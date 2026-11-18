@@ -42,9 +42,9 @@
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: rgba(1, 59, 255, 0.06);
-    border: 1px solid rgba(1, 59, 255, 0.15);
-    color: #013BFF;
+    background: rgba(0, 60, 255, 0.06);
+    border: 1px solid rgba(0, 60, 255, 0.15);
+    color: #003CFF;
     padding: 8px 18px;
     border-radius: 999px;
     font-size: 13.5px;
@@ -52,7 +52,7 @@
     margin-top: 18px;
   }
 
-  /* Interactive Billing Switcher */
+  /* Interactive Billing Switcher - Zarion Native Style */
   .billing-toggle-container {
     display: flex;
     justify-content: center;
@@ -66,7 +66,7 @@
     display: inline-flex;
     align-items: center;
     background: #EAEAE0;
-    border: 1px solid rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(25, 24, 20, 0.08);
     border-radius: 999px;
     padding: 4px;
     box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.04);
@@ -78,9 +78,9 @@
     padding: 10px 24px;
     border-radius: 999px;
     font-family: "Instrument Sans", sans-serif;
-    font-size: 14.5px;
+    font-size: 14px;
     font-weight: 500;
-    color: #787570;
+    color: #757368;
     cursor: pointer;
     transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
     display: inline-flex;
@@ -98,13 +98,14 @@
   }
 
   .billing-save-badge {
-    background: #10B981;
+    background: #00A76D;
     color: #FFFFFF;
-    font-size: 11px;
+    font-family: "Space Mono", monospace;
+    font-size: 10.5px;
     font-weight: 700;
-    padding: 3px 8px;
+    padding: 2.5px 7.5px;
     border-radius: 999px;
-    letter-spacing: 0.02em;
+    letter-spacing: 0.03em;
     text-transform: uppercase;
     transition: transform 0.2s ease;
   }
@@ -113,165 +114,64 @@
     transform: scale(1.05);
   }
 
-  /* Plan AI Credit Allowance Pill */
-  .card-ai-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 7px;
-    background: #F1F1E5;
-    border: 1px solid rgba(0, 0, 0, 0.07);
-    padding: 6px 12px;
-    border-radius: 8px;
-    margin-bottom: 20px;
-    font-size: 13px;
-    color: #191814;
-    font-family: "Instrument Sans", sans-serif;
-  }
-  .card-ai-badge.highlighted {
-    background: rgba(1, 59, 255, 0.08);
-    border-color: rgba(1, 59, 255, 0.2);
-    color: #013BFF;
-  }
-  .card-ai-badge .ai-spark-icon {
-    font-size: 13px;
-  }
-  
   .pricing-footnote {
     text-align: center;
     margin-top: 28px;
     font-size: 13px;
-    color: #787570;
+    color: #757368;
     font-family: "Instrument Sans", sans-serif;
   }
 
-  /* Section 2: Zero-Risk Talent Engagement */
+  /* Spacing fix for THE SPOTALENTS ADVANTAGE */
+  .section.difference {
+    padding-top: 100px !important;
+  }
+
+  /* Section 2: Zero-Risk Talent Engagement - Zarion Blended Style */
   .zero-risk-section {
-    padding: 100px 0;
+    padding: 110px 0;
     background-color: #F8F9F2;
-    border-top: 1px solid rgba(0, 0, 0, 0.06);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    border-top: 1px solid rgba(25, 24, 20, 0.08);
+    border-bottom: 1px solid rgba(25, 24, 20, 0.08);
     position: relative;
   }
 
-  /* Visual 4-Step Pipeline Graphic */
-  .pipeline-graphic-wrap {
-    margin: 44px 0 52px 0;
-  }
-
-  .zero-risk-pipeline {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 16px;
-    position: relative;
-  }
-
-  .pipeline-step-card {
-    background: #FFFFFF;
-    border: 1px solid rgba(0, 0, 0, 0.08);
-    border-radius: 18px;
-    padding: 24px 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    position: relative;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-  }
-
-  .pipeline-step-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
-  }
-
-  .pipeline-step-card.active-step {
-    border: 2px solid #013BFF;
-    background: linear-gradient(180deg, #FFFFFF 0%, #F5F7FF 100%);
-  }
-
-  .step-badge-wrap {
+  /* Website-Standard Research Cards Integration (from /solution/) */
+  .research-card-top-bar {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
   }
 
-  .step-num-circle {
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    background: #F1F1E5;
-    color: #191814;
-    font-family: "Space Mono", monospace;
-    font-size: 11px;
-    font-weight: 700;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  .research-card-pricing {
+    min-height: 270px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
   }
 
-  .pipeline-step-card.active-step .step-num-circle {
-    background: #013BFF;
-    color: #FFFFFF;
+  .research-card-pricing:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px -8px rgba(0, 0, 0, 0.06);
   }
 
-  .step-cost-pill {
-    font-family: "Space Mono", monospace;
-    font-size: 10px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    padding: 3px 8px;
-    border-radius: 6px;
-  }
-
-  .step-cost-pill.free {
-    background: #ECFDF5;
-    color: #059669;
-    border: 1px solid rgba(5, 150, 105, 0.2);
-  }
-
-  .step-cost-pill.trial {
-    background: #FEF3C7;
-    color: #D97706;
-    border: 1px solid rgba(217, 119, 6, 0.2);
-  }
-
-  .step-cost-pill.active {
-    background: rgba(1, 59, 255, 0.1);
-    color: #013BFF;
-    border: 1px solid rgba(1, 59, 255, 0.25);
-  }
-
-  .pipeline-step-title {
-    font-size: 15.5px;
-    font-weight: 700;
-    color: #191814;
-    line-height: 1.25;
-    font-family: "Instrument Sans", sans-serif;
-  }
-
-  .pipeline-step-desc {
-    font-size: 12.5px;
-    color: #5C5852;
-    line-height: 1.45;
-    font-family: "Instrument Sans", sans-serif;
-  }
-
-  /* Interactive Dynamic Calculator */
+  /* Interactive Dynamic Calculator - Zarion Themed */
   .calc-container-grid {
     display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
-    gap: 32px;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 28px;
     align-items: stretch;
+    margin-top: 56px;
   }
 
   .calc-interactive-card {
     background: #FFFFFF;
-    border: 1px solid rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(25, 24, 20, 0.08);
     border-radius: 24px;
     padding: 36px 32px;
     box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.04);
     display: flex;
-    flex-direction: column;
+    flex-flow: column;
     justify-content: space-between;
   }
 
@@ -280,14 +180,14 @@
     font-size: 11px;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: #787570;
+    color: #757368;
     margin-bottom: 8px;
     font-weight: 700;
   }
 
   .calc-heading {
     font-size: 20px;
-    font-weight: 700;
+    font-weight: 600;
     color: #191814;
     margin-bottom: 20px;
     font-family: "Instrument Sans", sans-serif;
@@ -295,17 +195,17 @@
 
   .calc-slider-box {
     background: #F8F9F2;
-    border: 1px solid rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(25, 24, 20, 0.06);
     border-radius: 16px;
-    padding: 24px 20px;
-    margin-bottom: 20px;
+    padding: 22px 20px;
+    margin-bottom: 18px;
   }
 
   .calc-slider-header {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
   }
 
   .calc-slider-label {
@@ -341,25 +241,25 @@
     width: 26px;
     height: 26px;
     border-radius: 50%;
-    background: #013BFF;
+    background: #003CFF;
     border: 3px solid #FFFFFF;
-    box-shadow: 0 2px 8px rgba(1, 59, 255, 0.4);
+    box-shadow: 0 2px 8px rgba(0, 60, 255, 0.35);
     cursor: pointer;
     transition: transform 0.15s ease, box-shadow 0.15s ease;
   }
 
   .talent-slider::-webkit-slider-thumb:hover {
     transform: scale(1.15);
-    box-shadow: 0 4px 12px rgba(1, 59, 255, 0.5);
+    box-shadow: 0 4px 12px rgba(0, 60, 255, 0.45);
   }
 
   .talent-slider::-moz-range-thumb {
     width: 26px;
     height: 26px;
     border-radius: 50%;
-    background: #013BFF;
+    background: #003CFF;
     border: 3px solid #FFFFFF;
-    box-shadow: 0 2px 8px rgba(1, 59, 255, 0.4);
+    box-shadow: 0 2px 8px rgba(0, 60, 255, 0.35);
     cursor: pointer;
   }
 
@@ -371,45 +271,13 @@
     color: #9CA3AF;
   }
 
-  .preset-row {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    flex-wrap: wrap;
-    margin-top: 16px;
-  }
-
-  .preset-label {
-    font-size: 12px;
-    color: #787570;
-    font-family: "Space Mono", monospace;
-  }
-
-  .preset-pill {
-    border: 1px solid rgba(0, 0, 0, 0.08);
-    background: #FFFFFF;
-    padding: 5px 12px;
-    border-radius: 999px;
-    font-size: 12.5px;
-    font-weight: 500;
-    color: #191814;
-    cursor: pointer;
-    transition: all 0.2s ease;
-  }
-
-  .preset-pill:hover, .preset-pill.active {
-    background: #191814;
-    color: #FFFFFF;
-    border-color: #191814;
-  }
-
   .calc-trust-list {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    margin-top: 24px;
-    padding-top: 20px;
-    border-top: 1px solid rgba(0, 0, 0, 0.06);
+    margin-top: 20px;
+    padding-top: 18px;
+    border-top: 1px solid rgba(25, 24, 20, 0.06);
   }
 
   .calc-trust-item {
@@ -421,21 +289,22 @@
   }
 
   .trust-check {
-    color: #059669;
+    color: #00A76D;
     font-weight: 700;
   }
 
+  /* Zarion Native Light-Blue Summary Card */
   .calc-summary-card {
-    background: #191814;
-    color: #FFFFFF;
+    background: #F0F6FF;
+    color: #191814;
     border-radius: 24px;
     padding: 36px 32px;
-    box-shadow: 0 16px 40px -10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 12px 36px -10px rgba(0, 60, 255, 0.06);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     position: relative;
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1.5px solid rgba(0, 60, 255, 0.18);
   }
 
   .summary-header-tag {
@@ -443,94 +312,117 @@
     font-size: 11px;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: #A1A1AA;
-    margin-bottom: 24px;
+    color: #003CFF;
+    font-weight: 700;
+    margin-bottom: 18px;
   }
 
   .summary-line-row {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 14px 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 13px 0;
+    border-bottom: 1px solid rgba(0, 60, 255, 0.1);
   }
 
   .summary-line-label {
     font-size: 13.5px;
-    color: #A1A1AA;
+    color: #5C5852;
     font-weight: 500;
   }
 
   .summary-line-value {
-    font-size: 18px;
+    font-size: 17px;
     font-weight: 600;
-    color: #FFFFFF;
+    color: #191814;
   }
 
   .summary-total-container {
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 60, 255, 0.16);
     border-radius: 16px;
-    padding: 20px;
-    margin: 24px 0 16px 0;
+    padding: 20px 24px;
+    margin: 20px 0 14px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    box-shadow: 0 4px 16px rgba(0, 60, 255, 0.04);
   }
 
   .summary-total-label {
     font-size: 14px;
-    font-weight: 500;
-    color: #E4E4E7;
+    font-weight: 600;
+    color: #191814;
   }
 
   .summary-total-value {
-    font-size: 32px;
+    font-size: 34px;
     font-weight: 700;
-    color: #FFFFFF;
+    color: #003CFF;
     letter-spacing: -0.02em;
-  }
-
-  .zero-upfront-pill {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    background: rgba(16, 185, 129, 0.12);
-    border: 1px solid rgba(16, 185, 129, 0.3);
-    color: #34D399;
-    padding: 10px 14px;
-    border-radius: 10px;
-    font-size: 13px;
-    font-weight: 600;
-    margin-bottom: 16px;
   }
 
   .summary-disclaimer {
     font-size: 11.5px;
-    color: #71717A;
+    color: #757368;
     line-height: 1.45;
   }
 
   @media screen and (max-width: 991px) {
-    .zero-risk-pipeline {
-      grid-template-columns: 1fr 1fr;
-    }
     .calc-container-grid {
       grid-template-columns: 1fr;
     }
   }
 
-  @media screen and (max-width: 640px) {
-    .zero-risk-pipeline {
-      grid-template-columns: 1fr;
+  @media screen and (max-width: 767px) {
+    .zero-risk-section {
+      padding: 70px 0;
+    }
+    .research-card-pricing {
+      min-height: 190px;
+      padding: 24px 20px;
+    }
+    .calc-container-grid {
+      margin-top: 36px;
+      gap: 20px;
     }
     .calc-interactive-card, .calc-summary-card {
       padding: 24px 20px;
+      border-radius: 20px;
+    }
+    .calc-heading {
+      font-size: 18px;
+    }
+    .calc-slider-box {
+      padding: 18px 16px;
+    }
+    .summary-total-container {
+      padding: 16px 14px;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .summary-total-value {
+      font-size: 28px;
+    }
+    .billing-toggle-pill {
+      padding: 4px;
+    }
+    .billing-toggle-btn {
+      padding: 8px 14px;
+      font-size: 13px;
+    }
+  }
+
+  @media screen and (max-width: 640px) {
+    .research-grid-wrap {
+      grid-template-columns: 1fr;
+      gap: 16px;
     }
     .summary-total-container {
       flex-direction: column;
       align-items: flex-start;
-      gap: 8px;
+      gap: 6px;
     }
   }
 </style></head>
@@ -655,7 +547,7 @@ Monthly
 <div class="pricing-a-single-top-wrap">
 <div class="pricing-a-title-wrap">
 <div class="pricing-a-single-title">DISCOVER</div>
-<div class="pricing-a-card-details">For companies exploring talent intelligence and building their first pipeline.</div></div>
+<div class="pricing-a-card-details">For companies exploring talent intelligence. Includes 1,000 AI credits/mo.</div></div>
 <div class="pricing-a-price-wrap">
 <div class="pricing-a-price-text-wrap">
 <div class="pricing-a-price-text" id="price-val-discover" style="font-size: 42px; line-height: 1;">$82.50</div></div>
@@ -666,12 +558,10 @@ Monthly
 <div class="balance-a-dot"></div>
 <div class="balance-a-dot"></div></div>
 
-<div class="card-ai-badge">
-<span class="ai-spark-icon">⚡</span>
-<span><strong>1,000 AI Credits</strong> / mo included</span>
-</div>
-
 <div class="pricing-a-list-wrapper">
+<div data-wf--pricing-a-list--variant="base" class="pricing-a-list-wrap">
+<div class="pricing-a-list-icon-wrap"><img loading="lazy" src="../images/6aa7b627d31a141ebbd2d4ea_Check%20Icon.svg" alt="Pricing Check Icon" class="pricing-a-list-icon"></div>
+<div class="pricing-a-list-text"><strong>1,000 monthly AI matching credits</strong> included</div></div>
 <div data-wf--pricing-a-list--variant="base" class="pricing-a-list-wrap">
 <div class="pricing-a-list-icon-wrap"><img loading="lazy" src="../images/6aa7b627d31a141ebbd2d4ea_Check%20Icon.svg" alt="Pricing Check Icon" class="pricing-a-list-icon"></div>
 <div class="pricing-a-list-text">Access to talent discovery &amp; verified profiles</div></div>
@@ -701,7 +591,7 @@ Monthly
 <div class="pricing-a-single-top-wrap">
 <div class="pricing-a-title-wrap">
 <div class="pricing-a-single-title">INTELLIGENCE</div>
-<div class="pricing-a-card-details">For companies actively sourcing, evaluating, and comparing technical talent.</div></div>
+<div class="pricing-a-card-details">For companies actively sourcing talents. Includes 5,000 AI credits/mo.</div></div>
 <div class="pricing-a-price-wrap">
 <div class="pricing-a-price-text-wrap">
 <div class="pricing-a-price-text" id="price-val-intel" style="font-size: 42px; line-height: 1;">$249</div></div>
@@ -712,12 +602,10 @@ Monthly
 <div class="balance-a-dot"></div>
 <div class="balance-a-dot"></div></div>
 
-<div class="card-ai-badge highlighted">
-<span class="ai-spark-icon">⚡</span>
-<span><strong>5,000 AI Credits</strong> / mo (5x allowance)</span>
-</div>
-
 <div class="pricing-a-list-wrapper">
+<div data-wf--pricing-a-list--variant="base" class="pricing-a-list-wrap">
+<div class="pricing-a-list-icon-wrap"><img loading="lazy" src="../images/6aa7b627d31a141ebbd2d4ea_Check%20Icon.svg" alt="Pricing Check Icon" class="pricing-a-list-icon"></div>
+<div class="pricing-a-list-text"><strong>5,000 monthly AI matching credits</strong> (5x allowance)</div></div>
 <div data-wf--pricing-a-list--variant="base" class="pricing-a-list-wrap">
 <div class="pricing-a-list-icon-wrap"><img loading="lazy" src="../images/6aa7b627d31a141ebbd2d4ea_Check%20Icon.svg" alt="Pricing Check Icon" class="pricing-a-list-icon"></div>
 <div class="pricing-a-list-text"><strong>Everything in Discover, plus:</strong></div></div>
@@ -748,23 +636,21 @@ Monthly
 <div class="pricing-a-single-top-wrap">
 <div class="pricing-a-title-wrap">
 <div class="pricing-a-single-title">ENTERPRISE</div>
-<div class="pricing-a-card-details">For organizations building a continuous, data-driven talent acquisition engine.</div></div>
+<div class="pricing-a-card-details">For organizations requiring talent intelligence at scale. Tailored AI credits.</div></div>
 <div class="pricing-a-price-wrap">
 <div class="pricing-a-price-text-wrap">
 <div class="pricing-a-price-text" style="font-size: 42px; line-height: 1;">Custom</div></div>
 <div class="pricing-a-month">/ annual</div></div>
 <div class="balance-wrap">
 <div class="balance-title">Tailored annual agreements</div>
-<div class="balance-month">Dedicated enterprise support &amp; custom SLAs</div>
+<div class="balance-month">Custom SLAs</div>
 <div class="balance-a-dot"></div>
 <div class="balance-a-dot"></div></div>
 
-<div class="card-ai-badge">
-<span class="ai-spark-icon">⚡</span>
-<span><strong>Custom Credits</strong> &amp; Private Models</span>
-</div>
-
 <div class="pricing-a-list-wrapper">
+<div data-wf--pricing-a-list--variant="base" class="pricing-a-list-wrap">
+<div class="pricing-a-list-icon-wrap"><img loading="lazy" src="../images/6aa7b627d31a141ebbd2d4ea_Check%20Icon.svg" alt="Pricing Check Icon" class="pricing-a-list-icon"></div>
+<div class="pricing-a-list-text"><strong>Tailored AI credit allowance</strong> &amp; dedicated throughput</div></div>
 <div data-wf--pricing-a-list--variant="base" class="pricing-a-list-wrap">
 <div class="pricing-a-list-icon-wrap"><img loading="lazy" src="../images/6aa7b627d31a141ebbd2d4ea_Check%20Icon.svg" alt="Pricing Check Icon" class="pricing-a-list-icon"></div>
 <div class="pricing-a-list-text"><strong>Everything in Intelligence, plus:</strong></div></div>
@@ -797,7 +683,7 @@ Monthly
 <section class="section zero-risk-section">
 <div class="w-layout-blockcontainer container w-container">
 <div class="zero-risk-wrapper">
-<div class="pricing-a-top-wrap" style="margin-bottom: 0;">
+<div class="pricing-a-top-wrap" style="margin-bottom: 48px;">
 <div animation="fade-one" class="contact-sub-title-wrap">
 <div data-wf--section-sub-title--variant="gray" class="section-sub-title w-variant-da0b81eb-ef6f-7786-e1c2-2810d345cc81">ZERO-RISK TALENT ENGAGEMENT</div></div>
 <div animation="heading" class="contact-title-wrap">
@@ -805,44 +691,68 @@ Monthly
 <div animation="fade-two" class="contact-detials-wrap">
 <p data-wf--global-details--variant="black" class="global-details w-variant-a13ec10e-e1c2-79cc-f6a4-77ba89b574d6">Traditional recruiters charge $20,000+ upfront before writing a single line of code. With SpotTalents, searching, matching, and interviewing are 100% free. You only pay when your talent begins active work.</p></div></div>
 
-<!-- Visual 4-Step Pipeline Graphic -->
-<div class="pipeline-graphic-wrap">
-<div class="zero-risk-pipeline">
+<!-- Website-Standard 4-Step Research Cards (Exact Zarion Component from /solution/) -->
+<div class="research-wrap">
+<div class="research-grid-wrap">
 
-<div class="pipeline-step-card">
-<div class="step-badge-wrap">
-<div class="step-num-circle">01</div>
-<span class="step-cost-pill free">100% Free</span>
+<div class="research-single-card one">
+<div animation="fade-three" data-wf--research-card--variant="base" class="research-card research-card-pricing">
+<div class="research-card-top-bar">
+<div class="research-icon-wrap">
+<img loading="lazy" src="../images/6aaa575f048fd3dc3699d41e_Research%20Icon%2001.svg" alt="Search &amp; Audit Icon" class="research-icon">
 </div>
-<div class="pipeline-step-title">Search &amp; Audit</div>
-<div class="pipeline-step-desc">Explore verified engineers with real Git commit history, AST code analysis, and benchmarks.</div>
+<div class="balance-month">100% Free</div>
 </div>
-
-<div class="pipeline-step-card">
-<div class="step-badge-wrap">
-<div class="step-num-circle">02</div>
-<span class="step-cost-pill free">100% Free</span>
+<div class="research-card-info-wrap">
+<div class="research-card-title">Search &amp; Audit</div>
+<p class="research-card-details">Explore verified engineers with real Git commit history, AST code analysis, and benchmarks.</p>
 </div>
-<div class="pipeline-step-title">AI Evidence Match</div>
-<div class="pipeline-step-desc">Our AI calibrates exact role fit, problem-solving speed, and team compatibility.</div>
+</div>
 </div>
 
-<div class="pipeline-step-card">
-<div class="step-badge-wrap">
-<div class="step-num-circle">03</div>
-<span class="step-cost-pill trial">14-Day Trial</span>
+<div class="research-single-card two">
+<div animation="fade-four" data-wf--research-card--variant="two" class="research-card w-variant-8ef59583-70f8-c24e-6ddb-ba7d7e0ec136 research-card-pricing">
+<div class="research-card-top-bar">
+<div class="research-icon-wrap">
+<img loading="lazy" src="../images/6aaa575f2a3a2eeaf43870a1_Research%20Icon%2002.svg" alt="AI Match Icon" class="research-icon">
 </div>
-<div class="pipeline-step-title">14-Day Calibration</div>
-<div class="pipeline-step-desc">Test live chemistry on your real stack. Zero penalty if not a perfect fit.</div>
+<div class="balance-month">100% Free</div>
+</div>
+<div class="research-card-info-wrap">
+<div class="research-card-title">AI Calibration</div>
+<p class="research-card-details">NIMO evaluates technical capability, behavioral compatibility, and delivery telemetry.</p>
+</div>
+</div>
 </div>
 
-<div class="pipeline-step-card active-step">
-<div class="step-badge-wrap">
-<div class="step-num-circle">04</div>
-<span class="step-cost-pill active">Pay on Delivery</span>
+<div class="research-single-card three">
+<div animation="fade-five" data-wf--research-card--variant="base" class="research-card research-card-pricing">
+<div class="research-card-top-bar">
+<div class="research-icon-wrap">
+<img loading="lazy" src="../images/6aaa575f22ca8de5610353e8_Research%20Icon%2003.svg" alt="14-Day Trial Icon" class="research-icon">
 </div>
-<div class="pipeline-step-title">Active Delivery</div>
-<div class="pipeline-step-desc">Pay an agreed monthly percentage on active salary. Cancels automatically when work stops.</div>
+<div class="balance-month">14-Day Trial</div>
+</div>
+<div class="research-card-info-wrap">
+<div class="research-card-title">14-Day Calibration</div>
+<p class="research-card-details">Calibrate live chemistry on your real stack with your team. Zero penalty if not a perfect fit.</p>
+</div>
+</div>
+</div>
+
+<div class="research-single-card four">
+<div animation="fade-six" data-wf--research-card--variant="two" class="research-card w-variant-8ef59583-70f8-c24e-6ddb-ba7d7e0ec136 research-card-pricing" style="border: 1.5px solid rgba(0, 60, 255, 0.25);">
+<div class="research-card-top-bar">
+<div class="research-icon-wrap">
+<img loading="lazy" src="../images/6aaa575f011df9823ccf9f12_Research%20Icon%2004.svg" alt="Pay on Delivery Icon" class="research-icon">
+</div>
+<div class="balance-month" style="background-color: var(--blue); color: #FFFFFF;">Pay on Delivery</div>
+</div>
+<div class="research-card-info-wrap">
+<div class="research-card-title">Active Delivery</div>
+<p class="research-card-details">Pay an agreed monthly percentage on active salary. Automatically pauses when engagement ends.</p>
+</div>
+</div>
 </div>
 
 </div>
@@ -867,13 +777,6 @@ Monthly
 <span>$5,000/mo</span>
 <span>$10,000/mo</span>
 </div>
-<div class="preset-row">
-<span class="preset-label">Quick Presets:</span>
-<button type="button" class="preset-pill" data-val="2500">$2,500</button>
-<button type="button" class="preset-pill active" data-val="3000">$3,000</button>
-<button type="button" class="preset-pill" data-val="5000">$5,000</button>
-<button type="button" class="preset-pill" data-val="7500">$7,500</button>
-</div>
 </div>
 </div>
 <div class="calc-trust-list">
@@ -883,13 +786,13 @@ Monthly
 </div>
 </div>
 
-<!-- Right Card: Live Breakdown -->
+<!-- Right Card: Live Breakdown - Zarion Themed -->
 <div class="calc-summary-card">
 <div>
 <div class="summary-header-tag">Live Monthly Cost Breakdown</div>
-<div class="zero-upfront-pill">
-<span>🛡️</span>
-<span>Upfront Search &amp; Placement: <strong>$0.00</strong></span>
+<div class="summary-line-row">
+<span class="summary-line-label">Upfront Search &amp; Placement</span>
+<span class="summary-line-value" style="color: #00A76D; font-weight: 600;">$0.00</span>
 </div>
 <div class="summary-line-row">
 <span class="summary-line-label">Talent Monthly Compensation</span>
@@ -897,7 +800,7 @@ Monthly
 </div>
 <div class="summary-line-row">
 <span class="summary-line-label">SpotTalents Engagement Fee (10%)</span>
-<span class="summary-line-value" style="color: #60A5FA;" id="summary-fee-val">+$300 / mo</span>
+<span class="summary-line-value" style="color: #003CFF; font-weight: 600;" id="summary-fee-val">+$300 / mo</span>
 </div>
 </div>
 <div>
@@ -906,7 +809,14 @@ Monthly
 <span class="summary-total-value" id="summary-total-val">$3,300</span>
 </div>
 <div class="summary-disclaimer">
-*Illustrative 10% engagement rate. Exact percentage is individually confirmed per talent before work begins. This fee recurs monthly only while the engagement remains active.
+*Illustrative 10% engagement rate. Exact percentage is individually confirmed per talent before work begins. Billed monthly only while active.
+</div>
+<div style="margin-top: 16px;">
+<a data-wf--primary-button--variant="blue" href="/start" class="primary-button w-variant-b428232b-7b24-db52-6b0b-12fd13311aee w-inline-block" style="width: 100%; justify-content: center;">
+<div class="primary-btn-text-wrap">
+<div class="primary-button-text">Start Free Calibration</div>
+<div class="primary-button-text">Start Free Calibration</div></div>
+<div class="primary-arrow-wrap w-variant-b428232b-7b24-db52-6b0b-12fd13311aee"><img loading="lazy" src="../images/6aa6bd06548e7975cbe07463_Primary%20Arrow%2002.svg" alt="Primary Arrow" class="primary-arrow w-variant-b428232b-7b24-db52-6b0b-12fd13311aee one"><img loading="lazy" src="../images/6aa6bd06548e7975cbe07463_Primary%20Arrow%2002.svg" alt="Primary Arrow" class="primary-arrow w-variant-b428232b-7b24-db52-6b0b-12fd13311aee two"></div></a>
 </div>
 </div>
 </div>
@@ -1072,10 +982,10 @@ Monthly
 <div class="faq-card-number">001</div></div>
 <div class="faq-all-wrap">
 <div class="faq-card-title-wrap">
-<div class="faq-card-title">What does my annual subscription include?</div></div>
+<div class="faq-card-title">What does the platform subscription include?</div></div>
 <div class="faq-answer-wrap">
 <div class="faq-details-wrap">
-<p data-wf--global-details--variant="black" class="global-details w-variant-a13ec10e-e1c2-79cc-f6a4-77ba89b574d6">Your subscription includes access to SpotTalents' platform, talent intelligence features, plan-specific AI capabilities, and a monthly AI credit allowance.</p></div></div></div></div>
+<p data-wf--global-details--variant="black" class="global-details w-variant-a13ec10e-e1c2-79cc-f6a4-77ba89b574d6">Your subscription provides continuous access to SpotTalents' talent intelligence engine, verified Git commit audits, AST code depth analysis, team compatibility models, and monthly AI credit allowances.</p></div></div></div></div>
 <div class="faq-card-right-wrap"><img loading="lazy" src="../images/6aa7aca48163890107f974d4_Plus%20Icon.svg" alt="Faq Card Icon" class="faq-card-icon"></div></div></div></a>
 
 <a data-w-tab="Tab 2" animation="fade-three" class="faq-tab-link w-inline-block w-tab-link">
@@ -1086,10 +996,10 @@ Monthly
 <div class="faq-card-number">002</div></div>
 <div class="faq-all-wrap">
 <div class="faq-card-title-wrap">
-<div class="faq-card-title">Is the talent engagement fee included?</div></div>
+<div class="faq-card-title">When do I start paying the talent engagement fee?</div></div>
 <div class="faq-answer-wrap">
 <div class="faq-details-wrap">
-<p data-wf--global-details--variant="black" class="global-details w-variant-a13ec10e-e1c2-79cc-f6a4-77ba89b574d6">No. The subscription and talent engagement fee are separate. An individually agreed percentage applies to a talent's monthly compensation when an engagement begins.</p></div></div></div></div>
+<p data-wf--global-details--variant="black" class="global-details w-variant-a13ec10e-e1c2-79cc-f6a4-77ba89b574d6">Only after you select an engineer and active work officially begins. Searching, viewing AST code telemetry, generating AI matches, and interviewing candidates are 100% free with zero obligation.</p></div></div></div></div>
 <div class="faq-card-right-wrap"><img loading="lazy" src="../images/6aa7aca48163890107f974d4_Plus%20Icon.svg" alt="Faq Card Icon" class="faq-card-icon"></div></div></div></a>
 
 <a data-w-tab="Tab 3" animation="fade-three" class="faq-tab-link w-inline-block w-tab-link">
@@ -1100,10 +1010,10 @@ Monthly
 <div class="faq-card-number">003</div></div>
 <div class="faq-all-wrap">
 <div class="faq-card-title-wrap">
-<div class="faq-card-title">When do I start paying the engagement fee?</div></div>
+<div class="faq-card-title">Is the engagement fee a one-time recruitment fee?</div></div>
 <div class="faq-answer-wrap">
 <div class="faq-details-wrap">
-<p data-wf--global-details--variant="black" class="global-details w-variant-a13ec10e-e1c2-79cc-f6a4-77ba89b574d6">Once you select a talent and the working relationship officially begins, according to the agreed engagement terms.</p></div></div></div></div>
+<p data-wf--global-details--variant="black" class="global-details w-variant-a13ec10e-e1c2-79cc-f6a4-77ba89b574d6">No. Traditional headhunters charge $15,000–$30,000 upfront regardless of outcome. SpotTalents charges an agreed monthly percentage (e.g. 10%) on active talent compensation. If the engagement ends, billing stops immediately.</p></div></div></div></div>
 <div class="faq-card-right-wrap"><img loading="lazy" src="../images/6aa7aca48163890107f974d4_Plus%20Icon.svg" alt="Faq Card Icon" class="faq-card-icon"></div></div></div></a>
 
 <a data-w-tab="Tab 4" animation="fade-three" class="faq-tab-link w-inline-block w-tab-link">
@@ -1114,10 +1024,10 @@ Monthly
 <div class="faq-card-number">004</div></div>
 <div class="faq-all-wrap">
 <div class="faq-card-title-wrap">
-<div class="faq-card-title">Is the engagement fee a one-time payment?</div></div>
+<div class="faq-card-title">What is the 14-day calibration guarantee?</div></div>
 <div class="faq-answer-wrap">
 <div class="faq-details-wrap">
-<p data-wf--global-details--variant="black" class="global-details w-variant-a13ec10e-e1c2-79cc-f6a4-77ba89b574d6">No. It is a recurring monthly fee calculated as an agreed percentage of the talent's monthly compensation while the engagement is active.</p></div></div></div></div>
+<p data-wf--global-details--variant="black" class="global-details w-variant-a13ec10e-e1c2-79cc-f6a4-77ba89b574d6">Every placed engineer starts with a 14-day risk-free calibration trial on your real codebase. If technical delivery or team chemistry isn't an exact fit, replace the candidate immediately or cancel with zero penalty.</p></div></div></div></div>
 <div class="faq-card-right-wrap"><img loading="lazy" src="../images/6aa7aca48163890107f974d4_Plus%20Icon.svg" alt="Faq Card Icon" class="faq-card-icon"></div></div></div></a>
 
 <a data-w-tab="Tab 5" animation="fade-three" class="faq-tab-link w-inline-block w-tab-link">
@@ -1128,10 +1038,10 @@ Monthly
 <div class="faq-card-number">005</div></div>
 <div class="faq-all-wrap">
 <div class="faq-card-title-wrap">
-<div class="faq-card-title">Do I pay if I don't hire anyone?</div></div>
+<div class="faq-card-title">How do monthly AI credits work and can I top up?</div></div>
 <div class="faq-answer-wrap">
 <div class="faq-details-wrap">
-<p data-wf--global-details--variant="black" class="global-details w-variant-a13ec10e-e1c2-79cc-f6a4-77ba89b574d6">No talent engagement fee applies if you do not start an engagement. Your annual subscription remains active and provides access to your subscribed platform features.</p></div></div></div></div>
+<p data-wf--global-details--variant="black" class="global-details w-variant-a13ec10e-e1c2-79cc-f6a4-77ba89b574d6">Every subscription plan includes a monthly AI credit allowance that refreshes each month. If your sourcing volume surges, you can purchase prepaid top-up credits anytime with transparent pricing and zero surprise billing.</p></div></div></div></div>
 <div class="faq-card-right-wrap"><img loading="lazy" src="../images/6aa7aca48163890107f974d4_Plus%20Icon.svg" alt="Faq Card Icon" class="faq-card-icon"></div></div></div></a>
 
 <a data-w-tab="Tab 6" animation="fade-three" class="faq-tab-link w-inline-block w-tab-link">
@@ -1142,66 +1052,10 @@ Monthly
 <div class="faq-card-number">006</div></div>
 <div class="faq-all-wrap">
 <div class="faq-card-title-wrap">
-<div class="faq-card-title">Can engagement percentages differ between talents?</div></div>
+<div class="faq-card-title">Can I switch between monthly and annual billing?</div></div>
 <div class="faq-answer-wrap">
 <div class="faq-details-wrap">
-<p data-wf--global-details--variant="black" class="global-details w-variant-a13ec10e-e1c2-79cc-f6a4-77ba89b574d6">Yes. Engagement percentages are individually agreed based on the talent, compensation, engagement structure, and commercial terms.</p></div></div></div></div>
-<div class="faq-card-right-wrap"><img loading="lazy" src="../images/6aa7aca48163890107f974d4_Plus%20Icon.svg" alt="Faq Card Icon" class="faq-card-icon"></div></div></div></a>
-
-<a data-w-tab="Tab 7" animation="fade-three" class="faq-tab-link w-inline-block w-tab-link">
-<div class="faq-single-card">
-<div class="faq-card-flex-wrap">
-<div class="faq-card-left-wrap">
-<div class="faq-number-wrap">
-<div class="faq-card-number">007</div></div>
-<div class="faq-all-wrap">
-<div class="faq-card-title-wrap">
-<div class="faq-card-title">Can I purchase additional AI credits?</div></div>
-<div class="faq-answer-wrap">
-<div class="faq-details-wrap">
-<p data-wf--global-details--variant="black" class="global-details w-variant-a13ec10e-e1c2-79cc-f6a4-77ba89b574d6">Yes. Every subscription includes a monthly allowance, and additional credits can be purchased separately with your approval.</p></div></div></div></div>
-<div class="faq-card-right-wrap"><img loading="lazy" src="../images/6aa7aca48163890107f974d4_Plus%20Icon.svg" alt="Faq Card Icon" class="faq-card-icon"></div></div></div></a>
-
-<a data-w-tab="Tab 8" animation="fade-three" class="faq-tab-link w-inline-block w-tab-link">
-<div class="faq-single-card">
-<div class="faq-card-flex-wrap">
-<div class="faq-card-left-wrap">
-<div class="faq-number-wrap">
-<div class="faq-card-number">008</div></div>
-<div class="faq-all-wrap">
-<div class="faq-card-title-wrap">
-<div class="faq-card-title">Do unused AI credits roll over?</div></div>
-<div class="faq-answer-wrap">
-<div class="faq-details-wrap">
-<p data-wf--global-details--variant="black" class="global-details w-variant-a13ec10e-e1c2-79cc-f6a4-77ba89b574d6">Monthly subscription allowances refresh each month and do not roll over. Purchased credit packages follow their stated validity and usage terms.</p></div></div></div></div>
-<div class="faq-card-right-wrap"><img loading="lazy" src="../images/6aa7aca48163890107f974d4_Plus%20Icon.svg" alt="Faq Card Icon" class="faq-card-icon"></div></div></div></a>
-
-<a data-w-tab="Tab 9" animation="fade-three" class="faq-tab-link w-inline-block w-tab-link">
-<div class="faq-single-card">
-<div class="faq-card-flex-wrap">
-<div class="faq-card-left-wrap">
-<div class="faq-number-wrap">
-<div class="faq-card-number">009</div></div>
-<div class="faq-all-wrap">
-<div class="faq-card-title-wrap">
-<div class="faq-card-title">Can I upgrade to Enterprise?</div></div>
-<div class="faq-answer-wrap">
-<div class="faq-details-wrap">
-<p data-wf--global-details--variant="black" class="global-details w-variant-a13ec10e-e1c2-79cc-f6a4-77ba89b574d6">Yes. Enterprise plans offer customized access, intelligence requirements, usage allowances, and commercial agreements.</p></div></div></div></div>
-<div class="faq-card-right-wrap"><img loading="lazy" src="../images/6aa7aca48163890107f974d4_Plus%20Icon.svg" alt="Faq Card Icon" class="faq-card-icon"></div></div></div></a>
-
-<a data-w-tab="Tab 10" animation="fade-three" class="faq-tab-link w-inline-block w-tab-link">
-<div class="faq-single-card">
-<div class="faq-card-flex-wrap">
-<div class="faq-card-left-wrap">
-<div class="faq-number-wrap">
-<div class="faq-card-number">010</div></div>
-<div class="faq-all-wrap">
-<div class="faq-card-title-wrap">
-<div class="faq-card-title">How are talent compensation and platform fees calculated?</div></div>
-<div class="faq-answer-wrap">
-<div class="faq-details-wrap">
-<p data-wf--global-details--variant="black" class="global-details w-variant-a13ec10e-e1c2-79cc-f6a4-77ba89b574d6">Talent compensation is agreed separately. The SpotTalents engagement fee is calculated using the agreed percentage and compensation basis specified in the engagement agreement.</p></div></div></div></div>
+<p data-wf--global-details--variant="black" class="global-details w-variant-a13ec10e-e1c2-79cc-f6a4-77ba89b574d6">Yes. You can begin on flexible monthly billing and switch to an annual plan at any time right from your account settings to lock in the 20% discount (2 months free).</p></div></div></div></div>
 <div class="faq-card-right-wrap"><img loading="lazy" src="../images/6aa7aca48163890107f974d4_Plus%20Icon.svg" alt="Faq Card Icon" class="faq-card-icon"></div></div></div></a>
 
 </div>
@@ -1212,10 +1066,6 @@ Monthly
 <div data-w-tab="Tab 4" class="w-tab-pane"></div>
 <div data-w-tab="Tab 5" class="w-tab-pane"></div>
 <div data-w-tab="Tab 6" class="w-tab-pane"></div>
-<div data-w-tab="Tab 7" class="w-tab-pane"></div>
-<div data-w-tab="Tab 8" class="w-tab-pane"></div>
-<div data-w-tab="Tab 9" class="w-tab-pane"></div>
-<div data-w-tab="Tab 10" class="w-tab-pane"></div>
 </div></div></div></div></div></section>
 <section data-wf--call-to-action--variant="base" class="section cta">
 <div class="w-layout-blockcontainer big-container w-container">
@@ -1239,6 +1089,7 @@ Monthly
 <section data-wf--footer--variant="base" class="section footer">
 <div class="w-layout-blockcontainer big-container w-container">
 <div class="footer-wrapper">
+<div class="footer-watermark-text" aria-hidden="true">Spotalents</div>
 <div class="footer-wrap">
 <div class="footer-top-wrap">
 <div animation="fade-one" class="footer-left-wrap"><a href="/" class="footer-brand-link w-inline-block"><img loading="lazy" src="../images/6aa6d393ac93082b8aacb5ff_Footer%20Logo.svg" alt="Footer Logo" class="footer-logo"></a>
@@ -1425,7 +1276,6 @@ document.addEventListener('DOMContentLoaded', function () {
   const summaryComp = document.getElementById('summary-comp-val');
   const summaryFee = document.getElementById('summary-fee-val');
   const summaryTotal = document.getElementById('summary-total-val');
-  const presetPills = document.querySelectorAll('.preset-pill');
 
   function updateCalculator(compValue) {
     const val = parseInt(compValue, 10);
@@ -1440,15 +1290,6 @@ document.addEventListener('DOMContentLoaded', function () {
     if (summaryComp) summaryComp.textContent = formattedVal + ' / mo';
     if (summaryFee) summaryFee.textContent = formattedFee + ' / mo';
     if (summaryTotal) summaryTotal.textContent = formattedTotal;
-
-    // Update preset pills active state
-    presetPills.forEach(function (pill) {
-      if (parseInt(pill.getAttribute('data-val'), 10) === val) {
-        pill.classList.add('active');
-      } else {
-        pill.classList.remove('active');
-      }
-    });
 
     // Update slider track gradient fill
     if (compRange) {
@@ -1466,16 +1307,6 @@ document.addEventListener('DOMContentLoaded', function () {
     // Initial call
     updateCalculator(compRange.value);
   }
-
-  presetPills.forEach(function (pill) {
-    pill.addEventListener('click', function () {
-      const val = this.getAttribute('data-val');
-      if (compRange) {
-        compRange.value = val;
-        updateCalculator(val);
-      }
-    });
-  });
 });
 </script>
 </body></html>

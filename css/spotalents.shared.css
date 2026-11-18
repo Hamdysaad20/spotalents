@@ -2732,7 +2732,7 @@ figure {
 }
 
 .section.difference {
-  padding-top: var(--_gap---gap-none);
+  padding-top: var(--_gap---gap-14xl);
   padding-bottom: var(--_gap---gap-10xl);
 }
 
@@ -2859,10 +2859,8 @@ figure {
   padding: var(--_gap---gap-7xl);
   border-radius: var(--_border---border-2xl);
   background-color: #f8f9f2;
-  background-image: url("../images/6aa6de6979cc6cc7686f50c6_3d01dbdc0ee3f6b52536a6ef554d1df2_Zerion.svg");
-  background-position: 50% 100%;
-  background-repeat: no-repeat;
-  background-size: auto;
+  position: relative;
+  overflow: hidden;
 }
 
 .footer-wrapper:where(.w-variant-45d62079-1b90-1785-0be1-90b9c0e2e5b4) {
@@ -10379,7 +10377,7 @@ figure {
 
 /* Recognition Section in About Page */
 
-/* === ZARION-NATIVE RECOGNITION & ECOSYSTEM SECTION === */
+/* === ZARION-NATIVE RECOGNITION & ECOSYSTEM (CONCISE & FUNCTIONAL UX) === */
 .section.recognition {
   padding-top: var(--_gap---gap-14xl);
   padding-bottom: var(--_gap---gap-14xl);
@@ -10387,158 +10385,224 @@ figure {
   position: relative;
 }
 
-.recognition-wrapper {
+.section-ecosystem-wrap {
   display: flex;
   flex-direction: column;
-  gap: 36px;
+  gap: 32px;
 }
 
 /* Header */
-.recognition-top-wrap {
-  max-width: 820px;
+.section-top-header {
+  max-width: 760px;
+  margin: 0 auto 48px auto;
+  text-align: center;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 16px;
 }
-
-/* Row 1: Dual Flagship Proof Cards (50 / 50 Grid) */
-.zarion-proof-row {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 28px;
+.sec-sub-tag {
+  font-family: var(--_font-family---secondary-font);
+  font-size: 11.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--dark-gray);
+  text-align: center;
+}
+.sec-heading {
+  font-size: 42px;
+  line-height: 1.15;
+  font-weight: 500;
+  color: var(--dark-black);
+  letter-spacing: -0.02em;
+  margin: 0;
+  text-align: center;
+}
+.sec-lead {
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--dark-gray);
+  margin: 0;
+  text-align: center;
 }
 
-.zarion-proof-card {
+/* Row 1: The 3 Milestones Grid (3-Col Bento matching Zarion beliefs-grid) */
+.milestones-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.milestone-card {
   background-color: var(--light-gray);
-  border: 1px solid rgba(25, 24, 20, 0.07);
+  border: 1px solid rgba(25, 24, 20, 0.06);
   border-radius: var(--_border---border-2xl);
-  padding: 36px 36px 32px;
+  padding: 28px 28px 24px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 24px;
-  transition: transform 0.25s ease, border-color 0.25s ease;
+  gap: 18px;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
 }
-
-.zarion-proof-card:hover {
+.milestone-card:hover {
   transform: translateY(-2px);
-  border-color: rgba(25, 24, 20, 0.16);
+  border-color: rgba(25, 24, 20, 0.15);
+  box-shadow: 0 12px 28px -10px rgba(0, 0, 0, 0.06);
 }
 
-.zarion-proof-card.accent-blue {
+.milestone-card.card-blue {
   background-color: var(--light-blue);
-  border-color: rgba(0, 60, 255, 0.12);
+  border-color: rgba(0, 60, 255, 0.1);
+}
+.milestone-card.card-blue:hover {
+  border-color: rgba(0, 60, 255, 0.22);
 }
 
-.zarion-proof-card.accent-blue:hover {
-  border-color: rgba(0, 60, 255, 0.24);
+.milestone-card.card-white {
+  background-color: var(--white);
+  border-color: rgba(25, 24, 20, 0.08);
 }
 
-.proof-top-meta {
+.card-top-meta {
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 8px;
 }
-
-.proof-num {
+.card-num {
   font-family: var(--_font-family---secondary-font);
-  font-size: 11.5px;
-  font-weight: 400;
+  font-size: 11px;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--dark-gray);
 }
-
-.proof-badge {
+.card-pill {
   font-family: var(--_font-family---secondary-font);
-  font-size: 11px;
-  font-weight: 400;
-  letter-spacing: 0.06em;
+  font-size: 10.5px;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
-  padding: 4px 12px;
+  padding: 3px 10px;
   border-radius: 999px;
   background-color: var(--white);
   border: 1px solid rgba(25, 24, 20, 0.08);
   color: var(--dark-black);
 }
-
-.zarion-proof-card.accent-blue .proof-badge {
+.milestone-card.card-blue .card-pill {
   color: var(--blue);
   border-color: rgba(0, 60, 255, 0.16);
 }
 
-.proof-image-frame {
+.card-thumb-frame {
   width: 100%;
-  height: 280px;
+  height: 190px;
   border-radius: var(--_border---border-l);
   overflow: hidden;
   background-color: var(--white);
   border: 1px solid rgba(25, 24, 20, 0.06);
-  position: relative;
 }
-
-.proof-image-frame img {
+.card-thumb-frame.top-focus img {
+  object-position: center 15%;
+}
+.card-thumb-frame img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center 20%;
   display: block;
 }
-
-.zarion-proof-card.accent-blue .proof-image-frame img {
+.milestone-card.card-blue .card-thumb-frame img {
   object-fit: contain;
-  background-color: #ffffff;
-  padding: 10px;
+  padding: 8px;
 }
 
-.proof-body-wrap {
+.card-content {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
 }
-
-.proof-category {
+.card-tag {
   font-family: var(--_font-family---secondary-font);
-  font-size: 11px;
-  letter-spacing: 0.08em;
+  font-size: 10.5px;
+  letter-spacing: 0.07em;
   text-transform: uppercase;
   color: var(--blue);
   font-weight: 500;
 }
-
-.proof-main-title {
-  font-size: 24px;
+.card-title {
+  font-size: 20px;
   line-height: 1.25;
   font-weight: 600;
   color: var(--dark-black);
   margin: 0;
   letter-spacing: -0.01em;
 }
-
-.proof-meta-line {
+.card-subtitle-pill {
+  font-size: 12.5px;
+  color: var(--dark-gray);
+  margin: 0;
+}
+.card-subtitle-pill strong {
+  color: var(--dark-black);
+}
+.card-text {
   font-size: 13.5px;
+  line-height: 1.5;
   color: var(--dark-gray);
   margin: 0;
 }
 
-.proof-meta-line strong {
+/* Quote card specific styling */
+.quote-content-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  gap: 16px;
+}
+.quote-lead {
+  font-size: 20px;
+  line-height: 1.35;
+  font-weight: 500;
+  color: var(--dark-black);
+  margin: 0;
+  letter-spacing: -0.01em;
+  border-left: 2px solid var(--blue);
+  padding-left: 12px;
+}
+.quote-sub-box {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(25, 24, 20, 0.08);
+}
+.quote-author-name {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--dark-black);
+}
+.quote-author-role {
+  font-size: 11.5px;
+  color: var(--dark-gray);
+}
+.quote-scale-callout {
+  font-size: 12px;
+  line-height: 1.45;
+  color: var(--dark-gray);
+  background-color: var(--light-gray);
+  padding: 8px 12px;
+  border-radius: var(--_border---border-m);
+}
+.quote-scale-callout strong {
   color: var(--dark-black);
 }
 
-.proof-description {
-  font-size: 14.5px;
-  line-height: 1.55;
-  color: var(--dark-gray);
-  margin: 0;
-}
-
-.proof-action-link {
+.card-link {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  font-size: 13.5px;
+  gap: 6px;
+  font-size: 12.5px;
   font-weight: 600;
   color: var(--dark-black);
   text-decoration: none;
@@ -10547,294 +10611,181 @@ figure {
   align-self: flex-start;
   transition: color 0.2s, border-color 0.2s;
 }
-
-.proof-action-link:hover {
+.card-link:hover {
   color: var(--blue);
   border-color: var(--blue);
 }
-
-.proof-action-link span.arrow {
-  font-size: 15px;
-  transition: transform 0.2s ease;
+.card-link span.arrow {
+  font-size: 13px;
+  transition: transform 0.2s;
 }
-
-.proof-action-link:hover span.arrow {
+.card-link:hover span.arrow {
   transform: translate(2px, -2px);
 }
 
-/* Row 2: Split Row (Quote 60% / Entity Separation 40%) */
-.zarion-split-row {
-  display: grid;
-  grid-template-columns: 1.4fr 1fr;
-  gap: 28px;
-}
-
-.zarion-quote-card {
+/* Row 2: Ecosystem Trust Strip (Interactive & Categorized) */
+.ecosystem-strip-card {
   background-color: var(--white);
-  border: 1px solid rgba(25, 24, 20, 0.09);
+  border: 1px solid rgba(25, 24, 20, 0.08);
   border-radius: var(--_border---border-2xl);
-  padding: 36px;
+  padding: 32px 36px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  gap: 20px;
+  gap: 22px;
 }
 
-.quote-top-row {
+.eco-top-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 16px;
+  border-bottom: 1px solid rgba(25, 24, 20, 0.07);
+  padding-bottom: 16px;
 }
-
-.quote-text {
-  font-size: 25px;
-  line-height: 1.35;
-  font-weight: 500;
-  color: var(--dark-black);
-  letter-spacing: -0.01em;
-  margin: 0;
-}
-
-.quote-elaboration {
-  font-size: 14px;
-  line-height: 1.55;
-  color: var(--dark-gray);
-  margin: 0;
-}
-
-.quote-author-block {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  border-top: 1px solid rgba(25, 24, 20, 0.08);
-  padding-top: 16px;
-  flex-wrap: wrap;
-  gap: 12px;
-}
-
-.author-name {
-  font-size: 15px;
-  font-weight: 600;
-  color: var(--dark-black);
-}
-
-.author-role {
-  font-size: 12.5px;
-  color: var(--dark-gray);
-  margin-top: 2px;
-}
-
-.author-exposure {
-  font-family: var(--_font-family---secondary-font);
-  font-size: 11px;
-  letter-spacing: 0.04em;
-  color: var(--dark-gray);
-  background-color: var(--light-gray);
-  padding: 4px 10px;
-  border-radius: 6px;
-}
-
-.author-exposure strong {
-  color: var(--dark-black);
-}
-
-/* Entity Separation Card */
-.zarion-separation-card {
-  background-color: var(--light-gray);
-  border: 1px solid rgba(25, 24, 20, 0.07);
-  border-radius: var(--_border---border-2xl);
-  padding: 36px;
+.eco-heading-wrap {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  gap: 16px;
+  gap: 4px;
 }
-
-.separation-title {
-  font-size: 22px;
+.eco-headline {
+  font-size: 20px;
   line-height: 1.25;
   font-weight: 600;
   color: var(--dark-black);
   margin: 0;
 }
-
-.separation-body {
-  font-size: 14px;
-  line-height: 1.6;
+.eco-caption {
+  font-size: 13.5px;
   color: var(--dark-gray);
   margin: 0;
 }
 
-.separation-body strong {
-  color: var(--dark-black);
-}
-
-.separation-pill-wrap {
+/* Interactive Filter Tabs */
+.eco-filter-nav {
   display: flex;
   align-items: center;
   gap: 8px;
   flex-wrap: wrap;
-  margin-top: 4px;
 }
-
-.separation-pill {
+.eco-filter-btn {
   font-family: var(--_font-family---secondary-font);
   font-size: 11px;
-  background-color: var(--white);
-  border: 1px solid rgba(25, 24, 20, 0.08);
-  padding: 3px 10px;
-  border-radius: 999px;
-  color: var(--dark-black);
-}
-
-/* Row 3: Full Width Ecosystem Card */
-.zarion-ecosystem-card {
-  background-color: var(--white);
-  border: 1px solid rgba(25, 24, 20, 0.09);
-  border-radius: var(--_border---border-2xl);
-  padding: 40px;
-  display: flex;
-  flex-direction: column;
-  gap: 28px;
-}
-
-.ecosystem-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  border-bottom: 1px solid rgba(25, 24, 20, 0.08);
-  padding-bottom: 20px;
-  flex-wrap: wrap;
-  gap: 16px;
-}
-
-.eco-title-wrap {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.eco-title {
-  font-size: 24px;
-  line-height: 1.2;
-  font-weight: 600;
-  color: var(--dark-black);
-  margin: 0;
-}
-
-.eco-subtitle {
-  font-size: 14px;
-  color: var(--dark-gray);
-  margin: 0;
-}
-
-.ecosystem-columns-wrap {
-  display: grid;
-  grid-template-columns: 1.6fr 1fr 0.8fr;
-  gap: 32px;
-}
-
-.eco-col {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-
-.col-header {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.col-tag {
-  font-family: var(--_font-family---secondary-font);
-  font-size: 11px;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: var(--blue);
-  font-weight: 500;
-}
-
-.col-desc {
-  font-size: 12.5px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background-color: var(--light-gray);
+  border: 1px solid transparent;
   color: var(--dark-gray);
-  margin: 0;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.eco-filter-btn:hover {
+  background-color: #ebece0;
+  color: var(--dark-black);
+}
+.eco-filter-btn.active {
+  background-color: var(--dark-black);
+  color: var(--white);
 }
 
-.partner-pills-grid {
+/* Logo Grid */
+.eco-partners-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 10px;
 }
 
-.partner-pills-grid.single-col {
-  grid-template-columns: 1fr;
-}
-
-.zarion-partner-item {
+.eco-pill-item {
   background-color: var(--light-gray);
-  border: 1px solid rgba(25, 24, 20, 0.05);
+  border: 1px solid rgba(25, 24, 20, 0.04);
   border-radius: var(--_border---border-m);
   padding: 10px 12px;
   display: flex;
   align-items: center;
   gap: 10px;
-  transition: transform 0.2s ease, background-color 0.2s ease;
+  transition: transform 0.2s, background-color 0.2s, opacity 0.2s;
 }
-
-.zarion-partner-item:hover {
+.eco-pill-item:hover {
   transform: translateY(-2px);
   background-color: #ebece0;
 }
-
-.zarion-partner-logo {
-  width: 28px;
-  height: 28px;
+.eco-pill-item.is-hidden {
+  display: none !important;
+}
+.eco-pill-logo {
+  width: 26px;
+  height: 26px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
 }
-
-.zarion-partner-logo img {
+.eco-pill-logo img {
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
 }
-
-.zarion-partner-info {
+.eco-pill-info {
   display: flex;
   flex-direction: column;
 }
-
-.zarion-partner-name {
-  font-size: 13px;
+.eco-pill-name {
+  font-size: 12.5px;
   font-weight: 600;
   color: var(--dark-black);
-  line-height: 1.25;
-}
-
-.zarion-partner-tier {
-  font-size: 10.5px;
-  color: var(--dark-gray);
-  margin-top: 2px;
   line-height: 1.2;
 }
+.eco-pill-role {
+  font-size: 10px;
+  color: var(--dark-gray);
+  line-height: 1.2;
+  margin-top: 2px;
+}
 
-/* Footer Badge Strip */
+/* Footer Watermark Text (Replaces Old Zerion Image Branding with Zero Layout Shift) */
+.footer-watermark-text {
+  position: absolute;
+  bottom: -22px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--_font-family---primary-font, "Instrument Sans", -apple-system, BlinkMacSystemFont, sans-serif);
+  font-size: clamp(52px, 14.5vw, 210px);
+  font-weight: 700;
+  line-height: 0.85;
+  letter-spacing: -0.04em;
+  color: transparent;
+  background: linear-gradient(180deg, rgba(218, 219, 212, 0.72) 0%, rgba(218, 219, 212, 0.05) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  white-space: nowrap;
+  user-select: none;
+  pointer-events: none;
+  z-index: 0;
+  text-align: center;
+  max-width: 100%;
+}
+
+.footer-wrap,
+.footer-badge-strip,
+.footer-copyright-wrap {
+  position: relative;
+  z-index: 1;
+}
+
+/* Footer Badge Strip (Blended into Zarion Footer) */
 .footer-badge-strip {
-  margin-top: 80px;
-  margin-bottom: -100px;
+  margin-top: 60px;
+  margin-bottom: -110px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  padding: 20px 24px;
-  background: rgba(255, 255, 255, 0.6);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(0, 60, 255, 0.12);
-  border-radius: var(--_border---border-xl);
+  gap: 18px;
+  padding: 22px 0;
+  border-top: 1px solid rgba(25, 24, 20, 0.08);
+  border-bottom: 1px solid rgba(25, 24, 20, 0.08);
+  background: transparent;
+  border-radius: 0;
 }
 
 .footer-award-badge {
@@ -10842,21 +10793,20 @@ figure {
   align-items: center;
   justify-content: space-between;
   text-decoration: none;
-  padding-bottom: 14px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
   color: inherit;
-  gap: 16px;
+  flex-wrap: wrap;
+  gap: 14px;
   transition: opacity 0.2s;
 }
 
 .footer-award-badge:hover {
-  opacity: 0.9;
+  opacity: 0.85;
 }
 
 .footer-award-badge-left {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 12px;
 }
 
 .footer-badge-cup {
@@ -10864,9 +10814,10 @@ figure {
   font-size: 11px;
   font-weight: 500;
   letter-spacing: 0.06em;
+  text-transform: uppercase;
   color: var(--blue);
   background-color: var(--light-blue);
-  border: 1px solid rgba(0, 60, 255, 0.14);
+  border: 1px solid rgba(0, 60, 255, 0.12);
   padding: 4px 10px;
   border-radius: 999px;
   flex-shrink: 0;
@@ -10880,34 +10831,35 @@ figure {
 
 .footer-badge-eyebrow {
   font-size: 11px;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 0.06em;
   color: var(--blue);
   font-family: var(--_font-family---secondary-font);
+  text-transform: uppercase;
 }
 
 .footer-badge-name {
-  font-size: 15px;
-  font-weight: 700;
+  font-size: 14.5px;
+  font-weight: 600;
   color: var(--dark-black);
 }
 
 .footer-badge-verify {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 5px;
   font-size: 12.5px;
   font-weight: 600;
-  color: var(--blue);
+  color: var(--dark-black);
   white-space: nowrap;
-  padding: 6px 14px;
-  background: var(--light-blue);
-  border-radius: 999px;
-  transition: background-color 0.2s;
+  border-bottom: 1px solid rgba(25, 24, 20, 0.2);
+  padding-bottom: 1px;
+  transition: color 0.2s, border-color 0.2s;
 }
 
 .footer-badge-verify:hover {
-  background-color: #d8e5ff;
+  color: var(--blue);
+  border-color: var(--blue);
 }
 
 .footer-backers-bar {
@@ -10934,35 +10886,39 @@ figure {
 .footer-backer-pill {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  padding: 4px 10px;
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
+  gap: 8px;
+  padding: 6px 12px;
+  background-color: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(25, 24, 20, 0.06);
   border-radius: 999px;
-  font-size: 12px;
-  font-weight: 600;
+  font-size: 12.5px;
+  font-weight: 500;
   color: var(--dark-black);
+  transition: all 0.2s ease;
+}
+
+.footer-backer-pill:hover {
+  background-color: #ffffff;
+  border-color: rgba(25, 24, 20, 0.14);
+  transform: translateY(-1px);
 }
 
 .footer-backer-pill img {
-  width: 14px;
-  height: 14px;
+  width: 22px;
+  height: 22px;
   object-fit: contain;
+  flex-shrink: 0;
 }
+
 
 /* Tablet Media Queries */
 @media screen and (max-width: 991px) {
-  .zarion-proof-row {
+  .milestones-grid {
     grid-template-columns: 1fr;
-    gap: 24px;
+    gap: 20px;
   }
-  .zarion-split-row {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-  .ecosystem-columns-wrap {
-    grid-template-columns: 1fr;
-    gap: 28px;
+  .eco-partners-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
   .footer-badge-strip {
     margin-top: 40px;
@@ -10979,23 +10935,18 @@ figure {
     padding-top: var(--_gap---gap-8xl);
     padding-bottom: var(--_gap---gap-8xl);
   }
-  .zarion-proof-card,
-  .zarion-quote-card,
-  .zarion-separation-card,
-  .zarion-ecosystem-card {
-    padding: 24px 20px;
+  .section-ecosystem-wrap {
+    gap: 24px;
   }
-  .partner-pills-grid {
+  .sec-heading {
+    font-size: 30px;
+  }
+  .milestone-card,
+  .ecosystem-strip-card {
+    padding: 22px 18px;
+  }
+  .eco-partners-grid {
     grid-template-columns: 1fr;
-  }
-  .quote-text {
-    font-size: 20px;
-  }
-  .proof-main-title {
-    font-size: 20px;
-  }
-  .proof-image-frame {
-    height: 220px;
   }
   .footer-award-badge {
     flex-direction: column;
@@ -11009,4 +10960,99 @@ figure {
   .footer-badge-strip {
     padding: 16px 16px;
   }
+  .footer-copyright-wrap {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    gap: 16px;
+    margin-top: 30px !important;
+  }
 }
+
+/* ==========================================================================
+   SpotTalents Interactive Billing Toggle & Pricing Shared Component Styles
+   ========================================================================== */
+.pricing-a-wrapper [animation] {
+  opacity: 1 !important;
+  transform: none !important;
+  visibility: visible !important;
+}
+
+.billing-toggle-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 36px auto 44px;
+  position: relative;
+  z-index: 5;
+}
+
+.billing-toggle-pill {
+  display: inline-flex;
+  align-items: center;
+  background: #EAEAE0;
+  border: 1px solid rgba(25, 24, 20, 0.08);
+  border-radius: 999px;
+  padding: 4px;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+.billing-toggle-btn {
+  border: none;
+  background: transparent;
+  padding: 10px 24px;
+  border-radius: 999px;
+  font-family: "Instrument Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #757368;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  outline: none;
+  user-select: none;
+}
+
+.billing-toggle-btn.active {
+  background: #191814;
+  color: #FFFFFF;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+  font-weight: 600;
+}
+
+.billing-save-badge {
+  background: #00A76D;
+  color: #FFFFFF;
+  font-family: "Space Mono", monospace;
+  font-size: 10.5px;
+  font-weight: 700;
+  padding: 2.5px 7.5px;
+  border-radius: 999px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  transition: transform 0.2s ease;
+}
+
+.billing-toggle-btn:hover .billing-save-badge {
+  transform: scale(1.05);
+}
+
+.pricing-footnote {
+  text-align: center;
+  margin-top: 28px;
+  font-size: 13px;
+  color: #757368;
+  font-family: "Instrument Sans", sans-serif;
+}
+
+@media screen and (max-width: 767px) {
+  .billing-toggle-pill {
+    padding: 4px;
+  }
+  .billing-toggle-btn {
+    padding: 8px 14px;
+    font-size: 13px;
+  }
+}
+
