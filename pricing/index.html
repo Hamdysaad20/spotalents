@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <link href="https://cdn.prod.website-files.com" rel="preconnect" crossorigin="anonymous">
-<title>Spotalents Pricing - Talent That Fits. Engagements That Scale.</title>
-<meta content="Access individually evaluated and intelligently matched engineering talent. Whether you need one specialist or an entire engineering organization, build your workforce around your actual requirements." name="description">
-<meta content="Spotalents Solution - AI-Powered Talent Intelligence & Workforce Engine" property="og:title">
-<meta content="Discover the Spotalents engine: automated code repository audits, multi-signal chemistry evaluation, Evidence Confidence Scoring, and 48-hour turn-key pod deployment." property="og:description">
+<title>SpotTalents Pricing — Pricing That Scales with Your Hiring Intelligence</title>
+<meta content="Access the intelligence behind better talent decisions through an annual platform subscription with included AI credits and transparent monthly talent engagement fees." name="description">
+<meta content="SpotTalents Pricing — Pricing That Scales with Your Hiring Intelligence" property="og:title">
+<meta content="Annual SaaS subscriptions with included AI credits, hybrid consumption, and flexible talent engagement fees aligned with actual working relationships." property="og:description">
 <meta content="../images/6abc120c9cbe81e3c6b4df09_Social%20Share%20%285%29.png" property="og:image">
-<meta content="Spotalents Solution - AI-Powered Talent Intelligence & Workforce Engine" name="twitter:title">
-<meta content="Discover the Spotalents engine: automated code repository audits, multi-signal chemistry evaluation, Evidence Confidence Scoring, and 48-hour turn-key pod deployment." name="twitter:description">
+<meta content="SpotTalents Pricing — Pricing That Scales with Your Hiring Intelligence" name="twitter:title">
+<meta content="Annual SaaS subscriptions with included AI credits, hybrid consumption, and flexible talent engagement fees aligned with actual working relationships." name="twitter:description">
 <meta property="og:type" content="website">
 <meta content="summary_large_image" name="twitter:card">
 <meta content="width=device-width, initial-scale=1" name="viewport">
@@ -27,22 +27,521 @@
 <link href="../images/6ac26a71357d0157fbb90249_Fav%20%281%29.png" rel="apple-touch-icon" sizes="180x180">
 <link href="../images/6ac26a71feeb4c6ac2519ddc_Fav%20%281%29.png" rel="icon" type="image/png" sizes="192x192">
 <link href="../images/6ac26a71caf81b3a2fb699bb_Fav%20%281%29.png" rel="icon" type="image/png" sizes="512x512">
-<style>.w-webflow-badge { display: none !important; opacity: 0 !important; visibility: hidden !important; pointer-events: none !important; }</style></head>
+<style>
+  .w-webflow-badge { display: none !important; opacity: 0 !important; visibility: hidden !important; pointer-events: none !important; }
+  
+  /* Ensure pricing page content is crisp and visible */
+  [animation] {
+    opacity: 1 !important;
+    transform: none !important;
+    visibility: visible !important;
+  }
+  
+  /* Pricing Custom Styles */
+  .pricing-hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(1, 59, 255, 0.06);
+    border: 1px solid rgba(1, 59, 255, 0.15);
+    color: #013BFF;
+    padding: 8px 18px;
+    border-radius: 999px;
+    font-size: 13.5px;
+    font-weight: 500;
+    margin-top: 18px;
+  }
+
+  /* Interactive Billing Switcher */
+  .billing-toggle-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 36px auto 44px;
+    position: relative;
+    z-index: 5;
+  }
+
+  .billing-toggle-pill {
+    display: inline-flex;
+    align-items: center;
+    background: #EAEAE0;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 999px;
+    padding: 4px;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.04);
+  }
+
+  .billing-toggle-btn {
+    border: none;
+    background: transparent;
+    padding: 10px 24px;
+    border-radius: 999px;
+    font-family: "Instrument Sans", sans-serif;
+    font-size: 14.5px;
+    font-weight: 500;
+    color: #787570;
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    outline: none;
+    user-select: none;
+  }
+
+  .billing-toggle-btn.active {
+    background: #191814;
+    color: #FFFFFF;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+    font-weight: 600;
+  }
+
+  .billing-save-badge {
+    background: #10B981;
+    color: #FFFFFF;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 999px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    transition: transform 0.2s ease;
+  }
+
+  .billing-toggle-btn:hover .billing-save-badge {
+    transform: scale(1.05);
+  }
+
+  /* Plan AI Credit Allowance Pill */
+  .card-ai-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: #F1F1E5;
+    border: 1px solid rgba(0, 0, 0, 0.07);
+    padding: 6px 12px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 13px;
+    color: #191814;
+    font-family: "Instrument Sans", sans-serif;
+  }
+  .card-ai-badge.highlighted {
+    background: rgba(1, 59, 255, 0.08);
+    border-color: rgba(1, 59, 255, 0.2);
+    color: #013BFF;
+  }
+  .card-ai-badge .ai-spark-icon {
+    font-size: 13px;
+  }
+  
+  .pricing-footnote {
+    text-align: center;
+    margin-top: 28px;
+    font-size: 13px;
+    color: #787570;
+    font-family: "Instrument Sans", sans-serif;
+  }
+
+  /* Section 2: Zero-Risk Talent Engagement */
+  .zero-risk-section {
+    padding: 100px 0;
+    background-color: #F8F9F2;
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    position: relative;
+  }
+
+  /* Visual 4-Step Pipeline Graphic */
+  .pipeline-graphic-wrap {
+    margin: 44px 0 52px 0;
+  }
+
+  .zero-risk-pipeline {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    position: relative;
+  }
+
+  .pipeline-step-card {
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 18px;
+    padding: 24px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: relative;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .pipeline-step-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  }
+
+  .pipeline-step-card.active-step {
+    border: 2px solid #013BFF;
+    background: linear-gradient(180deg, #FFFFFF 0%, #F5F7FF 100%);
+  }
+
+  .step-badge-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .step-num-circle {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #F1F1E5;
+    color: #191814;
+    font-family: "Space Mono", monospace;
+    font-size: 11px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .pipeline-step-card.active-step .step-num-circle {
+    background: #013BFF;
+    color: #FFFFFF;
+  }
+
+  .step-cost-pill {
+    font-family: "Space Mono", monospace;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 3px 8px;
+    border-radius: 6px;
+  }
+
+  .step-cost-pill.free {
+    background: #ECFDF5;
+    color: #059669;
+    border: 1px solid rgba(5, 150, 105, 0.2);
+  }
+
+  .step-cost-pill.trial {
+    background: #FEF3C7;
+    color: #D97706;
+    border: 1px solid rgba(217, 119, 6, 0.2);
+  }
+
+  .step-cost-pill.active {
+    background: rgba(1, 59, 255, 0.1);
+    color: #013BFF;
+    border: 1px solid rgba(1, 59, 255, 0.25);
+  }
+
+  .pipeline-step-title {
+    font-size: 15.5px;
+    font-weight: 700;
+    color: #191814;
+    line-height: 1.25;
+    font-family: "Instrument Sans", sans-serif;
+  }
+
+  .pipeline-step-desc {
+    font-size: 12.5px;
+    color: #5C5852;
+    line-height: 1.45;
+    font-family: "Instrument Sans", sans-serif;
+  }
+
+  /* Interactive Dynamic Calculator */
+  .calc-container-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 32px;
+    align-items: stretch;
+  }
+
+  .calc-interactive-card {
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 24px;
+    padding: 36px 32px;
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.04);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .calc-title-tag {
+    font-family: "Space Mono", monospace;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #787570;
+    margin-bottom: 8px;
+    font-weight: 700;
+  }
+
+  .calc-heading {
+    font-size: 20px;
+    font-weight: 700;
+    color: #191814;
+    margin-bottom: 20px;
+    font-family: "Instrument Sans", sans-serif;
+  }
+
+  .calc-slider-box {
+    background: #F8F9F2;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-radius: 16px;
+    padding: 24px 20px;
+    margin-bottom: 20px;
+  }
+
+  .calc-slider-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 12px;
+  }
+
+  .calc-slider-label {
+    font-size: 13.5px;
+    font-weight: 500;
+    color: #5C5852;
+  }
+
+  .calc-live-value {
+    font-size: 32px;
+    font-weight: 700;
+    color: #191814;
+    letter-spacing: -0.02em;
+    font-family: "Instrument Sans", sans-serif;
+  }
+
+  .talent-slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 8px;
+    border-radius: 6px;
+    background: #E5E7EB;
+    outline: none;
+    margin: 14px 0 8px 0;
+    cursor: pointer;
+    transition: background 0.15s ease;
+  }
+
+  .talent-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: #013BFF;
+    border: 3px solid #FFFFFF;
+    box-shadow: 0 2px 8px rgba(1, 59, 255, 0.4);
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+
+  .talent-slider::-webkit-slider-thumb:hover {
+    transform: scale(1.15);
+    box-shadow: 0 4px 12px rgba(1, 59, 255, 0.5);
+  }
+
+  .talent-slider::-moz-range-thumb {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: #013BFF;
+    border: 3px solid #FFFFFF;
+    box-shadow: 0 2px 8px rgba(1, 59, 255, 0.4);
+    cursor: pointer;
+  }
+
+  .slider-bounds {
+    display: flex;
+    justify-content: space-between;
+    font-family: "Space Mono", monospace;
+    font-size: 11px;
+    color: #9CA3AF;
+  }
+
+  .preset-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 16px;
+  }
+
+  .preset-label {
+    font-size: 12px;
+    color: #787570;
+    font-family: "Space Mono", monospace;
+  }
+
+  .preset-pill {
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    background: #FFFFFF;
+    padding: 5px 12px;
+    border-radius: 999px;
+    font-size: 12.5px;
+    font-weight: 500;
+    color: #191814;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .preset-pill:hover, .preset-pill.active {
+    background: #191814;
+    color: #FFFFFF;
+    border-color: #191814;
+  }
+
+  .calc-trust-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 24px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+  }
+
+  .calc-trust-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13.5px;
+    color: #42403C;
+  }
+
+  .trust-check {
+    color: #059669;
+    font-weight: 700;
+  }
+
+  .calc-summary-card {
+    background: #191814;
+    color: #FFFFFF;
+    border-radius: 24px;
+    padding: 36px 32px;
+    box-shadow: 0 16px 40px -10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .summary-header-tag {
+    font-family: "Space Mono", monospace;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #A1A1AA;
+    margin-bottom: 24px;
+  }
+
+  .summary-line-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .summary-line-label {
+    font-size: 13.5px;
+    color: #A1A1AA;
+    font-weight: 500;
+  }
+
+  .summary-line-value {
+    font-size: 18px;
+    font-weight: 600;
+    color: #FFFFFF;
+  }
+
+  .summary-total-container {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 20px;
+    margin: 24px 0 16px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .summary-total-label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #E4E4E7;
+  }
+
+  .summary-total-value {
+    font-size: 32px;
+    font-weight: 700;
+    color: #FFFFFF;
+    letter-spacing: -0.02em;
+  }
+
+  .zero-upfront-pill {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(16, 185, 129, 0.12);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    color: #34D399;
+    padding: 10px 14px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 16px;
+  }
+
+  .summary-disclaimer {
+    font-size: 11.5px;
+    color: #71717A;
+    line-height: 1.45;
+  }
+
+  @media screen and (max-width: 991px) {
+    .zero-risk-pipeline {
+      grid-template-columns: 1fr 1fr;
+    }
+    .calc-container-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media screen and (max-width: 640px) {
+    .zero-risk-pipeline {
+      grid-template-columns: 1fr;
+    }
+    .calc-interactive-card, .calc-summary-card {
+      padding: 24px 20px;
+    }
+    .summary-total-container {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
+    }
+  }
+</style></head>
 <body>
 <div class="pages-wrapper">
 <div data-animation="default" class="navbar w-nav" data-easing2="ease" data-wf-component-id="f91a6e72-3d48-2df7-ec13-3fd3e91e728d" data-easing="ease" data-wf-variant-state="base" data-collapse="medium" role="banner" data-duration="400">
 <div class="container w-container">
 <div class="navbar-wrapper"><a href="/" class="brand-logo-link w-nav-brand"><img loading="lazy" src="../images/6aa6b281bbff208b543d41a5_Brand%20Logo%20%282%29.svg" alt="Brand Logo " class="brand-logo"></a>
 <nav role="navigation" class="nav-menu w-nav-menu">
-<div class="nav-menu-wrap"><a href="/about" class="menu-link w-inline-block">
-<div menu-one="" class="menu-text">Overview</div>
-<div menu-two="" class="menu-text">Overview</div></a><a href="/features" class="menu-link w-inline-block">
-<div menu-one="" class="menu-text">Process</div>
-<div menu-two="" class="menu-text">Process</div></a><a href="/solution"  class="menu-link w-inline-block">
-<div menu-one="" class="menu-text">Engine</div>
-<div menu-two="" class="menu-text">Engine</div></a><a href="/pricing-a" class="menu-link w-inline-block w--current" aria-current="page">
-<div menu-one="" class="menu-text">Pathways</div>
-<div menu-two="" class="menu-text">Pathways</div></a>
+<div class="nav-menu-wrap"><a href="/about" class="menu-link w-inline-block"><div menu-one="" class="menu-text">Overview</div><div menu-two="" class="menu-text">Overview</div></a><a href="/features" class="menu-link w-inline-block"><div menu-one="" class="menu-text">Process</div><div menu-two="" class="menu-text">Process</div></a><a href="/solution" class="menu-link w-inline-block"><div menu-one="" class="menu-text">Engine</div><div menu-two="" class="menu-text">Engine</div></a><a href="/pricing" class="menu-link w-inline-block w--current" aria-current="page"><div menu-one="" class="menu-text">Pathways</div><div menu-two="" class="menu-text">Pathways</div></a><!-- Dropdown Menu commented out: direct links used for current pages -->
+<!--
 <div data-hover="true" data-delay="400" data-w-id="bd20b97c-b7e9-deb4-8f1c-510ab2ead699" class="dropdown w-dropdown">
 <div class="dropdown-toggle w-dropdown-toggle">
 <div class="dropdown-text">Pages</div>
@@ -65,7 +564,7 @@
 <div class="navigation-home-wrap">
 <div class="navigation-home-title">Solutions</div>
 <div class="home-link-wrap">
-<div class="home-icon-wrap"><img src="../images/6abcf183fa9c5fa556c4584c_Pricing%20Check%20Icon.svg" loading="lazy" alt="Home Icon" class="home-icon"></div><a href="/pricing-a" class="menu-link w-inline-block w--current" aria-current="page">
+<div class="home-icon-wrap"><img src="../images/6abcf183fa9c5fa556c4584c_Pricing%20Check%20Icon.svg" loading="lazy" alt="Home Icon" class="home-icon"></div><a href="/pricing" class="menu-link w-inline-block w--current" aria-current="page">
 <div menu-one="" class="menu-text">Workforce Pods</div>
 <div menu-two="" class="menu-text">Workforce Pods</div></a>
 <div class="menu-dot"></div><a href="/pricing-b" class="menu-link w-inline-block">
@@ -108,9 +607,10 @@
 <div menu-one="" class="menu-text">Style Guide</div>
 <div menu-two="" class="menu-text">Style Guide</div></a><a href="/404" class="menu-link w-inline-block">
 <div menu-one="" class="menu-text">404</div>
-<div menu-two="" class="menu-text">404</div></a></div></div></div></div></div></div></nav></div></div></nav>
+<div menu-two="" class="menu-text">404</div></a></div></div></div></div></div></div></nav></div>
+--></div></nav>
 <div class="nav-button-wrap">
-<div class="nav-mobile-button"><a data-wf--primary-button--variant="base" href="/contact" class="primary-button w-inline-block">
+<div class="nav-mobile-button"><a data-wf--primary-button--variant="base" href="/start" class="primary-button w-inline-block">
 <div class="primary-btn-text-wrap">
 <div class="primary-button-text">Deploy</div>
 <div class="primary-button-text">Deploy</div></div>
@@ -124,130 +624,296 @@
 <div class="pricing-a-wrapper">
 <div class="pricing-a-top-wrap">
 <div animation="fade-one" class="contact-sub-title-wrap">
-<div data-wf--section-sub-title--variant="base" class="section-sub-title">THE SPOTALENTS PLANS</div></div>
+<div data-wf--section-sub-title--variant="base" class="section-sub-title">SPOTTALENTS PLATFORM</div></div>
 <div animation="heading" class="contact-title-wrap">
-<h1 data-wf--global-heading--variant="base" class="global-heading">Talent that fits. Engagements that scale.</h1></div>
+<h1 data-wf--global-heading--variant="base" class="global-heading">Pricing that scales with your hiring intelligence.</h1></div>
 <div animation="fade-two" class="contact-detials-wrap">
-<p data-wf--global-details--variant="black" class="global-details w-variant-a13ec10e-e1c2-79cc-f6a4-77ba89b574d6">Access evaluated engineering talent matched to your needs. Build your workforce around actual requirements, from specialists to full teams.</p></div>
-<div animation="fade-three" class="contact-button-wrap" style="align-items: center; justify-content: center; text-align: center;">
-<div class="contact-button-flex-wrap" style="justify-content: center; align-items: center;">
-<a data-wf--primary-button--variant="blue" href="/contact" class="primary-button w-variant-b428232b-7b24-db52-6b0b-12fd13311aee w-inline-block">
-<div class="primary-btn-text-wrap">
-<div class="primary-button-text">Find Your Talent</div>
-<div class="primary-button-text">Find Your Talent</div></div>
-<div class="primary-arrow-wrap w-variant-b428232b-7b24-db52-6b0b-12fd13311aee"><img loading="lazy" src="../images/6aa6bd06548e7975cbe07463_Primary%20Arrow%2002.svg" alt="Primary Arrow " class="primary-arrow w-variant-b428232b-7b24-db52-6b0b-12fd13311aee one"><img loading="lazy" src="../images/6aa6bd06548e7975cbe07463_Primary%20Arrow%2002.svg" alt="Primary Arrow " class="primary-arrow w-variant-b428232b-7b24-db52-6b0b-12fd13311aee two"></div></a>
-<a data-wf--primary-button--variant="light-gray" href="/solution" class="primary-button w-variant-556931d7-230e-ba23-d856-882cfd8728f8 w-inline-block">
-<div class="primary-btn-text-wrap">
-<div class="primary-button-text">Explore the Engine</div>
-<div class="primary-button-text">Explore the Engine</div></div>
-<div class="primary-arrow-wrap w-variant-556931d7-230e-ba23-d856-882cfd8728f8"><img loading="lazy" src="../images/6aa6bd06548e7975cbe07463_Primary%20Arrow%2002.svg" alt="Primary Arrow " class="primary-arrow one"><img loading="lazy" src="../images/6aa6bd06548e7975cbe07463_Primary%20Arrow%2002.svg" alt="Primary Arrow " class="primary-arrow two"></div></a></div>
-<ul role="list" class="contact-button-list" style="padding-left: 0; margin-bottom: 0; text-align: center; list-style: none;">
-<li class="contact-button-list-item" style="text-align: center;">Verified talent · Team compatibility · Custom scaling</li></ul></div></div>
+<p data-wf--global-details--variant="black" class="global-details w-variant-a13ec10e-e1c2-79cc-f6a4-77ba89b574d6">Explore verified engineering depth, team compatibility, and predictive delivery matching. Start flexible monthly or save 20% with annual billing.</p>
+</div>
+
+<!-- Interactive Monthly / Annual Billing Switcher -->
+<div class="billing-toggle-container">
+<div class="billing-toggle-pill">
+<button type="button" class="billing-toggle-btn active" id="billing-annual-btn" data-mode="annual">
+Annual
+<span class="billing-save-badge">Save 20%</span>
+</button>
+<button type="button" class="billing-toggle-btn" id="billing-monthly-btn" data-mode="monthly">
+Monthly
+</button>
+</div>
+</div>
+
+</div>
+
 <div class="pricing-a-wrap two">
 <div class="pricing-a-grid-wrap">
+
+<!-- Card 1: Discover -->
 <div animation="fade-three" class="pricing-a-card">
 <div class="pricing-a-single-wrap">
 <div class="pricing-a-single-top-wrap">
 <div class="pricing-a-title-wrap">
-<div class="pricing-a-single-title">INDIVIDUAL TALENT</div>
-<div class="pricing-a-card-details">The right expertise for every role.</div></div>
+<div class="pricing-a-single-title">DISCOVER</div>
+<div class="pricing-a-card-details">For companies exploring talent intelligence and building their first pipeline.</div></div>
 <div class="pricing-a-price-wrap">
 <div class="pricing-a-price-text-wrap">
-<div class="pricing-a-price-text" style="font-size: 38px; line-height: 1.1;">Flexible</div></div>
-<div class="pricing-a-month">/ Per Role</div></div>
+<div class="pricing-a-price-text" id="price-val-discover" style="font-size: 42px; line-height: 1;">$82.50</div></div>
+<div class="pricing-a-month" id="period-discover">/ month</div></div>
 <div class="balance-wrap">
-<div class="balance-title">Based on individual talent</div>
-<div class="balance-month">and engagement requirements</div>
+<div class="balance-title" id="subtext-discover">Billed annually at $990</div>
+<div class="balance-month" id="savings-discover">Save $198 vs monthly</div>
 <div class="balance-a-dot"></div>
 <div class="balance-a-dot"></div></div>
+
+<div class="card-ai-badge">
+<span class="ai-spark-icon">⚡</span>
+<span><strong>1,000 AI Credits</strong> / mo included</span>
+</div>
+
 <div class="pricing-a-list-wrapper">
 <div data-wf--pricing-a-list--variant="base" class="pricing-a-list-wrap">
-<div class="pricing-a-list-icon-wrap"><img loading="lazy" src="../images/6aa7b627d31a141ebbd2d4ea_Check%20Icon.svg" alt="Pricing A List Icon" class="pricing-a-list-icon"></div>
-<div class="pricing-a-list-text">Multiple engineering specializations</div></div>
+<div class="pricing-a-list-icon-wrap"><img loading="lazy" src="../images/6aa7b627d31a141ebbd2d4ea_Check%20Icon.svg" alt="Pricing Check Icon" class="pricing-a-list-icon"></div>
+<div class="pricing-a-list-text">Access to talent discovery &amp; verified profiles</div></div>
 <div data-wf--pricing-a-list--variant="base" class="pricing-a-list-wrap">
-<div class="pricing-a-list-icon-wrap"><img loading="lazy" src="../images/6aa7b627d31a141ebbd2d4ea_Check%20Icon.svg" alt="Pricing A List Icon" class="pricing-a-list-icon"></div>
-<div class="pricing-a-list-text">Junior to Principal-level engineers</div></div>
+<div class="pricing-a-list-icon-wrap"><img loading="lazy" src="../images/6aa7b627d31a141ebbd2d4ea_Check%20Icon.svg" alt="Pricing Check Icon" class="pricing-a-list-icon"></div>
+<div class="pricing-a-list-text">Real Git commit history &amp; AST verification</div></div>
 <div data-wf--pricing-a-list--variant="base" class="pricing-a-list-wrap">
-<div class="pricing-a-list-icon-wrap"><img loading="lazy" src="../images/6aa7b627d31a141ebbd2d4ea_Check%20Icon.svg" alt="Pricing A List Icon" class="pricing-a-list-icon"></div>
-<div class="pricing-a-list-text">Individual technical &amp; behavioral evaluation</div></div>
+<div class="pricing-a-list-icon-wrap"><img loading="lazy" src="../images/6aa7b627d31a141ebbd2d4ea_Check%20Icon.svg" alt="Pricing Check Icon" class="pricing-a-list-icon"></div>
+<div class="pricing-a-list-text">Basic AI-powered matching &amp; recommendations</div></div>
 <div data-wf--pricing-a-list--variant="base" class="pricing-a-list-wrap">
-<div class="pricing-a-list-icon-wrap"><img loading="lazy" src="../images/6aa7b627d31a141ebbd2d4ea_Check%20Icon.svg" alt="Pricing A List Icon" class="pricing-a-list-icon"></div>
-<div class="pricing-a-list-text">Flexible engagement terms &amp; contracts</div></div>
+<div class="pricing-a-list-icon-wrap"><img loading="lazy" src="../images/6aa7b627d31a141ebbd2d4ea_Check%20Icon.svg" alt="Pricing Check Icon" class="pricing-a-list-icon"></div>
+<div class="pricing-a-list-text">Talent shortlists &amp; candidate evaluation workspace</div></div>
+<div data-wf--pricing-a-list--variant="base" class="pricing-a-list-wrap">
+<div class="pricing-a-list-icon-wrap"><img loading="lazy" src="../images/6aa7b627d31a141ebbd2d4ea_Check%20Icon.svg" alt="Pricing Check Icon" class="pricing-a-list-icon"></div>
+<div class="pricing-a-list-text">Flexible prepaid AI credit top-ups anytime</div></div>
 </div></div>
 <div class="pricing-a-single-btn-wrap">
-<a data-wf--primary-button--variant="white-full" href="/contact" class="primary-button w-variant-9cb0d27d-4dd5-ab4c-6739-bc66a7192e89 w-inline-block">
+<a data-wf--primary-button--variant="white-full" href="/start" class="primary-button w-variant-9cb0d27d-4dd5-ab4c-6739-bc66a7192e89 w-inline-block">
 <div class="primary-btn-text-wrap">
-<div class="primary-button-text">Explore Talent</div>
-<div class="primary-button-text">Explore Talent</div></div>
-<div class="primary-arrow-wrap w-variant-9cb0d27d-4dd5-ab4c-6739-bc66a7192e89"><img loading="lazy" src="../images/6aa6bd06548e7975cbe07463_Primary%20Arrow%2002.svg" alt="Primary Arrow " class="primary-arrow w-variant-9cb0d27d-4dd5-ab4c-6739-bc66a7192e89 one"><img loading="lazy" src="../images/6aa6bd06548e7975cbe07463_Primary%20Arrow%2002.svg" alt="Primary Arrow " class="primary-arrow w-variant-9cb0d27d-4dd5-ab4c-6739-bc66a7192e89 two"></div></a></div></div></div>
+<div class="primary-button-text">Get Started</div>
+<div class="primary-button-text">Get Started</div></div>
+<div class="primary-arrow-wrap w-variant-9cb0d27d-4dd5-ab4c-6739-bc66a7192e89"><img loading="lazy" src="../images/6aa6bd06548e7975cbe07463_Primary%20Arrow%2002.svg" alt="Primary Arrow" class="primary-arrow w-variant-9cb0d27d-4dd5-ab4c-6739-bc66a7192e89 one"><img loading="lazy" src="../images/6aa6bd06548e7975cbe07463_Primary%20Arrow%2002.svg" alt="Primary Arrow" class="primary-arrow w-variant-9cb0d27d-4dd5-ab4c-6739-bc66a7192e89 two"></div></a></div></div></div>
+
+<!-- Card 2: Intelligence (Most Popular) -->
 <div animation="fade-four" class="pricing-a-card">
 <div class="pricing-a-single-wrap blue">
 <div class="pricing-a-single-top-wrap">
 <div class="pricing-a-title-wrap">
-<div class="pricing-a-single-title">BUILD YOUR TEAM</div>
-<div class="pricing-a-card-details">Your requirements. Your team composition.</div></div>
+<div class="pricing-a-single-title">INTELLIGENCE</div>
+<div class="pricing-a-card-details">For companies actively sourcing, evaluating, and comparing technical talent.</div></div>
 <div class="pricing-a-price-wrap">
 <div class="pricing-a-price-text-wrap">
-<div class="pricing-a-price-text" style="font-size: 38px; line-height: 1.1;">Modular</div></div>
-<div class="pricing-a-month">/ Team</div></div>
+<div class="pricing-a-price-text" id="price-val-intel" style="font-size: 42px; line-height: 1;">$249</div></div>
+<div class="pricing-a-month" id="period-intel">/ month</div></div>
 <div class="balance-wrap">
-<div class="balance-title">Based on selected talent</div>
-<div class="balance-month">and engagement structure</div>
+<div class="balance-title" id="subtext-intel">Billed annually at $2,990</div>
+<div class="balance-month" id="savings-intel">Save $598 vs monthly</div>
 <div class="balance-a-dot"></div>
 <div class="balance-a-dot"></div></div>
+
+<div class="card-ai-badge highlighted">
+<span class="ai-spark-icon">⚡</span>
+<span><strong>5,000 AI Credits</strong> / mo (5x allowance)</span>
+</div>
+
 <div class="pricing-a-list-wrapper">
 <div data-wf--pricing-a-list--variant="base" class="pricing-a-list-wrap">
-<div class="pricing-a-list-icon-wrap"><img loading="lazy" src="../images/6aa7b627d31a141ebbd2d4ea_Check%20Icon.svg" alt="Pricing A List Icon" class="pricing-a-list-icon"></div>
-<div class="pricing-a-list-text">Everything in Individual Talent</div></div>
+<div class="pricing-a-list-icon-wrap"><img loading="lazy" src="../images/6aa7b627d31a141ebbd2d4ea_Check%20Icon.svg" alt="Pricing Check Icon" class="pricing-a-list-icon"></div>
+<div class="pricing-a-list-text"><strong>Everything in Discover, plus:</strong></div></div>
 <div data-wf--pricing-a-list--variant="base" class="pricing-a-list-wrap">
-<div class="pricing-a-list-icon-wrap"><img loading="lazy" src="../images/6aa7b627d31a141ebbd2d4ea_Check%20Icon.svg" alt="Pricing A List Icon" class="pricing-a-list-icon"></div>
-<div class="pricing-a-list-text">AI-recommended team composition</div></div>
+<div class="pricing-a-list-icon-wrap"><img loading="lazy" src="../images/6aa7b627d31a141ebbd2d4ea_Check%20Icon.svg" alt="Pricing Check Icon" class="pricing-a-list-icon"></div>
+<div class="pricing-a-list-text">Advanced AI matching &amp; predictive fit models</div></div>
 <div data-wf--pricing-a-list--variant="base" class="pricing-a-list-wrap">
-<div class="pricing-a-list-icon-wrap"><img loading="lazy" src="../images/6aa7b627d31a141ebbd2d4ea_Check%20Icon.svg" alt="Pricing A List Icon" class="pricing-a-list-icon"></div>
-<div class="pricing-a-list-text">Team compatibility &amp; capability synergy</div></div>
+<div class="pricing-a-list-icon-wrap"><img loading="lazy" src="../images/6aa7b627d31a141ebbd2d4ea_Check%20Icon.svg" alt="Pricing Check Icon" class="pricing-a-list-icon"></div>
+<div class="pricing-a-list-text">Technical, behavioral &amp; team compatibility scoring</div></div>
+<div data-wf--pricing-a-list--variant="base" class="pricing-a-list-wrap">
+<div class="pricing-a-list-icon-wrap"><img loading="lazy" src="../images/6aa7b627d31a141ebbd2d4ea_Check%20Icon.svg" alt="Pricing Check Icon" class="pricing-a-list-icon"></div>
+<div class="pricing-a-list-text">Match explanations &amp; evidence-backed rationale</div></div>
+<div data-wf--pricing-a-list--variant="base" class="pricing-a-list-wrap">
+<div class="pricing-a-list-icon-wrap"><img loading="lazy" src="../images/6aa7b627d31a141ebbd2d4ea_Check%20Icon.svg" alt="Pricing Check Icon" class="pricing-a-list-icon"></div>
+<div class="pricing-a-list-text">Multiple project workspaces &amp; team collaboration</div></div>
 </div></div>
 <div class="pricing-a-single-btn-wrap">
-<a data-wf--primary-button--variant="blue" href="/contact" class="primary-button w-variant-b428232b-7b24-db52-6b0b-12fd13311aee w-inline-block">
+<a data-wf--primary-button--variant="blue" href="/start" class="primary-button w-variant-b428232b-7b24-db52-6b0b-12fd13311aee w-inline-block">
 <div class="primary-btn-text-wrap">
-<div class="primary-button-text">Build Your Team</div>
-<div class="primary-button-text">Build Your Team</div></div>
-<div class="primary-arrow-wrap w-variant-b428232b-7b24-db52-6b0b-12fd13311aee"><img loading="lazy" src="../images/6aa6bd06548e7975cbe07463_Primary%20Arrow%2002.svg" alt="Primary Arrow " class="primary-arrow w-variant-b428232b-7b24-db52-6b0b-12fd13311aee one"><img loading="lazy" src="../images/6aa6bd06548e7975cbe07463_Primary%20Arrow%2002.svg" alt="Primary Arrow " class="primary-arrow w-variant-b428232b-7b24-db52-6b0b-12fd13311aee two"></div></a></div></div><div class="popular-tag"><div class="popular-icon-wrap"><img loading="lazy" src="../images/6aa7c4ec193b94d23a41abc7_Pricing%20Icon%2001.svg" alt="Popular Icon" class="popular-icon"></div><div class="popular-text">Most Popular</div></div></div>
+<div class="primary-button-text">Get Started</div>
+<div class="primary-button-text">Get Started</div></div>
+<div class="primary-arrow-wrap w-variant-b428232b-7b24-db52-6b0b-12fd13311aee"><img loading="lazy" src="../images/6aa6bd06548e7975cbe07463_Primary%20Arrow%2002.svg" alt="Primary Arrow" class="primary-arrow w-variant-b428232b-7b24-db52-6b0b-12fd13311aee one"><img loading="lazy" src="../images/6aa6bd06548e7975cbe07463_Primary%20Arrow%2002.svg" alt="Primary Arrow" class="primary-arrow w-variant-b428232b-7b24-db52-6b0b-12fd13311aee two"></div></a></div></div>
+<div class="popular-tag"><div class="popular-icon-wrap"><img loading="lazy" src="../images/6aa7c4ec193b94d23a41abc7_Pricing%20Icon%2001.svg" alt="Popular Icon" class="popular-icon"></div><div class="popular-text">Most Popular</div></div></div>
+
+<!-- Card 3: Enterprise -->
 <div animation="fade-five" class="pricing-a-card">
 <div class="pricing-a-single-wrap">
 <div class="pricing-a-single-top-wrap">
 <div class="pricing-a-title-wrap">
-<div class="pricing-a-single-title">ENTERPRISE WORKFORCE</div>
-<div class="pricing-a-card-details">Workforce intelligence at scale.</div></div>
+<div class="pricing-a-single-title">ENTERPRISE</div>
+<div class="pricing-a-card-details">For organizations building a continuous, data-driven talent acquisition engine.</div></div>
 <div class="pricing-a-price-wrap">
 <div class="pricing-a-price-text-wrap">
-<div class="pricing-a-price-text" style="font-size: 38px; line-height: 1.1;">Custom</div></div>
-<div class="pricing-a-month">/ Enterprise</div></div>
+<div class="pricing-a-price-text" style="font-size: 42px; line-height: 1;">Custom</div></div>
+<div class="pricing-a-month">/ annual</div></div>
 <div class="balance-wrap">
-<div class="balance-title">Organization-Wide Solution</div>
-<div class="balance-month">dedicated enterprise support &amp; custom SLAs</div>
+<div class="balance-title">Tailored annual agreements</div>
+<div class="balance-month">Dedicated enterprise support &amp; custom SLAs</div>
 <div class="balance-a-dot"></div>
 <div class="balance-a-dot"></div></div>
+
+<div class="card-ai-badge">
+<span class="ai-spark-icon">⚡</span>
+<span><strong>Custom Credits</strong> &amp; Private Models</span>
+</div>
+
 <div class="pricing-a-list-wrapper">
 <div data-wf--pricing-a-list--variant="base" class="pricing-a-list-wrap">
-<div class="pricing-a-list-icon-wrap"><img loading="lazy" src="../images/6aa7b627d31a141ebbd2d4ea_Check%20Icon.svg" alt="Pricing A List Icon" class="pricing-a-list-icon"></div>
-<div class="pricing-a-list-text">Everything in Build Your Team</div></div>
+<div class="pricing-a-list-icon-wrap"><img loading="lazy" src="../images/6aa7b627d31a141ebbd2d4ea_Check%20Icon.svg" alt="Pricing Check Icon" class="pricing-a-list-icon"></div>
+<div class="pricing-a-list-text"><strong>Everything in Intelligence, plus:</strong></div></div>
 <div data-wf--pricing-a-list--variant="base" class="pricing-a-list-wrap">
-<div class="pricing-a-list-icon-wrap"><img loading="lazy" src="../images/6aa7b627d31a141ebbd2d4ea_Check%20Icon.svg" alt="Pricing A List Icon" class="pricing-a-list-icon"></div>
-<div class="pricing-a-list-text">Organization-wide talent matching and planning</div></div>
+<div class="pricing-a-list-icon-wrap"><img loading="lazy" src="../images/6aa7b627d31a141ebbd2d4ea_Check%20Icon.svg" alt="Pricing Check Icon" class="pricing-a-list-icon"></div>
+<div class="pricing-a-list-text">Organization-wide access &amp; custom RBAC</div></div>
 <div data-wf--pricing-a-list--variant="base" class="pricing-a-list-wrap">
-<div class="pricing-a-list-icon-wrap"><img loading="lazy" src="../images/6aa7b627d31a141ebbd2d4ea_Check%20Icon.svg" alt="Pricing A List Icon" class="pricing-a-list-icon"></div>
-<div class="pricing-a-list-text">Advanced workforce analytics &amp; performance</div></div>
+<div class="pricing-a-list-icon-wrap"><img loading="lazy" src="../images/6aa7b627d31a141ebbd2d4ea_Check%20Icon.svg" alt="Pricing Check Icon" class="pricing-a-list-icon"></div>
+<div class="pricing-a-list-text">Custom intelligence criteria &amp; stack calibration</div></div>
 <div data-wf--pricing-a-list--variant="base" class="pricing-a-list-wrap">
-<div class="pricing-a-list-icon-wrap"><img loading="lazy" src="../images/6aa7b627d31a141ebbd2d4ea_Check%20Icon.svg" alt="Pricing A List Icon" class="pricing-a-list-icon"></div>
-<div class="pricing-a-list-text">Custom integrations, dedicated support &amp; SLAs</div></div>
+<div class="pricing-a-list-icon-wrap"><img loading="lazy" src="../images/6aa7b627d31a141ebbd2d4ea_Check%20Icon.svg" alt="Pricing Check Icon" class="pricing-a-list-icon"></div>
+<div class="pricing-a-list-text">Advanced ATS integrations &amp; automated pipelines</div></div>
+<div data-wf--pricing-a-list--variant="base" class="pricing-a-list-wrap">
+<div class="pricing-a-list-icon-wrap"><img loading="lazy" src="../images/6aa7b627d31a141ebbd2d4ea_Check%20Icon.svg" alt="Pricing Check Icon" class="pricing-a-list-icon"></div>
+<div class="pricing-a-list-text">Dedicated account strategist &amp; custom commercial terms</div></div>
 </div></div>
 <div class="pricing-a-single-btn-wrap">
-<a data-wf--primary-button--variant="white-full" href="/contact" class="primary-button w-variant-9cb0d27d-4dd5-ab4c-6739-bc66a7192e89 w-inline-block">
+<a data-wf--primary-button--variant="white-full" href="/start" class="primary-button w-variant-9cb0d27d-4dd5-ab4c-6739-bc66a7192e89 w-inline-block">
 <div class="primary-btn-text-wrap">
-<div class="primary-button-text">Talk to Our Team</div>
-<div class="primary-button-text">Talk to Our Team</div></div>
-<div class="primary-arrow-wrap w-variant-9cb0d27d-4dd5-ab4c-6739-bc66a7192e89"><img loading="lazy" src="../images/6aa6bd06548e7975cbe07463_Primary%20Arrow%2002.svg" alt="Primary Arrow " class="primary-arrow w-variant-9cb0d27d-4dd5-ab4c-6739-bc66a7192e89 one"><img loading="lazy" src="../images/6aa6bd06548e7975cbe07463_Primary%20Arrow%2002.svg" alt="Primary Arrow " class="primary-arrow w-variant-9cb0d27d-4dd5-ab4c-6739-bc66a7192e89 two"></div></a></div></div><div class="popular-tag black"><div class="popular-icon-wrap"><img loading="lazy" src="../images/6aa7c4ec323ef39a7aa4e7db_Pricing%20Icon%2002.svg" alt="Popular Icon" class="popular-icon"></div><div class="popular-text">Enterprise Scale</div></div></div>
-</div></div></div></div></section>
+<div class="primary-button-text">Talk to Sales</div>
+<div class="primary-button-text">Talk to Sales</div></div>
+<div class="primary-arrow-wrap w-variant-9cb0d27d-4dd5-ab4c-6739-bc66a7192e89"><img loading="lazy" src="../images/6aa6bd06548e7975cbe07463_Primary%20Arrow%2002.svg" alt="Primary Arrow" class="primary-arrow w-variant-9cb0d27d-4dd5-ab4c-6739-bc66a7192e89 one"><img loading="lazy" src="../images/6aa6bd06548e7975cbe07463_Primary%20Arrow%2002.svg" alt="Primary Arrow" class="primary-arrow w-variant-9cb0d27d-4dd5-ab4c-6739-bc66a7192e89 two"></div></a></div></div>
+<div class="popular-tag black"><div class="popular-icon-wrap"><img loading="lazy" src="../images/6aa7c4ec323ef39a7aa4e7db_Pricing%20Icon%2002.svg" alt="Popular Icon" class="popular-icon"></div><div class="popular-text">Enterprise Scale</div></div></div>
+
+</div>
+<div class="pricing-footnote">*Platform subscriptions include full access to SpotTalents intelligence and monthly AI credit allowances. Talent engagement fees are billed separately only when active work begins.</div>
+</div></div></div></section>
+
+<!-- Section 2: Zero-Risk Talent Engagement -->
+<section class="section zero-risk-section">
+<div class="w-layout-blockcontainer container w-container">
+<div class="zero-risk-wrapper">
+<div class="pricing-a-top-wrap" style="margin-bottom: 0;">
+<div animation="fade-one" class="contact-sub-title-wrap">
+<div data-wf--section-sub-title--variant="gray" class="section-sub-title w-variant-da0b81eb-ef6f-7786-e1c2-2810d345cc81">ZERO-RISK TALENT ENGAGEMENT</div></div>
+<div animation="heading" class="contact-title-wrap">
+<h2 data-wf--section-title--variant="two" class="section-title w-variant-a1c41d54-f4a0-ff01-86fc-643e3a321238">Pay $0 until your engineer delivers.</h2></div>
+<div animation="fade-two" class="contact-detials-wrap">
+<p data-wf--global-details--variant="black" class="global-details w-variant-a13ec10e-e1c2-79cc-f6a4-77ba89b574d6">Traditional recruiters charge $20,000+ upfront before writing a single line of code. With SpotTalents, searching, matching, and interviewing are 100% free. You only pay when your talent begins active work.</p></div></div>
+
+<!-- Visual 4-Step Pipeline Graphic -->
+<div class="pipeline-graphic-wrap">
+<div class="zero-risk-pipeline">
+
+<div class="pipeline-step-card">
+<div class="step-badge-wrap">
+<div class="step-num-circle">01</div>
+<span class="step-cost-pill free">100% Free</span>
+</div>
+<div class="pipeline-step-title">Search &amp; Audit</div>
+<div class="pipeline-step-desc">Explore verified engineers with real Git commit history, AST code analysis, and benchmarks.</div>
+</div>
+
+<div class="pipeline-step-card">
+<div class="step-badge-wrap">
+<div class="step-num-circle">02</div>
+<span class="step-cost-pill free">100% Free</span>
+</div>
+<div class="pipeline-step-title">AI Evidence Match</div>
+<div class="pipeline-step-desc">Our AI calibrates exact role fit, problem-solving speed, and team compatibility.</div>
+</div>
+
+<div class="pipeline-step-card">
+<div class="step-badge-wrap">
+<div class="step-num-circle">03</div>
+<span class="step-cost-pill trial">14-Day Trial</span>
+</div>
+<div class="pipeline-step-title">14-Day Calibration</div>
+<div class="pipeline-step-desc">Test live chemistry on your real stack. Zero penalty if not a perfect fit.</div>
+</div>
+
+<div class="pipeline-step-card active-step">
+<div class="step-badge-wrap">
+<div class="step-num-circle">04</div>
+<span class="step-cost-pill active">Pay on Delivery</span>
+</div>
+<div class="pipeline-step-title">Active Delivery</div>
+<div class="pipeline-step-desc">Pay an agreed monthly percentage on active salary. Cancels automatically when work stops.</div>
+</div>
+
+</div>
+</div>
+
+<!-- Interactive Dynamic Talent Fee Simulator -->
+<div class="calc-container-grid">
+
+<!-- Left Card: Interactive Controls -->
+<div class="calc-interactive-card">
+<div>
+<div class="calc-title-tag">Dynamic Fee Simulator</div>
+<div class="calc-heading">Simulate your monthly engagement</div>
+<div class="calc-slider-box">
+<div class="calc-slider-header">
+<span class="calc-slider-label">Talent Monthly Compensation</span>
+<span class="calc-live-value" id="calc-slider-display">$3,000</span>
+</div>
+<input type="range" min="1500" max="10000" step="500" value="3000" class="talent-slider" id="talent-comp-range" aria-label="Talent Monthly Compensation">
+<div class="slider-bounds">
+<span>$1,500/mo</span>
+<span>$5,000/mo</span>
+<span>$10,000/mo</span>
+</div>
+<div class="preset-row">
+<span class="preset-label">Quick Presets:</span>
+<button type="button" class="preset-pill" data-val="2500">$2,500</button>
+<button type="button" class="preset-pill active" data-val="3000">$3,000</button>
+<button type="button" class="preset-pill" data-val="5000">$5,000</button>
+<button type="button" class="preset-pill" data-val="7500">$7,500</button>
+</div>
+</div>
+</div>
+<div class="calc-trust-list">
+<div class="calc-trust-item"><span class="trust-check">✓</span> <span>Zero upfront placement fees or recruiter retainers</span></div>
+<div class="calc-trust-item"><span class="trust-check">✓</span> <span>Agreed monthly % (e.g. 10%) billed only while work is active</span></div>
+<div class="calc-trust-item"><span class="trust-check">✓</span> <span>No lock-in contracts — billing stops the day engagement ends</span></div>
+</div>
+</div>
+
+<!-- Right Card: Live Breakdown -->
+<div class="calc-summary-card">
+<div>
+<div class="summary-header-tag">Live Monthly Cost Breakdown</div>
+<div class="zero-upfront-pill">
+<span>🛡️</span>
+<span>Upfront Search &amp; Placement: <strong>$0.00</strong></span>
+</div>
+<div class="summary-line-row">
+<span class="summary-line-label">Talent Monthly Compensation</span>
+<span class="summary-line-value" id="summary-comp-val">$3,000 / mo</span>
+</div>
+<div class="summary-line-row">
+<span class="summary-line-label">SpotTalents Engagement Fee (10%)</span>
+<span class="summary-line-value" style="color: #60A5FA;" id="summary-fee-val">+$300 / mo</span>
+</div>
+</div>
+<div>
+<div class="summary-total-container">
+<span class="summary-total-label">Total Monthly Investment</span>
+<span class="summary-total-value" id="summary-total-val">$3,300</span>
+</div>
+<div class="summary-disclaimer">
+*Illustrative 10% engagement rate. Exact percentage is individually confirmed per talent before work begins. This fee recurs monthly only while the engagement remains active.
+</div>
+</div>
+</div>
+
+</div>
+
+</div></div></section>
 <section class="section difference">
 <div class="w-layout-blockcontainer container w-container">
 <div class="difference-wrapper">
@@ -255,9 +921,9 @@
 <div animation="fade-one" class="difference-sub-title-wrap">
 <div data-wf--section-sub-title--variant="gray" class="section-sub-title w-variant-da0b81eb-ef6f-7786-e1c2-2810d345cc81">THE SPOTALENTS ADVANTAGE</div></div>
 <div animation="heading" class="difference-title-wrap">
-<h2 data-wf--section-title--variant="two" class="section-title w-variant-a1c41d54-f4a0-ff01-86fc-643e3a321238">Don&#x27;t buy headcount. Build the right workforce.</h2></div>
+<h2 data-wf--section-title--variant="two" class="section-title w-variant-a1c41d54-f4a0-ff01-86fc-643e3a321238">Everything you need to make better talent decisions.</h2></div>
 <div animation="fade-two" class="difference-details-wrap">
-<p data-wf--global-details--variant="base" class="global-details">Evaluate individual talent independently and understand how engineers perform together.</p></div></div>
+<p data-wf--global-details--variant="base" class="global-details">SpotTalents goes beyond traditional talent databases and CV-based hiring. Our intelligence engine evaluates talent across technical capabilities, problem-solving, behavioral patterns, adaptability, and contextual fit. Your subscription gives you access to the data, intelligence, and AI infrastructure behind better talent decisions.</p></div></div>
 <div class="difference-wrap">
 <div class="difference-all-wrap">
 <div class="difference-flex-wrap">
@@ -393,10 +1059,11 @@
 <div animation="heading" class="faq-title-wrap">
 <h2 data-wf--section-title--variant="two" class="section-title w-variant-a1c41d54-f4a0-ff01-86fc-643e3a321238">Frequently Asked Questions</h2></div></div>
 <div animation="fade-two" class="faq-right-wrap">
-<p data-wf--global-details--variant="black" class="global-details w-variant-a13ec10e-e1c2-79cc-f6a4-77ba89b574d6">Clear answers about individual talent pricing, team composition, and flexible workforce arrangements.</p></div></div>
+<p data-wf--global-details--variant="black" class="global-details w-variant-a13ec10e-e1c2-79cc-f6a4-77ba89b574d6">Clear answers about annual subscriptions, talent engagement fees, AI credit allowances, and commercial terms.</p></div></div>
 <div class="faq-wrap">
 <div data-current="Tab 1" data-easing="ease" data-duration-in="300" data-duration-out="100" class="faq-tabs w-tabs">
 <div class="faq-tabs-menu w-tab-menu">
+
 <a data-w-tab="Tab 1" animation="fade-three" class="faq-tab-link w-inline-block w-tab-link w--current">
 <div class="faq-single-card">
 <div class="faq-card-flex-wrap">
@@ -405,11 +1072,12 @@
 <div class="faq-card-number">001</div></div>
 <div class="faq-all-wrap">
 <div class="faq-card-title-wrap">
-<div class="faq-card-title">How is individual talent priced?</div></div>
+<div class="faq-card-title">What does my annual subscription include?</div></div>
 <div class="faq-answer-wrap">
 <div class="faq-details-wrap">
-<p data-wf--global-details--variant="black" class="global-details w-variant-a13ec10e-e1c2-79cc-f6a4-77ba89b574d6">Each engagement is priced according to the engineer's experience, specialization, seniority, availability, and engagement terms.</p></div></div></div></div>
+<p data-wf--global-details--variant="black" class="global-details w-variant-a13ec10e-e1c2-79cc-f6a4-77ba89b574d6">Your subscription includes access to SpotTalents' platform, talent intelligence features, plan-specific AI capabilities, and a monthly AI credit allowance.</p></div></div></div></div>
 <div class="faq-card-right-wrap"><img loading="lazy" src="../images/6aa7aca48163890107f974d4_Plus%20Icon.svg" alt="Faq Card Icon" class="faq-card-icon"></div></div></div></a>
+
 <a data-w-tab="Tab 2" animation="fade-three" class="faq-tab-link w-inline-block w-tab-link">
 <div class="faq-single-card">
 <div class="faq-card-flex-wrap">
@@ -418,11 +1086,12 @@
 <div class="faq-card-number">002</div></div>
 <div class="faq-all-wrap">
 <div class="faq-card-title-wrap">
-<div class="faq-card-title">Can I engage just one engineer?</div></div>
+<div class="faq-card-title">Is the talent engagement fee included?</div></div>
 <div class="faq-answer-wrap">
 <div class="faq-details-wrap">
-<p data-wf--global-details--variant="black" class="global-details w-variant-a13ec10e-e1c2-79cc-f6a4-77ba89b574d6">Yes. You can engage an individual specialist for your project without purchasing a predefined or locked team package.</p></div></div></div></div>
+<p data-wf--global-details--variant="black" class="global-details w-variant-a13ec10e-e1c2-79cc-f6a4-77ba89b574d6">No. The subscription and talent engagement fee are separate. An individually agreed percentage applies to a talent's monthly compensation when an engagement begins.</p></div></div></div></div>
 <div class="faq-card-right-wrap"><img loading="lazy" src="../images/6aa7aca48163890107f974d4_Plus%20Icon.svg" alt="Faq Card Icon" class="faq-card-icon"></div></div></div></a>
+
 <a data-w-tab="Tab 3" animation="fade-three" class="faq-tab-link w-inline-block w-tab-link">
 <div class="faq-single-card">
 <div class="faq-card-flex-wrap">
@@ -431,11 +1100,12 @@
 <div class="faq-card-number">003</div></div>
 <div class="faq-all-wrap">
 <div class="faq-card-title-wrap">
-<div class="faq-card-title">Can I build a team with different seniority levels?</div></div>
+<div class="faq-card-title">When do I start paying the engagement fee?</div></div>
 <div class="faq-answer-wrap">
 <div class="faq-details-wrap">
-<p data-wf--global-details--variant="black" class="global-details w-variant-a13ec10e-e1c2-79cc-f6a4-77ba89b574d6">Yes. You can combine junior, mid-level, senior, lead, and principal engineers according to your project requirements.</p></div></div></div></div>
+<p data-wf--global-details--variant="black" class="global-details w-variant-a13ec10e-e1c2-79cc-f6a4-77ba89b574d6">Once you select a talent and the working relationship officially begins, according to the agreed engagement terms.</p></div></div></div></div>
 <div class="faq-card-right-wrap"><img loading="lazy" src="../images/6aa7aca48163890107f974d4_Plus%20Icon.svg" alt="Faq Card Icon" class="faq-card-icon"></div></div></div></a>
+
 <a data-w-tab="Tab 4" animation="fade-three" class="faq-tab-link w-inline-block w-tab-link">
 <div class="faq-single-card">
 <div class="faq-card-flex-wrap">
@@ -444,11 +1114,12 @@
 <div class="faq-card-number">004</div></div>
 <div class="faq-all-wrap">
 <div class="faq-card-title-wrap">
-<div class="faq-card-title">Does Spotalents recommend the team composition?</div></div>
+<div class="faq-card-title">Is the engagement fee a one-time payment?</div></div>
 <div class="faq-answer-wrap">
 <div class="faq-details-wrap">
-<p data-wf--global-details--variant="black" class="global-details w-variant-a13ec10e-e1c2-79cc-f6a4-77ba89b574d6">Yes. Spotalents Intelligence recommends individuals and pod combinations based on technical synergy and role compatibility.</p></div></div></div></div>
+<p data-wf--global-details--variant="black" class="global-details w-variant-a13ec10e-e1c2-79cc-f6a4-77ba89b574d6">No. It is a recurring monthly fee calculated as an agreed percentage of the talent's monthly compensation while the engagement is active.</p></div></div></div></div>
 <div class="faq-card-right-wrap"><img loading="lazy" src="../images/6aa7aca48163890107f974d4_Plus%20Icon.svg" alt="Faq Card Icon" class="faq-card-icon"></div></div></div></a>
+
 <a data-w-tab="Tab 5" animation="fade-three" class="faq-tab-link w-inline-block w-tab-link">
 <div class="faq-single-card">
 <div class="faq-card-flex-wrap">
@@ -457,11 +1128,12 @@
 <div class="faq-card-number">005</div></div>
 <div class="faq-all-wrap">
 <div class="faq-card-title-wrap">
-<div class="faq-card-title">Can I change my workforce requirements?</div></div>
+<div class="faq-card-title">Do I pay if I don't hire anyone?</div></div>
 <div class="faq-answer-wrap">
 <div class="faq-details-wrap">
-<p data-wf--global-details--variant="black" class="global-details w-variant-a13ec10e-e1c2-79cc-f6a4-77ba89b574d6">Yes. Engagements can be scaled up, down, or adjusted according to project availability, sprint pace, and delivery terms.</p></div></div></div></div>
+<p data-wf--global-details--variant="black" class="global-details w-variant-a13ec10e-e1c2-79cc-f6a4-77ba89b574d6">No talent engagement fee applies if you do not start an engagement. Your annual subscription remains active and provides access to your subscribed platform features.</p></div></div></div></div>
 <div class="faq-card-right-wrap"><img loading="lazy" src="../images/6aa7aca48163890107f974d4_Plus%20Icon.svg" alt="Faq Card Icon" class="faq-card-icon"></div></div></div></a>
+
 <a data-w-tab="Tab 6" animation="fade-three" class="faq-tab-link w-inline-block w-tab-link">
 <div class="faq-single-card">
 <div class="faq-card-flex-wrap">
@@ -470,11 +1142,68 @@
 <div class="faq-card-number">006</div></div>
 <div class="faq-all-wrap">
 <div class="faq-card-title-wrap">
-<div class="faq-card-title">Are there additional management or placement fees?</div></div>
+<div class="faq-card-title">Can engagement percentages differ between talents?</div></div>
 <div class="faq-answer-wrap">
 <div class="faq-details-wrap">
-<p data-wf--global-details--variant="black" class="global-details w-variant-a13ec10e-e1c2-79cc-f6a4-77ba89b574d6">No. All applicable fees and talent engagement rates are communicated with complete transparency before work begins.</p></div></div></div></div>
+<p data-wf--global-details--variant="black" class="global-details w-variant-a13ec10e-e1c2-79cc-f6a4-77ba89b574d6">Yes. Engagement percentages are individually agreed based on the talent, compensation, engagement structure, and commercial terms.</p></div></div></div></div>
 <div class="faq-card-right-wrap"><img loading="lazy" src="../images/6aa7aca48163890107f974d4_Plus%20Icon.svg" alt="Faq Card Icon" class="faq-card-icon"></div></div></div></a>
+
+<a data-w-tab="Tab 7" animation="fade-three" class="faq-tab-link w-inline-block w-tab-link">
+<div class="faq-single-card">
+<div class="faq-card-flex-wrap">
+<div class="faq-card-left-wrap">
+<div class="faq-number-wrap">
+<div class="faq-card-number">007</div></div>
+<div class="faq-all-wrap">
+<div class="faq-card-title-wrap">
+<div class="faq-card-title">Can I purchase additional AI credits?</div></div>
+<div class="faq-answer-wrap">
+<div class="faq-details-wrap">
+<p data-wf--global-details--variant="black" class="global-details w-variant-a13ec10e-e1c2-79cc-f6a4-77ba89b574d6">Yes. Every subscription includes a monthly allowance, and additional credits can be purchased separately with your approval.</p></div></div></div></div>
+<div class="faq-card-right-wrap"><img loading="lazy" src="../images/6aa7aca48163890107f974d4_Plus%20Icon.svg" alt="Faq Card Icon" class="faq-card-icon"></div></div></div></a>
+
+<a data-w-tab="Tab 8" animation="fade-three" class="faq-tab-link w-inline-block w-tab-link">
+<div class="faq-single-card">
+<div class="faq-card-flex-wrap">
+<div class="faq-card-left-wrap">
+<div class="faq-number-wrap">
+<div class="faq-card-number">008</div></div>
+<div class="faq-all-wrap">
+<div class="faq-card-title-wrap">
+<div class="faq-card-title">Do unused AI credits roll over?</div></div>
+<div class="faq-answer-wrap">
+<div class="faq-details-wrap">
+<p data-wf--global-details--variant="black" class="global-details w-variant-a13ec10e-e1c2-79cc-f6a4-77ba89b574d6">Monthly subscription allowances refresh each month and do not roll over. Purchased credit packages follow their stated validity and usage terms.</p></div></div></div></div>
+<div class="faq-card-right-wrap"><img loading="lazy" src="../images/6aa7aca48163890107f974d4_Plus%20Icon.svg" alt="Faq Card Icon" class="faq-card-icon"></div></div></div></a>
+
+<a data-w-tab="Tab 9" animation="fade-three" class="faq-tab-link w-inline-block w-tab-link">
+<div class="faq-single-card">
+<div class="faq-card-flex-wrap">
+<div class="faq-card-left-wrap">
+<div class="faq-number-wrap">
+<div class="faq-card-number">009</div></div>
+<div class="faq-all-wrap">
+<div class="faq-card-title-wrap">
+<div class="faq-card-title">Can I upgrade to Enterprise?</div></div>
+<div class="faq-answer-wrap">
+<div class="faq-details-wrap">
+<p data-wf--global-details--variant="black" class="global-details w-variant-a13ec10e-e1c2-79cc-f6a4-77ba89b574d6">Yes. Enterprise plans offer customized access, intelligence requirements, usage allowances, and commercial agreements.</p></div></div></div></div>
+<div class="faq-card-right-wrap"><img loading="lazy" src="../images/6aa7aca48163890107f974d4_Plus%20Icon.svg" alt="Faq Card Icon" class="faq-card-icon"></div></div></div></a>
+
+<a data-w-tab="Tab 10" animation="fade-three" class="faq-tab-link w-inline-block w-tab-link">
+<div class="faq-single-card">
+<div class="faq-card-flex-wrap">
+<div class="faq-card-left-wrap">
+<div class="faq-number-wrap">
+<div class="faq-card-number">010</div></div>
+<div class="faq-all-wrap">
+<div class="faq-card-title-wrap">
+<div class="faq-card-title">How are talent compensation and platform fees calculated?</div></div>
+<div class="faq-answer-wrap">
+<div class="faq-details-wrap">
+<p data-wf--global-details--variant="black" class="global-details w-variant-a13ec10e-e1c2-79cc-f6a4-77ba89b574d6">Talent compensation is agreed separately. The SpotTalents engagement fee is calculated using the agreed percentage and compensation basis specified in the engagement agreement.</p></div></div></div></div>
+<div class="faq-card-right-wrap"><img loading="lazy" src="../images/6aa7aca48163890107f974d4_Plus%20Icon.svg" alt="Faq Card Icon" class="faq-card-icon"></div></div></div></a>
+
 </div>
 <div class="w-tab-content">
 <div data-w-tab="Tab 1" class="w-tab-pane w--tab-active"></div>
@@ -483,6 +1212,10 @@
 <div data-w-tab="Tab 4" class="w-tab-pane"></div>
 <div data-w-tab="Tab 5" class="w-tab-pane"></div>
 <div data-w-tab="Tab 6" class="w-tab-pane"></div>
+<div data-w-tab="Tab 7" class="w-tab-pane"></div>
+<div data-w-tab="Tab 8" class="w-tab-pane"></div>
+<div data-w-tab="Tab 9" class="w-tab-pane"></div>
+<div data-w-tab="Tab 10" class="w-tab-pane"></div>
 </div></div></div></div></div></section>
 <section data-wf--call-to-action--variant="base" class="section cta">
 <div class="w-layout-blockcontainer big-container w-container">
@@ -491,18 +1224,18 @@
 <div animation="fade-one" class="cta-sub-title-wrap">
 <div data-wf--section-sub-title--variant="base" class="section-sub-title">Deploy With Certainty</div></div>
 <div animation="heading" class="cta-title-wrap">
-<h2 data-wf--global-heading--variant="white" class="global-heading w-variant-68427fef-2df8-4f81-591e-362081514eb3">Ready to deploy verified engineering talent?</h2></div>
+<h2 data-wf--global-heading--variant="white" class="global-heading w-variant-68427fef-2df8-4f81-591e-362081514eb3">Better intelligence. Better decisions. Better matches.</h2></div>
 <div animation="fade-three" class="cta-deatils-wrap">
-<div class="cta-details"><span class="black">Zero guesswork.</span> Match the right engineers and complete pods backed by real delivery evidence.</div></div>
-<div animation="fade-four" class="cta-button-wrap"><a data-wf--primary-button--variant="blue" href="/contact" class="primary-button w-variant-b428232b-7b24-db52-6b0b-12fd13311aee w-inline-block">
+<div class="cta-details"><span class="black">Find the talent that fits,</span> understand why they fit, and build working relationships with confidence.</div></div>
+<div animation="fade-four" class="cta-button-wrap"><a data-wf--primary-button--variant="blue" href="/start" class="primary-button w-variant-b428232b-7b24-db52-6b0b-12fd13311aee w-inline-block">
 <div class="primary-btn-text-wrap">
-<div class="primary-button-text">Find Your Talent</div>
-<div class="primary-button-text">Find Your Talent</div></div>
-<div class="primary-arrow-wrap w-variant-b428232b-7b24-db52-6b0b-12fd13311aee"><img loading="lazy" src="../images/6aa6bd06548e7975cbe07463_Primary%20Arrow%2002.svg" alt="Primary Arrow " class="primary-arrow w-variant-b428232b-7b24-db52-6b0b-12fd13311aee one"><img loading="lazy" src="../images/6aa6bd06548e7975cbe07463_Primary%20Arrow%2002.svg" alt="Primary Arrow " class="primary-arrow w-variant-b428232b-7b24-db52-6b0b-12fd13311aee two"></div></a><a data-wf--primary-button--variant="white" href="/contact" class="primary-button w-variant-33034aef-a839-2487-b88d-ba5ec2a83be5 w-inline-block">
+<div class="primary-button-text">Start with SpotTalents</div>
+<div class="primary-button-text">Start with SpotTalents</div></div>
+<div class="primary-arrow-wrap w-variant-b428232b-7b24-db52-6b0b-12fd13311aee"><img loading="lazy" src="../images/6aa6bd06548e7975cbe07463_Primary%20Arrow%2002.svg" alt="Primary Arrow" class="primary-arrow w-variant-b428232b-7b24-db52-6b0b-12fd13311aee one"><img loading="lazy" src="../images/6aa6bd06548e7975cbe07463_Primary%20Arrow%2002.svg" alt="Primary Arrow" class="primary-arrow w-variant-b428232b-7b24-db52-6b0b-12fd13311aee two"></div></a><a data-wf--primary-button--variant="white" href="/solution" class="primary-button w-variant-33034aef-a839-2487-b88d-ba5ec2a83be5 w-inline-block">
 <div class="primary-btn-text-wrap">
-<div class="primary-button-text">Explore Pathways</div>
-<div class="primary-button-text">Explore Pathways</div></div>
-<div class="primary-arrow-wrap w-variant-33034aef-a839-2487-b88d-ba5ec2a83be5"><img loading="lazy" src="../images/6aa6bd06548e7975cbe07463_Primary%20Arrow%2002.svg" alt="Primary Arrow " class="primary-arrow one"><img loading="lazy" src="../images/6aa6bd06548e7975cbe07463_Primary%20Arrow%2002.svg" alt="Primary Arrow " class="primary-arrow two"></div></a></div></div></div></div></section>
+<div class="primary-button-text">Explore the Engine</div>
+<div class="primary-button-text">Explore the Engine</div></div>
+<div class="primary-arrow-wrap w-variant-33034aef-a839-2487-b88d-ba5ec2a83be5"><img loading="lazy" src="../images/6aa6bd06548e7975cbe07463_Primary%20Arrow%2002.svg" alt="Primary Arrow" class="primary-arrow one"><img loading="lazy" src="../images/6aa6bd06548e7975cbe07463_Primary%20Arrow%2002.svg" alt="Primary Arrow" class="primary-arrow two"></div></a></div></div></div></div></section>
 <section data-wf--footer--variant="base" class="section footer">
 <div class="w-layout-blockcontainer big-container w-container">
 <div class="footer-wrapper">
@@ -526,7 +1259,7 @@
 <div menu-one="" class="menu-text">Intelligence</div>
 <div menu-two="" class="menu-text">Intelligence</div></a><a href="/blog" class="menu-link w-inline-block">
 <div menu-one="" class="menu-text">Blog</div>
-<div menu-two="" class="menu-text">Blog</div></a><a href="/pricing-a" class="menu-link w-inline-block">
+<div menu-two="" class="menu-text">Blog</div></a><a href="/pricing" class="menu-link w-inline-block">
 <div menu-one="" class="menu-text">Workforce Pods</div>
 <div menu-two="" class="menu-text">Workforce Pods</div></a><a href="/pricing-b" class="menu-link w-inline-block">
 <div menu-one="" class="menu-text">Evidence Model</div>
@@ -554,7 +1287,7 @@
 <div menu-two="" class="menu-text">Password</div></a><a href="/404" class="menu-link w-inline-block">
 <div menu-one="" class="menu-text">404</div>
 <div menu-two="" class="menu-text">404</div></a></div></div></div></div></div>
-<div animation="fade-three" class="footer-copyright-wrap">
+<div class="footer-badge-strip"><a href="https://eeawards.org/en/awards/people-of-tomorrow-youth-award?year=2025" target="_blank" rel="noopener noreferrer" class="footer-award-badge"><div class="footer-award-badge-left"><span class="footer-badge-cup">2025</span><div class="footer-badge-headings"><span class="footer-badge-eyebrow">OFFICIAL WINNER · 2025 PEOPLE OF TOMORROW YOUTH AWARD</span><span class="footer-badge-name">Egypt’s Entrepreneur Awards (EEA) · Dragons Bootcamp LLC</span></div></div><div class="footer-badge-verify"><span>Verify Archive</span><span class="footer-badge-arrow">↗</span></div></a><div class="footer-backers-bar"><span class="footer-backers-intro">Backed by global tech &amp; national institutions:</span><div class="footer-backers-pill-list"><span class="footer-backer-pill"><img src="../images/partners/microsoft.svg" alt="Microsoft"> Microsoft</span><span class="footer-backer-pill"><img src="../images/partners/google.svg" alt="Google"> Google</span><span class="footer-backer-pill"><img src="../images/partners/nvidia.svg" alt="NVIDIA"> NVIDIA</span><span class="footer-backer-pill"><img src="../images/partners/mcit_logo.png" alt="MCIT"> MCIT Egypt</span><span class="footer-backer-pill"><img src="../images/partners/itida_symbol.png" alt="ITIDA"> ITIDA</span><span class="footer-backer-pill"><img src="../images/partners/creativa_symbol.png" alt="Creativa"> Creativa</span><span class="footer-backer-pill"><img src="../images/partners/pnp_symbol.png" alt="Plug and Play"> Plug &amp; Play</span><span class="footer-backer-pill"><img src="../images/partners/mint_symbol.png" alt="MINT by EGBANK"> MINT by EGBANK</span></div></div></div><div animation="fade-three" class="footer-copyright-wrap">
 <div class="footer-copyright-text">© 2026 Spotalents. All rights reserved. Powered by Spotalents Intelligence.</div>
 <div class="footer-social-wrapper">
 <div class="footer-copyright-text">Socials</div>
@@ -629,6 +1362,118 @@ document.addEventListener('DOMContentLoaded', function () {
         tabLinks.forEach(function (l) { l.classList.remove('w--current'); });
         link.classList.add('w--current');
       });
+    });
+  });
+});
+</script>
+
+<!-- Interactive Pricing & Calculator Controller -->
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  // --- 1. Monthly / Annual Billing Switcher ---
+  const annualBtn = document.getElementById('billing-annual-btn');
+  const monthlyBtn = document.getElementById('billing-monthly-btn');
+  
+  const priceValDiscover = document.getElementById('price-val-discover');
+  const periodDiscover = document.getElementById('period-discover');
+  const subtextDiscover = document.getElementById('subtext-discover');
+  const savingsDiscover = document.getElementById('savings-discover');
+  
+  const priceValIntel = document.getElementById('price-val-intel');
+  const periodIntel = document.getElementById('period-intel');
+  const subtextIntel = document.getElementById('subtext-intel');
+  const savingsIntel = document.getElementById('savings-intel');
+
+  function setBillingMode(mode) {
+    if (mode === 'annual') {
+      annualBtn.classList.add('active');
+      monthlyBtn.classList.remove('active');
+      
+      if (priceValDiscover) priceValDiscover.textContent = '$82.50';
+      if (periodDiscover) periodDiscover.textContent = '/ month';
+      if (subtextDiscover) subtextDiscover.textContent = 'Billed annually at $990';
+      if (savingsDiscover) savingsDiscover.textContent = 'Save $198 vs monthly';
+      
+      if (priceValIntel) priceValIntel.textContent = '$249';
+      if (periodIntel) periodIntel.textContent = '/ month';
+      if (subtextIntel) subtextIntel.textContent = 'Billed annually at $2,990';
+      if (savingsIntel) savingsIntel.textContent = 'Save $598 vs monthly';
+    } else {
+      monthlyBtn.classList.add('active');
+      annualBtn.classList.remove('active');
+      
+      if (priceValDiscover) priceValDiscover.textContent = '$99';
+      if (periodDiscover) periodDiscover.textContent = '/ month';
+      if (subtextDiscover) subtextDiscover.textContent = 'Billed monthly';
+      if (savingsDiscover) savingsDiscover.textContent = 'Cancel anytime · Flexible';
+      
+      if (priceValIntel) priceValIntel.textContent = '$299';
+      if (periodIntel) periodIntel.textContent = '/ month';
+      if (subtextIntel) subtextIntel.textContent = 'Billed monthly';
+      if (savingsIntel) savingsIntel.textContent = 'Cancel anytime · Flexible';
+    }
+  }
+
+  if (annualBtn && monthlyBtn) {
+    annualBtn.addEventListener('click', function () { setBillingMode('annual'); });
+    monthlyBtn.addEventListener('click', function () { setBillingMode('monthly'); });
+  }
+
+  // --- 2. Dynamic Talent Fee Calculator ---
+  const compRange = document.getElementById('talent-comp-range');
+  const sliderDisplay = document.getElementById('calc-slider-display');
+  const summaryComp = document.getElementById('summary-comp-val');
+  const summaryFee = document.getElementById('summary-fee-val');
+  const summaryTotal = document.getElementById('summary-total-val');
+  const presetPills = document.querySelectorAll('.preset-pill');
+
+  function updateCalculator(compValue) {
+    const val = parseInt(compValue, 10);
+    const fee = Math.round(val * 0.10);
+    const total = val + fee;
+
+    const formattedVal = '$' + val.toLocaleString('en-US');
+    const formattedFee = '+$' + fee.toLocaleString('en-US');
+    const formattedTotal = '$' + total.toLocaleString('en-US');
+
+    if (sliderDisplay) sliderDisplay.textContent = formattedVal;
+    if (summaryComp) summaryComp.textContent = formattedVal + ' / mo';
+    if (summaryFee) summaryFee.textContent = formattedFee + ' / mo';
+    if (summaryTotal) summaryTotal.textContent = formattedTotal;
+
+    // Update preset pills active state
+    presetPills.forEach(function (pill) {
+      if (parseInt(pill.getAttribute('data-val'), 10) === val) {
+        pill.classList.add('active');
+      } else {
+        pill.classList.remove('active');
+      }
+    });
+
+    // Update slider track gradient fill
+    if (compRange) {
+      const min = parseInt(compRange.min, 10) || 1500;
+      const max = parseInt(compRange.max, 10) || 10000;
+      const percent = ((val - min) / (max - min)) * 100;
+      compRange.style.background = `linear-gradient(to right, #013BFF 0%, #013BFF ${percent}%, #E5E7EB ${percent}%, #E5E7EB 100%)`;
+    }
+  }
+
+  if (compRange) {
+    compRange.addEventListener('input', function () {
+      updateCalculator(this.value);
+    });
+    // Initial call
+    updateCalculator(compRange.value);
+  }
+
+  presetPills.forEach(function (pill) {
+    pill.addEventListener('click', function () {
+      const val = this.getAttribute('data-val');
+      if (compRange) {
+        compRange.value = val;
+        updateCalculator(val);
+      }
     });
   });
 });
