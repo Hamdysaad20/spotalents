@@ -63,6 +63,7 @@
   }
 
   .billing-toggle-pill {
+    position: relative;
     display: inline-flex;
     align-items: center;
     background: #EAEAE0;
@@ -72,9 +73,24 @@
     box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.04);
   }
 
+  .billing-glider {
+    position: absolute;
+    top: 4px;
+    bottom: 4px;
+    left: 0;
+    border-radius: 999px;
+    background: #191814;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+    transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1), width 0.32s cubic-bezier(0.16, 1, 0.3, 1);
+    pointer-events: none;
+    z-index: 1;
+  }
+
   .billing-toggle-btn {
+    position: relative;
+    z-index: 2;
     border: none;
-    background: transparent;
+    background: transparent !important;
     padding: 10px 24px;
     border-radius: 999px;
     font-family: "Instrument Sans", sans-serif;
@@ -82,7 +98,7 @@
     font-weight: 500;
     color: #757368;
     cursor: pointer;
-    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: color 0.28s cubic-bezier(0.16, 1, 0.3, 1), transform 0.15s ease;
     display: inline-flex;
     align-items: center;
     gap: 8px;
@@ -90,11 +106,18 @@
     user-select: none;
   }
 
+  .billing-toggle-btn:hover {
+    color: #191814;
+  }
+
   .billing-toggle-btn.active {
-    background: #191814;
     color: #FFFFFF;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
     font-weight: 600;
+    box-shadow: none !important;
+  }
+
+  .billing-toggle-btn:active {
+    transform: scale(0.96);
   }
 
   .billing-save-badge {
@@ -107,11 +130,87 @@
     border-radius: 999px;
     letter-spacing: 0.03em;
     text-transform: uppercase;
-    transition: transform 0.2s ease;
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
+    display: inline-block;
   }
 
   .billing-toggle-btn:hover .billing-save-badge {
-    transform: scale(1.05);
+    transform: scale(1.08);
+    box-shadow: 0 2px 8px rgba(0, 167, 109, 0.4);
+  }
+
+  /* Pricing Cards Hover Lift */
+  .pricing-a-card {
+    transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .pricing-a-single-wrap {
+    transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .pricing-a-card:hover .pricing-a-single-wrap {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 36px -12px rgba(25, 24, 20, 0.09);
+  }
+
+  .pricing-a-card:hover .pricing-a-single-wrap.blue {
+    box-shadow: 0 16px 38px -10px rgba(0, 60, 255, 0.18);
+  }
+
+  /* Website Standard Button Animations */
+  .primary-button {
+    cursor: pointer;
+    text-decoration: none;
+    transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .primary-button:active {
+    transform: scale(0.98);
+  }
+
+  .primary-button .primary-btn-text-wrap {
+    height: 20.8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .primary-button .primary-button-text {
+    display: block;
+    line-height: 20.8px;
+    transform: translateY(0%);
+    transition: transform 0.38s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform;
+  }
+
+  .primary-button:hover .primary-button-text {
+    transform: translateY(-100%);
+  }
+
+  .primary-button .primary-arrow-wrap {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .primary-button .primary-arrow.one {
+    position: absolute;
+    transform: translateX(-200%);
+    transition: transform 0.38s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform;
+  }
+
+  .primary-button .primary-arrow.two {
+    transform: translateX(0%);
+    transition: transform 0.38s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform;
+  }
+
+  .primary-button:hover .primary-arrow.one {
+    transform: translateX(0%);
+  }
+
+  .primary-button:hover .primary-arrow.two {
+    transform: translateX(200%);
   }
 
   .pricing-footnote {
@@ -525,7 +624,8 @@
 
 <!-- Interactive Monthly / Annual Billing Switcher -->
 <div class="billing-toggle-container">
-<div class="billing-toggle-pill">
+<div class="billing-toggle-pill" id="billing-toggle-pill">
+<div class="billing-glider" id="billing-glider"></div>
 <button type="button" class="billing-toggle-btn active" id="billing-annual-btn" data-mode="annual">
 Annual
 <span class="billing-save-badge">Save 20%</span>
@@ -639,11 +739,11 @@ Monthly
 <div class="pricing-a-card-details">For organizations requiring talent intelligence at scale. Tailored AI credits.</div></div>
 <div class="pricing-a-price-wrap">
 <div class="pricing-a-price-text-wrap">
-<div class="pricing-a-price-text" style="font-size: 42px; line-height: 1;">Custom</div></div>
-<div class="pricing-a-month">/ annual</div></div>
+<div class="pricing-a-price-text" id="price-val-enterprise" style="font-size: 42px; line-height: 1;">Custom</div></div>
+<div class="pricing-a-month" id="period-enterprise">/ annual</div></div>
 <div class="balance-wrap">
-<div class="balance-title">Tailored annual agreements</div>
-<div class="balance-month">Custom SLAs</div>
+<div class="balance-title" id="subtext-enterprise">Tailored annual agreements</div>
+<div class="balance-month" id="savings-enterprise">Custom SLAs</div>
 <div class="balance-a-dot"></div>
 <div class="balance-a-dot"></div></div>
 
@@ -1086,63 +1186,87 @@ Monthly
 <div class="primary-button-text">Explore the Engine</div>
 <div class="primary-button-text">Explore the Engine</div></div>
 <div class="primary-arrow-wrap w-variant-33034aef-a839-2487-b88d-ba5ec2a83be5"><img loading="lazy" src="../images/6aa6bd06548e7975cbe07463_Primary%20Arrow%2002.svg" alt="Primary Arrow" class="primary-arrow one"><img loading="lazy" src="../images/6aa6bd06548e7975cbe07463_Primary%20Arrow%2002.svg" alt="Primary Arrow" class="primary-arrow two"></div></a></div></div></div></div></section>
-<section data-wf--footer--variant="base" class="section footer">
-<div class="w-layout-blockcontainer big-container w-container">
-<div class="footer-wrapper">
-<div class="footer-watermark-text" aria-hidden="true">Spotalents</div>
-<div class="footer-wrap">
-<div class="footer-top-wrap">
-<div animation="fade-one" class="footer-left-wrap"><a href="/" class="footer-brand-link w-inline-block"><img loading="lazy" src="../images/6aa6d393ac93082b8aacb5ff_Footer%20Logo.svg" alt="Footer Logo" class="footer-logo"></a>
-<p class="footer-details">Spotalents is the AI-powered Talent Intelligence and Workforce Matching Engine. Connecting capability, compatibility, and real-world delivery evidence for high-performing engineering teams.</p></div>
-<div class="footer-right-wrap">
-<div animation="fade-two" class="footer-right-flex-wrap">
-<div class="footer-single-wrap">
-<div class="footer-menu-title">The Engine</div>
-<div class="footer-menu-wrap"><a href="/" class="menu-link w-inline-block">
-<div menu-one="" class="menu-text">Talent Intel</div>
-<div menu-two="" class="menu-text">Talent Intel</div></a><a href="/home-b" class="menu-link w-inline-block">
-<div menu-one="" class="menu-text">Role &amp; Team Fit</div>
-<div menu-two="" class="menu-text">Role &amp; Team Fit</div></a><a href="/about" class="menu-link w-inline-block">
-<div menu-one="" class="menu-text">Overview</div>
-<div menu-two="" class="menu-text">Overview</div></a><a href="/features" class="menu-link w-inline-block">
-<div menu-one="" class="menu-text">How It Works</div>
-<div menu-two="" class="menu-text">How It Works</div></a><a href="/solution" aria-current="page" class="menu-link w-inline-block w--current">
-<div menu-one="" class="menu-text">Intelligence</div>
-<div menu-two="" class="menu-text">Intelligence</div></a><a href="/blog" class="menu-link w-inline-block">
-<div menu-one="" class="menu-text">Blog</div>
-<div menu-two="" class="menu-text">Blog</div></a><a href="/pricing" class="menu-link w-inline-block">
-<div menu-one="" class="menu-text">Workforce Pods</div>
-<div menu-two="" class="menu-text">Workforce Pods</div></a><a href="/pricing-b" class="menu-link w-inline-block">
-<div menu-one="" class="menu-text">Evidence Model</div>
-<div menu-two="" class="menu-text">Evidence Model</div></a><a href="/contact" class="menu-link w-inline-block">
-<div menu-one="" class="menu-text">Contact</div>
-<div menu-two="" class="menu-text">Contact</div></a></div></div>
-<div class="footer-single-wrap">
-<div class="footer-menu-title">Ecosystem</div>
-<div class="footer-menu-wrap"><a href="/blog/talent-intelligence-vs-traditional-recruitment" class="menu-link w-inline-block">
-<div menu-one="" class="menu-text">Blog Details</div>
-<div menu-two="" class="menu-text">Blog Details</div></a><a href="/privacy" class="menu-link w-inline-block">
-<div menu-one="" class="menu-text">Privacy Policy</div>
-<div menu-two="" class="menu-text">Privacy Policy</div></a><a href="/terms" class="menu-link w-inline-block">
-<div menu-one="" class="menu-text">Terms &amp; Condition</div>
-<div menu-two="" class="menu-text">Terms &amp; Condition</div></a><a href="/style-guide" class="menu-link w-inline-block">
-<div menu-one="" class="menu-text">Style Guide</div>
-<div menu-two="" class="menu-text">Style Guide</div></a><a href="/licenses" class="menu-link w-inline-block">
-<div menu-one="" class="menu-text">Licenses</div>
-<div menu-two="" class="menu-text">Licenses</div></a><a href="/changelog" class="menu-link w-inline-block">
-<div menu-one="" class="menu-text">Changelog</div>
-<div menu-two="" class="menu-text">Changelog</div></a><a href="/instructions" class="menu-link w-inline-block">
-<div menu-one="" class="menu-text">Instructions</div>
-<div menu-two="" class="menu-text">Instructions</div></a><a href="/401" class="menu-link w-inline-block">
-<div menu-one="" class="menu-text">Password</div>
-<div menu-two="" class="menu-text">Password</div></a><a href="/404" class="menu-link w-inline-block">
-<div menu-one="" class="menu-text">404</div>
-<div menu-two="" class="menu-text">404</div></a></div></div></div></div></div>
-<div class="footer-badge-strip"><a href="https://eeawards.org/en/awards/people-of-tomorrow-youth-award?year=2025" target="_blank" rel="noopener noreferrer" class="footer-award-badge"><div class="footer-award-badge-left"><span class="footer-badge-cup">2025</span><div class="footer-badge-headings"><span class="footer-badge-eyebrow">OFFICIAL WINNER · 2025 PEOPLE OF TOMORROW YOUTH AWARD</span><span class="footer-badge-name">Egypt’s Entrepreneur Awards (EEA) · Dragons Bootcamp LLC</span></div></div><div class="footer-badge-verify"><span>Verify Archive</span><span class="footer-badge-arrow">↗</span></div></a><div class="footer-backers-bar"><span class="footer-backers-intro">Backed by global tech &amp; national institutions:</span><div class="footer-backers-pill-list"><span class="footer-backer-pill"><img src="../images/partners/microsoft.svg" alt="Microsoft"> Microsoft</span><span class="footer-backer-pill"><img src="../images/partners/google.svg" alt="Google"> Google</span><span class="footer-backer-pill"><img src="../images/partners/nvidia.svg" alt="NVIDIA"> NVIDIA</span><span class="footer-backer-pill"><img src="../images/partners/mcit_logo.png" alt="MCIT"> MCIT Egypt</span><span class="footer-backer-pill"><img src="../images/partners/itida_symbol.png" alt="ITIDA"> ITIDA</span><span class="footer-backer-pill"><img src="../images/partners/creativa_symbol.png" alt="Creativa"> Creativa</span><span class="footer-backer-pill"><img src="../images/partners/pnp_symbol.png" alt="Plug and Play"> Plug &amp; Play</span><span class="footer-backer-pill"><img src="../images/partners/mint_symbol.png" alt="MINT by EGBANK"> MINT by EGBANK</span></div></div></div><div animation="fade-three" class="footer-copyright-wrap">
-<div class="footer-copyright-text">© 2026 Spotalents. All rights reserved. Powered by Spotalents Intelligence.</div>
-<div class="footer-social-wrapper">
-<div class="footer-copyright-text">Socials</div>
-<div class="footer-social-wrap"><a href="https://discord.com/" target="_blank" class="social-link w-inline-block"><img loading="lazy" src="../images/6aa6daaf9d104f28ed99927d_Social%20Image%2001.svg" alt="Social Image " class="social-image"><img loading="lazy" src="../images/6aa6daaf9d104f28ed99927d_Social%20Image%2001.svg" alt="Social Image " class="social-image"></a><a href="https://x.com/" target="_blank" class="social-link w-inline-block"><img loading="lazy" src="../images/6ac251c54ddeb2f1f2ec08f5_Twitter.svg" alt="Social Image " class="social-image" style="width: 17px; height: 17px; margin: 3.5px auto;"><img loading="lazy" src="../images/6ac251c54ddeb2f1f2ec08f5_Twitter.svg" alt="Social Image " class="social-image" style="width: 17px; height: 17px; margin: 3.5px auto;"></a><a href="https://instagram.com/" target="_blank" class="social-link w-inline-block"><img loading="lazy" src="../images/6ac27f280b4e30951e8ec80f_Frame.svg" alt="Social Image " class="social-image"><img loading="lazy" src="../images/6ac27f280b4e30951e8ec80f_Frame.svg" alt="Social Image " class="social-image"></a><a href="https://facebook.com/" target="_blank" class="social-link w-inline-block"><img loading="lazy" src="../images/6ac27f2892ef515c156f4b58_Frame%20%281%29.svg" alt="Social Image " class="social-image"><img loading="lazy" src="../images/6ac27f2892ef515c156f4b58_Frame%20%281%29.svg" alt="Social Image " class="social-image"></a></div></div></div></div></div></div></section></div>
+<!-- Footer Component -->
+    <section data-wf--footer--variant="base" class="section footer">
+      <div class="w-layout-blockcontainer big-container w-container">
+        <div class="footer-wrapper">
+          <div class="footer-watermark-text" aria-hidden="true">Spotalents</div>
+          <div class="footer-wrap">
+            <div class="footer-top-wrap">
+              <div animation="fade-one" class="footer-left-wrap">
+                <a href="/" class="footer-brand-link w-inline-block">
+                  <img loading="lazy" src="/images/6aa6d393ac93082b8aacb5ff_Footer%20Logo.svg" alt="Spotalents Logo" class="footer-logo">
+                </a>
+                <p class="footer-details">Spotalents is the AI-powered Talent Intelligence and Workforce Matching Engine. Connecting capability, compatibility, and real-world delivery evidence for high-performing engineering teams.</p>
+              </div>
+              <div class="footer-right-wrap">
+                <div animation="fade-two" class="footer-right-flex-wrap">
+                  <div class="footer-single-wrap">
+                    <div class="footer-menu-title">Platform</div>
+                    <div class="footer-menu-wrap">
+                      <a href="/" class="menu-link w-inline-block"><div menu-one="" class="menu-text">Home</div><div menu-two="" class="menu-text">Home</div></a>
+                      <a href="/about" class="menu-link w-inline-block"><div menu-one="" class="menu-text">Overview</div><div menu-two="" class="menu-text">Overview</div></a>
+                      <a href="/features" class="menu-link w-inline-block"><div menu-one="" class="menu-text">Process</div><div menu-two="" class="menu-text">Process</div></a>
+                      <a href="/solution" class="menu-link w-inline-block"><div menu-one="" class="menu-text">Engine</div><div menu-two="" class="menu-text">Engine</div></a>
+                    </div>
+                  </div>
+                  <div class="footer-single-wrap">
+                    <div class="footer-menu-title">Workforce</div>
+                    <div class="footer-menu-wrap">
+                      <a href="/pricing" class="menu-link w-inline-block"><div menu-one="" class="menu-text">Pathways</div><div menu-two="" class="menu-text">Pathways</div></a>
+                      <a href="/start" class="menu-link w-inline-block"><div menu-one="" class="menu-text">Deploy</div><div menu-two="" class="menu-text">Deploy</div></a>
+                      <a href="/about#story" class="menu-link w-inline-block"><div menu-one="" class="menu-text">Founder Story</div><div menu-two="" class="menu-text">Founder Story</div></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="footer-badge-strip">
+              <a href="https://eeawards.org/en/awards/people-of-tomorrow-youth-award?year=2025" target="_blank" rel="noopener noreferrer" class="footer-award-badge">
+                <div class="footer-award-badge-left">
+                  <span class="footer-badge-cup">2025</span>
+                  <div class="footer-badge-headings">
+                    <span class="footer-badge-eyebrow">OFFICIAL WINNER · 2025 PEOPLE OF TOMORROW YOUTH AWARD</span>
+                    <span class="footer-badge-name">Egypt’s Entrepreneur Awards (EEA) · Dragons Bootcamp LLC</span>
+                  </div>
+                </div>
+                <div class="footer-badge-verify">
+                  <span>Verify Archive</span>
+                  <span class="footer-badge-arrow">↗</span>
+                </div>
+              </a>
+              <div class="footer-backers-bar">
+                <span class="footer-backers-intro">Backed by global tech &amp; national institutions:</span>
+                <div class="footer-backers-pill-list">
+                  <span class="footer-backer-pill"><img src="/images/partners/microsoft.svg" alt="Microsoft"> Microsoft</span>
+                  <span class="footer-backer-pill"><img src="/images/partners/google.svg" alt="Google"> Google</span>
+                  <span class="footer-backer-pill"><img src="/images/partners/nvidia.svg" alt="NVIDIA"> NVIDIA</span>
+                  <span class="footer-backer-pill"><img src="/images/partners/mcit_logo.png" alt="MCIT"> MCIT Egypt</span>
+                  <span class="footer-backer-pill"><img src="/images/partners/itida_symbol.png" alt="ITIDA"> ITIDA</span>
+                  <span class="footer-backer-pill"><img src="/images/partners/creativa_symbol.png" alt="Creativa"> Creativa</span>
+                  <span class="footer-backer-pill"><img src="/images/partners/pnp_symbol.png" alt="Plug and Play"> Plug &amp; Play</span>
+                  <span class="footer-backer-pill"><img src="/images/partners/mint_symbol.png" alt="MINT by EGBANK"> MINT by EGBANK</span>
+                </div>
+              </div>
+            </div>
+            <div animation="fade-three" class="footer-copyright-wrap">
+              <div class="footer-copyright-text">© 2026 Spotalents. All rights reserved. Powered by Spotalents Intelligence.</div>
+              <!-- Social channels commented out until official handles are launched
+              <div class="footer-social-wrapper">
+                <div class="footer-copyright-text">Socials</div>
+                <div class="footer-social-wrap">
+                  <a href="https://discord.com/" target="_blank" class="social-link w-inline-block"><img loading="lazy" src="/images/6aa6daaf9d104f28ed99927d_Social%20Image%2001.svg" alt="Discord" class="social-image"><img loading="lazy" src="/images/6aa6daaf9d104f28ed99927d_Social%20Image%2001.svg" alt="Discord" class="social-image"></a>
+                  <a href="https://x.com/" target="_blank" class="social-link w-inline-block"><img loading="lazy" src="/images/6ac251c54ddeb2f1f2ec08f5_Twitter.svg" alt="Twitter" class="social-image"><img loading="lazy" src="/images/6ac251c54ddeb2f1f2ec08f5_Twitter.svg" alt="Twitter" class="social-image"></a>
+                  <a href="https://instagram.com/" target="_blank" class="social-link w-inline-block"><img loading="lazy" src="/images/6ac27f280b4e30951e8ec80f_Frame.svg" alt="Instagram" class="social-image"><img loading="lazy" src="/images/6ac27f280b4e30951e8ec80f_Frame.svg" alt="Instagram" class="social-image"></a>
+                  <a href="https://facebook.com/" target="_blank" class="social-link w-inline-block"><img loading="lazy" src="/images/6ac27f2892ef515c156f4b58_Frame%20%281%29.svg" alt="Facebook" class="social-image"><img loading="lazy" src="/images/6ac27f2892ef515c156f4b58_Frame%20%281%29.svg" alt="Facebook" class="social-image"></a>
+                </div>
+              </div>
+              -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section></div>
 <script src="../js/jquery-3.5.1.min.dc5e7f18c8.js" type="text/javascript"></script>
 <script src="../js/spotalents.chunk.36b8fb49256177c8.js" type="text/javascript"></script>
 <script src="../js/spotalents.chunk.d5ced0f8a8550fc9.js" type="text/javascript"></script>
@@ -1221,7 +1345,9 @@ document.addEventListener('DOMContentLoaded', function () {
 <!-- Interactive Pricing & Calculator Controller -->
 <script>
 document.addEventListener('DOMContentLoaded', function () {
-  // --- 1. Monthly / Annual Billing Switcher ---
+  // --- 1. Monthly / Annual Billing Switcher with Glider & GSAP Animations ---
+  const billingPill = document.getElementById('billing-toggle-pill');
+  const billingGlider = document.getElementById('billing-glider');
   const annualBtn = document.getElementById('billing-annual-btn');
   const monthlyBtn = document.getElementById('billing-monthly-btn');
   
@@ -1235,40 +1361,184 @@ document.addEventListener('DOMContentLoaded', function () {
   const subtextIntel = document.getElementById('subtext-intel');
   const savingsIntel = document.getElementById('savings-intel');
 
-  function setBillingMode(mode) {
-    if (mode === 'annual') {
-      annualBtn.classList.add('active');
-      monthlyBtn.classList.remove('active');
-      
-      if (priceValDiscover) priceValDiscover.textContent = '$82.50';
-      if (periodDiscover) periodDiscover.textContent = '/ month';
-      if (subtextDiscover) subtextDiscover.textContent = 'Billed annually at $990';
-      if (savingsDiscover) savingsDiscover.textContent = 'Save $198 vs monthly';
-      
-      if (priceValIntel) priceValIntel.textContent = '$249';
-      if (periodIntel) periodIntel.textContent = '/ month';
-      if (subtextIntel) subtextIntel.textContent = 'Billed annually at $2,990';
-      if (savingsIntel) savingsIntel.textContent = 'Save $598 vs monthly';
-    } else {
-      monthlyBtn.classList.add('active');
-      annualBtn.classList.remove('active');
-      
-      if (priceValDiscover) priceValDiscover.textContent = '$99';
-      if (periodDiscover) periodDiscover.textContent = '/ month';
-      if (subtextDiscover) subtextDiscover.textContent = 'Billed monthly';
-      if (savingsDiscover) savingsDiscover.textContent = 'Cancel anytime · Flexible';
-      
-      if (priceValIntel) priceValIntel.textContent = '$299';
-      if (periodIntel) periodIntel.textContent = '/ month';
-      if (subtextIntel) subtextIntel.textContent = 'Billed monthly';
-      if (savingsIntel) savingsIntel.textContent = 'Cancel anytime · Flexible';
+  const priceValEnterprise = document.getElementById('price-val-enterprise');
+  const periodEnterprise = document.getElementById('period-enterprise');
+  const subtextEnterprise = document.getElementById('subtext-enterprise');
+  const savingsEnterprise = document.getElementById('savings-enterprise');
+
+  let currentMode = 'annual';
+  const discoverAnim = { val: 82.50 };
+  const intelAnim = { val: 249 };
+
+  function updateGlider(activeBtn) {
+    if (!billingGlider || !activeBtn || !billingPill) return;
+    const pillRect = billingPill.getBoundingClientRect();
+    const btnRect = activeBtn.getBoundingClientRect();
+    const leftOffset = btnRect.left - pillRect.left;
+    const btnWidth = btnRect.width;
+
+    billingGlider.style.width = btnWidth + 'px';
+    billingGlider.style.transform = 'translateX(' + leftOffset + 'px)';
+  }
+
+  function setBillingMode(mode, immediate) {
+    if (mode === currentMode && !immediate) return;
+    currentMode = mode;
+    const isAnnual = (mode === 'annual');
+
+    const activeBtn = isAnnual ? annualBtn : monthlyBtn;
+    const inactiveBtn = isAnnual ? monthlyBtn : annualBtn;
+
+    if (activeBtn) activeBtn.classList.add('active');
+    if (inactiveBtn) inactiveBtn.classList.remove('active');
+
+    updateGlider(activeBtn);
+
+    const targetDiscover = isAnnual ? 82.50 : 99;
+    const targetIntel = isAnnual ? 249 : 299;
+
+    const dataItems = [
+      { el: subtextDiscover, text: isAnnual ? 'Billed annually at $990' : 'Billed monthly' },
+      { el: savingsDiscover, text: isAnnual ? 'Save $198 vs monthly' : 'Cancel anytime · Flexible' },
+      { el: subtextIntel, text: isAnnual ? 'Billed annually at $2,990' : 'Billed monthly' },
+      { el: savingsIntel, text: isAnnual ? 'Save $598 vs monthly' : 'Cancel anytime · Flexible' },
+      { el: periodEnterprise, text: isAnnual ? '/ annual' : '/ monthly' },
+      { el: subtextEnterprise, text: isAnnual ? 'Tailored annual agreements' : 'Flexible tailored agreements' },
+      { el: savingsEnterprise, text: 'Custom SLAs' }
+    ].filter(function (item) { return item.el !== null; });
+
+    if (immediate || typeof gsap === 'undefined') {
+      if (priceValDiscover) priceValDiscover.textContent = isAnnual ? '$82.50' : '$99';
+      if (priceValIntel) priceValIntel.textContent = isAnnual ? '$249' : '$299';
+      dataItems.forEach(function (item) { item.el.textContent = item.text; });
+      return;
     }
+
+    // A. Animate Discover Price Number
+    if (priceValDiscover) {
+      gsap.killTweensOf(discoverAnim);
+      gsap.killTweensOf(priceValDiscover);
+
+      gsap.fromTo(priceValDiscover,
+        { scale: 0.93, y: isAnnual ? -6 : 6, opacity: 0.75 },
+        { scale: 1, y: 0, opacity: 1, duration: 0.42, ease: "back.out(1.5)" }
+      );
+
+      gsap.to(discoverAnim, {
+        val: targetDiscover,
+        duration: 0.42,
+        ease: "power2.out",
+        onUpdate: function () {
+          if (isAnnual) {
+            priceValDiscover.textContent = '$' + discoverAnim.val.toFixed(2);
+          } else {
+            if (discoverAnim.val >= 98.9) {
+              priceValDiscover.textContent = '$99';
+            } else {
+              priceValDiscover.textContent = '$' + (discoverAnim.val % 1 === 0 ? discoverAnim.val.toFixed(0) : discoverAnim.val.toFixed(1));
+            }
+          }
+        },
+        onComplete: function () {
+          priceValDiscover.textContent = isAnnual ? '$82.50' : '$99';
+        }
+      });
+    }
+
+    // B. Animate Intelligence Price Number
+    if (priceValIntel) {
+      gsap.killTweensOf(intelAnim);
+      gsap.killTweensOf(priceValIntel);
+
+      gsap.fromTo(priceValIntel,
+        { scale: 0.93, y: isAnnual ? -6 : 6, opacity: 0.75 },
+        { scale: 1, y: 0, opacity: 1, duration: 0.42, ease: "back.out(1.5)" }
+      );
+
+      gsap.to(intelAnim, {
+        val: targetIntel,
+        duration: 0.42,
+        ease: "power2.out",
+        onUpdate: function () {
+          priceValIntel.textContent = '$' + Math.round(intelAnim.val);
+        },
+        onComplete: function () {
+          priceValIntel.textContent = isAnnual ? '$249' : '$299';
+        }
+      });
+    }
+
+    // C. Enterprise subtle refresh
+    if (priceValEnterprise) {
+      gsap.fromTo(priceValEnterprise,
+        { scale: 0.95, opacity: 0.8 },
+        { scale: 1, opacity: 1, duration: 0.35, ease: "power2.out" }
+      );
+    }
+
+    // D. Smooth Data Fade (Fade-out, update text, staggered cascade fade-in)
+    const animElements = dataItems.map(function (item) { return item.el; });
+    gsap.killTweensOf(animElements);
+
+    gsap.to(animElements, {
+      opacity: 0,
+      y: -6,
+      duration: 0.16,
+      ease: "power2.in",
+      stagger: 0.015,
+      onComplete: function () {
+        dataItems.forEach(function (item) {
+          item.el.textContent = item.text;
+        });
+
+        gsap.fromTo(animElements,
+          { opacity: 0, y: 6 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.28,
+            ease: "power2.out",
+            stagger: 0.02
+          }
+        );
+      }
+    });
   }
 
   if (annualBtn && monthlyBtn) {
     annualBtn.addEventListener('click', function () { setBillingMode('annual'); });
     monthlyBtn.addEventListener('click', function () { setBillingMode('monthly'); });
   }
+
+  // Initial Glider Positioning
+  window.addEventListener('load', function () {
+    updateGlider(currentMode === 'annual' ? annualBtn : monthlyBtn);
+  });
+  window.addEventListener('resize', function () {
+    updateGlider(currentMode === 'annual' ? annualBtn : monthlyBtn);
+  });
+  setTimeout(function () {
+    updateGlider(currentMode === 'annual' ? annualBtn : monthlyBtn);
+  }, 50);
+
+  // --- 2. Guaranteed Interactive Standard Website Animations for Buttons ---
+  document.querySelectorAll('.primary-button').forEach(function (btn) {
+    const textEls = btn.querySelectorAll('.primary-button-text');
+    const arrowOne = btn.querySelector('.primary-arrow.one');
+    const arrowTwo = btn.querySelector('.primary-arrow.two');
+
+    btn.addEventListener('mouseenter', function () {
+      textEls.forEach(function (t) { t.style.transform = 'translateY(-100%)'; });
+      if (arrowOne) arrowOne.style.transform = 'translateX(0%)';
+      if (arrowTwo) arrowTwo.style.transform = 'translateX(200%)';
+    });
+
+    btn.addEventListener('mouseleave', function () {
+      textEls.forEach(function (t) { t.style.transform = 'translateY(0%)'; });
+      if (arrowOne) arrowOne.style.transform = 'translateX(-200%)';
+      if (arrowTwo) arrowTwo.style.transform = 'translateX(0%)';
+    });
+  });
 
   // --- 2. Dynamic Talent Fee Calculator ---
   const compRange = document.getElementById('talent-comp-range');
