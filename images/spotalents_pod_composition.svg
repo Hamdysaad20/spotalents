@@ -1,0 +1,38 @@
+<svg width="325" height="323" viewBox="0 0 325 323" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="325" height="323" fill="#E9EDE7" rx="18"/>
+  
+  <!-- Title matching Strativo style -->
+  <text x="24" y="38" font-family="'Instrument Sans', -apple-system, sans-serif" font-size="18" font-weight="600" fill="#191814" letter-spacing="-0.3px">Pod Composition</text>
+  
+  <!-- Donut Ring Chart -->
+  <!-- Center: 162.5, 172. Radius: 68. Circumference: 427.26 -->
+  <g transform="rotate(-135 162.5 172)">
+    <!-- Sector 1 (45%): Royal Blue (Top & Top-Right) -->
+    <circle cx="162.5" cy="172" r="68" fill="none" stroke="#003cff" stroke-width="40" stroke-dasharray="192.27 427.26" stroke-dashoffset="0"/>
+    
+    <!-- Sector 3 (20%): Light cream (Bottom-Right) -->
+    <circle cx="162.5" cy="172" r="68" fill="none" stroke="#F8F9EF" stroke-width="40" stroke-dasharray="85.45 427.26" stroke-dashoffset="-192.27"/>
+    
+    <!-- Sector 2 (35%): Dark Black (Left & Bottom) -->
+    <circle cx="162.5" cy="172" r="68" fill="none" stroke="#191814" stroke-width="40" stroke-dasharray="149.54 427.26" stroke-dashoffset="-277.72"/>
+  </g>
+  
+  <!-- Pill Badges perfectly centered on each sector -->
+  <!-- Badge 1: 45% (top-right, on Blue sector) -->
+  <g filter="drop-shadow(0 2px 8px rgba(0,0,0,0.06))">
+    <rect x="180" y="64" width="58" height="36" rx="18" fill="#FFFFFF"/>
+    <text x="209" y="87" text-anchor="middle" font-family="'Instrument Sans', -apple-system, sans-serif" font-size="15" font-weight="600" fill="#191814" letter-spacing="-0.2px">45%</text>
+  </g>
+
+  <!-- Badge 2: 35% (left, on Black sector) -->
+  <g filter="drop-shadow(0 2px 8px rgba(0,0,0,0.06))">
+    <rect x="28" y="142" width="58" height="36" rx="18" fill="#FFFFFF"/>
+    <text x="57" y="165" text-anchor="middle" font-family="'Instrument Sans', -apple-system, sans-serif" font-size="15" font-weight="600" fill="#191814" letter-spacing="-0.2px">35%</text>
+  </g>
+
+  <!-- Badge 3: 20% (bottom-right, on light sector) -->
+  <g filter="drop-shadow(0 2px 8px rgba(0,0,0,0.06))">
+    <rect x="184" y="238" width="58" height="36" rx="18" fill="#FFFFFF"/>
+    <text x="213" y="261" text-anchor="middle" font-family="'Instrument Sans', -apple-system, sans-serif" font-size="15" font-weight="600" fill="#191814" letter-spacing="-0.2px">20%</text>
+  </g>
+</svg>

@@ -11599,6 +11599,11 @@ number-flow.pricing-a-price-text {
   border-top: 1px solid rgba(25, 24, 20, 0.06);
 }
 
+.section.about-d .container {
+  max-width: 1392px;
+  width: 100%;
+}
+
 .about-d-wrapper {
   width: 100%;
 }
@@ -11617,21 +11622,22 @@ number-flow.pricing-a-price-text {
 
 .about-d-right-wrap {
   flex: 1;
-  max-width: 860px;
+  max-width: 845px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 36px;
+  gap: 32px;
 }
 
 .case-c-details {
   font-family: var(--_font-family---primary-font, "Instrument Sans", sans-serif);
-  font-size: 38px;
-  line-height: 1.34;
+  font-size: 30px;
+  line-height: 38px;
   font-weight: 500;
-  letter-spacing: -0.025em;
+  letter-spacing: -0.3px;
   color: var(--dark-black, #191814);
   margin: 0;
+  max-width: 845px;
 }
 
 .case-c-inline-badge {
@@ -11639,10 +11645,10 @@ number-flow.pricing-a-price-text {
   align-items: center;
   justify-content: center;
   vertical-align: middle;
-  margin: 0 6px;
-  transform: translateY(-3px);
-  width: 38px;
-  height: 38px;
+  margin: 0 5px;
+  transform: translateY(-2px);
+  width: 34px;
+  height: 34px;
   border-radius: 50%;
   flex-shrink: 0;
 }
@@ -11659,7 +11665,7 @@ number-flow.pricing-a-price-text {
 }
 
 .about-d-wrap {
-  margin-top: 64px;
+  margin-top: 56px;
   width: 100%;
 }
 
@@ -11671,19 +11677,28 @@ number-flow.pricing-a-price-text {
   box-sizing: border-box;
 }
 
+/* Card Aspect Ratio & Base Styling (325x323 ~ 1:1 Square matching Strativo) */
+.continent-wrap,
+.about-d .commitment-wrap,
+.about-e-image-wrap {
+  aspect-ratio: 1 / 1;
+  min-height: auto;
+  width: 100%;
+  height: 100%;
+  border-radius: var(--_border---border-2xl, 24px);
+  box-sizing: border-box;
+  overflow: hidden;
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
 /* Card 1: Horizontal Pill Tickers + Stat */
 .continent-wrap {
   background-color: var(--light-gray, #f1f2e5);
-  border-radius: var(--_border---border-2xl, 24px);
   border: 1px solid rgba(25, 24, 20, 0.06);
-  padding-top: 26px;
+  padding-top: 24px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  overflow: hidden;
-  min-height: 340px;
-  box-sizing: border-box;
-  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.28s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .continent-wrap:hover {
@@ -11694,7 +11709,7 @@ number-flow.pricing-a-price-text {
 .continent-top-warp {
   display: flex;
   flex-direction: column;
-  gap: 9px;
+  gap: 8px;
   overflow: hidden;
   width: 100%;
 }
@@ -11737,11 +11752,11 @@ number-flow.pricing-a-price-text {
 }
 
 .continent-tricker-text {
-  padding: 6.5px 13px;
+  padding: 6px 12px;
   border-radius: 999px;
   background-color: #e5e8dc;
   font-family: var(--_font-family---primary-font, "Instrument Sans", sans-serif);
-  font-size: 13px;
+  font-size: 12.5px;
   font-weight: 500;
   color: #4b4a43;
   transition: background-color 0.25s, color 0.25s;
@@ -11754,17 +11769,17 @@ number-flow.pricing-a-price-text {
 }
 
 .continent-btm-wrap {
-  padding: 20px 22px 22px;
+  padding: 18px 22px 20px;
   border-top: 1px solid rgba(25, 24, 20, 0.06);
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 3px;
   background-color: rgba(255, 255, 255, 0.3);
 }
 
 .continent-sub-title {
   font-family: var(--_font-family---secondary-font, "Space Mono", monospace);
-  font-size: 11.5px;
+  font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.06em;
   color: var(--dark-gray, #757368);
@@ -11773,7 +11788,7 @@ number-flow.pricing-a-price-text {
 
 .continent-title {
   font-family: var(--_font-family---primary-font, "Instrument Sans", sans-serif);
-  font-size: 22px;
+  font-size: 21px;
   font-weight: 600;
   color: var(--dark-black, #191814);
   letter-spacing: -0.02em;
@@ -11784,15 +11799,11 @@ number-flow.pricing-a-price-text {
 /* Card 2: Match Precision & Chemistry */
 .about-d .commitment-wrap {
   background-color: var(--light-blue, #e9f5ff);
-  border-radius: var(--_border---border-2xl, 24px);
   border: 1px solid rgba(0, 60, 255, 0.12);
-  padding: 28px 24px 24px;
+  padding: 26px 24px 22px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 340px;
-  box-sizing: border-box;
-  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.28s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .about-d .commitment-wrap:hover {
@@ -11803,7 +11814,7 @@ number-flow.pricing-a-price-text {
 .about-d .commitment-top-wrap {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 12px;
   align-items: flex-start;
   text-align: left;
   margin-bottom: 0;
@@ -11823,7 +11834,7 @@ number-flow.pricing-a-price-text {
   display: flex;
   align-items: baseline;
   font-family: var(--_font-family---secondary-font, "Space Mono", monospace);
-  font-size: 56px;
+  font-size: 54px;
   font-weight: 700;
   line-height: 1;
   color: var(--dark-black, #191814);
@@ -11844,22 +11855,22 @@ number-flow.pricing-a-price-text {
 
 .about-d .commitment-details {
   font-family: var(--_font-family---primary-font, "Instrument Sans", sans-serif);
-  font-size: 14.5px;
-  line-height: 1.5;
+  font-size: 14px;
+  line-height: 1.45;
   color: #3b4e60;
   margin: 0;
 }
 
-/* Card 3: Image Card */
+/* Card 3 & 4: Image & Donut Cards */
 .about-e-image-wrap {
-  border-radius: var(--_border---border-2xl, 24px);
-  overflow: hidden;
-  position: relative;
-  min-height: 340px;
   border: 1px solid rgba(25, 24, 20, 0.06);
   background-color: var(--light-gray, #f1f2e5);
   display: flex;
-  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+}
+
+.about-e-image-wrap.is-one {
+  background-color: #e9ede7;
 }
 
 .about-e-image-wrap:hover {
@@ -11874,78 +11885,9 @@ number-flow.pricing-a-price-text {
   display: block;
 }
 
-/* Card 4: Telemetry Card with Donut Chart */
-.about-e-image-wrap.telemetry-card {
-  padding: 24px 22px 22px;
-  background-color: var(--light-gray, #f1f2e5);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  box-sizing: border-box;
+.about-e-image-wrap.is-one .about-e-image {
+  object-fit: contain;
 }
-
-.telemetry-card-top {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.telemetry-card-sub-title {
-  font-family: var(--_font-family---secondary-font, "Space Mono", monospace);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  color: var(--dark-gray, #757368);
-  text-transform: uppercase;
-}
-
-.telemetry-card-title {
-  font-family: var(--_font-family---primary-font, "Instrument Sans", sans-serif);
-  font-size: 16px;
-  font-weight: 600;
-  color: var(--dark-black, #191814);
-  letter-spacing: -0.01em;
-  line-height: 1.3;
-}
-
-.telemetry-donut-wrap {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10px 0 8px;
-}
-
-.telemetry-donut-svg {
-  display: block;
-}
-
-.telemetry-legend-wrap {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  border-top: 1px solid rgba(25, 24, 20, 0.06);
-  padding-top: 12px;
-}
-
-.telemetry-legend-item {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  font-family: var(--_font-family---primary-font, "Instrument Sans", sans-serif);
-  font-size: 12.5px;
-  color: #4b4a43;
-}
-
-.telemetry-dot {
-  width: 7.5px;
-  height: 7.5px;
-  border-radius: 50%;
-  flex-shrink: 0;
-}
-
-.telemetry-dot.is-blue { background-color: var(--blue, #003cff); }
-.telemetry-dot.is-dark { background-color: var(--dark-black, #191814); }
-.telemetry-dot.is-gray { background-color: var(--dark-gray, #757368); }
 
 /* Responsive Media Queries */
 @media screen and (max-width: 991px) {
@@ -11958,11 +11900,11 @@ number-flow.pricing-a-price-text {
     gap: 24px;
   }
   .case-c-details {
-    font-size: 30px;
-    line-height: 1.35;
+    font-size: 27px;
+    line-height: 35px;
   }
   .about-d-wrap {
-    margin-top: 44px;
+    margin-top: 40px;
   }
   .about-e-btm-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -11971,7 +11913,8 @@ number-flow.pricing-a-price-text {
   .continent-wrap,
   .about-d .commitment-wrap,
   .about-e-image-wrap {
-    min-height: 320px;
+    aspect-ratio: 1 / 1;
+    min-height: auto;
   }
 }
 
@@ -11981,17 +11924,17 @@ number-flow.pricing-a-price-text {
     padding-bottom: 54px;
   }
   .case-c-details {
-    font-size: 23px;
-    line-height: 1.38;
+    font-size: 22px;
+    line-height: 30px;
   }
   .case-c-inline-badge {
-    width: 30px;
-    height: 30px;
+    width: 28px;
+    height: 28px;
     transform: translateY(-2px);
-    margin: 0 4px;
+    margin: 0 3px;
   }
   .about-d-wrap {
-    margin-top: 36px;
+    margin-top: 32px;
   }
   .about-e-btm-grid {
     grid-template-columns: 1fr;
@@ -12000,10 +11943,11 @@ number-flow.pricing-a-price-text {
   .continent-wrap,
   .about-d .commitment-wrap,
   .about-e-image-wrap {
-    min-height: auto;
+    aspect-ratio: auto;
+    min-height: 270px;
   }
   .about-e-image-wrap {
-    height: 280px;
+    height: 290px;
   }
   .about-d .commitment-number-wrap {
     font-size: 46px;
