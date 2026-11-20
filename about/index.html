@@ -265,13 +265,14 @@
   .feedback-arrow-btn { width: 46px; height: 46px; font-size: 16px; }
 }
 
-/* Section: Why Choose Us (Strativo Service Inspired) */
+/* Section: Why Choose Spotalents (Strativo Service Inspired) */
 .section.choose {
-  padding-top: 100px;
-  padding-bottom: 100px;
-  background-color: #f8f9ef;
+  padding-top: var(--_gap---gap-13xl, 90px);
+  padding-bottom: var(--_gap---gap-13xl, 90px);
+  background-color: var(--white);
   position: relative;
   overflow: hidden;
+  border-top: 1px solid rgba(25, 24, 20, 0.06);
 }
 
 .choose-wrapper {
@@ -283,7 +284,7 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  max-width: 780px;
+  max-width: 820px;
   margin: 0 auto;
 }
 
@@ -296,7 +297,7 @@
 }
 
 .choose-details-wrap {
-  max-width: 580px;
+  max-width: 620px;
   margin: 0 auto;
 }
 
@@ -311,16 +312,16 @@
 .choose-grid-wrap {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
+  gap: 20px;
   width: 100%;
   box-sizing: border-box;
 }
 
 .choose-card {
-  background-color: #e9ede7;
-  border: 1px solid rgba(25, 24, 20, 0.08);
-  border-radius: 18px;
-  padding: 34px 28px 30px;
+  background-color: var(--light-gray);
+  border: 1px solid rgba(25, 24, 20, 0.06);
+  border-radius: var(--_border---border-2xl, 20px);
+  padding: 34px 26px 30px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -332,23 +333,23 @@
 
 .choose-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 18px 40px -12px rgba(25, 24, 20, 0.12);
-  border-color: rgba(25, 24, 20, 0.18);
+  box-shadow: 0 20px 40px -12px rgba(25, 24, 20, 0.1);
+  border-color: rgba(25, 24, 20, 0.16);
 }
 
 .choose-card-number {
   font-family: var(--_font-family---secondary-font, "Space Mono", monospace);
-  font-size: 13px;
+  font-size: 12.5px;
   font-weight: 700;
   letter-spacing: 0.08em;
-  color: #757368;
+  color: var(--dark-gray, #757368);
   line-height: 1.3;
 }
 
 .choose-card-icon-wrap {
-  width: 96px;
-  height: 96px;
-  margin: 28px 0 36px;
+  width: 90px;
+  height: 90px;
+  margin: 26px 0 34px;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -356,7 +357,7 @@
 }
 
 .choose-card:hover .choose-card-icon-wrap {
-  transform: scale(1.05);
+  transform: scale(1.06);
 }
 
 .choose-card-icon {
@@ -377,17 +378,17 @@
 
 .choose-card-title {
   font-family: var(--_font-family---primary-font, "Instrument Sans", sans-serif);
-  font-size: 22px;
+  font-size: 21px;
   font-weight: 600;
   line-height: 1.3;
-  color: #191814;
+  color: var(--dark-black, #191814);
   letter-spacing: -0.3px;
   margin: 0;
 }
 
 .choose-card-details {
   font-family: var(--_font-family---primary-font, "Instrument Sans", sans-serif);
-  font-size: 15px;
+  font-size: 14.5px;
   line-height: 1.5;
   color: #55534b;
   margin: 0;
@@ -395,50 +396,50 @@
 
 @media screen and (max-width: 991px) {
   .section.choose {
-    padding-top: 80px;
-    padding-bottom: 80px;
+    padding-top: 70px;
+    padding-bottom: 70px;
   }
   .choose-grid-wrap {
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    gap: 18px;
   }
   .choose-card {
     min-height: 340px;
-    padding: 30px 24px 26px;
+    padding: 28px 22px 24px;
   }
   .choose-card-icon-wrap {
-    width: 80px;
-    height: 80px;
+    width: 78px;
+    height: 78px;
     margin: 20px 0 28px;
   }
 }
 
 @media screen and (max-width: 767px) {
   .section.choose {
-    padding-top: 60px;
-    padding-bottom: 60px;
+    padding-top: 50px;
+    padding-bottom: 50px;
   }
   .choose-wrap {
-    margin-top: 40px;
+    margin-top: 36px;
   }
   .choose-grid-wrap {
     grid-template-columns: 1fr;
-    gap: 16px;
+    gap: 14px;
   }
   .choose-card {
     min-height: auto;
-    padding: 26px 22px;
+    padding: 24px 20px;
   }
   .choose-card-icon-wrap {
-    width: 70px;
-    height: 70px;
-    margin: 16px 0 22px;
+    width: 68px;
+    height: 68px;
+    margin: 16px 0 20px;
   }
   .choose-card-title {
-    font-size: 20px;
+    font-size: 19px;
   }
   .choose-card-details {
-    font-size: 14.5px;
+    font-size: 14px;
   }
 }
 </style><link href="../css/lenis.css" rel="stylesheet" type="text/css"><link href="https://fonts.googleapis.com" rel="preconnect"><link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous"><script src="../js/webfont.js" type="text/javascript"></script><script type="text/javascript">WebFont.load({  google: {    families: ["Instrument Sans:400,500,600","Space Mono:400"]  }});</script><script type="text/javascript">!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);</script><link href="../images/6ac26a71c118dcab5930bb0a_Fav%20%281%29.png" rel="icon" type="image/png" sizes="32x32" media="(prefers-color-scheme: light)"><link href="../images/6ac26a71c118dcab5930bb0a_Fav%20%281%29.png" rel="icon" type="image/png" sizes="32x32" media="(prefers-color-scheme: dark)"><link href="../images/6ac26a71459ca49cb12b1337_Fav%20%281%29.png" rel="icon" type="image/png" sizes="48x48"><link href="../images/6ac26a71357d0157fbb90249_Fav%20%281%29.png" rel="apple-touch-icon" sizes="180x180"><link href="../images/6ac26a71feeb4c6ac2519ddc_Fav%20%281%29.png" rel="icon" type="image/png" sizes="192x192"><link href="../images/6ac26a71caf81b3a2fb699bb_Fav%20%281%29.png" rel="icon" type="image/png" sizes="512x512"><style>.w-webflow-badge { display: none !important; opacity: 0 !important; visibility: hidden !important; pointer-events: none !important; }</style></head><body><div class="pages-wrapper"><div data-animation="default" class="navbar w-nav" data-easing2="ease" data-wf-component-id="f91a6e72-3d48-2df7-ec13-3fd3e91e728d" data-easing="ease" data-wf-variant-state="base" data-collapse="medium" role="banner" data-duration="400"><div class="container w-container"><div class="navbar-wrapper"><a href="/" class="brand-logo-link w-nav-brand"><img loading="lazy" src="../images/6aa6b281bbff208b543d41a5_Brand%20Logo%20%282%29.svg" alt="Brand Logo " class="brand-logo"></a><nav role="navigation" class="nav-menu w-nav-menu"><div class="nav-menu-wrap"><a href="/about" class="menu-link w-inline-block w--current" aria-current="page"><div menu-one="" class="menu-text">Overview</div><div menu-two="" class="menu-text">Overview</div></a><a href="/features" class="menu-link w-inline-block"><div menu-one="" class="menu-text">Process</div><div menu-two="" class="menu-text">Process</div></a><a href="/solution" class="menu-link w-inline-block"><div menu-one="" class="menu-text">Engine</div><div menu-two="" class="menu-text">Engine</div></a><a href="/pricing" class="menu-link w-inline-block"><div menu-one="" class="menu-text">Pathways</div><div menu-two="" class="menu-text">Pathways</div></a><!-- Dropdown Menu commented out: direct links used for current pages -->
@@ -538,95 +539,6 @@
         </div>
 
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- Section: Why Choose Us (Strativo Service Inspired) -->
-<section class="section choose" id="why-choose-us" aria-label="Why Choose Us">
-  <div class="w-layout-blockcontainer container w-container">
-    <div class="choose-wrapper">
-      
-      <!-- Section Header -->
-      <div class="choose-top-wrap">
-        <div animation="fade-one" class="choose-sub-title-wrap">
-          <div data-wf--section-sub-title--variant="gray" class="section-sub-title w-variant-da0b81eb-ef6f-7786-e1c2-2810d345cc81">Why Choose Us</div>
-        </div>
-        <div animation="heading" class="choose-title-wrap">
-          <h2 data-wf--section-title--variant="two" class="section-title w-variant-a1c41d54-f4a0-ff01-86fc-643e3a321238">Driving Sustainable Business Growth</h2>
-        </div>
-        <div animation="fade-two" class="choose-details-wrap">
-          <p data-wf--global-details--variant="base" class="global-details">We combine industry expertise, strategic thinking, and measurable results to help businesses navigate challenges</p>
-        </div>
-        <div animation="fade-three" class="choose-button-wrap">
-          <a data-wf--primary-button--variant="base" href="/start" class="primary-button w-inline-block">
-            <div class="primary-btn-text-wrap">
-              <div class="primary-button-text">Book a Call</div>
-              <div class="primary-button-text">Book a Call</div>
-            </div>
-            <div class="primary-arrow-wrap">
-              <img loading="lazy" src="../images/6aa6bd06548e7975cbe07463_Primary%20Arrow%2002.svg" alt="Primary Arrow" class="primary-arrow one">
-              <img loading="lazy" src="../images/6aa6bd06548e7975cbe07463_Primary%20Arrow%2002.svg" alt="Primary Arrow" class="primary-arrow two">
-            </div>
-          </a>
-        </div>
-      </div>
-
-      <!-- 4-Card Bento Grid -->
-      <div class="choose-wrap">
-        <div animation="fade-four" class="choose-grid-wrap">
-          
-          <!-- Card 001: Industry Expertise -->
-          <div class="choose-card">
-            <div class="choose-card-number">001</div>
-            <div class="choose-card-icon-wrap">
-              <img loading="lazy" src="../images/choose_icon_01.svg" alt="Industry Expertise" class="choose-card-icon"/>
-            </div>
-            <div class="choose-card-info-wrap">
-              <h3 class="choose-card-title">Industry Expertise</h3>
-              <p class="choose-card-details">Our experienced consultants bring deep industry knowledge and practical insights</p>
-            </div>
-          </div>
-
-          <!-- Card 002: Tailored Solutions -->
-          <div class="choose-card">
-            <div class="choose-card-number">002</div>
-            <div class="choose-card-icon-wrap">
-              <img loading="lazy" src="../images/choose_icon_02.svg" alt="Tailored Solutions" class="choose-card-icon"/>
-            </div>
-            <div class="choose-card-info-wrap">
-              <h3 class="choose-card-title">Tailored Solutions</h3>
-              <p class="choose-card-details">Every business is unique, so we create customized strategies that align</p>
-            </div>
-          </div>
-
-          <!-- Card 003: Growth Focused -->
-          <div class="choose-card">
-            <div class="choose-card-number">003</div>
-            <div class="choose-card-icon-wrap">
-              <img loading="lazy" src="../images/choose_icon_03.svg" alt="Growth Focused" class="choose-card-icon"/>
-            </div>
-            <div class="choose-card-info-wrap">
-              <h3 class="choose-card-title">Growth Focused</h3>
-              <p class="choose-card-details">We focus on measurable outcomes that improve efficiency profitability</p>
-            </div>
-          </div>
-
-          <!-- Card 004: Long Partnership -->
-          <div class="choose-card">
-            <div class="choose-card-number">004</div>
-            <div class="choose-card-icon-wrap">
-              <img loading="lazy" src="../images/choose_icon_04.svg" alt="Long Partnership" class="choose-card-icon"/>
-            </div>
-            <div class="choose-card-info-wrap">
-              <h3 class="choose-card-title">Long Partnership</h3>
-              <p class="choose-card-details">We work alongside your team, providing continuous support and guidance</p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
     </div>
   </div>
 </section>
@@ -786,7 +698,96 @@
   </div>
 
 </div>
-<!-- Row 2: Ecosystem Trust Strip (Interactive) --><div animation="fade-four" class="ecosystem-strip-card"><div class="eco-top-row"><div class="eco-heading-wrap"><h3 class="eco-headline">Institutional, Academic &amp; Technology Ecosystem</h3><p class="eco-caption">Backed by global tech leaders, Egyptian national institutions, and university engineering programs.</p></div><div class="eco-filter-nav"><button type="button" class="eco-filter-btn active" data-filter="all">All Partners (17)</button><button type="button" class="eco-filter-btn" data-filter="strategic">Strategic Supporters (8)</button><button type="button" class="eco-filter-btn" data-filter="collab">Technology Collaboration (5)</button><button type="button" class="eco-filter-btn" data-filter="academic">Academic Partners (4)</button></div></div><div class="eco-partners-grid"><!-- Strategic Supporters & Tech Titans --><div class="eco-pill-item" data-category="strategic"><div class="eco-pill-logo"><img src="../images/partners/microsoft.svg" alt="Microsoft" loading="lazy"></div><div class="eco-pill-info"><span class="eco-pill-name">Microsoft</span><span class="eco-pill-role">Founders Hub Backed</span></div></div><div class="eco-pill-item" data-category="strategic"><div class="eco-pill-logo"><img src="../images/partners/google.svg" alt="Google" loading="lazy"></div><div class="eco-pill-info"><span class="eco-pill-name">Google</span><span class="eco-pill-role">Cloud &amp; AI for Startups</span></div></div><div class="eco-pill-item" data-category="strategic"><div class="eco-pill-logo"><img src="../images/partners/nvidia.svg" alt="NVIDIA" loading="lazy"></div><div class="eco-pill-info"><span class="eco-pill-name">NVIDIA</span><span class="eco-pill-role">Inception Program</span></div></div><div class="eco-pill-item" data-category="strategic"><div class="eco-pill-logo"><img src="../images/partners/mcit_logo.png" alt="MCIT Egypt" loading="lazy"></div><div class="eco-pill-info"><span class="eco-pill-name">MCIT Egypt</span><span class="eco-pill-role">Ministry of Comm. &amp; IT</span></div></div><div class="eco-pill-item" data-category="strategic"><div class="eco-pill-logo"><img src="../images/partners/itida_symbol.png" alt="ITIDA" loading="lazy"></div><div class="eco-pill-info"><span class="eco-pill-name">ITIDA</span><span class="eco-pill-role">IT Industry Development</span></div></div><div class="eco-pill-item" data-category="strategic"><div class="eco-pill-logo"><img src="../images/partners/creativa_symbol.png" alt="Creativa Hubs" loading="lazy"></div><div class="eco-pill-info"><span class="eco-pill-name">Creativa Hubs</span><span class="eco-pill-role">Digital Innovation Centers</span></div></div><div class="eco-pill-item" data-category="strategic"><div class="eco-pill-logo"><img src="../images/partners/pnp_symbol.png" alt="Plug and Play" loading="lazy"></div><div class="eco-pill-info"><span class="eco-pill-name">Plug and Play</span><span class="eco-pill-role">Global Tech Accelerator</span></div></div><div class="eco-pill-item" data-category="strategic"><div class="eco-pill-logo"><img src="../images/partners/mint_symbol.png" alt="MINT by EGBANK" loading="lazy"></div><div class="eco-pill-info"><span class="eco-pill-name">MINT by EGBANK</span><span class="eco-pill-role">Youth Startup Incubation</span></div></div><!-- Academic Partners --><div class="eco-pill-item" data-category="academic"><div class="eco-pill-logo"><img src="../images/partners/mnu_symbol.png" alt="Mansoura National University" loading="lazy"></div><div class="eco-pill-info"><span class="eco-pill-name">Mansoura Nat. Univ.</span><span class="eco-pill-role">Academic Training Partner</span></div></div><div class="eco-pill-item" data-category="academic"><div class="eco-pill-logo"><img src="../images/partners/benha_symbol.png" alt="Benha University" loading="lazy"></div><div class="eco-pill-info"><span class="eco-pill-name">Benha University</span><span class="eco-pill-role">Talent Development Partner</span></div></div><div class="eco-pill-item" data-category="academic"><div class="eco-pill-logo"><img src="../images/partners/bnu_symbol.png" alt="Benha National University" loading="lazy"></div><div class="eco-pill-info"><span class="eco-pill-name">Benha Nat. Univ. (BNU)</span><span class="eco-pill-role">Academic Engineering Partner</span></div></div><div class="eco-pill-item" data-category="academic"><div class="eco-pill-logo"><img src="../images/partners/eelu_symbol.png" alt="Egyptian E-Learning University" loading="lazy"></div><div class="eco-pill-info"><span class="eco-pill-name">EELU University</span><span class="eco-pill-role">Egyptian E-Learning Univ.</span></div></div><!-- Technology Collaboration Partners --><div class="eco-pill-item" data-category="collab"><div class="eco-pill-logo"><img src="../images/partners/tech1_symbol.png" alt="Enterprise Tech" loading="lazy"></div><div class="eco-pill-info"><span class="eco-pill-name">Enterprise Tech</span><span class="eco-pill-role">Technology Collaboration</span></div></div><div class="eco-pill-item" data-category="collab"><div class="eco-pill-logo"><img src="../images/partners/tech2_symbol.png" alt="Systems & Networks" loading="lazy"></div><div class="eco-pill-info"><span class="eco-pill-name">Systems &amp; Networks</span><span class="eco-pill-role">Infrastructure Collaboration</span></div></div><div class="eco-pill-item" data-category="collab"><div class="eco-pill-logo"><img src="../images/partners/tech3_symbol.png" alt="Go Solutions" loading="lazy"></div><div class="eco-pill-info"><span class="eco-pill-name">Go Solutions</span><span class="eco-pill-role">Digital Services Partner</span></div></div><div class="eco-pill-item" data-category="collab"><div class="eco-pill-logo"><img src="../images/partners/tech4_symbol.png" alt="Digital Platform" loading="lazy"></div><div class="eco-pill-info"><span class="eco-pill-name">Digital Platform</span><span class="eco-pill-role">Technical Solutions</span></div></div><div class="eco-pill-item" data-category="collab"><div class="eco-pill-logo"><img src="../images/partners/divzoon_symbol.png" alt="Divzoon" loading="lazy"></div><div class="eco-pill-info"><span class="eco-pill-name">Divzoon</span><span class="eco-pill-role">Software Engineering Services</span></div></div></div></div></div></div></section><section class="section built"><div class="w-layout-blockcontainer container w-container"><div class="built-wrapper"><div class="built-grid-wrap"><div animation="fade-two" class="built-left-wrap"><img src="../images/6aaeb7425129ce16cef6b9c7_Stop%20Dashboard.avif" loading="lazy" sizes="100vw" srcset="../images/6aaeb7425129ce16cef6b9c7_Stop%20Dashboard-p-500.avif 500w, ../images/6aaeb7425129ce16cef6b9c7_Stop%20Dashboard.avif 878w" alt="Mission Image" class="built-image"></div><div id="w-node-_9a492f9d-c02e-149e-ce3a-a3a4476bf3c0-8a159b38" class="built-right-wrap"><div class="mission-left-top-wrap"><div animation="fade-one" class="mission-sub-title-wrap"><div data-wf--section-sub-title--variant="gray" class="section-sub-title w-variant-da0b81eb-ef6f-7786-e1c2-2810d345cc81">CONTINUOUS TELEMETRY</div></div><div animation="heading" class="mission-title-wrap"><h2 data-wf--section-title--variant="two" class="section-title w-variant-a1c41d54-f4a0-ff01-86fc-643e3a321238">Automated continuous telemetry</h2></div><div animation="fade-two" class="mission-details-wrap"><p data-wf--global-details--variant="black" class="global-details w-variant-a13ec10e-e1c2-79cc-f6a4-77ba89b574d6">How our engine ingests live commits, PR critiques, and outage triage into verified data.</p></div></div><div class="built-btm-wrap"><div animation="fade-three" data-wf--built-card--variant="base" class="built-card"><div class="build-card-top-wrap"><div class="mission-icon-wrap"><img loading="lazy" src="../images/6aaeb742c0da5e2926bd7e4e_Stop%20Icon%2001.svg" alt="Mission Icon" class="mission-icon"></div><div class="mission-card-title">48,200+ Git Commits Ingested</div></div><p class="mission-card-details">Webhooks capture code churn, branch hygiene, and test suite execution.</p></div><div animation="fade-three" data-wf--built-card--variant="two" class="built-card w-variant-de5b2fca-14f6-4072-7fbd-c1d3d3daa0b9"><div class="build-card-top-wrap"><div class="mission-icon-wrap"><img loading="lazy" src="../images/6aaeb742eb9437744adae4d1_Stop%20Icon%2002.svg" alt="Mission Icon" class="mission-icon"></div><div class="mission-card-title">9,400+ PR Reviews Evaluated</div></div><p class="mission-card-details">Peer reviews analyzed for architectural debate, turnaround speed, and rigor.</p></div><div id="w-node-_3d47440d-b663-8f25-a14c-b2930c350daf-8a159b38" class="built-card-last"><div animation="fade-three" data-wf--built-card--variant="two" class="built-card w-variant-de5b2fca-14f6-4072-7fbd-c1d3d3daa0b9"><div class="build-card-top-wrap"><div class="mission-icon-wrap"><img loading="lazy" src="../images/6aaeb742337c1be41b84e823_Stop%20Icon%2003.svg" alt="Mission Icon" class="mission-icon"></div><div class="mission-card-title">1,850+ Meeting Transcripts Scored</div></div><p class="mission-card-details">Transcripts evaluated for blocker resolution speed and Architecture Decision Records.</p></div></div><div animation="fade-three" data-wf--built-card--variant="base" class="built-card"><div class="build-card-top-wrap"><div class="mission-icon-wrap"><img loading="lazy" src="../images/6aaeb742188600ff4a8aeb49_eb1c56018252633bc93b0230f2b70b22_Stop%20Icon%2004.svg" alt="Mission Icon" class="mission-icon"></div><div class="mission-card-title">5 Injected Outages</div></div><p class="mission-card-details">Live production chaos injected to isolate systematic triage from random guessing.</p></div></div></div></div></div></div></section><section class="section confidence"><div class="w-layout-blockcontainer container w-container"><div class="confidence-wrapper"><div class="confidence-top-wrap"><div class="confidence-left-wrap"><div animation="fade-one" class="confidence-sub-title-wrap"><div data-wf--section-sub-title--variant="gray" class="section-sub-title w-variant-da0b81eb-ef6f-7786-e1c2-2810d345cc81">COGNITIVE TRACING &amp; RADAR</div></div><div animation="heading" class="confidence-title-wrap"><h2 data-wf--section-title--variant="two" class="section-title w-variant-a1c41d54-f4a0-ff01-86fc-643e3a321238">Confidence in every engineering match</h2></div></div><div animation="fade-two" class="confidence-right-wrap"><p data-wf--global-details--variant="base" class="global-details">We map how engineers think under system failure using empirical cognitive telemetry.</p></div></div><div class="confidence-wrap"><div class="confidence-grid-wrap"><div animation="fade-three" data-wf--confidence-card--variant="base" class="confidence-card"><div class="confidence-card-top-wrap"><div class="confidence-card-icon-wrap"><img loading="lazy" src="../images/6aaffc6c7a28c5816ae4d670_Confidence%20Card%20Icon%2001.svg" alt="Confidence Card Icon" class="confidence-card-icon"></div><div class="confidence-card-ctg">Traceable</div></div><div class="confidence-card-btm-wrap"><div class="confidence-card-title">System Modularity (88%)</div><div class="confidence-card-details">Clean separation of concerns, idempotent APIs, and resilient data tiers under load.</div></div></div><div animation="fade-three" data-wf--confidence-card--variant="blue" class="confidence-card w-variant-ca1e33b9-993c-a4af-99f2-8e46f98ff451"><div class="confidence-card-top-wrap"><div class="confidence-card-icon-wrap"><img loading="lazy" src="../images/6aaffc6c7a28c5816ae4d670_Confidence%20Card%20Icon%2001.svg" alt="Confidence Card Icon" class="confidence-card-icon"></div><div class="confidence-card-ctg">Calibrated</div></div><div class="confidence-card-btm-wrap"><div class="confidence-card-title">89.8% MTTR Drop (91%)</div><div class="confidence-card-details">Mean Time-to-Root-Cause drops from 142m to 14.5m through binary-search triage.</div></div></div><div animation="fade-four" id="w-node-_022832c3-0bf8-ec2a-caf5-7c7d8411df64-8a159b38" class="confidence-image-wrap"><img src="../images/6aaffd958accdba5818cf624_Confidence%20Image.avif" loading="lazy" sizes="100vw" srcset="../images/6aaffd958accdba5818cf624_Confidence%20Image-p-500.avif 500w, ../images/6aaffd958accdba5818cf624_Confidence%20Image-p-800.avif 800w, ../images/6aaffd958accdba5818cf624_Confidence%20Image-p-1080.avif 1080w, ../images/6aaffd958accdba5818cf624_Confidence%20Image.avif 1184w" alt="Confidence Image" class="confidence-image"></div><div animation="fade-five" id="w-node-_253d24ca-b5e3-4f93-e357-6d9f99be4989-8a159b38" class="confidence-details-card"><div class="confidence-details-wrap"><p data-wf--global-details--variant="black" class="global-details w-variant-a13ec10e-e1c2-79cc-f6a4-77ba89b574d6">Our 5-axis competence radar triangulates Architecture (88%), Diagnostic Triage (91%), Outage Composure (89%), Ideation Speed (86%), and PR Rigor (85%) into an objective, auditable candidate evidence profile.</p></div></div><div animation="fade-three" data-wf--confidence-card--variant="base" class="confidence-card"><div class="confidence-card-top-wrap"><div class="confidence-card-icon-wrap"><img loading="lazy" src="../images/6aaffc6c7a28c5816ae4d670_Confidence%20Card%20Icon%2001.svg" alt="Confidence Card Icon" class="confidence-card-icon"></div><div class="confidence-card-ctg">Guarded</div></div><div class="confidence-card-btm-wrap"><div class="confidence-card-title">Outage Composure (89%)</div><div class="confidence-card-details">Documenting explicit trade-offs in ADRs rather than cutting tests under deadline panic.</div></div></div><div animation="fade-three" data-wf--confidence-card--variant="blue" class="confidence-card w-variant-ca1e33b9-993c-a4af-99f2-8e46f98ff451"><div class="confidence-card-top-wrap"><div class="confidence-card-icon-wrap"><img loading="lazy" src="../images/6aaffc6c7a28c5816ae4d670_Confidence%20Card%20Icon%2001.svg" alt="Confidence Card Icon" class="confidence-card-icon"></div><div class="confidence-card-ctg">Accountable</div></div><div class="confidence-card-btm-wrap"><div class="confidence-card-title">Tamper-Proof Proof (85%)</div><div class="confidence-card-details">Public cryptographic verification linking exact Git commit SHAs, PRs, and live cloud URLs.</div></div></div></div></div></div></div></section><section class="section turn"><div class="w-layout-blockcontainer container w-container"><div class="turn-wrapper"><div class="trun-top-wrap"><div animation="fade-one" class="beliefs-sub-title-wrap"><div data-wf--section-sub-title--variant="gray" class="section-sub-title w-variant-da0b81eb-ef6f-7786-e1c2-2810d345cc81">14 CURRICULUM SPRINT TRACKS</div></div><div animation="heading" class="trun-title-wrap"><h2 data-wf--section-title--variant="two" class="section-title w-variant-a1c41d54-f4a0-ff01-86fc-643e3a321238">Targeted sprints. Audited deliverables.</h2></div><div animation="fade-two" class="beliefs-details-wrap"><p data-wf--global-details--variant="base" class="global-details">Fourteen modular tracks engineered for universities, enterprise teams, and innovators.</p></div></div><div animation="fade-three" class="trun-wrap"><div class="trun-image-wrap"><img src="../images/6ab003abb4f217bb1f312ea5_Trun%20Image.svg" loading="lazy" alt="Trun Image" class="trun-image"></div><div class="trun-grid-wrap"><div class="trun-tricker-wrap"><div class="trun-tricker-flex-wrap"><div class="trun-single-tricker one"><div class="trun-tricker-item one"><div data-wf--trun-tricker--variant="base" class="trun-tricker">The 10x AI Engineer (Cursor/Claude)</div><div data-wf--trun-tricker--variant="grey" class="trun-tricker w-variant-873ad2ef-f6eb-b470-7353-e80474d5f267">Autonomous AI Agents (LangChain/CrewAI)</div><div data-wf--trun-tricker--variant="base" class="trun-tricker">Enterprise RAG Systems (pgvector/Qdrant)</div></div><div class="trun-tricker-item one"><div data-wf--trun-tricker--variant="base" class="trun-tricker">The 10x AI Engineer (Cursor/Claude)</div><div data-wf--trun-tricker--variant="grey" class="trun-tricker w-variant-873ad2ef-f6eb-b470-7353-e80474d5f267">Autonomous AI Agents (LangChain/CrewAI)</div><div data-wf--trun-tricker--variant="base" class="trun-tricker">Enterprise RAG Systems (pgvector/Qdrant)</div></div><div class="trun-tricker-item one"><div data-wf--trun-tricker--variant="base" class="trun-tricker">The 10x AI Engineer (Cursor/Claude)</div><div data-wf--trun-tricker--variant="grey" class="trun-tricker w-variant-873ad2ef-f6eb-b470-7353-e80474d5f267">Autonomous AI Agents (LangChain/CrewAI)</div><div data-wf--trun-tricker--variant="base" class="trun-tricker">Enterprise RAG Systems (pgvector/Qdrant)</div></div></div><div class="trun-single-tricker two"><div class="trun-tricker-item two"><div data-wf--trun-tricker--variant="grey" class="trun-tricker w-variant-873ad2ef-f6eb-b470-7353-e80474d5f267">Production CI/CD &amp; DevSecOps</div><div data-wf--trun-tricker--variant="base" class="trun-tricker">High-Perf PostgreSQL (100x Query Bench)</div><div data-wf--trun-tricker--variant="grey" class="trun-tricker w-variant-873ad2ef-f6eb-b470-7353-e80474d5f267">Incident Triage Chaos War-Room</div></div><div class="trun-tricker-item two"><div data-wf--trun-tricker--variant="grey" class="trun-tricker w-variant-873ad2ef-f6eb-b470-7353-e80474d5f267">Production CI/CD &amp; DevSecOps</div><div data-wf--trun-tricker--variant="base" class="trun-tricker">High-Perf PostgreSQL (100x Query Bench)</div><div data-wf--trun-tricker--variant="grey" class="trun-tricker w-variant-873ad2ef-f6eb-b470-7353-e80474d5f267">Incident Triage Chaos War-Room</div></div><div class="trun-tricker-item two"><div data-wf--trun-tricker--variant="grey" class="trun-tricker w-variant-873ad2ef-f6eb-b470-7353-e80474d5f267">Production CI/CD &amp; DevSecOps</div><div data-wf--trun-tricker--variant="base" class="trun-tricker">High-Perf PostgreSQL (100x Query Bench)</div><div data-wf--trun-tricker--variant="grey" class="trun-tricker w-variant-873ad2ef-f6eb-b470-7353-e80474d5f267">Incident Triage Chaos War-Room</div></div></div></div></div><div class="trun-tricker-wrap"><div class="trun-tricker-flex-wrap"><div class="trun-single-tricker one"><div class="trun-tricker-item one"><div data-wf--trun-tricker--variant="transparent" class="trun-tricker w-variant-4d444cf1-9dbc-5569-b7c5-50eb7c0317c0">The 10x AI Engineer (Cursor/Claude)</div><div data-wf--trun-tricker--variant="transparent" class="trun-tricker w-variant-4d444cf1-9dbc-5569-b7c5-50eb7c0317c0">Autonomous AI Agents (LangChain/CrewAI)</div><div data-wf--trun-tricker--variant="transparent" class="trun-tricker w-variant-4d444cf1-9dbc-5569-b7c5-50eb7c0317c0">Enterprise RAG Systems (pgvector/Qdrant)</div></div><div class="trun-tricker-item one"><div data-wf--trun-tricker--variant="transparent" class="trun-tricker w-variant-4d444cf1-9dbc-5569-b7c5-50eb7c0317c0">The 10x AI Engineer (Cursor/Claude)</div><div data-wf--trun-tricker--variant="transparent" class="trun-tricker w-variant-4d444cf1-9dbc-5569-b7c5-50eb7c0317c0">Autonomous AI Agents (LangChain/CrewAI)</div><div data-wf--trun-tricker--variant="transparent" class="trun-tricker w-variant-4d444cf1-9dbc-5569-b7c5-50eb7c0317c0">Enterprise RAG Systems (pgvector/Qdrant)</div></div><div class="trun-tricker-item one"><div data-wf--trun-tricker--variant="transparent" class="trun-tricker w-variant-4d444cf1-9dbc-5569-b7c5-50eb7c0317c0">The 10x AI Engineer (Cursor/Claude)</div><div data-wf--trun-tricker--variant="transparent" class="trun-tricker w-variant-4d444cf1-9dbc-5569-b7c5-50eb7c0317c0">Autonomous AI Agents (LangChain/CrewAI)</div><div data-wf--trun-tricker--variant="transparent" class="trun-tricker w-variant-4d444cf1-9dbc-5569-b7c5-50eb7c0317c0">Enterprise RAG Systems (pgvector/Qdrant)</div></div></div><div class="trun-single-tricker two"><div class="trun-tricker-item two"><div data-wf--trun-tricker--variant="transparent" class="trun-tricker w-variant-4d444cf1-9dbc-5569-b7c5-50eb7c0317c0">Production CI/CD &amp; DevSecOps</div><div data-wf--trun-tricker--variant="transparent" class="trun-tricker w-variant-4d444cf1-9dbc-5569-b7c5-50eb7c0317c0">High-Perf PostgreSQL (100x Query Bench)</div><div data-wf--trun-tricker--variant="transparent" class="trun-tricker w-variant-4d444cf1-9dbc-5569-b7c5-50eb7c0317c0">Incident Triage Chaos War-Room</div></div><div class="trun-tricker-item two"><div data-wf--trun-tricker--variant="transparent" class="trun-tricker w-variant-4d444cf1-9dbc-5569-b7c5-50eb7c0317c0">Production CI/CD &amp; DevSecOps</div><div data-wf--trun-tricker--variant="transparent" class="trun-tricker w-variant-4d444cf1-9dbc-5569-b7c5-50eb7c0317c0">High-Perf PostgreSQL (100x Query Bench)</div><div data-wf--trun-tricker--variant="transparent" class="trun-tricker w-variant-4d444cf1-9dbc-5569-b7c5-50eb7c0317c0">Incident Triage Chaos War-Room</div></div><div class="trun-tricker-item two"><div data-wf--trun-tricker--variant="transparent" class="trun-tricker w-variant-4d444cf1-9dbc-5569-b7c5-50eb7c0317c0">Production CI/CD &amp; DevSecOps</div><div data-wf--trun-tricker--variant="transparent" class="trun-tricker w-variant-4d444cf1-9dbc-5569-b7c5-50eb7c0317c0">High-Perf PostgreSQL (100x Query Bench)</div><div data-wf--trun-tricker--variant="transparent" class="trun-tricker w-variant-4d444cf1-9dbc-5569-b7c5-50eb7c0317c0">Incident Triage Chaos War-Room</div></div></div></div></div></div></div></div></div></section><section class="section faq">
+<!-- Row 2: Ecosystem Trust Strip (Interactive) --><div animation="fade-four" class="ecosystem-strip-card"><div class="eco-top-row"><div class="eco-heading-wrap"><h3 class="eco-headline">Institutional, Academic &amp; Technology Ecosystem</h3><p class="eco-caption">Backed by global tech leaders, Egyptian national institutions, and university engineering programs.</p></div><div class="eco-filter-nav"><button type="button" class="eco-filter-btn active" data-filter="all">All Partners (17)</button><button type="button" class="eco-filter-btn" data-filter="strategic">Strategic Supporters (8)</button><button type="button" class="eco-filter-btn" data-filter="collab">Technology Collaboration (5)</button><button type="button" class="eco-filter-btn" data-filter="academic">Academic Partners (4)</button></div></div><div class="eco-partners-grid"><!-- Strategic Supporters & Tech Titans --><div class="eco-pill-item" data-category="strategic"><div class="eco-pill-logo"><img src="../images/partners/microsoft.svg" alt="Microsoft" loading="lazy"></div><div class="eco-pill-info"><span class="eco-pill-name">Microsoft</span><span class="eco-pill-role">Founders Hub Backed</span></div></div><div class="eco-pill-item" data-category="strategic"><div class="eco-pill-logo"><img src="../images/partners/google.svg" alt="Google" loading="lazy"></div><div class="eco-pill-info"><span class="eco-pill-name">Google</span><span class="eco-pill-role">Cloud &amp; AI for Startups</span></div></div><div class="eco-pill-item" data-category="strategic"><div class="eco-pill-logo"><img src="../images/partners/nvidia.svg" alt="NVIDIA" loading="lazy"></div><div class="eco-pill-info"><span class="eco-pill-name">NVIDIA</span><span class="eco-pill-role">Inception Program</span></div></div><div class="eco-pill-item" data-category="strategic"><div class="eco-pill-logo"><img src="../images/partners/mcit_logo.png" alt="MCIT Egypt" loading="lazy"></div><div class="eco-pill-info"><span class="eco-pill-name">MCIT Egypt</span><span class="eco-pill-role">Ministry of Comm. &amp; IT</span></div></div><div class="eco-pill-item" data-category="strategic"><div class="eco-pill-logo"><img src="../images/partners/itida_symbol.png" alt="ITIDA" loading="lazy"></div><div class="eco-pill-info"><span class="eco-pill-name">ITIDA</span><span class="eco-pill-role">IT Industry Development</span></div></div><div class="eco-pill-item" data-category="strategic"><div class="eco-pill-logo"><img src="../images/partners/creativa_symbol.png" alt="Creativa Hubs" loading="lazy"></div><div class="eco-pill-info"><span class="eco-pill-name">Creativa Hubs</span><span class="eco-pill-role">Digital Innovation Centers</span></div></div><div class="eco-pill-item" data-category="strategic"><div class="eco-pill-logo"><img src="../images/partners/pnp_symbol.png" alt="Plug and Play" loading="lazy"></div><div class="eco-pill-info"><span class="eco-pill-name">Plug and Play</span><span class="eco-pill-role">Global Tech Accelerator</span></div></div><div class="eco-pill-item" data-category="strategic"><div class="eco-pill-logo"><img src="../images/partners/mint_symbol.png" alt="MINT by EGBANK" loading="lazy"></div><div class="eco-pill-info"><span class="eco-pill-name">MINT by EGBANK</span><span class="eco-pill-role">Youth Startup Incubation</span></div></div><!-- Academic Partners --><div class="eco-pill-item" data-category="academic"><div class="eco-pill-logo"><img src="../images/partners/mnu_symbol.png" alt="Mansoura National University" loading="lazy"></div><div class="eco-pill-info"><span class="eco-pill-name">Mansoura Nat. Univ.</span><span class="eco-pill-role">Academic Training Partner</span></div></div><div class="eco-pill-item" data-category="academic"><div class="eco-pill-logo"><img src="../images/partners/benha_symbol.png" alt="Benha University" loading="lazy"></div><div class="eco-pill-info"><span class="eco-pill-name">Benha University</span><span class="eco-pill-role">Talent Development Partner</span></div></div><div class="eco-pill-item" data-category="academic"><div class="eco-pill-logo"><img src="../images/partners/bnu_symbol.png" alt="Benha National University" loading="lazy"></div><div class="eco-pill-info"><span class="eco-pill-name">Benha Nat. Univ. (BNU)</span><span class="eco-pill-role">Academic Engineering Partner</span></div></div><div class="eco-pill-item" data-category="academic"><div class="eco-pill-logo"><img src="../images/partners/eelu_symbol.png" alt="Egyptian E-Learning University" loading="lazy"></div><div class="eco-pill-info"><span class="eco-pill-name">EELU University</span><span class="eco-pill-role">Egyptian E-Learning Univ.</span></div></div><!-- Technology Collaboration Partners --><div class="eco-pill-item" data-category="collab"><div class="eco-pill-logo"><img src="../images/partners/tech1_symbol.png" alt="Enterprise Tech" loading="lazy"></div><div class="eco-pill-info"><span class="eco-pill-name">Enterprise Tech</span><span class="eco-pill-role">Technology Collaboration</span></div></div><div class="eco-pill-item" data-category="collab"><div class="eco-pill-logo"><img src="../images/partners/tech2_symbol.png" alt="Systems & Networks" loading="lazy"></div><div class="eco-pill-info"><span class="eco-pill-name">Systems &amp; Networks</span><span class="eco-pill-role">Infrastructure Collaboration</span></div></div><div class="eco-pill-item" data-category="collab"><div class="eco-pill-logo"><img src="../images/partners/tech3_symbol.png" alt="Go Solutions" loading="lazy"></div><div class="eco-pill-info"><span class="eco-pill-name">Go Solutions</span><span class="eco-pill-role">Digital Services Partner</span></div></div><div class="eco-pill-item" data-category="collab"><div class="eco-pill-logo"><img src="../images/partners/tech4_symbol.png" alt="Digital Platform" loading="lazy"></div><div class="eco-pill-info"><span class="eco-pill-name">Digital Platform</span><span class="eco-pill-role">Technical Solutions</span></div></div><div class="eco-pill-item" data-category="collab"><div class="eco-pill-logo"><img src="../images/partners/divzoon_symbol.png" alt="Divzoon" loading="lazy"></div><div class="eco-pill-info"><span class="eco-pill-name">Divzoon</span><span class="eco-pill-role">Software Engineering Services</span></div></div></div></div></div></div></section><section class="section built"><div class="w-layout-blockcontainer container w-container"><div class="built-wrapper"><div class="built-grid-wrap"><div animation="fade-two" class="built-left-wrap"><img src="../images/6aaeb7425129ce16cef6b9c7_Stop%20Dashboard.avif" loading="lazy" sizes="100vw" srcset="../images/6aaeb7425129ce16cef6b9c7_Stop%20Dashboard-p-500.avif 500w, ../images/6aaeb7425129ce16cef6b9c7_Stop%20Dashboard.avif 878w" alt="Mission Image" class="built-image"></div><div id="w-node-_9a492f9d-c02e-149e-ce3a-a3a4476bf3c0-8a159b38" class="built-right-wrap"><div class="mission-left-top-wrap"><div animation="fade-one" class="mission-sub-title-wrap"><div data-wf--section-sub-title--variant="gray" class="section-sub-title w-variant-da0b81eb-ef6f-7786-e1c2-2810d345cc81">CONTINUOUS TELEMETRY</div></div><div animation="heading" class="mission-title-wrap"><h2 data-wf--section-title--variant="two" class="section-title w-variant-a1c41d54-f4a0-ff01-86fc-643e3a321238">Automated continuous telemetry</h2></div><div animation="fade-two" class="mission-details-wrap"><p data-wf--global-details--variant="black" class="global-details w-variant-a13ec10e-e1c2-79cc-f6a4-77ba89b574d6">How our engine ingests live commits, PR critiques, and outage triage into verified data.</p></div></div><div class="built-btm-wrap"><div animation="fade-three" data-wf--built-card--variant="base" class="built-card"><div class="build-card-top-wrap"><div class="mission-icon-wrap"><img loading="lazy" src="../images/6aaeb742c0da5e2926bd7e4e_Stop%20Icon%2001.svg" alt="Mission Icon" class="mission-icon"></div><div class="mission-card-title">48,200+ Git Commits Ingested</div></div><p class="mission-card-details">Webhooks capture code churn, branch hygiene, and test suite execution.</p></div><div animation="fade-three" data-wf--built-card--variant="two" class="built-card w-variant-de5b2fca-14f6-4072-7fbd-c1d3d3daa0b9"><div class="build-card-top-wrap"><div class="mission-icon-wrap"><img loading="lazy" src="../images/6aaeb742eb9437744adae4d1_Stop%20Icon%2002.svg" alt="Mission Icon" class="mission-icon"></div><div class="mission-card-title">9,400+ PR Reviews Evaluated</div></div><p class="mission-card-details">Peer reviews analyzed for architectural debate, turnaround speed, and rigor.</p></div><div id="w-node-_3d47440d-b663-8f25-a14c-b2930c350daf-8a159b38" class="built-card-last"><div animation="fade-three" data-wf--built-card--variant="two" class="built-card w-variant-de5b2fca-14f6-4072-7fbd-c1d3d3daa0b9"><div class="build-card-top-wrap"><div class="mission-icon-wrap"><img loading="lazy" src="../images/6aaeb742337c1be41b84e823_Stop%20Icon%2003.svg" alt="Mission Icon" class="mission-icon"></div><div class="mission-card-title">1,850+ Meeting Transcripts Scored</div></div><p class="mission-card-details">Transcripts evaluated for blocker resolution speed and Architecture Decision Records.</p></div></div><div animation="fade-three" data-wf--built-card--variant="base" class="built-card"><div class="build-card-top-wrap"><div class="mission-icon-wrap"><img loading="lazy" src="../images/6aaeb742188600ff4a8aeb49_eb1c56018252633bc93b0230f2b70b22_Stop%20Icon%2004.svg" alt="Mission Icon" class="mission-icon"></div><div class="mission-card-title">5 Injected Outages</div></div><p class="mission-card-details">Live production chaos injected to isolate systematic triage from random guessing.</p></div></div></div></div></div></div></section><section class="section confidence"><div class="w-layout-blockcontainer container w-container"><div class="confidence-wrapper"><div class="confidence-top-wrap"><div class="confidence-left-wrap"><div animation="fade-one" class="confidence-sub-title-wrap"><div data-wf--section-sub-title--variant="gray" class="section-sub-title w-variant-da0b81eb-ef6f-7786-e1c2-2810d345cc81">COGNITIVE TRACING &amp; RADAR</div></div><div animation="heading" class="confidence-title-wrap"><h2 data-wf--section-title--variant="two" class="section-title w-variant-a1c41d54-f4a0-ff01-86fc-643e3a321238">Confidence in every engineering match</h2></div></div><div animation="fade-two" class="confidence-right-wrap"><p data-wf--global-details--variant="base" class="global-details">We map how engineers think under system failure using empirical cognitive telemetry.</p></div></div><div class="confidence-wrap"><div class="confidence-grid-wrap"><div animation="fade-three" data-wf--confidence-card--variant="base" class="confidence-card"><div class="confidence-card-top-wrap"><div class="confidence-card-icon-wrap"><img loading="lazy" src="../images/6aaffc6c7a28c5816ae4d670_Confidence%20Card%20Icon%2001.svg" alt="Confidence Card Icon" class="confidence-card-icon"></div><div class="confidence-card-ctg">Traceable</div></div><div class="confidence-card-btm-wrap"><div class="confidence-card-title">System Modularity (88%)</div><div class="confidence-card-details">Clean separation of concerns, idempotent APIs, and resilient data tiers under load.</div></div></div><div animation="fade-three" data-wf--confidence-card--variant="blue" class="confidence-card w-variant-ca1e33b9-993c-a4af-99f2-8e46f98ff451"><div class="confidence-card-top-wrap"><div class="confidence-card-icon-wrap"><img loading="lazy" src="../images/6aaffc6c7a28c5816ae4d670_Confidence%20Card%20Icon%2001.svg" alt="Confidence Card Icon" class="confidence-card-icon"></div><div class="confidence-card-ctg">Calibrated</div></div><div class="confidence-card-btm-wrap"><div class="confidence-card-title">89.8% MTTR Drop (91%)</div><div class="confidence-card-details">Mean Time-to-Root-Cause drops from 142m to 14.5m through binary-search triage.</div></div></div><div animation="fade-four" id="w-node-_022832c3-0bf8-ec2a-caf5-7c7d8411df64-8a159b38" class="confidence-image-wrap"><img src="../images/6aaffd958accdba5818cf624_Confidence%20Image.avif" loading="lazy" sizes="100vw" srcset="../images/6aaffd958accdba5818cf624_Confidence%20Image-p-500.avif 500w, ../images/6aaffd958accdba5818cf624_Confidence%20Image-p-800.avif 800w, ../images/6aaffd958accdba5818cf624_Confidence%20Image-p-1080.avif 1080w, ../images/6aaffd958accdba5818cf624_Confidence%20Image.avif 1184w" alt="Confidence Image" class="confidence-image"></div><div animation="fade-five" id="w-node-_253d24ca-b5e3-4f93-e357-6d9f99be4989-8a159b38" class="confidence-details-card"><div class="confidence-details-wrap"><p data-wf--global-details--variant="black" class="global-details w-variant-a13ec10e-e1c2-79cc-f6a4-77ba89b574d6">Our 5-axis competence radar triangulates Architecture (88%), Diagnostic Triage (91%), Outage Composure (89%), Ideation Speed (86%), and PR Rigor (85%) into an objective, auditable candidate evidence profile.</p></div></div><div animation="fade-three" data-wf--confidence-card--variant="base" class="confidence-card"><div class="confidence-card-top-wrap"><div class="confidence-card-icon-wrap"><img loading="lazy" src="../images/6aaffc6c7a28c5816ae4d670_Confidence%20Card%20Icon%2001.svg" alt="Confidence Card Icon" class="confidence-card-icon"></div><div class="confidence-card-ctg">Guarded</div></div><div class="confidence-card-btm-wrap"><div class="confidence-card-title">Outage Composure (89%)</div><div class="confidence-card-details">Documenting explicit trade-offs in ADRs rather than cutting tests under deadline panic.</div></div></div><div animation="fade-three" data-wf--confidence-card--variant="blue" class="confidence-card w-variant-ca1e33b9-993c-a4af-99f2-8e46f98ff451"><div class="confidence-card-top-wrap"><div class="confidence-card-icon-wrap"><img loading="lazy" src="../images/6aaffc6c7a28c5816ae4d670_Confidence%20Card%20Icon%2001.svg" alt="Confidence Card Icon" class="confidence-card-icon"></div><div class="confidence-card-ctg">Accountable</div></div><div class="confidence-card-btm-wrap"><div class="confidence-card-title">Tamper-Proof Proof (85%)</div><div class="confidence-card-details">Public cryptographic verification linking exact Git commit SHAs, PRs, and live cloud URLs.</div></div></div></div></div></div></div></section><section class="section turn"><div class="w-layout-blockcontainer container w-container"><div class="turn-wrapper"><div class="trun-top-wrap"><div animation="fade-one" class="beliefs-sub-title-wrap"><div data-wf--section-sub-title--variant="gray" class="section-sub-title w-variant-da0b81eb-ef6f-7786-e1c2-2810d345cc81">14 CURRICULUM SPRINT TRACKS</div></div><div animation="heading" class="trun-title-wrap"><h2 data-wf--section-title--variant="two" class="section-title w-variant-a1c41d54-f4a0-ff01-86fc-643e3a321238">Targeted sprints. Audited deliverables.</h2></div><div animation="fade-two" class="beliefs-details-wrap"><p data-wf--global-details--variant="base" class="global-details">Fourteen modular tracks engineered for universities, enterprise teams, and innovators.</p></div></div><div animation="fade-three" class="trun-wrap"><div class="trun-image-wrap"><img src="../images/6ab003abb4f217bb1f312ea5_Trun%20Image.svg" loading="lazy" alt="Trun Image" class="trun-image"></div><div class="trun-grid-wrap"><div class="trun-tricker-wrap"><div class="trun-tricker-flex-wrap"><div class="trun-single-tricker one"><div class="trun-tricker-item one"><div data-wf--trun-tricker--variant="base" class="trun-tricker">The 10x AI Engineer (Cursor/Claude)</div><div data-wf--trun-tricker--variant="grey" class="trun-tricker w-variant-873ad2ef-f6eb-b470-7353-e80474d5f267">Autonomous AI Agents (LangChain/CrewAI)</div><div data-wf--trun-tricker--variant="base" class="trun-tricker">Enterprise RAG Systems (pgvector/Qdrant)</div></div><div class="trun-tricker-item one"><div data-wf--trun-tricker--variant="base" class="trun-tricker">The 10x AI Engineer (Cursor/Claude)</div><div data-wf--trun-tricker--variant="grey" class="trun-tricker w-variant-873ad2ef-f6eb-b470-7353-e80474d5f267">Autonomous AI Agents (LangChain/CrewAI)</div><div data-wf--trun-tricker--variant="base" class="trun-tricker">Enterprise RAG Systems (pgvector/Qdrant)</div></div><div class="trun-tricker-item one"><div data-wf--trun-tricker--variant="base" class="trun-tricker">The 10x AI Engineer (Cursor/Claude)</div><div data-wf--trun-tricker--variant="grey" class="trun-tricker w-variant-873ad2ef-f6eb-b470-7353-e80474d5f267">Autonomous AI Agents (LangChain/CrewAI)</div><div data-wf--trun-tricker--variant="base" class="trun-tricker">Enterprise RAG Systems (pgvector/Qdrant)</div></div></div><div class="trun-single-tricker two"><div class="trun-tricker-item two"><div data-wf--trun-tricker--variant="grey" class="trun-tricker w-variant-873ad2ef-f6eb-b470-7353-e80474d5f267">Production CI/CD &amp; DevSecOps</div><div data-wf--trun-tricker--variant="base" class="trun-tricker">High-Perf PostgreSQL (100x Query Bench)</div><div data-wf--trun-tricker--variant="grey" class="trun-tricker w-variant-873ad2ef-f6eb-b470-7353-e80474d5f267">Incident Triage Chaos War-Room</div></div><div class="trun-tricker-item two"><div data-wf--trun-tricker--variant="grey" class="trun-tricker w-variant-873ad2ef-f6eb-b470-7353-e80474d5f267">Production CI/CD &amp; DevSecOps</div><div data-wf--trun-tricker--variant="base" class="trun-tricker">High-Perf PostgreSQL (100x Query Bench)</div><div data-wf--trun-tricker--variant="grey" class="trun-tricker w-variant-873ad2ef-f6eb-b470-7353-e80474d5f267">Incident Triage Chaos War-Room</div></div><div class="trun-tricker-item two"><div data-wf--trun-tricker--variant="grey" class="trun-tricker w-variant-873ad2ef-f6eb-b470-7353-e80474d5f267">Production CI/CD &amp; DevSecOps</div><div data-wf--trun-tricker--variant="base" class="trun-tricker">High-Perf PostgreSQL (100x Query Bench)</div><div data-wf--trun-tricker--variant="grey" class="trun-tricker w-variant-873ad2ef-f6eb-b470-7353-e80474d5f267">Incident Triage Chaos War-Room</div></div></div></div></div><div class="trun-tricker-wrap"><div class="trun-tricker-flex-wrap"><div class="trun-single-tricker one"><div class="trun-tricker-item one"><div data-wf--trun-tricker--variant="transparent" class="trun-tricker w-variant-4d444cf1-9dbc-5569-b7c5-50eb7c0317c0">The 10x AI Engineer (Cursor/Claude)</div><div data-wf--trun-tricker--variant="transparent" class="trun-tricker w-variant-4d444cf1-9dbc-5569-b7c5-50eb7c0317c0">Autonomous AI Agents (LangChain/CrewAI)</div><div data-wf--trun-tricker--variant="transparent" class="trun-tricker w-variant-4d444cf1-9dbc-5569-b7c5-50eb7c0317c0">Enterprise RAG Systems (pgvector/Qdrant)</div></div><div class="trun-tricker-item one"><div data-wf--trun-tricker--variant="transparent" class="trun-tricker w-variant-4d444cf1-9dbc-5569-b7c5-50eb7c0317c0">The 10x AI Engineer (Cursor/Claude)</div><div data-wf--trun-tricker--variant="transparent" class="trun-tricker w-variant-4d444cf1-9dbc-5569-b7c5-50eb7c0317c0">Autonomous AI Agents (LangChain/CrewAI)</div><div data-wf--trun-tricker--variant="transparent" class="trun-tricker w-variant-4d444cf1-9dbc-5569-b7c5-50eb7c0317c0">Enterprise RAG Systems (pgvector/Qdrant)</div></div><div class="trun-tricker-item one"><div data-wf--trun-tricker--variant="transparent" class="trun-tricker w-variant-4d444cf1-9dbc-5569-b7c5-50eb7c0317c0">The 10x AI Engineer (Cursor/Claude)</div><div data-wf--trun-tricker--variant="transparent" class="trun-tricker w-variant-4d444cf1-9dbc-5569-b7c5-50eb7c0317c0">Autonomous AI Agents (LangChain/CrewAI)</div><div data-wf--trun-tricker--variant="transparent" class="trun-tricker w-variant-4d444cf1-9dbc-5569-b7c5-50eb7c0317c0">Enterprise RAG Systems (pgvector/Qdrant)</div></div></div><div class="trun-single-tricker two"><div class="trun-tricker-item two"><div data-wf--trun-tricker--variant="transparent" class="trun-tricker w-variant-4d444cf1-9dbc-5569-b7c5-50eb7c0317c0">Production CI/CD &amp; DevSecOps</div><div data-wf--trun-tricker--variant="transparent" class="trun-tricker w-variant-4d444cf1-9dbc-5569-b7c5-50eb7c0317c0">High-Perf PostgreSQL (100x Query Bench)</div><div data-wf--trun-tricker--variant="transparent" class="trun-tricker w-variant-4d444cf1-9dbc-5569-b7c5-50eb7c0317c0">Incident Triage Chaos War-Room</div></div><div class="trun-tricker-item two"><div data-wf--trun-tricker--variant="transparent" class="trun-tricker w-variant-4d444cf1-9dbc-5569-b7c5-50eb7c0317c0">Production CI/CD &amp; DevSecOps</div><div data-wf--trun-tricker--variant="transparent" class="trun-tricker w-variant-4d444cf1-9dbc-5569-b7c5-50eb7c0317c0">High-Perf PostgreSQL (100x Query Bench)</div><div data-wf--trun-tricker--variant="transparent" class="trun-tricker w-variant-4d444cf1-9dbc-5569-b7c5-50eb7c0317c0">Incident Triage Chaos War-Room</div></div><div class="trun-tricker-item two"><div data-wf--trun-tricker--variant="transparent" class="trun-tricker w-variant-4d444cf1-9dbc-5569-b7c5-50eb7c0317c0">Production CI/CD &amp; DevSecOps</div><div data-wf--trun-tricker--variant="transparent" class="trun-tricker w-variant-4d444cf1-9dbc-5569-b7c5-50eb7c0317c0">High-Perf PostgreSQL (100x Query Bench)</div><div data-wf--trun-tricker--variant="transparent" class="trun-tricker w-variant-4d444cf1-9dbc-5569-b7c5-50eb7c0317c0">Incident Triage Chaos War-Room</div></div></div></div></div></div></div></div></div></section><!-- Section: Why Choose Spotalents (Strativo Service Inspired) -->
+<section class="section choose" id="why-choose-us" aria-label="Why Choose Spotalents">
+  <div class="w-layout-blockcontainer container w-container">
+    <div class="choose-wrapper">
+      
+      <!-- Section Header -->
+      <div class="choose-top-wrap">
+        <div animation="fade-one" class="choose-sub-title-wrap">
+          <div data-wf--section-sub-title--variant="gray" class="section-sub-title w-variant-da0b81eb-ef6f-7786-e1c2-2810d345cc81">WHY SPOTALENTS</div>
+        </div>
+        <div animation="heading" class="choose-title-wrap">
+          <h2 data-wf--section-title--variant="two" class="section-title w-variant-a1c41d54-f4a0-ff01-86fc-643e3a321238">The Engineering Standard Built for High-Growth Teams</h2>
+        </div>
+        <div animation="fade-two" class="choose-details-wrap">
+          <p data-wf--global-details--variant="base" class="global-details">We replace speculative hiring, resume embellishment, and agency markups with verified code telemetry, pre-calibrated engineering pods, and guaranteed sprint delivery.</p>
+        </div>
+        <div animation="fade-three" class="choose-button-wrap">
+          <a data-wf--primary-button--variant="base" href="/start" class="primary-button w-inline-block">
+            <div class="primary-btn-text-wrap">
+              <div class="primary-button-text">Deploy with Spotalents</div>
+              <div class="primary-button-text">Deploy with Spotalents</div>
+            </div>
+            <div class="primary-arrow-wrap">
+              <img loading="lazy" src="../images/6aa6bd06548e7975cbe07463_Primary%20Arrow%2002.svg" alt="Primary Arrow" class="primary-arrow one">
+              <img loading="lazy" src="../images/6aa6bd06548e7975cbe07463_Primary%20Arrow%2002.svg" alt="Primary Arrow" class="primary-arrow two">
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- 4-Card Bento Grid -->
+      <div class="choose-wrap">
+        <div animation="fade-four" class="choose-grid-wrap">
+          
+          <!-- Card 001: Verified Code Depth -->
+          <div class="choose-card">
+            <div class="choose-card-number">001</div>
+            <div class="choose-card-icon-wrap">
+              <img loading="lazy" src="../images/choose_icon_01.svg" alt="Verified Code Depth" class="choose-card-icon"/>
+            </div>
+            <div class="choose-card-info-wrap">
+              <h3 class="choose-card-title">Verified Code Depth</h3>
+              <p class="choose-card-details">Every engineer is benchmarked against real repository commits, AST complexity analysis, and crucible pressure code—not inflated resumes.</p>
+            </div>
+          </div>
+
+          <!-- Card 002: Calibrated Pod Chemistry -->
+          <div class="choose-card">
+            <div class="choose-card-number">002</div>
+            <div class="choose-card-icon-wrap">
+              <img loading="lazy" src="../images/choose_icon_02.svg" alt="Calibrated Pod Chemistry" class="choose-card-icon"/>
+            </div>
+            <div class="choose-card-info-wrap">
+              <h3 class="choose-card-title">Calibrated Pod Chemistry</h3>
+              <p class="choose-card-details">Engineers vetted for async PR review velocity, cross-time-zone communication rhythm, and direct alignment with your existing tech stack.</p>
+            </div>
+          </div>
+
+          <!-- Card 003: 48-Hour Deployment -->
+          <div class="choose-card">
+            <div class="choose-card-number">003</div>
+            <div class="choose-card-icon-wrap">
+              <img loading="lazy" src="../images/choose_icon_03.svg" alt="48-Hour Deployment Velocity" class="choose-card-icon"/>
+            </div>
+            <div class="choose-card-info-wrap">
+              <h3 class="choose-card-title">48-Hour Deployment</h3>
+              <p class="choose-card-details">Bypass the 60-day recruitment drag. Matched engineers and self-managed pods integrate into your active sprints within 48 hours.</p>
+            </div>
+          </div>
+
+          <!-- Card 004: Risk-Free Calibration -->
+          <div class="choose-card">
+            <div class="choose-card-number">004</div>
+            <div class="choose-card-icon-wrap">
+              <img loading="lazy" src="../images/choose_icon_04.svg" alt="Risk-Free Calibration" class="choose-card-icon"/>
+            </div>
+            <div class="choose-card-info-wrap">
+              <h3 class="choose-card-title">Risk-Free Calibration</h3>
+              <p class="choose-card-details">Zero agency markups, transparent direct contracts, and a 14-day calibration guarantee to ensure complete product velocity and cultural fit.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section faq">
 <div class="w-layout-blockcontainer container w-container">
 <div class="faq-wrapper">
 <div class="faq-top-wrap">
