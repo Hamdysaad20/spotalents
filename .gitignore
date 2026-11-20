@@ -10,3 +10,7 @@ scratch/
 .env.production
 .env.test
 
+# Large raw video downloads
+images/*_full.mp4
+images/*_video.mp4
+

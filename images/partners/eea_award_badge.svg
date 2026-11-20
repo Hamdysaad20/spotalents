@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 48" fill="none">
+  <!-- Trophy icon in luxury gold -->
+  <g transform="translate(6, 4)">
+    <!-- Trophy cup -->
+    <path d="M11 4 L29 4 L27 22 C26 28 14 28 13 22 Z" fill="#D4AF37"/>
+    <path d="M15 7 L25 7 L24 18 C23 23 17 23 16 18 Z" fill="#F7E7A9"/>
+    <!-- Handles -->
+    <path d="M11 7 C5 7 4 16 11 18" stroke="#D4AF37" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+    <path d="M29 7 C35 7 36 16 29 18" stroke="#D4AF37" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+    <!-- Stem & Base -->
+    <path d="M19 25 L21 25 L21 32 L19 32 Z" fill="#D4AF37"/>
+    <rect x="12" y="32" width="16" height="5" rx="1.5" fill="#B8860B"/>
+    <!-- Star accent -->
+    <polygon points="20,10.5 21.2,14 24.8,14 21.9,16.2 23,19.6 20,17.5 17,19.6 18.1,16.2 15.2,14 18.8,14" fill="#FFF8DC"/>
+  </g>
+  <!-- Text: EEA & WINNER -->
+  <text x="52" y="22" font-family="'Instrument Sans', -apple-system, sans-serif" font-weight="900" font-size="20" fill="#191814" letter-spacing="0.04em">EEA</text>
+  <text x="98" y="16.5" font-family="'Space Mono', monospace" font-weight="700" font-size="8.5" fill="#C59B27" letter-spacing="0.08em">2025 WINNER</text>
+  <text x="53" y="34.5" font-family="'Instrument Sans', -apple-system, sans-serif" font-weight="600" font-size="8" fill="#75736c" letter-spacing="0.06em">PEOPLE OF TOMORROW</text>
+</svg>
