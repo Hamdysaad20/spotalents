@@ -2318,18 +2318,28 @@ figure {
 .navbar {
   width: 100%;
   max-width: 716px;
-  margin-top: var(--_gap---gap-2xl);
-  background-color: var(--transparent);
+  margin-top: 18px;
+  background-color: transparent;
   margin-left: auto;
   margin-right: auto;
-  position: absolute;
-  inset: 0% 0% auto;
-  z-index: 1001 !important;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999 !important;
+  pointer-events: none;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), margin-top 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.navbar .container {
+  padding: 0;
+  pointer-events: none;
 }
 
 .navbar-wrapper {
   position: relative;
   z-index: 1002;
+  pointer-events: auto;
 }
 
 /* Visibility safeguards for animated headers and sections */
@@ -2385,15 +2395,67 @@ figure {
 }
 
 .navbar-wrapper {
-  grid-column-gap: var(--_gap---gap-5xl);
-  grid-row-gap: var(--_gap---gap-5xl);
-  border-radius: var(--_border---border-max);
-  background-color: var(--white);
-  border: 1px solid #f8f9f2;
+  grid-column-gap: var(--_gap---gap-5xl, 24px);
+  grid-row-gap: var(--_gap---gap-5xl, 24px);
+  border-radius: var(--_border---border-max, 999px);
+  background-color: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(25, 24, 20, 0.08);
+  box-shadow: 0 4px 20px -4px rgba(25, 24, 20, 0.06);
   justify-content: space-between;
   align-items: center;
-  padding: 4px 4px 4px 14px;
+  padding: 5px 6px 5px 16px;
   display: flex;
+  pointer-events: auto;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease, padding 0.3s ease, transform 0.3s ease;
+}
+
+/* Sticky scrolled state with floating glass animation */
+.navbar.is-scrolled {
+  margin-top: 10px;
+}
+
+.navbar.is-scrolled .navbar-wrapper {
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-color: rgba(25, 24, 20, 0.12);
+  box-shadow: 0 14px 38px -8px rgba(25, 24, 20, 0.12), 0 2px 8px rgba(25, 24, 20, 0.04);
+  padding: 4px 5px 4px 16px;
+}
+
+@supports (animation-timeline: scroll()) {
+  @keyframes navScrollFloat {
+    from {
+      margin-top: 18px;
+    }
+    to {
+      margin-top: 10px;
+    }
+  }
+  @keyframes navWrapperGlass {
+    from {
+      background-color: rgba(255, 255, 255, 0.92);
+      box-shadow: 0 4px 20px -4px rgba(25, 24, 20, 0.06);
+      border-color: rgba(25, 24, 20, 0.08);
+    }
+    to {
+      background-color: rgba(255, 255, 255, 0.85);
+      box-shadow: 0 14px 38px -8px rgba(25, 24, 20, 0.12), 0 2px 8px rgba(25, 24, 20, 0.04);
+      border-color: rgba(25, 24, 20, 0.12);
+    }
+  }
+  .navbar {
+    animation: navScrollFloat linear both;
+    animation-timeline: scroll(root);
+    animation-range: 0px 80px;
+  }
+  .navbar-wrapper {
+    animation: navWrapperGlass linear both;
+    animation-timeline: scroll(root);
+    animation-range: 0px 80px;
+  }
 }
 
 .nav-menu-wrap {
@@ -8806,17 +8868,39 @@ figure {
   }
 
   .navbar {
-    max-width: var(--_sizing---width);
-    margin-top: var(--_gap---gap-none);
-    padding-top: var(--_gap---gap-2xl);
-    padding-bottom: var(--_gap---gap-2xl);
-    background-color: var(--white);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    max-width: 100%;
+    margin-top: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 16px;
+    padding-right: 16px;
+    background-color: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(25, 24, 20, 0.08);
+    box-shadow: 0 4px 16px -4px rgba(25, 24, 20, 0.06);
+    pointer-events: auto;
+    z-index: 9999 !important;
+    animation: none;
+  }
+
+  .navbar.is-scrolled {
+    margin-top: 0;
+    box-shadow: 0 8px 24px -4px rgba(25, 24, 20, 0.1);
   }
 
   .navbar-wrapper {
     padding: var(--_gap---gap-none);
     border-radius: var(--_gap---gap-none);
     border-style: none;
+    background: transparent;
+    box-shadow: none;
+    animation: none;
   }
 
   .section.footer {
