@@ -11023,6 +11023,31 @@ figure {
   visibility: visible !important;
 }
 
+/* NumberFlow Custom Element Styles (https://number-flow.barvian.me) */
+number-flow {
+  display: inline-block;
+  direction: ltr;
+  white-space: nowrap;
+  line-height: 1;
+  font-family: inherit;
+  font-weight: inherit;
+  font-size: inherit;
+  color: inherit;
+  --number-flow-mask-height: 0.25em;
+  --number-flow-mask-width: 0.35em;
+}
+
+number-flow::part(number) {
+  font-variant-numeric: tabular-nums;
+}
+
+number-flow.pricing-a-price-text {
+  font-size: 42px;
+  line-height: 1;
+  font-weight: 600;
+  color: var(--dark-black);
+}
+
 /* Smooth Pricing Transitions */
 .pricing-a-price-text,
 .pricing-a-month,
@@ -11139,13 +11164,14 @@ figure {
 
 
 /* ==========================================================================
-   Client Feedback & Video Story Component (Replica Reference Style)
+   Client Feedback & Video Story Component (Strativo Slider Layout)
    ========================================================================== */
 .section.client-feedback {
-  padding-top: var(--_gap---gap-12xl);
-  padding-bottom: var(--_gap---gap-12xl);
+  padding-top: var(--_gap---gap-12xl, 80px);
+  padding-bottom: var(--_gap---gap-12xl, 80px);
   position: relative;
-  background-color: #F8FAF2;
+  background-color: #f8f9ef;
+  overflow: hidden;
 }
 
 .feedback-wrapper {
@@ -11157,7 +11183,7 @@ figure {
 
 .feedback-top-wrap {
   text-align: center;
-  margin-bottom: var(--_gap---gap-8xl);
+  margin-bottom: 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -11167,127 +11193,150 @@ figure {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: #EAECE4;
+  background: #e9ede7;
   border: 1px solid rgba(25, 24, 20, 0.08);
   border-radius: 999px;
-  padding: 5px 16px;
-  font-family: "Instrument Sans", sans-serif;
-  font-size: 13px;
+  padding: 6px 18px;
+  font-family: var(--_font-family---primary-font, "Instrument Sans", sans-serif);
+  font-size: 14px;
   font-weight: 500;
   color: #191814;
   letter-spacing: -0.01em;
   line-height: 1.3;
 }
 
-.feedback-sub-title-wrap {
-  display: flex;
-  justify-content: center;
-}
-
 .feedback-top-wrap .section-title {
-  margin-top: 14px;
+  margin-top: 18px;
   margin-bottom: 0;
   text-align: center;
 }
 
-.feedback-cards-container {
-  display: flex;
-  justify-content: center;
-  align-items: stretch;
-  gap: 15px;
+.feedback-slider-container {
   width: 100%;
-  max-width: 1100px;
+  max-width: 954px;
   margin: 0 auto;
+  position: relative;
 }
 
-/* Card 1 & 3: Text Cards */
-.feedback-text-card {
-  flex: 1.48 1 0;
-  background: #EAECE4;
-  border: 1px solid rgba(25, 24, 20, 0.05);
-  border-radius: 14px;
-  padding: 24px 22px;
+.feedback-slider-mask {
+  width: 100%;
+  max-width: 954px;
+  overflow: visible;
+}
+
+.feedback-slider-track {
+  display: flex;
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+.feedback-slide {
+  width: 954px;
+  max-width: 954px;
+  flex-shrink: 0;
+  margin-right: 24px;
+  box-sizing: border-box;
+}
+
+.feedback-single-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 20px;
+  width: 100%;
+}
+
+/* Left: Text Card (554px) */
+.feedback-slide-card {
+  width: 100%;
+  max-width: 554px;
+  min-height: 435px;
+  padding: 34px 32px;
+  border-radius: 12px;
+  background-color: #e9ede7;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 252px;
   box-sizing: border-box;
-  box-shadow: 0 4px 16px -8px rgba(0, 0, 0, 0.03);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  border: 1px solid rgba(25, 24, 20, 0.04);
 }
 
-.feedback-text-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 24px -10px rgba(0, 0, 0, 0.07);
-}
-
-.feedback-card-header {
+.feedback-slider-top-wrap {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  gap: 12px;
+  gap: 16px;
+}
+
+.feedback-author-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
 .feedback-author-name {
-  font-family: "Instrument Sans", sans-serif;
-  font-size: 17px;
+  font-family: var(--_font-family---primary-font, "Instrument Sans", sans-serif);
+  font-size: 26px;
   font-weight: 600;
   color: #191814;
   line-height: 1.25;
-  margin-bottom: 3px;
+  letter-spacing: -0.5px;
+  margin: 0;
 }
 
-.feedback-author-role {
-  font-family: "Instrument Sans", sans-serif;
-  font-size: 13px;
+.feedback-author-pst {
+  font-family: var(--_font-family---primary-font, "Instrument Sans", sans-serif);
+  font-size: 14px;
   color: #757368;
   font-weight: 400;
+  margin: 0;
 }
 
-.feedback-avatar {
-  width: 46px;
-  height: 46px;
+.feedback-video-wrap {
+  width: 90px;
+  height: 85px;
   border-radius: 10px;
-  object-fit: cover;
-  flex-shrink: 0;
-  background: #E2E4DC;
-}
-
-.feedback-avatar.padded {
-  padding: 6px;
-  object-fit: contain;
-  background: #FFFFFF;
-}
-
-.feedback-quote {
-  font-family: "Instrument Sans", sans-serif;
-  font-size: 15px;
-  line-height: 1.45;
-  color: #191814;
-  margin: 18px 0 0 0;
-  font-weight: 400;
-}
-
-/* Card 2 & 4: Video Cards */
-.feedback-video-card {
-  flex: 1 1 0;
-  position: relative;
-  border-radius: 14px;
   overflow: hidden;
-  min-height: 252px;
-  background: #111110;
-  border: 1px solid rgba(25, 24, 20, 0.05);
+  flex-shrink: 0;
+  background: #dfe3dc;
+  display: flex;
+}
+
+.feedback-avatar-media {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.feedback-slider-btm-wrap {
+  margin-top: 24px;
+}
+
+.feedback-card-details {
+  font-family: var(--_font-family---primary-font, "Instrument Sans", sans-serif);
+  font-size: 28px;
+  line-height: 1.32;
+  font-weight: 400;
+  letter-spacing: -0.56px;
+  color: #191814;
+  margin: 0;
+}
+
+/* Right: Video Card (376px) */
+.feedback-main-video {
+  width: 100%;
+  max-width: 376px;
+  min-height: 435px;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  background: #000000;
+  flex-shrink: 0;
   display: block;
   text-decoration: none;
   cursor: pointer;
   box-sizing: border-box;
-  box-shadow: 0 4px 16px -8px rgba(0, 0, 0, 0.05);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.feedback-video-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 24px -10px rgba(0, 0, 0, 0.12);
 }
 
 .feedback-video-media {
@@ -11295,101 +11344,153 @@ figure {
   height: 100%;
   object-fit: cover;
   object-position: center 20%;
-  transform: scale(1.08);
   display: block;
   pointer-events: none;
 }
 
-.feedback-play-icon {
+.feedback-play-btn {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 40px;
-  height: 40px;
+  width: 56px;
+  height: 56px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.45);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  background-color: rgba(248, 249, 239, 0.45);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.25s ease;
   pointer-events: none;
 }
 
-.feedback-play-icon svg {
-  width: 14px;
-  height: 14px;
+.feedback-play-btn svg {
+  width: 18px;
+  height: 18px;
   fill: #FFFFFF;
   margin-left: 2px;
 }
 
-.feedback-video-card:hover .feedback-play-icon {
-  background: rgba(255, 255, 255, 0.85);
+.feedback-main-video:hover .feedback-play-btn {
+  background-color: rgba(248, 249, 239, 0.85);
   transform: translate(-50%, -50%) scale(1.1);
 }
 
-.feedback-video-card:hover .feedback-play-icon svg {
+.feedback-main-video:hover .feedback-play-btn svg {
   fill: #191814;
 }
 
-/* Navigation Arrows (below cards) */
+/* Slider Controls */
 .feedback-nav-wrap {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 12px;
-  margin-top: 28px;
+  gap: 14px;
+  margin-top: 36px;
 }
 
-.feedback-nav-btn {
-  width: 36px;
-  height: 36px;
+.feedback-arrow-btn {
+  width: 54px;
+  height: 54px;
   border-radius: 50%;
-  background: #EAECE4;
+  background-color: #e9ede7;
   border: 1px solid rgba(25, 24, 20, 0.08);
   color: #191814;
-  font-size: 15px;
+  font-size: 18px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.25s ease;
   outline: none;
 }
 
-.feedback-nav-btn:hover {
-  background: #191814;
+.feedback-arrow-btn:hover {
+  background-color: #191814;
   color: #FFFFFF;
   border-color: #191814;
+  transform: scale(1.05);
 }
 
+/* Responsive Breakpoints */
 @media screen and (max-width: 991px) {
-  .feedback-cards-container {
-    flex-wrap: wrap;
+  .feedback-slider-container,
+  .feedback-slider-mask {
+    max-width: 760px;
   }
-  .feedback-text-card {
-    flex: 1 1 calc(58% - 10px);
-    min-height: 250px;
+  .feedback-slide {
+    width: 760px;
+    max-width: 760px;
+    margin-right: 20px;
   }
-  .feedback-video-card {
-    flex: 1 1 calc(42% - 10px);
-    min-height: 250px;
+  .feedback-slide-card {
+    max-width: 440px;
+    min-height: 380px;
+    padding: 26px 22px;
+  }
+  .feedback-main-video {
+    max-width: 300px;
+    min-height: 380px;
+  }
+  .feedback-author-name {
+    font-size: 22px;
+  }
+  .feedback-card-details {
+    font-size: 24px;
   }
 }
 
-@media screen and (max-width: 640px) {
-  .feedback-cards-container {
+@media screen and (max-width: 767px) {
+  .feedback-slider-container,
+  .feedback-slider-mask {
+    max-width: 100%;
+    overflow: hidden;
+  }
+  .feedback-slide {
+    width: 100%;
+    max-width: 100%;
+    margin-right: 16px;
+  }
+  .feedback-single-card {
     flex-direction: column;
-    gap: 14px;
+    gap: 16px;
   }
-  .feedback-text-card, .feedback-video-card {
-    flex: 1 1 100%;
-    min-height: 240px;
+  .feedback-slide-card {
+    max-width: 100%;
+    min-height: auto;
+    padding: 24px 20px;
   }
-  .feedback-nav-wrap {
-    display: none;
+  .feedback-main-video {
+    max-width: 100%;
+    height: 320px;
+    min-height: 320px;
+  }
+  .feedback-author-name {
+    font-size: 20px;
+  }
+  .feedback-card-details {
+    font-size: 21px;
+    line-height: 1.35;
+  }
+  .feedback-video-wrap {
+    width: 70px;
+    height: 66px;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .feedback-slide-card {
+    min-height: 280px;
+    padding: 20px 16px;
+  }
+  .feedback-card-details {
+    font-size: 19px;
+  }
+  .feedback-arrow-btn {
+    width: 46px;
+    height: 46px;
+    font-size: 16px;
   }
 }
