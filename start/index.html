@@ -163,6 +163,18 @@
       display: block;
     }
 
+    .form-alert-banner {
+      background-color: #FEF2F2;
+      border: 1px solid #FCA5A5;
+      color: #991B1B;
+      padding: 12px 16px;
+      border-radius: 8px;
+      font-size: 13.5px;
+      line-height: 1.45;
+      margin-bottom: 20px;
+      font-family: "Instrument Sans", sans-serif;
+    }
+
     .form-control::placeholder {
       color: #9E9C96;
       font-size: 14px;
@@ -686,6 +698,14 @@
               </div>
 
               <form id="startLeadForm" novalidate>
+                <!-- Form Feedback Alert Banner -->
+                <div id="formAlertBanner" class="form-alert-banner" style="display: none;" role="alert"></div>
+
+                <!-- Anti-Spam Bot Trap (Honeypot: Hidden from real users) -->
+                <div style="display:none !important; visibility:hidden !important; opacity:0; position:absolute; left:-9999px; height:0; width:0; overflow:hidden;" aria-hidden="true">
+                  <label for="_hp_company_url">Leave this empty</label>
+                  <input type="text" id="_hp_company_url" name="_hp_company_url" tabindex="-1" autocomplete="off">
+                </div>
                 <div class="form-group">
                   <label class="form-label" for="firstName">First Name<span class="required-star">*</span></label>
                   <input type="text" id="firstName" name="firstName" class="form-control" autocomplete="given-name">
@@ -1021,7 +1041,7 @@
   <script src="../js/spotalents.chunk.d5ced0f8a8550fc9.js" type="text/javascript"></script>
   <script src="../js/spotalents.main.67653a4a608f3e1a.js" type="text/javascript"></script>
 
-  <!-- Client-side Form Validation & Submission Script -->
+  <!-- Client-side Form Validation & Secure Submission Script -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       const form = document.getElementById('startLeadForm');
@@ -1029,6 +1049,9 @@
       const successState = document.getElementById('successState');
       const submitBtn = document.getElementById('submitBtn');
       const resetBtn = document.getElementById('resetBtn');
+      const alertBanner = document.getElementById('formAlertBanner');
+      const honeypotInput = document.getElementById('_hp_company_url');
+      const formLoadTime = Date.now();
 
       const fields = {
         firstName: {
@@ -1058,8 +1081,8 @@
         projectDetails: {
           el: document.getElementById('projectDetails'),
           errorEl: document.getElementById('error-projectDetails'),
-          validate: val => val.trim().length >= 5,
-          errorMsg: 'Please tell us briefly about your project or hiring requirements'
+          validate: val => val.trim().length === 0 || val.trim().length >= 5,
+          errorMsg: 'Please provide at least 5 characters describing your project requirements'
         }
       };
 
@@ -1096,9 +1119,15 @@
         }
       }
 
-      form.addEventListener('submit', function(e) {
+      form.addEventListener('submit', async function(e) {
         e.preventDefault();
         
+        // Hide previous alert
+        if (alertBanner) {
+          alertBanner.style.display = 'none';
+          alertBanner.textContent = '';
+        }
+
         let allValid = true;
         let firstInvalid = null;
 
@@ -1118,7 +1147,7 @@
         // Form is valid: set loading state
         submitBtn.disabled = true;
         const originalBtnHTML = submitBtn.innerHTML;
-        submitBtn.innerHTML = '<span>Submitting...</span>';
+        submitBtn.innerHTML = '<span>Submitting demo request...</span>';
 
         const leadData = {
           firstName: fields.firstName.el.value.trim(),
@@ -1126,37 +1155,88 @@
           companyName: fields.companyName.el.value.trim(),
           email: fields.email.el.value.trim(),
           projectDetails: fields.projectDetails.el.value.trim(),
-          submittedAt: new Date().toISOString(),
-          source: 'start_page_lead'
+          source: 'start_page_lead',
+          _hp_company_url: honeypotInput ? honeypotInput.value : '',
+          _formRenderTime: formLoadTime
         };
 
-        // Store client-side in localStorage for v2 backend sync
         try {
-          const existing = JSON.parse(localStorage.getItem('spotalents_leads') || '[]');
-          existing.push(leadData);
-          localStorage.setItem('spotalents_leads', JSON.stringify(existing));
-        } catch(err) {
-          console.warn('LocalStorage unavailable:', err);
-        }
+          // Send request to Vercel Serverless Function -> Supabase
+          const response = await fetch('/api/leads', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Accept': 'application/json'
+            },
+            body: JSON.stringify(leadData)
+          });
 
-        // Simulate fast network response
-        setTimeout(() => {
-          submitBtn.disabled = false;
-          submitBtn.innerHTML = originalBtnHTML;
+          const result = await response.json().catch(() => ({}));
+
+          if (!response.ok || !result.success) {
+            const errorMsg = result.error || (result.details && result.details[0]) || 'Unable to submit your demo request at this moment. Please try again.';
+            throw new Error(errorMsg);
+          }
 
           // Populate confirmation details
           document.getElementById('confirmName').textContent = leadData.firstName;
           document.getElementById('confirmCompany').textContent = leadData.companyName;
           document.getElementById('confirmEmail').textContent = leadData.email;
 
-          // Switch views
+          // Store successful lead in localStorage as client-side backup
+          try {
+            const existing = JSON.parse(localStorage.getItem('spotalents_leads') || '[]');
+            existing.push({
+              firstName: leadData.firstName,
+              lastName: leadData.lastName,
+              companyName: leadData.companyName,
+              email: leadData.email,
+              submittedAt: new Date().toISOString()
+            });
+            localStorage.setItem('spotalents_leads', JSON.stringify(existing));
+          } catch(err) {
+            console.warn('LocalStorage unavailable:', err);
+          }
+
+          // Switch views to success card
           formContainer.style.display = 'none';
           successState.classList.add('visible');
-        }, 500);
+
+        } catch (err) {
+          console.error('[Lead Submission Error]:', err);
+
+          // Save pending submission to localStorage so lead information is never lost
+          try {
+            const pending = JSON.parse(localStorage.getItem('spotalents_leads_pending') || '[]');
+            pending.push({
+              ...leadData,
+              failedAt: new Date().toISOString(),
+              error: err.message
+            });
+            localStorage.setItem('spotalents_leads_pending', JSON.stringify(pending));
+          } catch(e) {}
+
+          // Display user-friendly error message
+          if (alertBanner) {
+            alertBanner.textContent = err.message || 'We could not submit your request. Please check your connection or contact contact@spotalents.com.';
+            alertBanner.style.display = 'block';
+            alertBanner.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          } else {
+            alert(err.message || 'We could not submit your request. Please try again.');
+          }
+
+        } finally {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = originalBtnHTML;
+        }
       });
 
       resetBtn.addEventListener('click', function() {
         form.reset();
+        if (alertBanner) {
+          alertBanner.style.display = 'none';
+          alertBanner.textContent = '';
+        }
         Object.keys(fields).forEach(key => {
           fields[key].el.classList.remove('is-invalid');
           fields[key].errorEl.classList.remove('visible');

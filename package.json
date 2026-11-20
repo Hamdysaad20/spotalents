@@ -1,0 +1,13 @@
+{
+  "name": "spotalents",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Spotalents - Elite engineering pods powered by multi-signal intelligence",
+  "scripts": {
+    "test": "node scripts/test_lead_api.js"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.48.1",
+    "pg": "^8.23.1"
+  }
+}
