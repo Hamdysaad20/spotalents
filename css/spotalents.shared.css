@@ -12004,15 +12004,18 @@ number-flow.pricing-a-price-text {
 }
 
 .commitment-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 36px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
+  gap: 32px;
   width: 100%;
   box-sizing: border-box;
 }
 
 .commitment-left-col {
+  width: 100%;
+  max-width: 618px;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -12070,22 +12073,27 @@ number-flow.pricing-a-price-text {
 
 .commitment-right-col {
   width: 100%;
+  max-width: 682px;
 }
 
 .commitment-media-card {
   position: relative;
   border-radius: var(--_border---border-2xl);
   overflow: hidden;
-  height: 440px;
-  box-shadow: 0 20px 48px -16px rgba(25, 24, 20, 0.16);
+  width: 100%;
+  max-width: 682px;
+  aspect-ratio: 682 / 726;
+  height: auto;
+  box-shadow: 0 24px 64px -16px rgba(25, 24, 20, 0.16);
   border: 1px solid rgba(25, 24, 20, 0.08);
+  margin-left: auto;
 }
 
 .commitment-photo {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 25%;
+  object-position: center 20%;
   display: block;
 }
 
@@ -12184,11 +12192,20 @@ number-flow.pricing-a-price-text {
     padding: 0 16px;
   }
   .commitment-grid {
-    grid-template-columns: 1fr;
+    flex-direction: column;
+    align-items: stretch;
     gap: 28px;
   }
+  .commitment-left-col {
+    max-width: 100%;
+  }
+  .commitment-right-col {
+    max-width: 100%;
+  }
   .commitment-media-card {
-    height: 380px;
+    max-width: 100%;
+    aspect-ratio: 682 / 560;
+    height: auto;
   }
 }
 
@@ -12211,7 +12228,8 @@ number-flow.pricing-a-price-text {
     height: 36px;
   }
   .commitment-media-card {
-    height: 320px;
+    aspect-ratio: 1 / 1;
+    height: auto;
   }
   .commitment-media-badge {
     font-size: 10px;
