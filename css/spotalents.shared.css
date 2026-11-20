@@ -11430,3 +11430,162 @@ number-flow.pricing-a-price-text {
   .feedback-card-details { font-size: 19px; }
   .feedback-arrow-btn { width: 46px; height: 46px; font-size: 16px; }
 }
+
+
+/* Backers & Partners Section (RaidX AI Marquee Inspired) */
+.section.backers-partners {
+  padding-top: 54px;
+  padding-bottom: 54px;
+  position: relative;
+  background-color: #f8f9ef;
+  overflow: hidden;
+  border-top: 1px solid rgba(25, 24, 20, 0.06);
+  border-bottom: 1px solid rgba(25, 24, 20, 0.06);
+}
+.backers-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 920px;
+  margin: 0 auto 36px;
+  padding: 0 20px;
+}
+.backers-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #e9ede7;
+  border: 1px solid rgba(25, 24, 20, 0.08);
+  border-radius: 999px;
+  padding: 5px 16px;
+  margin-bottom: 18px;
+  font-family: var(--_font-family---secondary-font, "Space Mono", monospace);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #757368;
+  line-height: 1.3;
+}
+.backers-statement {
+  font-family: var(--_font-family---primary-font, "Instrument Sans", sans-serif);
+  font-size: 26px;
+  line-height: 1.35;
+  font-weight: 500;
+  letter-spacing: -0.4px;
+  color: #191814;
+  margin: 0;
+}
+.backers-marquee-wrap {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+.backers-fade-edge {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 120px;
+  z-index: 10;
+  pointer-events: none;
+}
+.backers-fade-edge.left {
+  left: 0;
+  background: linear-gradient(to right, #f8f9ef 20%, rgba(248, 249, 239, 0) 100%);
+}
+.backers-fade-edge.right {
+  right: 0;
+  background: linear-gradient(to left, #f8f9ef 20%, rgba(248, 249, 239, 0) 100%);
+}
+.backers-marquee-track {
+  display: flex;
+  width: max-content;
+  user-select: none;
+}
+.backers-marquee-track:hover .backers-marquee-list {
+  animation-play-state: paused;
+}
+.backers-marquee-list {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 52px;
+  padding-right: 52px;
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+  animation: backers-marquee-scroll 38s linear infinite;
+  will-change: transform;
+}
+@keyframes backers-marquee-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+.backers-logo-item {
+  display: flex;
+  align-items: center;
+  height: 48px;
+  flex-shrink: 0;
+}
+.backers-logo-img {
+  max-height: 26px;
+  height: 26px;
+  width: auto;
+  object-fit: contain;
+  opacity: 0.6;
+  filter: grayscale(100%);
+  transition: opacity 0.25s ease, filter 0.25s ease, transform 0.25s ease;
+}
+.backers-logo-item:hover .backers-logo-img {
+  opacity: 1;
+  filter: grayscale(0%);
+  transform: scale(1.06);
+}
+.backers-logo-img-sm {
+  max-height: 22px;
+  height: 22px;
+  width: auto;
+  object-fit: contain;
+  opacity: 0.6;
+  filter: grayscale(100%);
+  margin-right: 8px;
+  transition: opacity 0.25s ease, filter 0.25s ease;
+}
+.backers-logo-item:hover .backers-logo-img-sm {
+  opacity: 1;
+  filter: grayscale(0%);
+}
+.backers-logo-text {
+  font-family: var(--_font-family---primary-font, "Instrument Sans", sans-serif);
+  font-size: 14px;
+  font-weight: 600;
+  color: #191814;
+  opacity: 0.6;
+  letter-spacing: -0.2px;
+  white-space: nowrap;
+  transition: opacity 0.25s ease;
+}
+.backers-logo-item:hover .backers-logo-text {
+  opacity: 1;
+}
+@media screen and (max-width: 991px) {
+  .section.backers-partners { padding-top: 44px; padding-bottom: 44px; }
+  .backers-statement { font-size: 22px; }
+  .backers-marquee-list { gap: 40px; padding-right: 40px; animation-duration: 32s; }
+  .backers-fade-edge { width: 70px; }
+}
+@media screen and (max-width: 767px) {
+  .section.backers-partners { padding-top: 36px; padding-bottom: 36px; }
+  .backers-header { margin-bottom: 28px; }
+  .backers-pill { font-size: 11px; padding: 4px 12px; }
+  .backers-statement { font-size: 18px; line-height: 1.4; }
+  .backers-marquee-list { gap: 32px; padding-right: 32px; animation-duration: 26s; }
+  .backers-logo-img { max-height: 22px; height: 22px; }
+  .backers-logo-img-sm { max-height: 18px; height: 18px; }
+  .backers-logo-text { font-size: 13px; }
+  .backers-fade-edge { width: 40px; }
+}
+
