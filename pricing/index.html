@@ -650,7 +650,7 @@ Monthly
 <div class="pricing-a-card-details">For companies exploring talent intelligence. Includes 1,000 AI credits/mo.</div></div>
 <div class="pricing-a-price-wrap">
 <div class="pricing-a-price-text-wrap">
-<div class="pricing-a-price-text" id="price-val-discover" style="font-size: 42px; line-height: 1;">$82.50</div></div>
+<number-flow class="pricing-a-price-text" id="price-val-discover" style="font-size: 42px; line-height: 1;">$82.50</number-flow></div>
 <div class="pricing-a-month" id="period-discover">/ month</div></div>
 <div class="balance-wrap">
 <div class="balance-title" id="subtext-discover">Billed annually at $990</div>
@@ -694,7 +694,7 @@ Monthly
 <div class="pricing-a-card-details">For companies actively sourcing talents. Includes 5,000 AI credits/mo.</div></div>
 <div class="pricing-a-price-wrap">
 <div class="pricing-a-price-text-wrap">
-<div class="pricing-a-price-text" id="price-val-intel" style="font-size: 42px; line-height: 1;">$249</div></div>
+<number-flow class="pricing-a-price-text" id="price-val-intel" style="font-size: 42px; line-height: 1;">$249</number-flow></div>
 <div class="pricing-a-month" id="period-intel">/ month</div></div>
 <div class="balance-wrap">
 <div class="balance-title" id="subtext-intel">Billed annually at $2,990</div>
@@ -1174,13 +1174,13 @@ Monthly
 <div animation="fade-one" class="cta-sub-title-wrap">
 <div data-wf--section-sub-title--variant="base" class="section-sub-title">Deploy With Certainty</div></div>
 <div animation="heading" class="cta-title-wrap">
-<h2 data-wf--global-heading--variant="white" class="global-heading w-variant-68427fef-2df8-4f81-591e-362081514eb3">Better intelligence. Better decisions. Better matches.</h2></div>
+<h2 data-wf--global-heading--variant="white" class="global-heading w-variant-68427fef-2df8-4f81-591e-362081514eb3">Start with zero upfront risk. Scale with proof.</h2></div>
 <div animation="fade-three" class="cta-deatils-wrap">
-<div class="cta-details"><span class="black">Find the talent that fits,</span> understand why they fit, and build working relationships with confidence.</div></div>
+<div class="cta-details"><span class="black">Zero placement fees.</span> 14-day calibration trial on your live stack. Cancel or adjust your plan anytime.</div></div>
 <div animation="fade-four" class="cta-button-wrap"><a data-wf--primary-button--variant="blue" href="/start" class="primary-button w-variant-b428232b-7b24-db52-6b0b-12fd13311aee w-inline-block">
 <div class="primary-btn-text-wrap">
-<div class="primary-button-text">Start with SpotTalents</div>
-<div class="primary-button-text">Start with SpotTalents</div></div>
+<div class="primary-button-text">Get Started Free</div>
+<div class="primary-button-text">Get Started Free</div></div>
 <div class="primary-arrow-wrap w-variant-b428232b-7b24-db52-6b0b-12fd13311aee"><img loading="lazy" src="../images/6aa6bd06548e7975cbe07463_Primary%20Arrow%2002.svg" alt="Primary Arrow" class="primary-arrow w-variant-b428232b-7b24-db52-6b0b-12fd13311aee one"><img loading="lazy" src="../images/6aa6bd06548e7975cbe07463_Primary%20Arrow%2002.svg" alt="Primary Arrow" class="primary-arrow w-variant-b428232b-7b24-db52-6b0b-12fd13311aee two"></div></a><a data-wf--primary-button--variant="white" href="/solution" class="primary-button w-variant-33034aef-a839-2487-b88d-ba5ec2a83be5 w-inline-block">
 <div class="primary-btn-text-wrap">
 <div class="primary-button-text">Explore the Engine</div>
@@ -1276,6 +1276,7 @@ Monthly
 <script src="../js/ScrollTrigger.min.js" type="text/javascript"></script>
 <script src="../js/SplitText.min.js" type="text/javascript"></script>
 <script src="../js/lenis.min.js" type="text/javascript"></script>
+<script src="../js/number-flow.js" type="text/javascript"></script>
 <script>
   if (typeof gsap !== 'undefined') {
     if (typeof ScrollTrigger !== 'undefined') gsap.registerPlugin(ScrollTrigger);
@@ -1345,7 +1346,7 @@ document.addEventListener('DOMContentLoaded', function () {
 <!-- Interactive Pricing & Calculator Controller -->
 <script>
 document.addEventListener('DOMContentLoaded', function () {
-  // --- 1. Monthly / Annual Billing Switcher with Glider & GSAP Animations ---
+  // --- 1. Monthly / Annual Billing Switcher with Glider & NumberFlow Animations ---
   const billingPill = document.getElementById('billing-toggle-pill');
   const billingGlider = document.getElementById('billing-glider');
   const annualBtn = document.getElementById('billing-annual-btn');
@@ -1367,8 +1368,36 @@ document.addEventListener('DOMContentLoaded', function () {
   const savingsEnterprise = document.getElementById('savings-enterprise');
 
   let currentMode = 'annual';
-  const discoverAnim = { val: 82.50 };
-  const intelAnim = { val: 249 };
+
+  // Initialize NumberFlow custom elements (https://number-flow.barvian.me/vanilla)
+  function initNumberFlow() {
+    if (priceValDiscover && priceValDiscover.update) {
+      priceValDiscover.format = {
+        style: 'currency',
+        currency: 'USD',
+        trailingZeroDisplay: 'stripIfInteger',
+        maximumFractionDigits: 2
+      };
+      if (window.NumberFlow && window.NumberFlow.continuous) {
+        priceValDiscover.plugins = [window.NumberFlow.continuous];
+      }
+      priceValDiscover.update(82.5);
+    }
+
+    if (priceValIntel && priceValIntel.update) {
+      priceValIntel.format = {
+        style: 'currency',
+        currency: 'USD',
+        trailingZeroDisplay: 'stripIfInteger'
+      };
+      if (window.NumberFlow && window.NumberFlow.continuous) {
+        priceValIntel.plugins = [window.NumberFlow.continuous];
+      }
+      priceValIntel.update(249);
+    }
+  }
+
+  initNumberFlow();
 
   function updateGlider(activeBtn) {
     if (!billingGlider || !activeBtn || !billingPill) return;
@@ -1394,9 +1423,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     updateGlider(activeBtn);
 
-    const targetDiscover = isAnnual ? 82.50 : 99;
-    const targetIntel = isAnnual ? 249 : 299;
-
     const dataItems = [
       { el: subtextDiscover, text: isAnnual ? 'Billed annually at $990' : 'Billed monthly' },
       { el: savingsDiscover, text: isAnnual ? 'Save $198 vs monthly' : 'Cancel anytime · Flexible' },
@@ -1407,102 +1433,74 @@ document.addEventListener('DOMContentLoaded', function () {
       { el: savingsEnterprise, text: 'Custom SLAs' }
     ].filter(function (item) { return item.el !== null; });
 
-    if (immediate || typeof gsap === 'undefined') {
-      if (priceValDiscover) priceValDiscover.textContent = isAnnual ? '$82.50' : '$99';
-      if (priceValIntel) priceValIntel.textContent = isAnnual ? '$249' : '$299';
-      dataItems.forEach(function (item) { item.el.textContent = item.text; });
-      return;
+    // A. Animate Prices using NumberFlow digit spin
+    if (isAnnual) {
+      if (priceValDiscover && priceValDiscover.update) {
+        priceValDiscover.update(82.5);
+      } else if (priceValDiscover) {
+        priceValDiscover.textContent = '$82.50';
+      }
+
+      if (priceValIntel && priceValIntel.update) {
+        priceValIntel.update(249);
+      } else if (priceValIntel) {
+        priceValIntel.textContent = '$249';
+      }
+    } else {
+      if (priceValDiscover && priceValDiscover.update) {
+        priceValDiscover.update(99);
+      } else if (priceValDiscover) {
+        priceValDiscover.textContent = '$99';
+      }
+
+      if (priceValIntel && priceValIntel.update) {
+        priceValIntel.update(299);
+      } else if (priceValIntel) {
+        priceValIntel.textContent = '$299';
+      }
     }
 
-    // A. Animate Discover Price Number
-    if (priceValDiscover) {
-      gsap.killTweensOf(discoverAnim);
-      gsap.killTweensOf(priceValDiscover);
-
-      gsap.fromTo(priceValDiscover,
-        { scale: 0.93, y: isAnnual ? -6 : 6, opacity: 0.75 },
-        { scale: 1, y: 0, opacity: 1, duration: 0.42, ease: "back.out(1.5)" }
-      );
-
-      gsap.to(discoverAnim, {
-        val: targetDiscover,
-        duration: 0.42,
-        ease: "power2.out",
-        onUpdate: function () {
-          if (isAnnual) {
-            priceValDiscover.textContent = '$' + discoverAnim.val.toFixed(2);
-          } else {
-            if (discoverAnim.val >= 98.9) {
-              priceValDiscover.textContent = '$99';
-            } else {
-              priceValDiscover.textContent = '$' + (discoverAnim.val % 1 === 0 ? discoverAnim.val.toFixed(0) : discoverAnim.val.toFixed(1));
-            }
-          }
-        },
-        onComplete: function () {
-          priceValDiscover.textContent = isAnnual ? '$82.50' : '$99';
-        }
-      });
-    }
-
-    // B. Animate Intelligence Price Number
-    if (priceValIntel) {
-      gsap.killTweensOf(intelAnim);
-      gsap.killTweensOf(priceValIntel);
-
-      gsap.fromTo(priceValIntel,
-        { scale: 0.93, y: isAnnual ? -6 : 6, opacity: 0.75 },
-        { scale: 1, y: 0, opacity: 1, duration: 0.42, ease: "back.out(1.5)" }
-      );
-
-      gsap.to(intelAnim, {
-        val: targetIntel,
-        duration: 0.42,
-        ease: "power2.out",
-        onUpdate: function () {
-          priceValIntel.textContent = '$' + Math.round(intelAnim.val);
-        },
-        onComplete: function () {
-          priceValIntel.textContent = isAnnual ? '$249' : '$299';
-        }
-      });
-    }
-
-    // C. Enterprise subtle refresh
-    if (priceValEnterprise) {
+    // B. Enterprise subtle refresh
+    if (priceValEnterprise && typeof gsap !== 'undefined') {
       gsap.fromTo(priceValEnterprise,
         { scale: 0.95, opacity: 0.8 },
         { scale: 1, opacity: 1, duration: 0.35, ease: "power2.out" }
       );
     }
 
-    // D. Smooth Data Fade (Fade-out, update text, staggered cascade fade-in)
+    // C. Smooth Data Fade (Fade-out, update text, staggered cascade fade-in)
     const animElements = dataItems.map(function (item) { return item.el; });
-    gsap.killTweensOf(animElements);
+    if (typeof gsap !== 'undefined' && !immediate) {
+      gsap.killTweensOf(animElements);
 
-    gsap.to(animElements, {
-      opacity: 0,
-      y: -6,
-      duration: 0.16,
-      ease: "power2.in",
-      stagger: 0.015,
-      onComplete: function () {
-        dataItems.forEach(function (item) {
-          item.el.textContent = item.text;
-        });
+      gsap.to(animElements, {
+        opacity: 0,
+        y: -6,
+        duration: 0.16,
+        ease: "power2.in",
+        stagger: 0.015,
+        onComplete: function () {
+          dataItems.forEach(function (item) {
+            item.el.textContent = item.text;
+          });
 
-        gsap.fromTo(animElements,
-          { opacity: 0, y: 6 },
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.28,
-            ease: "power2.out",
-            stagger: 0.02
-          }
-        );
-      }
-    });
+          gsap.fromTo(animElements,
+            { opacity: 0, y: 6 },
+            {
+              opacity: 1,
+              y: 0,
+              duration: 0.28,
+              ease: "power2.out",
+              stagger: 0.02
+            }
+          );
+        }
+      });
+    } else {
+      dataItems.forEach(function (item) {
+        item.el.textContent = item.text;
+      });
+    }
   }
 
   if (annualBtn && monthlyBtn) {
