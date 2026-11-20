@@ -1,15 +1,248 @@
-<!DOCTYPE html><!-- Spotalents - AI-Powered Talent Intelligence --><!-- Last Published: Wed Nov 04 2026 08:33:03 GMT+0000 (Coordinated Universal Time) --><html data-wf-domain="spotalents.com" data-wf-page="6aa967da0815964a8a159b38" data-wf-site="6aa5926f78a0f4db2f6d1d20" lang="en" class="w-mod-js w-mod-ix3"><head><meta charset="utf-8"><link href="https://cdn.prod.website-files.com" rel="preconnect" crossorigin="anonymous"><title>About Spotalents - Audited Track Record & Talent Intelligence Engine</title><meta content="From a regional university experiment to an international tech talent company: 5,000+ engineers trained, 2,000+ on hiring radar, 237 placed contracts, and national recognition (EEA 2025). Discover the Spotalents operational journey." name="description"><meta content="About Spotalents - AI-Powered Talent Intelligence & Workforce Matching Engine" property="og:title"><meta content="Learn how Spotalents replaces resume keyword matching with deep code verification, team chemistry analytics, and evidence-backed engineering pod deployment." property="og:description"><meta content="../images/6abc120c9cbe81e3c6b4df09_Social%20Share%20%285%29.png" property="og:image"><meta content="About Spotalents - AI-Powered Talent Intelligence & Workforce Matching Engine" name="twitter:title"><meta content="Learn how Spotalents replaces resume keyword matching with deep code verification, team chemistry analytics, and evidence-backed engineering pod deployment." name="twitter:description"><meta property="og:type" content="website"><meta content="summary_large_image" name="twitter:card"><meta content="width=device-width, initial-scale=1" name="viewport"><meta content="Spotalents" name="generator"><link href="../css/spotalents.shared.css?v=2.0" rel="stylesheet" type="text/css">
-<style>
-/* Feedback Component Critical Sizing Failsafe */
-.feedback-slider-container { width: 100%; max-width: 954px; margin: 0 auto; position: relative; }
-.feedback-slider-mask { width: 100%; max-width: 954px; overflow: visible; }
-.feedback-slide { width: 954px; max-width: 954px; flex-shrink: 0; margin-right: 24px; box-sizing: border-box; }
-.feedback-slide-card { width: 100%; max-width: 554px; min-height: 435px; box-sizing: border-box; }
-.feedback-main-video { width: 100%; max-width: 376px; min-height: 435px; overflow: hidden; position: relative; box-sizing: border-box; display: block; }
-.feedback-video-media { width: 100%; height: 100%; object-fit: cover; display: block; }
-.feedback-video-wrap { width: 90px; height: 85px; border-radius: 10px; overflow: hidden; }
-.feedback-avatar-media { width: 100%; height: 100%; object-fit: cover; display: block; }
-.feedback-play-btn svg { width: 18px; height: 18px; }
+<!DOCTYPE html><!-- Spotalents - AI-Powered Talent Intelligence --><!-- Last Published: Wed Nov 04 2026 08:33:03 GMT+0000 (Coordinated Universal Time) --><html data-wf-domain="spotalents.com" data-wf-page="6aa967da0815964a8a159b38" data-wf-site="6aa5926f78a0f4db2f6d1d20" lang="en" class="w-mod-js w-mod-ix3"><head><meta charset="utf-8"><link href="https://cdn.prod.website-files.com" rel="preconnect" crossorigin="anonymous"><title>About Spotalents - Audited Track Record & Talent Intelligence Engine</title><meta content="From a regional university experiment to an international tech talent company: 5,000+ engineers trained, 2,000+ on hiring radar, 237 placed contracts, and national recognition (EEA 2025). Discover the Spotalents operational journey." name="description"><meta content="About Spotalents - AI-Powered Talent Intelligence & Workforce Matching Engine" property="og:title"><meta content="Learn how Spotalents replaces resume keyword matching with deep code verification, team chemistry analytics, and evidence-backed engineering pod deployment." property="og:description"><meta content="../images/6abc120c9cbe81e3c6b4df09_Social%20Share%20%285%29.png" property="og:image"><meta content="About Spotalents - AI-Powered Talent Intelligence & Workforce Matching Engine" name="twitter:title"><meta content="Learn how Spotalents replaces resume keyword matching with deep code verification, team chemistry analytics, and evidence-backed engineering pod deployment." name="twitter:description"><meta property="og:type" content="website"><meta content="summary_large_image" name="twitter:card"><meta content="width=device-width, initial-scale=1" name="viewport"><meta content="Spotalents" name="generator"><link href="../css/spotalents.shared.css?v=2.2" rel="stylesheet" type="text/css">
+<style id="feedback-critical-css">
+/* Feedback Component Critical Sizing & Layout Failsafe */
+.feedback-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  position: relative;
+}
+.feedback-top-wrap {
+  text-align: center;
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.feedback-sub-title-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #e9ede7;
+  border: 1px solid rgba(25, 24, 20, 0.08);
+  border-radius: 999px;
+  padding: 6px 18px;
+  font-family: var(--_font-family---primary-font, "Instrument Sans", sans-serif);
+  font-size: 14px;
+  font-weight: 500;
+  color: #191814;
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+}
+.feedback-top-wrap .section-title {
+  margin-top: 18px;
+  margin-bottom: 0;
+  text-align: center;
+}
+.feedback-slider-container {
+  width: 100%;
+  position: relative;
+}
+.feedback-slider-mask {
+  width: 100%;
+  max-width: 954px;
+  overflow: visible;
+  position: relative;
+}
+.feedback-slider-track {
+  display: flex;
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+.feedback-slide {
+  width: 954px;
+  max-width: 954px;
+  flex-shrink: 0;
+  margin-right: 24px;
+  box-sizing: border-box;
+}
+.feedback-single-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.feedback-slide-card {
+  width: 100%;
+  max-width: 554px;
+  min-height: 435px;
+  padding: 34px 32px;
+  border-radius: 12px;
+  background-color: #e9ede7;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  border: 1px solid rgba(25, 24, 20, 0.04);
+}
+.feedback-slider-top-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  width: 100%;
+}
+.feedback-author-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.feedback-author-name {
+  font-family: var(--_font-family---primary-font, "Instrument Sans", sans-serif);
+  font-size: 26px;
+  font-weight: 600;
+  color: #191814;
+  line-height: 1.25;
+  letter-spacing: -0.5px;
+  margin: 0;
+}
+.feedback-author-pst {
+  font-family: var(--_font-family---primary-font, "Instrument Sans", sans-serif);
+  font-size: 14px;
+  color: #757368;
+  font-weight: 400;
+  margin: 0;
+}
+.feedback-video-wrap {
+  width: 90px;
+  height: 85px;
+  border-radius: 10px;
+  overflow: hidden;
+  flex-shrink: 0;
+  background: #dfe3dc;
+  display: flex;
+}
+.feedback-avatar-media {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.feedback-slider-btm-wrap {
+  margin-top: 24px;
+}
+.feedback-card-details {
+  font-family: var(--_font-family---primary-font, "Instrument Sans", sans-serif);
+  font-size: 28px;
+  line-height: 1.32;
+  font-weight: 400;
+  letter-spacing: -0.56px;
+  color: #191814;
+  margin: 0;
+}
+.feedback-main-video {
+  width: 100%;
+  max-width: 376px;
+  min-height: 435px;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  background: #000000;
+  flex-shrink: 0;
+  display: block;
+  text-decoration: none;
+  cursor: pointer;
+  box-sizing: border-box;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+}
+.feedback-main-video:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+.feedback-video-media {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+  display: block;
+}
+.feedback-play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: rgba(248, 249, 239, 0.45);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s ease;
+  pointer-events: none;
+}
+.feedback-play-btn svg {
+  width: 18px;
+  height: 18px;
+  fill: #FFFFFF;
+  margin-left: 2px;
+}
+.feedback-main-video:hover .feedback-play-btn {
+  background-color: rgba(248, 249, 239, 0.85);
+  transform: translate(-50%, -50%) scale(1.1);
+}
+.feedback-main-video:hover .feedback-play-btn svg {
+  fill: #191814;
+}
+.feedback-nav-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 36px;
+  position: relative;
+  z-index: 10;
+}
+.feedback-arrow-btn {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background-color: #e9ede7;
+  border: 1px solid rgba(25, 24, 20, 0.08);
+  color: #191814;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  outline: none;
+}
+.feedback-arrow-btn:hover {
+  background-color: #191814;
+  color: #FFFFFF;
+  border-color: #191814;
+  transform: scale(1.05);
+}
+@media screen and (max-width: 991px) {
+  .feedback-slider-mask { max-width: 760px; }
+  .feedback-slide { width: 760px; max-width: 760px; margin-right: 20px; }
+  .feedback-slide-card { max-width: 440px; min-height: 380px; padding: 26px 22px; }
+  .feedback-main-video { max-width: 300px; min-height: 380px; }
+  .feedback-author-name { font-size: 22px; }
+  .feedback-card-details { font-size: 24px; }
+}
+@media screen and (max-width: 767px) {
+  .feedback-slider-mask { max-width: 100%; overflow: hidden; }
+  .feedback-slide { width: 100%; max-width: 100%; margin-right: 16px; }
+  .feedback-single-card { flex-direction: column; gap: 16px; }
+  .feedback-slide-card { max-width: 100%; min-height: auto; padding: 24px 20px; }
+  .feedback-main-video { max-width: 100%; height: 320px; min-height: 320px; }
+  .feedback-author-name { font-size: 20px; }
+  .feedback-card-details { font-size: 21px; line-height: 1.35; }
+  .feedback-video-wrap { width: 70px; height: 66px; }
+}
+@media screen and (max-width: 479px) {
+  .feedback-slide-card { min-height: 280px; padding: 20px 16px; }
+  .feedback-card-details { font-size: 19px; }
+  .feedback-arrow-btn { width: 46px; height: 46px; font-size: 16px; }
+}
 </style><link href="../css/lenis.css" rel="stylesheet" type="text/css"><link href="https://fonts.googleapis.com" rel="preconnect"><link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous"><script src="../js/webfont.js" type="text/javascript"></script><script type="text/javascript">WebFont.load({  google: {    families: ["Instrument Sans:400,500,600","Space Mono:400"]  }});</script><script type="text/javascript">!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);</script><link href="../images/6ac26a71c118dcab5930bb0a_Fav%20%281%29.png" rel="icon" type="image/png" sizes="32x32" media="(prefers-color-scheme: light)"><link href="../images/6ac26a71c118dcab5930bb0a_Fav%20%281%29.png" rel="icon" type="image/png" sizes="32x32" media="(prefers-color-scheme: dark)"><link href="../images/6ac26a71459ca49cb12b1337_Fav%20%281%29.png" rel="icon" type="image/png" sizes="48x48"><link href="../images/6ac26a71357d0157fbb90249_Fav%20%281%29.png" rel="apple-touch-icon" sizes="180x180"><link href="../images/6ac26a71feeb4c6ac2519ddc_Fav%20%281%29.png" rel="icon" type="image/png" sizes="192x192"><link href="../images/6ac26a71caf81b3a2fb699bb_Fav%20%281%29.png" rel="icon" type="image/png" sizes="512x512"><style>.w-webflow-badge { display: none !important; opacity: 0 !important; visibility: hidden !important; pointer-events: none !important; }</style></head><body><div class="pages-wrapper"><div data-animation="default" class="navbar w-nav" data-easing2="ease" data-wf-component-id="f91a6e72-3d48-2df7-ec13-3fd3e91e728d" data-easing="ease" data-wf-variant-state="base" data-collapse="medium" role="banner" data-duration="400"><div class="container w-container"><div class="navbar-wrapper"><a href="/" class="brand-logo-link w-nav-brand"><img loading="lazy" src="../images/6aa6b281bbff208b543d41a5_Brand%20Logo%20%282%29.svg" alt="Brand Logo " class="brand-logo"></a><nav role="navigation" class="nav-menu w-nav-menu"><div class="nav-menu-wrap"><a href="/about" class="menu-link w-inline-block w--current" aria-current="page"><div menu-one="" class="menu-text">Overview</div><div menu-two="" class="menu-text">Overview</div></a><a href="/features" class="menu-link w-inline-block"><div menu-one="" class="menu-text">Process</div><div menu-two="" class="menu-text">Process</div></a><a href="/solution" class="menu-link w-inline-block"><div menu-one="" class="menu-text">Engine</div><div menu-two="" class="menu-text">Engine</div></a><a href="/pricing" class="menu-link w-inline-block"><div menu-one="" class="menu-text">Pathways</div><div menu-two="" class="menu-text">Pathways</div></a><!-- Dropdown Menu commented out: direct links used for current pages -->
 <!--
 <div data-hover="true" data-delay="400" data-w-id="bd20b97c-b7e9-deb4-8f1c-510ab2ead699" class="dropdown w-dropdown"><div class="dropdown-toggle w-dropdown-toggle"><div class="dropdown-text">Pages</div><div class="dropdown-arrow-wrap"><img src="../images/6abcf1fcc7f632f068ee6f49_DD%20Arrow.svg" loading="lazy" alt="Dropdown Arrow " class="dropdown-arrow"></div></div><nav class="navigation w-dropdown-list"><div class="navigation-margin-wrap"><div class="navigation-padding-wrap"><div class="navigation-flex-wrap"><div class="navigation-left-wrap"><div class="navigation-left-menu-wrap"><div class="navigation-home-wrap"><div class="navigation-home-title">Intelligence</div><div class="home-link-wrap"><div class="home-icon-wrap"><img src="../images/6abcf19065d241daa90d2253_DD%20Home.svg" loading="lazy" alt="Home Icon" class="home-icon"></div><a href="/" aria-current="page" class="menu-link w-inline-block w--current"><div menu-one="" class="menu-text">Talent Intel</div><div menu-two="" class="menu-text">Talent Intel</div></a><div class="menu-dot"></div><a href="/home-b" class="menu-link w-inline-block"><div menu-one="" class="menu-text">Role &amp; Team Fit</div><div menu-two="" class="menu-text">Role &amp; Team Fit</div></a></div></div><div class="navigation-home-wrap"><div class="navigation-home-title">Solutions</div><div class="home-link-wrap"><div class="home-icon-wrap"><img src="../images/6abcf183fa9c5fa556c4584c_Pricing%20Check%20Icon.svg" loading="lazy" alt="Home Icon" class="home-icon"></div><a href="/pricing" class="menu-link w-inline-block"><div menu-one="" class="menu-text">Workforce Pods</div><div menu-two="" class="menu-text">Workforce Pods</div></a><div class="menu-dot"></div><a href="/pricing-b" class="menu-link w-inline-block"><div menu-one="" class="menu-text">Evidence Model</div><div menu-two="" class="menu-text">Evidence Model</div></a></div></div></div><div class="navigation-image-wrap"><img src="../images/6abcf1836439b90228a1e154_Dropdown%20BG.avif" loading="lazy" sizes="100vw" srcset="../images/6abcf1836439b90228a1e154_Dropdown%20BG-p-500.avif 500w, ../images/6abcf1836439b90228a1e154_Dropdown%20BG.avif 532w" alt="Navigation Image" class="navigation-image"></div></div><div class="navigation-right-wrap"><div class="dd-menu-wrapper"><div class="navigation-home-title">Main Pages</div><div class="all-menu-wrap"><a href="/about" aria-current="page" class="menu-link w-inline-block w--current"><div menu-one="" class="menu-text">Overview</div><div menu-two="" class="menu-text">Overview</div></a><a href="/features" class="menu-link w-inline-block"><div menu-one="" class="menu-text">How It Works</div><div menu-two="" class="menu-text">How It Works</div></a><a href="/solution" class="menu-link w-inline-block"><div menu-one="" class="menu-text">Intelligence</div><div menu-two="" class="menu-text">Intelligence</div></a><a href="/blog" class="menu-link w-inline-block"><div menu-one="" class="menu-text">Blog</div><div menu-two="" class="menu-text">Blog</div></a><a href="/pricing-a" class="menu-link w-inline-block"><div menu-one="" class="menu-text">Pathways</div><div menu-two="" class="menu-text">Pathways</div></a><a href="/contact" class="menu-link w-inline-block"><div menu-one="" class="menu-text">Contact</div><div menu-two="" class="menu-text">Contact</div></a><a href="/contact" class="menu-link w-inline-block"><div menu-one="" class="menu-text">Get Started</div><div menu-two="" class="menu-text">Get Started</div></a></div></div><div class="dd-menu-wrapper"><div class="navigation-home-title">Utility Pages</div><div class="all-menu-wrap"><a href="/blog/talent-intelligence-vs-traditional-recruitment" class="menu-link w-inline-block"><div menu-one="" class="menu-text">Blog Details</div><div menu-two="" class="menu-text">Blog Details</div></a><a href="/changelog" class="menu-link w-inline-block"><div menu-one="" class="menu-text">Changelog</div><div menu-two="" class="menu-text">Changelog</div></a><a href="/privacy" class="menu-link w-inline-block"><div menu-one="" class="menu-text">Privacy Policy</div><div menu-two="" class="menu-text">Privacy Policy</div></a><a href="/terms" class="menu-link w-inline-block"><div menu-one="" class="menu-text">Terms &amp; Condition</div><div menu-two="" class="menu-text">Terms &amp; Condition</div></a><a href="/licenses" class="menu-link w-inline-block"><div menu-one="" class="menu-text">Licenses</div><div menu-two="" class="menu-text">Licenses</div></a><a href="/401" class="menu-link w-inline-block"><div menu-one="" class="menu-text">Password</div><div menu-two="" class="menu-text">Password</div></a><a href="/style-guide" class="menu-link w-inline-block"><div menu-one="" class="menu-text">Style Guide</div><div menu-two="" class="menu-text">Style Guide</div></a><a href="/404" class="menu-link w-inline-block"><div menu-one="" class="menu-text">404</div><div menu-two="" class="menu-text">404</div></a></div></div></div></div></div></div></nav></div>
@@ -32,7 +265,7 @@
     <div class="feedback-slider-mask">
       <div class="feedback-slider-track" id="feedback-track">
         
-        <!-- Slide 1: CEO Story -->
+        <!-- Slide 1: CEO Story (Problem & Solution) -->
         <div class="feedback-slide">
           <div class="feedback-single-card">
             <!-- Left: Text Card (554px) -->
@@ -94,6 +327,68 @@
           </div>
         </div>
 
+        <!-- Slide 3: Hatem Ali (Engineering Pods Vision) -->
+        <div class="feedback-slide">
+          <div class="feedback-single-card">
+            <!-- Left: Text Card (554px) -->
+            <div class="feedback-slide-card">
+              <div class="feedback-slider-top-wrap">
+                <div class="feedback-author-wrap">
+                  <div class="feedback-author-name">Hatem Ali</div>
+                  <div class="feedback-author-pst">Founder &amp; CEO</div>
+                </div>
+                <div class="feedback-video-wrap">
+                  <img src="../images/hatem_avatar_thumb.jpg" alt="Hatem Ali" class="feedback-avatar-media" loading="lazy">
+                </div>
+              </div>
+              <div class="feedback-slider-btm-wrap">
+                <div class="feedback-card-details">“Instead of sending resumes into a black box, companies deploy pre-calibrated engineering pods that ship real software from day one with total certainty.”</div>
+              </div>
+            </div>
+            <!-- Right: Main Video Card (376px) -->
+            <a href="https://www.instagram.com/reel/DfhnSMytaKi/" target="_blank" rel="noopener noreferrer" class="feedback-main-video" aria-label="Watch Hatem Ali interview on Instagram">
+              <video class="feedback-video-media" muted loop playsinline preload="metadata" poster="../images/eea_interview_ceo.jpg">
+                <source src="../images/reel_ceo_loop.mp4" type="video/mp4">
+                <img src="../images/reel_ceo_loop.gif" alt="Hatem Ali Interview Loop" class="feedback-video-media">
+              </video>
+              <div class="feedback-play-btn">
+                <svg viewBox="0 0 24 24"><polygon points="7,4 20,12 7,20"></polygon></svg>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Slide 4: EEA Jury & Industry Recognition -->
+        <div class="feedback-slide">
+          <div class="feedback-single-card">
+            <!-- Left: Text Card (554px) -->
+            <div class="feedback-slide-card">
+              <div class="feedback-slider-top-wrap">
+                <div class="feedback-author-wrap">
+                  <div class="feedback-author-name">EEA Jury &amp; Awards</div>
+                  <div class="feedback-author-pst">Entrepreneurship Awards 2025</div>
+                </div>
+                <div class="feedback-video-wrap">
+                  <img src="../images/eea_trophy_thumb.jpg" alt="EEA Award Trophy" class="feedback-avatar-media" loading="lazy">
+                </div>
+              </div>
+              <div class="feedback-slider-btm-wrap">
+                <div class="feedback-card-details">“SpotTalents represents the next frontier of intelligence-driven workforce solutions in the region — recognized for execution excellence.”</div>
+              </div>
+            </div>
+            <!-- Right: Main Video Card (376px) -->
+            <a href="https://www.instagram.com/reel/DUyCYFbDeaC/" target="_blank" rel="noopener noreferrer" class="feedback-main-video" aria-label="Watch EEA Award interview on Instagram">
+              <video class="feedback-video-media" muted loop playsinline preload="metadata" poster="../images/eea_interview_award.jpg">
+                <source src="../images/reel_award_loop.mp4" type="video/mp4">
+                <img src="../images/reel_award_loop.gif" alt="EEA Ceremony Loop" class="feedback-video-media">
+              </video>
+              <div class="feedback-play-btn">
+                <svg viewBox="0 0 24 24"><polygon points="7,4 20,12 7,20"></polygon></svg>
+              </div>
+            </a>
+          </div>
+        </div>
+
       </div>
     </div>
 
@@ -106,451 +401,4 @@
   </div>
 
 </div>
-<!-- Row 2: Ecosystem Trust Strip (Interactive) --><div animation="fade-four" class="ecosystem-strip-card"><div class="eco-top-row"><div class="eco-heading-wrap"><h3 class="eco-headline">Institutional, Academic &amp; Technology Ecosystem</h3><p class="eco-caption">Backed by global tech leaders, Egyptian national institutions, and university engineering programs.</p></div><div class="eco-filter-nav"><button type="button" class="eco-filter-btn active" data-filter="all">All Partners (17)</button><button type="button" class="eco-filter-btn" data-filter="strategic">Strategic Supporters (8)</button><button type="button" class="eco-filter-btn" data-filter="collab">Technology Collaboration (5)</button><button type="button" class="eco-filter-btn" data-filter="academic">Academic Partners (4)</button></div></div><div class="eco-partners-grid"><!-- Strategic Supporters & Tech Titans --><div class="eco-pill-item" data-category="strategic"><div class="eco-pill-logo"><img src="../images/partners/microsoft.svg" alt="Microsoft" loading="lazy"></div><div class="eco-pill-info"><span class="eco-pill-name">Microsoft</span><span class="eco-pill-role">Founders Hub Backed</span></div></div><div class="eco-pill-item" data-category="strategic"><div class="eco-pill-logo"><img src="../images/partners/google.svg" alt="Google" loading="lazy"></div><div class="eco-pill-info"><span class="eco-pill-name">Google</span><span class="eco-pill-role">Cloud &amp; AI for Startups</span></div></div><div class="eco-pill-item" data-category="strategic"><div class="eco-pill-logo"><img src="../images/partners/nvidia.svg" alt="NVIDIA" loading="lazy"></div><div class="eco-pill-info"><span class="eco-pill-name">NVIDIA</span><span class="eco-pill-role">Inception Program</span></div></div><div class="eco-pill-item" data-category="strategic"><div class="eco-pill-logo"><img src="../images/partners/mcit_logo.png" alt="MCIT Egypt" loading="lazy"></div><div class="eco-pill-info"><span class="eco-pill-name">MCIT Egypt</span><span class="eco-pill-role">Ministry of Comm. &amp; IT</span></div></div><div class="eco-pill-item" data-category="strategic"><div class="eco-pill-logo"><img src="../images/partners/itida_symbol.png" alt="ITIDA" loading="lazy"></div><div class="eco-pill-info"><span class="eco-pill-name">ITIDA</span><span class="eco-pill-role">IT Industry Development</span></div></div><div class="eco-pill-item" data-category="strategic"><div class="eco-pill-logo"><img src="../images/partners/creativa_symbol.png" alt="Creativa Hubs" loading="lazy"></div><div class="eco-pill-info"><span class="eco-pill-name">Creativa Hubs</span><span class="eco-pill-role">Digital Innovation Centers</span></div></div><div class="eco-pill-item" data-category="strategic"><div class="eco-pill-logo"><img src="../images/partners/pnp_symbol.png" alt="Plug and Play" loading="lazy"></div><div class="eco-pill-info"><span class="eco-pill-name">Plug and Play</span><span class="eco-pill-role">Global Tech Accelerator</span></div></div><div class="eco-pill-item" data-category="strategic"><div class="eco-pill-logo"><img src="../images/partners/mint_symbol.png" alt="MINT by EGBANK" loading="lazy"></div><div class="eco-pill-info"><span class="eco-pill-name">MINT by EGBANK</span><span class="eco-pill-role">Youth Startup Incubation</span></div></div><!-- Academic Partners --><div class="eco-pill-item" data-category="academic"><div class="eco-pill-logo"><img src="../images/partners/mnu_symbol.png" alt="Mansoura National University" loading="lazy"></div><div class="eco-pill-info"><span class="eco-pill-name">Mansoura Nat. Univ.</span><span class="eco-pill-role">Academic Training Partner</span></div></div><div class="eco-pill-item" data-category="academic"><div class="eco-pill-logo"><img src="../images/partners/benha_symbol.png" alt="Benha University" loading="lazy"></div><div class="eco-pill-info"><span class="eco-pill-name">Benha University</span><span class="eco-pill-role">Talent Development Partner</span></div></div><div class="eco-pill-item" data-category="academic"><div class="eco-pill-logo"><img src="../images/partners/bnu_symbol.png" alt="Benha National University" loading="lazy"></div><div class="eco-pill-info"><span class="eco-pill-name">Benha Nat. Univ. (BNU)</span><span class="eco-pill-role">Academic Engineering Partner</span></div></div><div class="eco-pill-item" data-category="academic"><div class="eco-pill-logo"><img src="../images/partners/eelu_symbol.png" alt="Egyptian E-Learning University" loading="lazy"></div><div class="eco-pill-info"><span class="eco-pill-name">EELU University</span><span class="eco-pill-role">Egyptian E-Learning Univ.</span></div></div><!-- Technology Collaboration Partners --><div class="eco-pill-item" data-category="collab"><div class="eco-pill-logo"><img src="../images/partners/tech1_symbol.png" alt="Enterprise Tech" loading="lazy"></div><div class="eco-pill-info"><span class="eco-pill-name">Enterprise Tech</span><span class="eco-pill-role">Technology Collaboration</span></div></div><div class="eco-pill-item" data-category="collab"><div class="eco-pill-logo"><img src="../images/partners/tech2_symbol.png" alt="Systems & Networks" loading="lazy"></div><div class="eco-pill-info"><span class="eco-pill-name">Systems &amp; Networks</span><span class="eco-pill-role">Infrastructure Collaboration</span></div></div><div class="eco-pill-item" data-category="collab"><div class="eco-pill-logo"><img src="../images/partners/tech3_symbol.png" alt="Go Solutions" loading="lazy"></div><div class="eco-pill-info"><span class="eco-pill-name">Go Solutions</span><span class="eco-pill-role">Digital Services Partner</span></div></div><div class="eco-pill-item" data-category="collab"><div class="eco-pill-logo"><img src="../images/partners/tech4_symbol.png" alt="Digital Platform" loading="lazy"></div><div class="eco-pill-info"><span class="eco-pill-name">Digital Platform</span><span class="eco-pill-role">Technical Solutions</span></div></div><div class="eco-pill-item" data-category="collab"><div class="eco-pill-logo"><img src="../images/partners/divzoon_symbol.png" alt="Divzoon" loading="lazy"></div><div class="eco-pill-info"><span class="eco-pill-name">Divzoon</span><span class="eco-pill-role">Software Engineering Services</span></div></div></div></div></div></div></section><section class="section built"><div class="w-layout-blockcontainer container w-container"><div class="built-wrapper"><div class="built-grid-wrap"><div animation="fade-two" class="built-left-wrap"><img src="../images/6aaeb7425129ce16cef6b9c7_Stop%20Dashboard.avif" loading="lazy" sizes="100vw" srcset="../images/6aaeb7425129ce16cef6b9c7_Stop%20Dashboard-p-500.avif 500w, ../images/6aaeb7425129ce16cef6b9c7_Stop%20Dashboard.avif 878w" alt="Mission Image" class="built-image"></div><div id="w-node-_9a492f9d-c02e-149e-ce3a-a3a4476bf3c0-8a159b38" class="built-right-wrap"><div class="mission-left-top-wrap"><div animation="fade-one" class="mission-sub-title-wrap"><div data-wf--section-sub-title--variant="gray" class="section-sub-title w-variant-da0b81eb-ef6f-7786-e1c2-2810d345cc81">CONTINUOUS TELEMETRY</div></div><div animation="heading" class="mission-title-wrap"><h2 data-wf--section-title--variant="two" class="section-title w-variant-a1c41d54-f4a0-ff01-86fc-643e3a321238">Automated continuous telemetry</h2></div><div animation="fade-two" class="mission-details-wrap"><p data-wf--global-details--variant="black" class="global-details w-variant-a13ec10e-e1c2-79cc-f6a4-77ba89b574d6">How our engine ingests live commits, PR critiques, and outage triage into verified data.</p></div></div><div class="built-btm-wrap"><div animation="fade-three" data-wf--built-card--variant="base" class="built-card"><div class="build-card-top-wrap"><div class="mission-icon-wrap"><img loading="lazy" src="../images/6aaeb742c0da5e2926bd7e4e_Stop%20Icon%2001.svg" alt="Mission Icon" class="mission-icon"></div><div class="mission-card-title">48,200+ Git Commits Ingested</div></div><p class="mission-card-details">Webhooks capture code churn, branch hygiene, and test suite execution.</p></div><div animation="fade-three" data-wf--built-card--variant="two" class="built-card w-variant-de5b2fca-14f6-4072-7fbd-c1d3d3daa0b9"><div class="build-card-top-wrap"><div class="mission-icon-wrap"><img loading="lazy" src="../images/6aaeb742eb9437744adae4d1_Stop%20Icon%2002.svg" alt="Mission Icon" class="mission-icon"></div><div class="mission-card-title">9,400+ PR Reviews Evaluated</div></div><p class="mission-card-details">Peer reviews analyzed for architectural debate, turnaround speed, and rigor.</p></div><div id="w-node-_3d47440d-b663-8f25-a14c-b2930c350daf-8a159b38" class="built-card-last"><div animation="fade-three" data-wf--built-card--variant="two" class="built-card w-variant-de5b2fca-14f6-4072-7fbd-c1d3d3daa0b9"><div class="build-card-top-wrap"><div class="mission-icon-wrap"><img loading="lazy" src="../images/6aaeb742337c1be41b84e823_Stop%20Icon%2003.svg" alt="Mission Icon" class="mission-icon"></div><div class="mission-card-title">1,850+ Meeting Transcripts Scored</div></div><p class="mission-card-details">Transcripts evaluated for blocker resolution speed and Architecture Decision Records.</p></div></div><div animation="fade-three" data-wf--built-card--variant="base" class="built-card"><div class="build-card-top-wrap"><div class="mission-icon-wrap"><img loading="lazy" src="../images/6aaeb742188600ff4a8aeb49_eb1c56018252633bc93b0230f2b70b22_Stop%20Icon%2004.svg" alt="Mission Icon" class="mission-icon"></div><div class="mission-card-title">5 Injected Outages</div></div><p class="mission-card-details">Live production chaos injected to isolate systematic triage from random guessing.</p></div></div></div></div></div></div></section><section class="section confidence"><div class="w-layout-blockcontainer container w-container"><div class="confidence-wrapper"><div class="confidence-top-wrap"><div class="confidence-left-wrap"><div animation="fade-one" class="confidence-sub-title-wrap"><div data-wf--section-sub-title--variant="gray" class="section-sub-title w-variant-da0b81eb-ef6f-7786-e1c2-2810d345cc81">COGNITIVE TRACING &amp; RADAR</div></div><div animation="heading" class="confidence-title-wrap"><h2 data-wf--section-title--variant="two" class="section-title w-variant-a1c41d54-f4a0-ff01-86fc-643e3a321238">Confidence in every engineering match</h2></div></div><div animation="fade-two" class="confidence-right-wrap"><p data-wf--global-details--variant="base" class="global-details">We map how engineers think under system failure using empirical cognitive telemetry.</p></div></div><div class="confidence-wrap"><div class="confidence-grid-wrap"><div animation="fade-three" data-wf--confidence-card--variant="base" class="confidence-card"><div class="confidence-card-top-wrap"><div class="confidence-card-icon-wrap"><img loading="lazy" src="../images/6aaffc6c7a28c5816ae4d670_Confidence%20Card%20Icon%2001.svg" alt="Confidence Card Icon" class="confidence-card-icon"></div><div class="confidence-card-ctg">Traceable</div></div><div class="confidence-card-btm-wrap"><div class="confidence-card-title">System Modularity (88%)</div><div class="confidence-card-details">Clean separation of concerns, idempotent APIs, and resilient data tiers under load.</div></div></div><div animation="fade-three" data-wf--confidence-card--variant="blue" class="confidence-card w-variant-ca1e33b9-993c-a4af-99f2-8e46f98ff451"><div class="confidence-card-top-wrap"><div class="confidence-card-icon-wrap"><img loading="lazy" src="../images/6aaffc6c7a28c5816ae4d670_Confidence%20Card%20Icon%2001.svg" alt="Confidence Card Icon" class="confidence-card-icon"></div><div class="confidence-card-ctg">Calibrated</div></div><div class="confidence-card-btm-wrap"><div class="confidence-card-title">89.8% MTTR Drop (91%)</div><div class="confidence-card-details">Mean Time-to-Root-Cause drops from 142m to 14.5m through binary-search triage.</div></div></div><div animation="fade-four" id="w-node-_022832c3-0bf8-ec2a-caf5-7c7d8411df64-8a159b38" class="confidence-image-wrap"><img src="../images/6aaffd958accdba5818cf624_Confidence%20Image.avif" loading="lazy" sizes="100vw" srcset="../images/6aaffd958accdba5818cf624_Confidence%20Image-p-500.avif 500w, ../images/6aaffd958accdba5818cf624_Confidence%20Image-p-800.avif 800w, ../images/6aaffd958accdba5818cf624_Confidence%20Image-p-1080.avif 1080w, ../images/6aaffd958accdba5818cf624_Confidence%20Image.avif 1184w" alt="Confidence Image" class="confidence-image"></div><div animation="fade-five" id="w-node-_253d24ca-b5e3-4f93-e357-6d9f99be4989-8a159b38" class="confidence-details-card"><div class="confidence-details-wrap"><p data-wf--global-details--variant="black" class="global-details w-variant-a13ec10e-e1c2-79cc-f6a4-77ba89b574d6">Our 5-axis competence radar triangulates Architecture (88%), Diagnostic Triage (91%), Outage Composure (89%), Ideation Speed (86%), and PR Rigor (85%) into an objective, auditable candidate evidence profile.</p></div></div><div animation="fade-three" data-wf--confidence-card--variant="base" class="confidence-card"><div class="confidence-card-top-wrap"><div class="confidence-card-icon-wrap"><img loading="lazy" src="../images/6aaffc6c7a28c5816ae4d670_Confidence%20Card%20Icon%2001.svg" alt="Confidence Card Icon" class="confidence-card-icon"></div><div class="confidence-card-ctg">Guarded</div></div><div class="confidence-card-btm-wrap"><div class="confidence-card-title">Outage Composure (89%)</div><div class="confidence-card-details">Documenting explicit trade-offs in ADRs rather than cutting tests under deadline panic.</div></div></div><div animation="fade-three" data-wf--confidence-card--variant="blue" class="confidence-card w-variant-ca1e33b9-993c-a4af-99f2-8e46f98ff451"><div class="confidence-card-top-wrap"><div class="confidence-card-icon-wrap"><img loading="lazy" src="../images/6aaffc6c7a28c5816ae4d670_Confidence%20Card%20Icon%2001.svg" alt="Confidence Card Icon" class="confidence-card-icon"></div><div class="confidence-card-ctg">Accountable</div></div><div class="confidence-card-btm-wrap"><div class="confidence-card-title">Tamper-Proof Proof (85%)</div><div class="confidence-card-details">Public cryptographic verification linking exact Git commit SHAs, PRs, and live cloud URLs.</div></div></div></div></div></div></div></section><section class="section turn"><div class="w-layout-blockcontainer container w-container"><div class="turn-wrapper"><div class="trun-top-wrap"><div animation="fade-one" class="beliefs-sub-title-wrap"><div data-wf--section-sub-title--variant="gray" class="section-sub-title w-variant-da0b81eb-ef6f-7786-e1c2-2810d345cc81">14 CURRICULUM SPRINT TRACKS</div></div><div animation="heading" class="trun-title-wrap"><h2 data-wf--section-title--variant="two" class="section-title w-variant-a1c41d54-f4a0-ff01-86fc-643e3a321238">Targeted sprints. Audited deliverables.</h2></div><div animation="fade-two" class="beliefs-details-wrap"><p data-wf--global-details--variant="base" class="global-details">Fourteen modular tracks engineered for universities, enterprise teams, and innovators.</p></div></div><div animation="fade-three" class="trun-wrap"><div class="trun-image-wrap"><img src="../images/6ab003abb4f217bb1f312ea5_Trun%20Image.svg" loading="lazy" alt="Trun Image" class="trun-image"></div><div class="trun-grid-wrap"><div class="trun-tricker-wrap"><div class="trun-tricker-flex-wrap"><div class="trun-single-tricker one"><div class="trun-tricker-item one"><div data-wf--trun-tricker--variant="base" class="trun-tricker">The 10x AI Engineer (Cursor/Claude)</div><div data-wf--trun-tricker--variant="grey" class="trun-tricker w-variant-873ad2ef-f6eb-b470-7353-e80474d5f267">Autonomous AI Agents (LangChain/CrewAI)</div><div data-wf--trun-tricker--variant="base" class="trun-tricker">Enterprise RAG Systems (pgvector/Qdrant)</div></div><div class="trun-tricker-item one"><div data-wf--trun-tricker--variant="base" class="trun-tricker">The 10x AI Engineer (Cursor/Claude)</div><div data-wf--trun-tricker--variant="grey" class="trun-tricker w-variant-873ad2ef-f6eb-b470-7353-e80474d5f267">Autonomous AI Agents (LangChain/CrewAI)</div><div data-wf--trun-tricker--variant="base" class="trun-tricker">Enterprise RAG Systems (pgvector/Qdrant)</div></div><div class="trun-tricker-item one"><div data-wf--trun-tricker--variant="base" class="trun-tricker">The 10x AI Engineer (Cursor/Claude)</div><div data-wf--trun-tricker--variant="grey" class="trun-tricker w-variant-873ad2ef-f6eb-b470-7353-e80474d5f267">Autonomous AI Agents (LangChain/CrewAI)</div><div data-wf--trun-tricker--variant="base" class="trun-tricker">Enterprise RAG Systems (pgvector/Qdrant)</div></div></div><div class="trun-single-tricker two"><div class="trun-tricker-item two"><div data-wf--trun-tricker--variant="grey" class="trun-tricker w-variant-873ad2ef-f6eb-b470-7353-e80474d5f267">Production CI/CD &amp; DevSecOps</div><div data-wf--trun-tricker--variant="base" class="trun-tricker">High-Perf PostgreSQL (100x Query Bench)</div><div data-wf--trun-tricker--variant="grey" class="trun-tricker w-variant-873ad2ef-f6eb-b470-7353-e80474d5f267">Incident Triage Chaos War-Room</div></div><div class="trun-tricker-item two"><div data-wf--trun-tricker--variant="grey" class="trun-tricker w-variant-873ad2ef-f6eb-b470-7353-e80474d5f267">Production CI/CD &amp; DevSecOps</div><div data-wf--trun-tricker--variant="base" class="trun-tricker">High-Perf PostgreSQL (100x Query Bench)</div><div data-wf--trun-tricker--variant="grey" class="trun-tricker w-variant-873ad2ef-f6eb-b470-7353-e80474d5f267">Incident Triage Chaos War-Room</div></div><div class="trun-tricker-item two"><div data-wf--trun-tricker--variant="grey" class="trun-tricker w-variant-873ad2ef-f6eb-b470-7353-e80474d5f267">Production CI/CD &amp; DevSecOps</div><div data-wf--trun-tricker--variant="base" class="trun-tricker">High-Perf PostgreSQL (100x Query Bench)</div><div data-wf--trun-tricker--variant="grey" class="trun-tricker w-variant-873ad2ef-f6eb-b470-7353-e80474d5f267">Incident Triage Chaos War-Room</div></div></div></div></div><div class="trun-tricker-wrap"><div class="trun-tricker-flex-wrap"><div class="trun-single-tricker one"><div class="trun-tricker-item one"><div data-wf--trun-tricker--variant="transparent" class="trun-tricker w-variant-4d444cf1-9dbc-5569-b7c5-50eb7c0317c0">The 10x AI Engineer (Cursor/Claude)</div><div data-wf--trun-tricker--variant="transparent" class="trun-tricker w-variant-4d444cf1-9dbc-5569-b7c5-50eb7c0317c0">Autonomous AI Agents (LangChain/CrewAI)</div><div data-wf--trun-tricker--variant="transparent" class="trun-tricker w-variant-4d444cf1-9dbc-5569-b7c5-50eb7c0317c0">Enterprise RAG Systems (pgvector/Qdrant)</div></div><div class="trun-tricker-item one"><div data-wf--trun-tricker--variant="transparent" class="trun-tricker w-variant-4d444cf1-9dbc-5569-b7c5-50eb7c0317c0">The 10x AI Engineer (Cursor/Claude)</div><div data-wf--trun-tricker--variant="transparent" class="trun-tricker w-variant-4d444cf1-9dbc-5569-b7c5-50eb7c0317c0">Autonomous AI Agents (LangChain/CrewAI)</div><div data-wf--trun-tricker--variant="transparent" class="trun-tricker w-variant-4d444cf1-9dbc-5569-b7c5-50eb7c0317c0">Enterprise RAG Systems (pgvector/Qdrant)</div></div><div class="trun-tricker-item one"><div data-wf--trun-tricker--variant="transparent" class="trun-tricker w-variant-4d444cf1-9dbc-5569-b7c5-50eb7c0317c0">The 10x AI Engineer (Cursor/Claude)</div><div data-wf--trun-tricker--variant="transparent" class="trun-tricker w-variant-4d444cf1-9dbc-5569-b7c5-50eb7c0317c0">Autonomous AI Agents (LangChain/CrewAI)</div><div data-wf--trun-tricker--variant="transparent" class="trun-tricker w-variant-4d444cf1-9dbc-5569-b7c5-50eb7c0317c0">Enterprise RAG Systems (pgvector/Qdrant)</div></div></div><div class="trun-single-tricker two"><div class="trun-tricker-item two"><div data-wf--trun-tricker--variant="transparent" class="trun-tricker w-variant-4d444cf1-9dbc-5569-b7c5-50eb7c0317c0">Production CI/CD &amp; DevSecOps</div><div data-wf--trun-tricker--variant="transparent" class="trun-tricker w-variant-4d444cf1-9dbc-5569-b7c5-50eb7c0317c0">High-Perf PostgreSQL (100x Query Bench)</div><div data-wf--trun-tricker--variant="transparent" class="trun-tricker w-variant-4d444cf1-9dbc-5569-b7c5-50eb7c0317c0">Incident Triage Chaos War-Room</div></div><div class="trun-tricker-item two"><div data-wf--trun-tricker--variant="transparent" class="trun-tricker w-variant-4d444cf1-9dbc-5569-b7c5-50eb7c0317c0">Production CI/CD &amp; DevSecOps</div><div data-wf--trun-tricker--variant="transparent" class="trun-tricker w-variant-4d444cf1-9dbc-5569-b7c5-50eb7c0317c0">High-Perf PostgreSQL (100x Query Bench)</div><div data-wf--trun-tricker--variant="transparent" class="trun-tricker w-variant-4d444cf1-9dbc-5569-b7c5-50eb7c0317c0">Incident Triage Chaos War-Room</div></div><div class="trun-tricker-item two"><div data-wf--trun-tricker--variant="transparent" class="trun-tricker w-variant-4d444cf1-9dbc-5569-b7c5-50eb7c0317c0">Production CI/CD &amp; DevSecOps</div><div data-wf--trun-tricker--variant="transparent" class="trun-tricker w-variant-4d444cf1-9dbc-5569-b7c5-50eb7c0317c0">High-Perf PostgreSQL (100x Query Bench)</div><div data-wf--trun-tricker--variant="transparent" class="trun-tricker w-variant-4d444cf1-9dbc-5569-b7c5-50eb7c0317c0">Incident Triage Chaos War-Room</div></div></div></div></div></div></div></div></div></section><section class="section faq">
-<div class="w-layout-blockcontainer container w-container">
-<div class="faq-wrapper">
-<div class="faq-top-wrap">
-<div class="faq-left-wrap">
-<div animation="fade-one" class="faq-sub-title-wrap">
-<div data-wf--section-sub-title--variant="gray" class="section-sub-title w-variant-da0b81eb-ef6f-7786-e1c2-2810d345cc81">PRICING FAQ</div></div>
-<div animation="heading" class="faq-title-wrap">
-<h2 data-wf--section-title--variant="two" class="section-title w-variant-a1c41d54-f4a0-ff01-86fc-643e3a321238">Frequently Asked Questions</h2></div></div>
-<div animation="fade-two" class="faq-right-wrap">
-<p data-wf--global-details--variant="black" class="global-details w-variant-a13ec10e-e1c2-79cc-f6a4-77ba89b574d6">Clear answers about annual subscriptions, talent engagement fees, AI credit allowances, and commercial terms.</p></div></div>
-<div class="faq-wrap">
-<div data-current="Tab 1" data-easing="ease" data-duration-in="300" data-duration-out="100" class="faq-tabs w-tabs">
-<div class="faq-tabs-menu w-tab-menu">
-
-<a data-w-tab="Tab 1" animation="fade-three" class="faq-tab-link w-inline-block w-tab-link w--current">
-<div class="faq-single-card">
-<div class="faq-card-flex-wrap">
-<div class="faq-card-left-wrap">
-<div class="faq-number-wrap">
-<div class="faq-card-number">001</div></div>
-<div class="faq-all-wrap">
-<div class="faq-card-title-wrap">
-<div class="faq-card-title">What does the platform subscription include?</div></div>
-<div class="faq-answer-wrap">
-<div class="faq-details-wrap">
-<p data-wf--global-details--variant="black" class="global-details w-variant-a13ec10e-e1c2-79cc-f6a4-77ba89b574d6">Your subscription provides continuous access to SpotTalents' talent intelligence engine, verified Git commit audits, AST code depth analysis, team compatibility models, and monthly AI credit allowances.</p></div></div></div></div>
-<div class="faq-card-right-wrap"><img loading="lazy" src="../images/6aa7aca48163890107f974d4_Plus%20Icon.svg" alt="Faq Card Icon" class="faq-card-icon"></div></div></div></a>
-
-<a data-w-tab="Tab 2" animation="fade-three" class="faq-tab-link w-inline-block w-tab-link">
-<div class="faq-single-card">
-<div class="faq-card-flex-wrap">
-<div class="faq-card-left-wrap">
-<div class="faq-number-wrap">
-<div class="faq-card-number">002</div></div>
-<div class="faq-all-wrap">
-<div class="faq-card-title-wrap">
-<div class="faq-card-title">When do I start paying the talent engagement fee?</div></div>
-<div class="faq-answer-wrap">
-<div class="faq-details-wrap">
-<p data-wf--global-details--variant="black" class="global-details w-variant-a13ec10e-e1c2-79cc-f6a4-77ba89b574d6">Only after you select an engineer and active work officially begins. Searching, viewing AST code telemetry, generating AI matches, and interviewing candidates are 100% free with zero obligation.</p></div></div></div></div>
-<div class="faq-card-right-wrap"><img loading="lazy" src="../images/6aa7aca48163890107f974d4_Plus%20Icon.svg" alt="Faq Card Icon" class="faq-card-icon"></div></div></div></a>
-
-<a data-w-tab="Tab 3" animation="fade-three" class="faq-tab-link w-inline-block w-tab-link">
-<div class="faq-single-card">
-<div class="faq-card-flex-wrap">
-<div class="faq-card-left-wrap">
-<div class="faq-number-wrap">
-<div class="faq-card-number">003</div></div>
-<div class="faq-all-wrap">
-<div class="faq-card-title-wrap">
-<div class="faq-card-title">Is the engagement fee a one-time recruitment fee?</div></div>
-<div class="faq-answer-wrap">
-<div class="faq-details-wrap">
-<p data-wf--global-details--variant="black" class="global-details w-variant-a13ec10e-e1c2-79cc-f6a4-77ba89b574d6">No. Traditional headhunters charge $15,000–$30,000 upfront regardless of outcome. SpotTalents charges an agreed monthly percentage (e.g. 10%) on active talent compensation. If the engagement ends, billing stops immediately.</p></div></div></div></div>
-<div class="faq-card-right-wrap"><img loading="lazy" src="../images/6aa7aca48163890107f974d4_Plus%20Icon.svg" alt="Faq Card Icon" class="faq-card-icon"></div></div></div></a>
-
-<a data-w-tab="Tab 4" animation="fade-three" class="faq-tab-link w-inline-block w-tab-link">
-<div class="faq-single-card">
-<div class="faq-card-flex-wrap">
-<div class="faq-card-left-wrap">
-<div class="faq-number-wrap">
-<div class="faq-card-number">004</div></div>
-<div class="faq-all-wrap">
-<div class="faq-card-title-wrap">
-<div class="faq-card-title">What is the 14-day calibration guarantee?</div></div>
-<div class="faq-answer-wrap">
-<div class="faq-details-wrap">
-<p data-wf--global-details--variant="black" class="global-details w-variant-a13ec10e-e1c2-79cc-f6a4-77ba89b574d6">Every placed engineer starts with a 14-day risk-free calibration trial on your real codebase. If technical delivery or team chemistry isn't an exact fit, replace the candidate immediately or cancel with zero penalty.</p></div></div></div></div>
-<div class="faq-card-right-wrap"><img loading="lazy" src="../images/6aa7aca48163890107f974d4_Plus%20Icon.svg" alt="Faq Card Icon" class="faq-card-icon"></div></div></div></a>
-
-<a data-w-tab="Tab 5" animation="fade-three" class="faq-tab-link w-inline-block w-tab-link">
-<div class="faq-single-card">
-<div class="faq-card-flex-wrap">
-<div class="faq-card-left-wrap">
-<div class="faq-number-wrap">
-<div class="faq-card-number">005</div></div>
-<div class="faq-all-wrap">
-<div class="faq-card-title-wrap">
-<div class="faq-card-title">How do monthly AI credits work and can I top up?</div></div>
-<div class="faq-answer-wrap">
-<div class="faq-details-wrap">
-<p data-wf--global-details--variant="black" class="global-details w-variant-a13ec10e-e1c2-79cc-f6a4-77ba89b574d6">Every subscription plan includes a monthly AI credit allowance that refreshes each month. If your sourcing volume surges, you can purchase prepaid top-up credits anytime with transparent pricing and zero surprise billing.</p></div></div></div></div>
-<div class="faq-card-right-wrap"><img loading="lazy" src="../images/6aa7aca48163890107f974d4_Plus%20Icon.svg" alt="Faq Card Icon" class="faq-card-icon"></div></div></div></a>
-
-<a data-w-tab="Tab 6" animation="fade-three" class="faq-tab-link w-inline-block w-tab-link">
-<div class="faq-single-card">
-<div class="faq-card-flex-wrap">
-<div class="faq-card-left-wrap">
-<div class="faq-number-wrap">
-<div class="faq-card-number">006</div></div>
-<div class="faq-all-wrap">
-<div class="faq-card-title-wrap">
-<div class="faq-card-title">Can I switch between monthly and annual billing?</div></div>
-<div class="faq-answer-wrap">
-<div class="faq-details-wrap">
-<p data-wf--global-details--variant="black" class="global-details w-variant-a13ec10e-e1c2-79cc-f6a4-77ba89b574d6">Yes. You can begin on flexible monthly billing and switch to an annual plan at any time right from your account settings to lock in the 20% discount (2 months free).</p></div></div></div></div>
-<div class="faq-card-right-wrap"><img loading="lazy" src="../images/6aa7aca48163890107f974d4_Plus%20Icon.svg" alt="Faq Card Icon" class="faq-card-icon"></div></div></div></a>
-
-</div>
-<div class="w-tab-content">
-<div data-w-tab="Tab 1" class="w-tab-pane w--tab-active"></div>
-<div data-w-tab="Tab 2" class="w-tab-pane"></div>
-<div data-w-tab="Tab 3" class="w-tab-pane"></div>
-<div data-w-tab="Tab 4" class="w-tab-pane"></div>
-<div data-w-tab="Tab 5" class="w-tab-pane"></div>
-<div data-w-tab="Tab 6" class="w-tab-pane"></div>
-</div></div></div></div></div></section><section data-wf--call-to-action--variant="base" class="section cta"><div class="w-layout-blockcontainer big-container w-container"><div class="cta-wrapper"><div class="cta-wrap"><div animation="fade-one" class="cta-sub-title-wrap"><div data-wf--section-sub-title--variant="base" class="section-sub-title">Deploy With Certainty</div></div><div animation="heading" class="cta-title-wrap"><h2 data-wf--section-title--variant="base-mobile" class="section-title w-variant-2bee573a-2f5b-e418-48d1-d34dbeb09879">Skip the noise. Deploy with proof.</h2></div><div animation="fade-three" class="cta-deatils-wrap"><div class="cta-details"><span class="black">Zero guesswork.</span> Match the right engineers and complete pods backed by real delivery evidence.</div></div><div animation="fade-four" class="cta-button-wrap"><a data-wf--primary-button--variant="blue" href="/start" class="primary-button w-variant-b428232b-7b24-db52-6b0b-12fd13311aee w-inline-block"><div class="primary-btn-text-wrap"><div class="primary-button-text">Deploy with Spotalents</div><div class="primary-button-text">Deploy with Spotalents</div></div><div class="primary-arrow-wrap w-variant-b428232b-7b24-db52-6b0b-12fd13311aee"><img loading="lazy" src="../images/6aa6bd06548e7975cbe07463_Primary%20Arrow%2002.svg" alt="Primary Arrow " class="primary-arrow w-variant-b428232b-7b24-db52-6b0b-12fd13311aee one"><img loading="lazy" src="../images/6aa6bd06548e7975cbe07463_Primary%20Arrow%2002.svg" alt="Primary Arrow " class="primary-arrow w-variant-b428232b-7b24-db52-6b0b-12fd13311aee two"></div></a><a data-wf--primary-button--variant="white" href="/solution" class="primary-button w-variant-33034aef-a839-2487-b88d-ba5ec2a83be5 w-inline-block"><div class="primary-btn-text-wrap"><div class="primary-button-text">Explore Engine</div><div class="primary-button-text">Explore Engine</div></div><div class="primary-arrow-wrap w-variant-33034aef-a839-2487-b88d-ba5ec2a83be5"><img loading="lazy" src="../images/6aa6bd06548e7975cbe07463_Primary%20Arrow%2002.svg" alt="Primary Arrow " class="primary-arrow one"><img loading="lazy" src="../images/6aa6bd06548e7975cbe07463_Primary%20Arrow%2002.svg" alt="Primary Arrow " class="primary-arrow two"></div></a></div></div></div></div></section><!-- Footer Component -->
-    <section data-wf--footer--variant="base" class="section footer">
-      <div class="w-layout-blockcontainer big-container w-container">
-        <div class="footer-wrapper">
-          <div class="footer-watermark-text" aria-hidden="true">Spotalents</div>
-          <div class="footer-wrap">
-            <div class="footer-top-wrap">
-              <div animation="fade-one" class="footer-left-wrap">
-                <a href="/" class="footer-brand-link w-inline-block">
-                  <img loading="lazy" src="/images/6aa6d393ac93082b8aacb5ff_Footer%20Logo.svg" alt="Spotalents Logo" class="footer-logo">
-                </a>
-                <p class="footer-details">Spotalents is the AI-powered Talent Intelligence and Workforce Matching Engine. Connecting capability, compatibility, and real-world delivery evidence for high-performing engineering teams.</p>
-              </div>
-              <div class="footer-right-wrap">
-                <div animation="fade-two" class="footer-right-flex-wrap">
-                  <div class="footer-single-wrap">
-                    <div class="footer-menu-title">Platform</div>
-                    <div class="footer-menu-wrap">
-                      <a href="/" class="menu-link w-inline-block"><div menu-one="" class="menu-text">Home</div><div menu-two="" class="menu-text">Home</div></a>
-                      <a href="/about" class="menu-link w-inline-block"><div menu-one="" class="menu-text">Overview</div><div menu-two="" class="menu-text">Overview</div></a>
-                      <a href="/features" class="menu-link w-inline-block"><div menu-one="" class="menu-text">Process</div><div menu-two="" class="menu-text">Process</div></a>
-                      <a href="/solution" class="menu-link w-inline-block"><div menu-one="" class="menu-text">Engine</div><div menu-two="" class="menu-text">Engine</div></a>
-                    </div>
-                  </div>
-                  <div class="footer-single-wrap">
-                    <div class="footer-menu-title">Workforce</div>
-                    <div class="footer-menu-wrap">
-                      <a href="/pricing" class="menu-link w-inline-block"><div menu-one="" class="menu-text">Pathways</div><div menu-two="" class="menu-text">Pathways</div></a>
-                      <a href="/start" class="menu-link w-inline-block"><div menu-one="" class="menu-text">Deploy</div><div menu-two="" class="menu-text">Deploy</div></a>
-                      <a href="/about#story" class="menu-link w-inline-block"><div menu-one="" class="menu-text">Founder Story</div><div menu-two="" class="menu-text">Founder Story</div></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="footer-badge-strip">
-              <a href="https://eeawards.org/en/awards/people-of-tomorrow-youth-award?year=2025" target="_blank" rel="noopener noreferrer" class="footer-award-badge">
-                <div class="footer-award-badge-left">
-                  <span class="footer-badge-cup">2025</span>
-                  <div class="footer-badge-headings">
-                    <span class="footer-badge-eyebrow">OFFICIAL WINNER · 2025 PEOPLE OF TOMORROW YOUTH AWARD</span>
-                    <span class="footer-badge-name">Egypt’s Entrepreneur Awards (EEA) · Dragons Bootcamp LLC</span>
-                  </div>
-                </div>
-                <div class="footer-badge-verify">
-                  <span>Verify Archive</span>
-                  <span class="footer-badge-arrow">↗</span>
-                </div>
-              </a>
-              <div class="footer-backers-bar">
-                <span class="footer-backers-intro">Backed by global tech &amp; national institutions:</span>
-                <div class="footer-backers-pill-list">
-                  <span class="footer-backer-pill"><img src="/images/partners/microsoft.svg" alt="Microsoft"> Microsoft</span>
-                  <span class="footer-backer-pill"><img src="/images/partners/google.svg" alt="Google"> Google</span>
-                  <span class="footer-backer-pill"><img src="/images/partners/nvidia.svg" alt="NVIDIA"> NVIDIA</span>
-                  <span class="footer-backer-pill"><img src="/images/partners/mcit_logo.png" alt="MCIT"> MCIT Egypt</span>
-                  <span class="footer-backer-pill"><img src="/images/partners/itida_symbol.png" alt="ITIDA"> ITIDA</span>
-                  <span class="footer-backer-pill"><img src="/images/partners/creativa_symbol.png" alt="Creativa"> Creativa</span>
-                  <span class="footer-backer-pill"><img src="/images/partners/pnp_symbol.png" alt="Plug and Play"> Plug &amp; Play</span>
-                  <span class="footer-backer-pill"><img src="/images/partners/mint_symbol.png" alt="MINT by EGBANK"> MINT by EGBANK</span>
-                </div>
-              </div>
-            </div>
-            <div animation="fade-three" class="footer-copyright-wrap">
-              <div class="footer-copyright-text">© 2026 Spotalents. All rights reserved. Powered by Spotalents Intelligence.</div>
-              <!-- Social channels commented out until official handles are launched
-              <div class="footer-social-wrapper">
-                <div class="footer-copyright-text">Socials</div>
-                <div class="footer-social-wrap">
-                  <a href="https://discord.com/" target="_blank" class="social-link w-inline-block"><img loading="lazy" src="/images/6aa6daaf9d104f28ed99927d_Social%20Image%2001.svg" alt="Discord" class="social-image"><img loading="lazy" src="/images/6aa6daaf9d104f28ed99927d_Social%20Image%2001.svg" alt="Discord" class="social-image"></a>
-                  <a href="https://x.com/" target="_blank" class="social-link w-inline-block"><img loading="lazy" src="/images/6ac251c54ddeb2f1f2ec08f5_Twitter.svg" alt="Twitter" class="social-image"><img loading="lazy" src="/images/6ac251c54ddeb2f1f2ec08f5_Twitter.svg" alt="Twitter" class="social-image"></a>
-                  <a href="https://instagram.com/" target="_blank" class="social-link w-inline-block"><img loading="lazy" src="/images/6ac27f280b4e30951e8ec80f_Frame.svg" alt="Instagram" class="social-image"><img loading="lazy" src="/images/6ac27f280b4e30951e8ec80f_Frame.svg" alt="Instagram" class="social-image"></a>
-                  <a href="https://facebook.com/" target="_blank" class="social-link w-inline-block"><img loading="lazy" src="/images/6ac27f2892ef515c156f4b58_Frame%20%281%29.svg" alt="Facebook" class="social-image"><img loading="lazy" src="/images/6ac27f2892ef515c156f4b58_Frame%20%281%29.svg" alt="Facebook" class="social-image"></a>
-                </div>
-              </div>
-              -->
-            </div>
-          </div>
-        </div>
-      </div>
-    </section></div><script src="../js/jquery-3.5.1.min.dc5e7f18c8.js" type="text/javascript"></script>
-<script src="../js/spotalents.chunk.36b8fb49256177c8.js" type="text/javascript"></script>
-<script src="../js/spotalents.chunk.d5ced0f8a8550fc9.js" type="text/javascript"></script>
-<script src="../js/spotalents.about.9abb199fde624ba2.js" type="text/javascript"></script>
-<script src="../js/gsap.min.js" type="text/javascript"></script>
-<script src="../js/ScrollTrigger.min.js" type="text/javascript"></script>
-<script src="../js/SplitText.min.js" type="text/javascript"></script>
-<script src="../js/lenis.min.js" type="text/javascript"></script>
-
-<script>
-  if (typeof gsap !== 'undefined') {
-    if (typeof ScrollTrigger !== 'undefined') gsap.registerPlugin(ScrollTrigger);
-    if (typeof SplitText !== 'undefined') gsap.registerPlugin(SplitText);
-  }
-</script>
-
-<!-- Lenis Smooth Scroll -->
-<script>
-window.Webflow = window.Webflow || [];
-window.Webflow.push(() => {
-  if (!window.matchMedia('(min-width: 768px)').matches) return;
-
-  function initLenis() {
-    if (window._lenisInstance) return;
-    if (typeof Lenis === 'undefined') return;
-
-    const lenis = new Lenis({
-      duration: 0.9,
-      easing: (t) => 1 - Math.pow(1 - t, 3),
-      smoothWheel: true,
-      smoothTouch: false
-    });
-    window._lenisInstance = lenis;
-
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-    requestAnimationFrame(raf);
-
-    if (typeof ScrollTrigger !== 'undefined') {
-      lenis.on('scroll', ScrollTrigger.update);
-      ScrollTrigger.refresh();
-    }
-  }
-
-  if (document.readyState === 'complete') {
-    initLenis();
-  } else {
-    window.addEventListener('load', initLenis);
-  }
-});
-</script>
-
-<!-- GSAP Counter Animation -->
-<script>
-function initCounters() {
-  if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
-
-  document.querySelectorAll('.counter').forEach(counter => {
-    let targetValue = +counter.getAttribute('data-target');
-    if (isNaN(targetValue)) return;
-
-    gsap.fromTo(counter,
-      { innerText: 0 },
-      {
-        innerText: targetValue,
-        duration: 2,
-        ease: 'power1.out',
-        snap: { innerText: 1 },
-        scrollTrigger: {
-          trigger: counter,
-          start: 'top 80%',
-          once: true
-        },
-        onUpdate: function () {
-          counter.innerText = Math.floor(counter.innerText);
-        }
-      }
-    );
-  });
-}
-
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', initCounters);
-} else {
-  initCounters();
-}
-</script>
-<script>
-// Zarion Ecosystem Filter Interaction
-document.addEventListener("DOMContentLoaded", function() {
-  var filterBtns = document.querySelectorAll(".eco-filter-btn");
-  var partnerItems = document.querySelectorAll(".eco-pill-item");
-  filterBtns.forEach(function(btn) {
-    btn.addEventListener("click", function() {
-      filterBtns.forEach(function(b) { b.classList.remove("active"); });
-      btn.classList.add("active");
-      var filter = btn.getAttribute("data-filter");
-      partnerItems.forEach(function(item) {
-        if (filter === "all" || item.getAttribute("data-category") === filter) {
-          item.style.display = "flex";
-        } else {
-          item.style.display = "none";
-        }
-      });
-    });
-  });
-});
-</script>
-<!-- Interactive FAQ Accordion Controller -->
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-  const faqTabs = document.querySelectorAll('.faq-tabs');
-  faqTabs.forEach(function (tabs) {
-    const tabLinks = tabs.querySelectorAll('.faq-tab-link');
-    tabLinks.forEach(function (link) {
-      link.addEventListener('click', function (e) {
-        const isCurrent = link.classList.contains('w--current');
-        if (isCurrent) {
-          link.classList.remove('w--current');
-          e.preventDefault();
-          e.stopPropagation();
-          return;
-        }
-        tabLinks.forEach(function (l) { l.classList.remove('w--current'); });
-        link.classList.add('w--current');
-      });
-    });
-  });
-});
-</script>
-<!-- Feedback Section Slider & Video Autoplay Controller -->
-<script>
-(function() {
-  document.addEventListener('DOMContentLoaded', function() {
-    var container = document.querySelector('.feedback-slider-container');
-    if (!container) return;
-    var track = document.getElementById('feedback-track');
-    var slides = container.querySelectorAll('.feedback-slide');
-    var prevBtn = container.querySelector('.feedback-arrow-btn.prev');
-    var nextBtn = container.querySelector('.feedback-arrow-btn.next');
-    if (!track || !slides.length) return;
-
-    var currentIndex = 0;
-    var totalSlides = slides.length;
-    var isSectionInView = false;
-
-    function getStep() {
-      if (!slides[0]) return 978;
-      var slideRect = slides[0].getBoundingClientRect();
-      var style = window.getComputedStyle(slides[0]);
-      var marginRight = parseFloat(style.marginRight) || 0;
-      return slideRect.width + marginRight;
-    }
-
-    function updateActiveVideo() {
-      slides.forEach(function(slide, idx) {
-        var vid = slide.querySelector('video');
-        if (!vid) return;
-        if (idx === currentIndex && isSectionInView) {
-          var playPromise = vid.play();
-          if (playPromise !== undefined) {
-            playPromise.catch(function() {});
-          }
-        } else {
-          vid.pause();
-        }
-      });
-    }
-
-    function goToSlide(index) {
-      if (index < 0) index = 0;
-      if (index >= totalSlides) index = totalSlides - 1;
-      currentIndex = index;
-      var step = getStep();
-      track.style.transform = 'translateX(' + (-currentIndex * step) + 'px)';
-      updateActiveVideo();
-    }
-
-    if (prevBtn) {
-      prevBtn.addEventListener('click', function() {
-        if (currentIndex > 0) {
-          goToSlide(currentIndex - 1);
-        } else {
-          goToSlide(totalSlides - 1);
-        }
-      });
-    }
-
-    if (nextBtn) {
-      nextBtn.addEventListener('click', function() {
-        if (currentIndex < totalSlides - 1) {
-          goToSlide(currentIndex + 1);
-        } else {
-          goToSlide(0);
-        }
-      });
-    }
-
-    // Touch / swipe support
-    var startX = 0;
-    var currentX = 0;
-    var isDragging = false;
-
-    track.addEventListener('touchstart', function(e) {
-      startX = e.touches[0].clientX;
-      currentX = startX;
-      isDragging = true;
-    }, { passive: true });
-
-    track.addEventListener('touchmove', function(e) {
-      if (!isDragging) return;
-      currentX = e.touches[0].clientX;
-    }, { passive: true });
-
-    track.addEventListener('touchend', function() {
-      if (!isDragging) return;
-      isDragging = false;
-      var diffX = currentX - startX;
-      if (diffX < -50) {
-        if (currentIndex < totalSlides - 1) {
-          goToSlide(currentIndex + 1);
-        } else {
-          goToSlide(0);
-        }
-      } else if (diffX > 50) {
-        if (currentIndex > 0) {
-          goToSlide(currentIndex - 1);
-        } else {
-          goToSlide(totalSlides - 1);
-        }
-      }
-    });
-
-    // Resize handler
-    window.addEventListener('resize', function() {
-      goToSlide(currentIndex);
-    });
-
-    // Viewport IntersectionObserver
-    var section = document.querySelector('.section.client-feedback') || document.querySelector('.feedback-wrapper');
-    if (section && 'IntersectionObserver' in window) {
-      var observer = new IntersectionObserver(function(entries) {
-        entries.forEach(function(entry) {
-          isSectionInView = entry.isIntersecting;
-          updateActiveVideo();
-        });
-      }, { threshold: 0.2 });
-      observer.observe(section);
-    } else {
-      isSectionInView = true;
-      updateActiveVideo();
-    }
-
-    goToSlide(0);
-  });
-})();
-</script>
-</body>
-</html>
+>

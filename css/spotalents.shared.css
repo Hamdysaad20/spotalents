@@ -11166,7 +11166,8 @@ number-flow.pricing-a-price-text {
 /* ==========================================================================
    Client Feedback & Video Story Component (Strativo Slider Layout)
    ========================================================================== */
-.section.client-feedback {
+.section.client-feedback,
+.section.feedback {
   padding-top: var(--_gap---gap-12xl, 80px);
   padding-bottom: var(--_gap---gap-12xl, 80px);
   position: relative;
@@ -11179,6 +11180,7 @@ number-flow.pricing-a-price-text {
   flex-direction: column;
   align-items: center;
   width: 100%;
+  position: relative;
 }
 
 .feedback-top-wrap {
@@ -11213,8 +11215,6 @@ number-flow.pricing-a-price-text {
 
 .feedback-slider-container {
   width: 100%;
-  max-width: 954px;
-  margin: 0 auto;
   position: relative;
 }
 
@@ -11222,6 +11222,7 @@ number-flow.pricing-a-price-text {
   width: 100%;
   max-width: 954px;
   overflow: visible;
+  position: relative;
 }
 
 .feedback-slider-track {
@@ -11244,6 +11245,7 @@ number-flow.pricing-a-price-text {
   align-items: stretch;
   gap: 20px;
   width: 100%;
+  box-sizing: border-box;
 }
 
 /* Left: Text Card (554px) */
@@ -11266,6 +11268,7 @@ number-flow.pricing-a-price-text {
   justify-content: space-between;
   align-items: flex-start;
   gap: 16px;
+  width: 100%;
 }
 
 .feedback-author-wrap {
@@ -11416,7 +11419,6 @@ number-flow.pricing-a-price-text {
 
 /* Responsive Breakpoints */
 @media screen and (max-width: 991px) {
-  .feedback-slider-container,
   .feedback-slider-mask {
     max-width: 760px;
   }
@@ -11443,7 +11445,6 @@ number-flow.pricing-a-price-text {
 }
 
 @media screen and (max-width: 767px) {
-  .feedback-slider-container,
   .feedback-slider-mask {
     max-width: 100%;
     overflow: hidden;
