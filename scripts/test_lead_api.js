@@ -180,6 +180,35 @@ async function runTests() {
     console.log('✓ Test 7 Passed: Required defensive security headers verified');
   }
 
+  // Test 8: Local & File Protocol CORS Support
+  {
+    // Test 8a: file:// protocol sends origin "null"
+    const { req: reqNull, res: resNull, getHeaders: getHeadersNull } = createMockReqRes({ 
+      method: 'OPTIONS', 
+      origin: 'null' 
+    });
+    await handler(reqNull, resNull);
+    assert.strictEqual(getHeadersNull()['access-control-allow-origin'], '*', 'Expected * for file:// (null origin)');
+
+    // Test 8b: localhost on arbitrary port
+    const { req: reqLocal, res: resLocal, getHeaders: getHeadersLocal } = createMockReqRes({ 
+      method: 'OPTIONS', 
+      origin: 'http://localhost:8000' 
+    });
+    await handler(reqLocal, resLocal);
+    assert.strictEqual(getHeadersLocal()['access-control-allow-origin'], 'http://localhost:8000', 'Expected reflected localhost origin');
+
+    // Test 8c: 127.0.0.1 on arbitrary port (VS Code Live Server)
+    const { req: reqIp, res: resIp, getHeaders: getHeadersIp } = createMockReqRes({ 
+      method: 'OPTIONS', 
+      origin: 'http://127.0.0.1:5500' 
+    });
+    await handler(reqIp, resIp);
+    assert.strictEqual(getHeadersIp()['access-control-allow-origin'], 'http://127.0.0.1:5500', 'Expected reflected 127.0.0.1 origin');
+
+    console.log('✓ Test 8 Passed: Local development & file:// CORS policies verified');
+  }
+
   console.log('\n========================================');
   console.log('All 7 Security & API Tests Passed 100%!');
   console.log('========================================\n');

@@ -1161,15 +1161,53 @@
         };
 
         try {
-          // Send request to Vercel Serverless Function -> Supabase
-          const response = await fetch('/api/leads', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-              'Accept': 'application/json'
-            },
-            body: JSON.stringify(leadData)
-          });
+          // Resolve target API endpoint:
+          // 1. If loaded from file:// protocol, target the live production endpoint directly
+          // 2. If loaded from localhost, try local /api/leads first; if 404 or network error, fallback to production
+          // 3. If on production (spotalents.com), use relative /api/leads
+          const isFileProtocol = window.location.protocol === 'file:';
+          const productionEndpoint = 'https://www.spotalents.com/api/leads';
+          let endpoint = isFileProtocol ? productionEndpoint : '/api/leads';
+
+          let response;
+          try {
+            response = await fetch(endpoint, {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+              },
+              body: JSON.stringify(leadData)
+            });
+
+            // If a local static server (Live Server, python -m http.server, etc.) returns 404 for /api/leads
+            if (!response.ok && response.status === 404 && endpoint !== productionEndpoint) {
+              console.info('[Spotalents Local] Local backend not detected. Seamlessly routing to production endpoint...');
+              response = await fetch(productionEndpoint, {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json',
+                  'Accept': 'application/json'
+                },
+                body: JSON.stringify(leadData)
+              });
+            }
+          } catch (fetchErr) {
+            // If local fetch threw network error (e.g. protocol mismatch or offline local server)
+            if (endpoint !== productionEndpoint) {
+              console.info('[Spotalents Local] Retrying via production endpoint:', fetchErr.message);
+              response = await fetch(productionEndpoint, {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json',
+                  'Accept': 'application/json'
+                },
+                body: JSON.stringify(leadData)
+              });
+            } else {
+              throw fetchErr;
+            }
+          }
 
           const result = await response.json().catch(() => ({}));
 

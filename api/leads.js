@@ -79,16 +79,22 @@ module.exports = async function handler(req, res) {
 
   // Handle CORS
   const origin = req.headers.origin || '';
-  const allowedOrigins = [
-    'https://spotalents.com',
-    'https://www.spotalents.com',
-    'http://localhost:3000',
-    'http://localhost:5000',
-    'http://127.0.0.1:5500'
-  ];
   
-  const isVercelPreview = origin.endsWith('.vercel.app');
-  if (allowedOrigins.includes(origin) || isVercelPreview || !origin) {
+  // Allow all local development environments (file:// protocol, localhost on any port, 127.0.0.1 on any port)
+  const isLocalOrigin = 
+    origin === 'null' ||
+    /^https?:\/\/localhost(:\d+)?$/.test(origin) ||
+    /^https?:\/\/127\.0\.0\.1(:\d+)?$/.test(origin);
+
+  const isProductionOrigin = 
+    origin === 'https://spotalents.com' ||
+    origin === 'https://www.spotalents.com' ||
+    origin.endsWith('.vercel.app');
+
+  if (isLocalOrigin) {
+    // When opened from local (file:// sends 'null', or any localhost/127.0.0.1 port)
+    res.setHeader('Access-Control-Allow-Origin', origin === 'null' ? '*' : origin);
+  } else if (isProductionOrigin || !origin) {
     res.setHeader('Access-Control-Allow-Origin', origin || '*');
   } else {
     res.setHeader('Access-Control-Allow-Origin', 'https://spotalents.com');
