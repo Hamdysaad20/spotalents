@@ -101,3 +101,28 @@ To test locally with environment variables:
 | **Stored Cross-Site Scripting (XSS)** | All string inputs are sanitized, tag brackets `<>` and non-printable control characters are stripped. | `/api/leads.js` |
 | **Lead Loss Resilience** | If network drops or database maintenance occurs, lead payload is preserved in client `localStorage` (`spotalents_leads_pending`). | `start/index.html` |
 | **Information Disclosure** | Generic, safe error messages returned to clients; detailed PostgreSQL stack traces logged only in private Vercel runtime logs. | `/api/leads.js` |
+| **Founder Notification Loss** | Dual founder alerting to `hatemalihassan1@gmail.com` and `contact@jointhedragons.com` with anti-XSS template rendering and multi-provider fallback. | `/api/_email.js` & `/api/leads.js` |
+
+---
+
+## 5. Founder Email Notification System
+
+Whenever a prospect submits the form on the **Start Page**, the submission triggers two actions:
+1. **Database Persistence**: Saved securely in Supabase (`leads` table) using administrative Row Level Security bypass.
+2. **Founder Email Alert**: An executive, branded HTML email is dispatched to both founders:
+   - `hatemalihassan1@gmail.com`
+   - `contact@jointhedragons.com`
+
+### Supported Email Providers:
+- **Resend** (Recommended for Vercel): Set `RESEND_API_KEY` in Vercel environment variables.
+- **Gmail / Nodemailer**: Set `GMAIL_USER` and `GMAIL_APP_PASSWORD` in Vercel.
+- **Custom SMTP**: Set `SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, and `SMTP_PASS`.
+- **SendGrid**: Set `SENDGRID_API_KEY`.
+
+### Email Template Features:
+- **Spotalents Executive Branding**: Royal Blue `#013BFF` and dark slate card styling.
+- **One-Click Reply**: Includes pre-populated `mailto:` button with subject and intro copy.
+- **Full Lead Context**: Prospect Name, Company, Work Email, Scope, Source, Client IP, and Timezone.
+- **XSS-Protected**: All prospect input is HTML-escaped before insertion into the template.
+- **Non-blocking Dispatch**: Even if an email provider is unreachable or temporarily down, the lead submission returns HTTP 200 to the applicant and is safely preserved in Supabase.
+

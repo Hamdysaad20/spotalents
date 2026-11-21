@@ -12,8 +12,11 @@
  * - Database Row Level Security (RLS) Compatible Integration
  * - Information Leakage Prevention
  * - Dual Engine: Official @supabase/supabase-js with native REST fallback
+ * - Branded Founder Email Notifications to hatemalihassan1@gmail.com & contact@jointhedragons.com
  * ==============================================================================
  */
+
+const { sendFounderNotification } = require('./_email');
 
 // 1. In-memory Rate Limiting (Token Bucket per IP)
 const RATE_LIMIT_WINDOW_MS = 10 * 60 * 1000; // 10 minutes
@@ -187,6 +190,12 @@ module.exports = async function handler(req, res) {
   const projectDetails = sanitizeString(body.projectDetails, 3000);
   const source = sanitizeString(body.source || 'start_page', 50);
 
+  // Pricing & Plan Metadata
+  const plan = sanitizeString(body.plan || '', 50);
+  const billing = sanitizeString(body.billing || '', 50);
+  const talentComp = body.talentComp || body.comp ? sanitizeString(String(body.talentComp || body.comp), 20) : null;
+  const talentFee = body.talentFee || body.fee ? sanitizeString(String(body.talentFee || body.fee), 20) : null;
+
   const errors = [];
   if (!firstName || firstName.length < 1) errors.push('First name is required.');
   if (!lastName || lastName.length < 1) errors.push('Last name is required.');
@@ -201,14 +210,29 @@ module.exports = async function handler(req, res) {
     });
   }
 
+  // Prepend structured plan metadata to project_details so it is always preserved in any database/dashboard
+  let formattedProjectDetails = projectDetails;
+  if (plan && plan !== 'general') {
+    const metaParts = [`Plan: ${plan.toUpperCase()}`];
+    if (billing && billing !== 'unspecified') metaParts.push(`Billing: ${billing}`);
+    if (talentComp) metaParts.push(`Comp: $${talentComp}`);
+    if (talentFee) metaParts.push(`Fee: $${talentFee}`);
+    const metaHeader = `[${metaParts.join(' | ')}]`;
+    formattedProjectDetails = formattedProjectDetails ? `${metaHeader}\n\n${formattedProjectDetails}` : metaHeader;
+  }
+
   // Prepare Record for Supabase
   const leadRecord = {
     first_name: firstName,
     last_name: lastName,
     company_name: companyName,
     email: email,
-    project_details: projectDetails || null,
+    project_details: formattedProjectDetails || null,
     source: source,
+    plan: plan || null,
+    billing: billing || null,
+    talent_comp: talentComp || null,
+    talent_fee: talentFee || null,
     ip_address: clientIp,
     user_agent: userAgent.slice(0, 500),
     referrer: referrer.slice(0, 500),
@@ -235,6 +259,11 @@ module.exports = async function handler(req, res) {
   try {
     let insertedId = null;
 
+    // Prepare extended payload for when native plan/billing columns exist
+    const insertPayload = { ...leadRecord };
+    if (plan) insertPayload.plan = plan;
+    if (billing) insertPayload.billing = billing;
+
     // Strategy A: Official @supabase/supabase-js library
     try {
       const { createClient } = require('@supabase/supabase-js');
@@ -245,13 +274,24 @@ module.exports = async function handler(req, res) {
         }
       });
 
-      const { data, error } = await supabase
+      let { data, error } = await supabase
         .from('leads')
-        .insert([leadRecord])
+        .insert([insertPayload])
         .select('id')
         .single();
 
-      if (error) {
+      // If database table does not yet have plan/billing columns, retry with base leadRecord
+      if (error && (error.message?.includes('column') || error.code === 'PGRST204' || error.code === '42703')) {
+        console.info('[Supabase] Native plan/billing columns not detected. Inserting base lead record (metadata preserved in project_details)...');
+        const retry = await supabase
+          .from('leads')
+          .insert([leadRecord])
+          .select('id')
+          .single();
+        if (retry.error) throw retry.error;
+        data = retry.data;
+        error = null;
+      } else if (error) {
         throw error;
       }
       insertedId = data ? data.id : null;
@@ -261,7 +301,7 @@ module.exports = async function handler(req, res) {
       console.warn('[Supabase SDK fallback to PostgREST HTTP fetch]:', sdkError.message || sdkError);
       
       const restEndpoint = `${supabaseUrl.replace(/\/$/, '')}/rest/v1/leads`;
-      const response = await fetch(restEndpoint, {
+      let response = await fetch(restEndpoint, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -269,12 +309,27 @@ module.exports = async function handler(req, res) {
           'Authorization': `Bearer ${supabaseKey}`,
           'Prefer': 'return=representation'
         },
-        body: JSON.stringify(leadRecord)
+        body: JSON.stringify(insertPayload)
       });
 
       if (!response.ok) {
         const errorText = await response.text();
-        throw new Error(`Supabase REST error (${response.status}): ${errorText}`);
+        if (errorText.includes('column') || response.status === 400) {
+          console.info('[Supabase REST] Retrying insert with base lead record...');
+          response = await fetch(restEndpoint, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'apikey': supabaseKey,
+              'Authorization': `Bearer ${supabaseKey}`,
+              'Prefer': 'return=representation'
+            },
+            body: JSON.stringify(leadRecord)
+          });
+        }
+        if (!response.ok) {
+          throw new Error(`Supabase REST error (${response.status}): ${await response.text()}`);
+        }
       }
 
       const responseData = await response.json();
@@ -283,11 +338,35 @@ module.exports = async function handler(req, res) {
       }
     }
 
+    // Dispatch Instant Founder Email Notification (to hatemalihassan1@gmail.com & contact@jointhedragons.com)
+    let emailStatus = null;
+    try {
+      emailStatus = await sendFounderNotification({
+        ...leadRecord,
+        leadId: insertedId,
+        plan: plan || 'General',
+        billing: billing || 'annual',
+        talentComp: talentComp || null,
+        talentFee: talentFee || null,
+        userTimezone: sanitizeString(body.timezone || body.userTimezone, 100),
+        submittedLocalTime: sanitizeString(body.submittedLocalTime, 100),
+        pageUrl: sanitizeString(body.pageUrl, 500)
+      });
+    } catch (emailErr) {
+      console.error('[Founder Notification Dispatch Error]:', emailErr.message || emailErr);
+      emailStatus = { sent: false, error: emailErr.message };
+    }
+
     // Success response
     return res.status(200).json({
       success: true,
       message: 'Demo request received successfully. Our calibration team will connect with you within 24 hours.',
-      leadId: insertedId || undefined
+      leadId: insertedId || undefined,
+      notification: {
+        sent: Boolean(emailStatus?.sent),
+        provider: emailStatus?.provider || null,
+        recipients: emailStatus?.recipients || ['hatemalihassan1@gmail.com', 'contact@jointhedragons.com']
+      }
     });
 
   } catch (dbError) {

@@ -5,10 +5,11 @@
   <meta charset="utf-8">
   <link href="https://cdn.prod.website-files.com" rel="preconnect" crossorigin="anonymous">
   <title>Schedule Demo & Deploy Engineering Pods | Spotalents</title>
+<link rel="canonical" href="https://spotalents.com/start">
   <meta content="Connect with Spotalents to calibrate and deploy an elite engineering pod within 48 hours. Built on multi-signal intelligence, verified production code, and guaranteed delivery." name="description">
   <meta content="Schedule Demo & Deploy Engineering Pods | Spotalents" property="og:title">
   <meta content="Connect with Spotalents to calibrate and deploy an elite engineering pod within 48 hours. Built on multi-signal intelligence, verified production code, and guaranteed delivery." property="og:description">
-  <meta content="../images/6abc120c9cbe81e3c6b4df09_Social%20Share%20%285%29.png" property="og:image">
+  <meta property="og:image" content="https://spotalents.com/images/6abc120c9cbe81e3c6b4df09_Social%20Share%20%285%29.png">
   <meta content="Schedule Demo & Deploy Engineering Pods | Spotalents" name="twitter:title">
   <meta content="Connect with Spotalents to calibrate and deploy an elite engineering pod within 48 hours. Built on multi-signal intelligence, verified production code, and guaranteed delivery." name="twitter:description">
   <meta property="og:type" content="website">
@@ -16,7 +17,7 @@
   <meta content="width=device-width, initial-scale=1" name="viewport">
   <meta content="Spotalents" name="generator">
   
-  <link href="../css/spotalents.shared.css" rel="stylesheet" type="text/css">
+  <link href="../css/spotalents.shared.css?v=2.9" rel="stylesheet" type="text/css">
   <link href="../css/lenis.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous">
@@ -102,6 +103,105 @@
       line-height: 1.5;
       margin: 0;
       word-wrap: break-word;
+    }
+
+    /* Dynamic Selected Plan Badge Card */
+    .plan-selection-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 12px 16px;
+      margin-bottom: 22px;
+      background: #F8FAFC;
+      border: 1px solid rgba(1, 59, 255, 0.16);
+      border-left: 3px solid #013BFF;
+      border-radius: 10px;
+      transition: all 0.25s ease;
+      box-shadow: 0 2px 8px rgba(1, 59, 255, 0.04);
+    }
+
+    .plan-card-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .plan-icon-pill {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: rgba(1, 59, 255, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: #013BFF;
+    }
+
+    .plan-card-info {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      min-width: 0;
+    }
+
+    .plan-card-title-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .plan-label-tag {
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #71717A;
+    }
+
+    .plan-title-name {
+      font-size: 14.5px;
+      font-weight: 700;
+      color: #09090B;
+    }
+
+    .plan-billing-tag {
+      display: inline-block;
+      font-size: 11.5px;
+      font-weight: 600;
+      padding: 2px 7px;
+      border-radius: 100px;
+      background: rgba(1, 59, 255, 0.10);
+      color: #013BFF;
+    }
+
+    .plan-summary-text {
+      font-size: 13px;
+      color: #52525B;
+      line-height: 1.35;
+    }
+
+    .plan-change-link {
+      font-size: 12.5px;
+      font-weight: 600;
+      color: #013BFF;
+      text-decoration: none;
+      padding: 6px 12px;
+      border-radius: 6px;
+      background: #FFFFFF;
+      border: 1px solid rgba(1, 59, 255, 0.2);
+      transition: all 0.2s ease;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .plan-change-link:hover {
+      background: #013BFF;
+      color: #FFFFFF;
+      border-color: #013BFF;
     }
 
     .form-group {
@@ -234,43 +334,62 @@
       transform: translateX(4px);
     }
 
-    .recaptcha-badge {
+    .security-trust-badge {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      background: #013BFF;
-      color: #FFFFFF;
-      padding: 6px 12px;
-      border-radius: 6px;
+      gap: 10px;
+      background: #FFFFFF;
+      border: 1px solid rgba(25, 24, 20, 0.12);
+      color: #191814;
+      padding: 7px 12px;
+      border-radius: 8px;
       font-family: "Instrument Sans", sans-serif;
-      font-size: 10px;
-      line-height: 1.25;
-      box-shadow: 0 2px 6px rgba(1, 59, 255, 0.2);
+      font-size: 11px;
+      line-height: 1.3;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
     }
 
-    .recaptcha-badge .rc-text {
+    .security-trust-badge .sec-text {
       display: flex;
       flex-direction: column;
+      text-align: left;
     }
 
-    .recaptcha-badge .rc-title {
+    .security-trust-badge .sec-title {
+      font-weight: 600;
+      color: #191814;
+      font-size: 11px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .security-trust-badge .sec-sub {
+      color: #757368;
+      font-size: 9.5px;
+    }
+
+    .security-trust-badge .sec-link {
+      color: #013BFF;
+      text-decoration: none;
       font-weight: 500;
-      opacity: 0.95;
+      transition: color 0.15s ease;
     }
 
-    .recaptcha-badge .rc-sub {
-      opacity: 0.8;
-      font-size: 8.5px;
+    .security-trust-badge .sec-link:hover {
+      text-decoration: underline;
     }
 
-    .recaptcha-badge .rc-icon {
-      width: 22px;
-      height: 22px;
-      background: #FFFFFF;
+    .security-trust-badge .sec-icon {
+      width: 26px;
+      height: 26px;
+      background: #F8F9F2;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
+      flex-shrink: 0;
+      color: #059669;
     }
 
     /* Success Card State */
@@ -384,6 +503,8 @@
 
     .carousel-arrow-btn:hover {
       background: #013BFF;
+      color: #FFFFFF;
+      border-color: #013BFF;
       transform: scale(1.05);
     }
 
@@ -403,16 +524,17 @@
       overflow: hidden;
       width: 100%;
       position: relative;
-      padding: 6px 2px;
-      margin: -6px -2px;
+      padding: 10px 4px;
+      margin: -10px -4px;
     }
 
     .carousel-track {
       display: flex;
       gap: 20px;
-      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-      width: 100%;
+      transition: transform 0.85s cubic-bezier(0.25, 1, 0.35, 1);
+      width: max-content;
       box-sizing: border-box;
+      will-change: transform;
     }
 
     /* Testimonial Card (Matches Tonic Reference Structure) */
@@ -614,10 +736,11 @@
       .start-submit-btn {
         width: 100%;
       }
-      .recaptcha-badge {
+      .security-trust-badge {
         justify-content: center;
-        width: fit-content;
+        width: 100%;
         margin: 0 auto;
+        box-sizing: border-box;
       }
     }
 
@@ -629,29 +752,39 @@
       }
     }
   </style>
-</head>
+
+<meta property="og:url" content="https://spotalents.com/start">
+<meta name="twitter:image" content="https://spotalents.com/images/6abc120c9cbe81e3c6b4df09_Social%20Share%20%285%29.png"></head>
 
 <body>
   <div class="pages-wrapper">
-    <!-- Navbar Component -->
+    <!-- Skip to Content Bypass Link -->
+    <a href="#main-content" class="skip-to-content sr-only">Skip to main content</a>
+    <!-- Navigation Bar Component -->
     <div data-animation="default" class="navbar w-nav" data-easing2="ease" data-wf-component-id="f91a6e72-3d48-2df7-ec13-3fd3e91e728d" data-easing="ease" data-wf-variant-state="base" data-collapse="medium" role="banner" data-duration="400">
       <div class="container w-container">
         <div class="navbar-wrapper">
-          <a href="/" class="brand-logo-link w-nav-brand">
-            <img loading="lazy" src="../images/6aa6b281bbff208b543d41a5_Brand%20Logo%20%282%29.svg" alt="Brand Logo" class="brand-logo">
+          <a href="/" class="brand-logo-link w-nav-brand" aria-label="Spotalents Home">
+            <img loading="lazy" src="/images/6aa6b281bbff208b543d41a5_Brand%20Logo%20%282%29.svg" alt="Spotalents Logo" class="brand-logo" width="112" height="20">
           </a>
           <nav role="navigation" class="nav-menu w-nav-menu">
-            <div class="nav-menu-wrap"><a href="/about" class="menu-link w-inline-block"><div menu-one="" class="menu-text">About</div><div menu-two="" class="menu-text">About</div></a><a href="/features" class="menu-link w-inline-block"><div menu-one="" class="menu-text">Features</div><div menu-two="" class="menu-text">Features</div></a><a href="/solution" class="menu-link w-inline-block"><div menu-one="" class="menu-text">Solution</div><div menu-two="" class="menu-text">Solution</div></a><a href="/pricing" class="menu-link w-inline-block"><div menu-one="" class="menu-text">Pricing</div><div menu-two="" class="menu-text">Pricing</div></a></nav>
+            <div class="nav-menu-wrap">
+              <a href="/about" class="menu-link w-inline-block"><div menu-one="" class="menu-text">About</div><div menu-two="" class="menu-text">About</div></a>
+              <a href="/features" class="menu-link w-inline-block"><div menu-one="" class="menu-text">Features</div><div menu-two="" class="menu-text">Features</div></a>
+              <a href="/solution" class="menu-link w-inline-block"><div menu-one="" class="menu-text">Solution</div><div menu-two="" class="menu-text">Solution</div></a>
+              <a href="/pricing" class="menu-link w-inline-block"><div menu-one="" class="menu-text">Pricing</div><div menu-two="" class="menu-text">Pricing</div></a>
+            </div>
+          </nav>
           <div class="nav-button-wrap">
             <div class="nav-mobile-button">
-              <a data-wf--primary-button--variant="base" href="/start" class="primary-button w-inline-block w--current">
+              <a data-wf--primary-button--variant="base" href="/start" class="primary-button w-inline-block">
                 <div class="primary-btn-text-wrap">
                   <div class="primary-button-text">Deploy</div>
                   <div class="primary-button-text">Deploy</div>
                 </div>
                 <div class="primary-arrow-wrap">
-                  <img loading="lazy" src="../images/6aa6bd06548e7975cbe07463_Primary%20Arrow%2002.svg" alt="Primary Arrow" class="primary-arrow one">
-                  <img loading="lazy" src="../images/6aa6bd06548e7975cbe07463_Primary%20Arrow%2002.svg" alt="Primary Arrow" class="primary-arrow two">
+                  <img loading="lazy" src="/images/6aa6bd06548e7975cbe07463_Primary%20Arrow%2002.svg" alt="Primary Arrow" class="primary-arrow one">
+                  <img loading="lazy" src="/images/6aa6bd06548e7975cbe07463_Primary%20Arrow%2002.svg" alt="Primary Arrow" class="primary-arrow two">
                 </div>
               </a>
             </div>
@@ -666,7 +799,9 @@
       </div>
     </div>
 
-    <!-- Main Start / Schedule Demo Section -->
+  <!-- Main Content -->
+    <main id="main-content">
+<!-- Main Start / Schedule Demo Section -->
     <section class="start-page-section">
       <div class="start-container">
         <div class="start-split-grid">
@@ -675,11 +810,39 @@
           <div class="start-form-card">
             <div id="formContainer">
               <div class="start-form-header">
-                <h1>Schedule demo</h1>
-                <p>We're excited to connect. Please complete this form to book time with our team.</p>
+                <h1 id="startFormTitle">Schedule demo</h1>
+                <p id="startFormSubtitle">We're excited to connect. Please complete this form to book time with our team.</p>
+              </div>
+
+              <!-- Dynamic Selected Plan Indicator (Populated via URL metadata) -->
+              <div id="planSelectionBadge" class="plan-selection-card" style="display: none;">
+                <div class="plan-card-left">
+                  <div class="plan-icon-pill">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" stroke="#013BFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                  <div class="plan-card-info">
+                    <div class="plan-card-title-row">
+                      <span class="plan-label-tag">Selected Plan</span>
+                      <strong id="planNameDisplay" class="plan-title-name">Intelligence</strong>
+                      <span id="planBillingTag" class="plan-billing-tag">Annual</span>
+                    </div>
+                    <div id="planSummaryText" class="plan-summary-text">$249 / month · Billed annually</div>
+                  </div>
+                </div>
+                <div class="plan-card-right">
+                  <a href="/pricing" id="planChangeLink" class="plan-change-link">Change plan</a>
+                </div>
               </div>
 
               <form id="startLeadForm" novalidate>
+                <!-- Hidden inputs for pricing & plan metadata -->
+                <input type="hidden" id="selectedPlan" name="plan" value="">
+                <input type="hidden" id="selectedBilling" name="billing" value="">
+                <input type="hidden" id="selectedComp" name="comp" value="">
+                <input type="hidden" id="selectedFee" name="fee" value="">
+
                 <!-- Form Feedback Alert Banner -->
                 <div id="formAlertBanner" class="form-alert-banner" style="display: none;" role="alert"></div>
 
@@ -726,15 +889,16 @@
                     </svg>
                   </button>
 
-                  <div class="recaptcha-badge">
-                    <div class="rc-text">
-                      <span class="rc-title">protected by reCAPTCHA</span>
-                      <span class="rc-sub">Privacy - Terms</span>
-                    </div>
-                    <div class="rc-icon">
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C14.8273 3 17.3374 4.30234 18.9806 6.33333M21 3V7H17" stroke="#013BFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <div class="security-trust-badge" role="note" aria-label="Security and Privacy Information">
+                    <div class="sec-icon" aria-hidden="true">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        <path d="M9 12l2 2 4-4"/>
                       </svg>
+                    </div>
+                    <div class="sec-text">
+                      <span class="sec-title">ThreatShield · 256-Bit Encrypted</span>
+                      <span class="sec-sub">Spotalents Security · <a href="/privacy" class="sec-link" target="_blank" rel="noopener">Privacy</a> &amp; <a href="/terms" class="sec-link" target="_blank" rel="noopener">Terms</a></span>
                     </div>
                   </div>
                 </div>
@@ -750,7 +914,7 @@
               </div>
               <h2 class="success-title">We're Excited to Connect!</h2>
               <p class="success-desc">
-                Thank you, <span id="confirmName" style="font-weight: 600; color: #191814;"></span>. We've received your requirements for <span id="confirmCompany" style="font-weight: 600; color: #191814;"></span>. A Spotalents calibration specialist will connect with you at <span id="confirmEmail" style="font-weight: 600; color: #013BFF;"></span> within 24 hours to schedule your session.
+                Thank you, <span id="confirmName" style="font-weight: 600; color: #191814;"></span>. We've received your requirements for <span id="confirmCompany" style="font-weight: 600; color: #191814;"></span><span id="confirmPlanDetails"></span>. A Spotalents calibration specialist will connect with you at <span id="confirmEmail" style="font-weight: 600; color: #013BFF;"></span> within 24 hours to schedule your session.
               </p>
               <button type="button" id="resetBtn" class="success-reset-btn">Submit another response</button>
             </div>
@@ -935,8 +1099,10 @@
       </div>
     </section>
 
+        </main>
+
     <!-- Footer Component -->
-    <section data-wf--footer--variant="base" class="section footer">
+    <section data-wf--footer--variant="base" class="section footer" role="contentinfo">
       <div class="w-layout-blockcontainer big-container w-container">
         <div class="footer-wrapper">
           <div class="footer-watermark-text" aria-hidden="true">Spotalents</div>
@@ -962,9 +1128,10 @@
                   <div class="footer-single-wrap">
                     <div class="footer-menu-title">Workforce</div>
                     <div class="footer-menu-wrap">
-                      <a href="/pricing" class="menu-link w-inline-block"><div menu-one="" class="menu-text">Pathways</div><div menu-two="" class="menu-text">Pathways</div></a><a href="/blog" class="menu-link w-inline-block"><div menu-one="" class="menu-text">News &amp; Press</div><div menu-two="" class="menu-text">News &amp; Press</div></a>
+                      <a href="/pricing" class="menu-link w-inline-block"><div menu-one="" class="menu-text">Pathways</div><div menu-two="" class="menu-text">Pathways</div></a>
                       <a href="/start" class="menu-link w-inline-block"><div menu-one="" class="menu-text">Deploy</div><div menu-two="" class="menu-text">Deploy</div></a>
                       <a href="/about#story" class="menu-link w-inline-block"><div menu-one="" class="menu-text">Founder Story</div><div menu-two="" class="menu-text">Founder Story</div></a>
+                      <a href="/blog" class="menu-link w-inline-block"><div menu-one="" class="menu-text">News &amp; Press</div><div menu-two="" class="menu-text">News &amp; Press</div></a>
                     </div>
                   </div>
                 </div>
@@ -987,9 +1154,9 @@
               <div class="footer-backers-bar">
                 <span class="footer-backers-intro">Backed by global tech &amp; national institutions:</span>
                 <div class="footer-backers-pill-list">
-                  <span class="footer-backer-pill"><img src="/images/partners/microsoft.svg" alt="Microsoft"> Microsoft</span>
-                  <span class="footer-backer-pill"><img src="/images/partners/google.svg" alt="Google"> Google</span>
-                  <span class="footer-backer-pill"><img src="/images/partners/nvidia.svg" alt="NVIDIA"> NVIDIA</span>
+                  <span class="footer-backer-pill footer-backer-logo"><img src="/images/partners/microsoft.svg" alt="Microsoft"></span>
+                  <span class="footer-backer-pill footer-backer-logo"><img src="/images/partners/google.svg" alt="Google"></span>
+                  <span class="footer-backer-pill footer-backer-logo"><img src="/images/partners/nvidia.svg" alt="NVIDIA"></span>
                   <span class="footer-backer-pill"><img src="/images/partners/mcit_logo.png" alt="MCIT"> MCIT Egypt</span>
                   <span class="footer-backer-pill"><img src="/images/partners/itida_symbol.png" alt="ITIDA"> ITIDA</span>
                   <span class="footer-backer-pill"><img src="/images/partners/creativa_symbol.png" alt="Creativa"> Creativa</span>
@@ -998,19 +1165,15 @@
                 </div>
               </div>
             </div>
-            <div animation="fade-three" class="footer-copyright-wrap">
+            <div animation="fade-three" class="footer-copyright-wrap" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
               <div class="footer-copyright-text">© 2026 Spotalents. All rights reserved. Powered by Spotalents Intelligence.</div>
-              <!-- Social channels commented out until official handles are launched
-              <div class="footer-social-wrapper">
-                <div class="footer-copyright-text">Socials</div>
-                <div class="footer-social-wrap">
-                  <a href="https://discord.com/" target="_blank" class="social-link w-inline-block"><img loading="lazy" src="/images/6aa6daaf9d104f28ed99927d_Social%20Image%2001.svg" alt="Discord" class="social-image"><img loading="lazy" src="/images/6aa6daaf9d104f28ed99927d_Social%20Image%2001.svg" alt="Discord" class="social-image"></a>
-                  <a href="https://x.com/" target="_blank" class="social-link w-inline-block"><img loading="lazy" src="/images/6ac251c54ddeb2f1f2ec08f5_Twitter.svg" alt="Twitter" class="social-image"><img loading="lazy" src="/images/6ac251c54ddeb2f1f2ec08f5_Twitter.svg" alt="Twitter" class="social-image"></a>
-                  <a href="https://instagram.com/" target="_blank" class="social-link w-inline-block"><img loading="lazy" src="/images/6ac27f280b4e30951e8ec80f_Frame.svg" alt="Instagram" class="social-image"><img loading="lazy" src="/images/6ac27f280b4e30951e8ec80f_Frame.svg" alt="Instagram" class="social-image"></a>
-                  <a href="https://facebook.com/" target="_blank" class="social-link w-inline-block"><img loading="lazy" src="/images/6ac27f2892ef515c156f4b58_Frame%20%281%29.svg" alt="Facebook" class="social-image"><img loading="lazy" src="/images/6ac27f2892ef515c156f4b58_Frame%20%281%29.svg" alt="Facebook" class="social-image"></a>
-                </div>
+              <div class="footer-legal-links" style="display: flex; gap: 16px; align-items: center; flex-wrap: wrap;">
+                <a href="/privacy" class="footer-legal-link" style="color: #757368; font-size: 13px; text-decoration: none; transition: color 0.2s;">Privacy Policy</a>
+                <span style="color: rgba(25, 24, 20, 0.2);" aria-hidden="true">·</span>
+                <a href="/terms" class="footer-legal-link" style="color: #757368; font-size: 13px; text-decoration: none; transition: color 0.2s;">Terms of Service</a>
+                <span style="color: rgba(25, 24, 20, 0.2);" aria-hidden="true">·</span>
+                <a href="mailto:contact@spotalents.com" class="footer-legal-link" style="color: #757368; font-size: 13px; text-decoration: none; transition: color 0.2s;">contact@spotalents.com</a>
               </div>
-              -->
             </div>
           </div>
         </div>
@@ -1034,6 +1197,81 @@
       const alertBanner = document.getElementById('formAlertBanner');
       const honeypotInput = document.getElementById('_hp_company_url');
       const formLoadTime = Date.now();
+
+      // --- URL Query Parameter Parsing for Pricing & Plan Metadata ---
+      const urlParams = new URLSearchParams(window.location.search);
+      const rawPlan = (urlParams.get('plan') || '').trim().toLowerCase();
+      const rawBilling = (urlParams.get('billing') || '').trim().toLowerCase();
+      const rawComp = (urlParams.get('comp') || '').trim();
+      const rawFee = (urlParams.get('fee') || '').trim();
+
+      const planBadge = document.getElementById('planSelectionBadge');
+      const planNameDisplay = document.getElementById('planNameDisplay');
+      const planBillingTag = document.getElementById('planBillingTag');
+      const planSummaryText = document.getElementById('planSummaryText');
+      const planChangeLink = document.getElementById('planChangeLink');
+      const hiddenPlanInput = document.getElementById('selectedPlan');
+      const hiddenBillingInput = document.getElementById('selectedBilling');
+      const hiddenCompInput = document.getElementById('selectedComp');
+      const hiddenFeeInput = document.getElementById('selectedFee');
+      const formTitle = document.getElementById('startFormTitle');
+
+      let selectedPlan = '';
+      let selectedBilling = rawBilling || 'annual';
+
+      if (rawPlan === 'discover') {
+        selectedPlan = 'discover';
+        if (planBadge) {
+          planNameDisplay.textContent = 'Discover';
+          planBillingTag.textContent = selectedBilling === 'monthly' ? 'Monthly Billing' : 'Annual Billing';
+          planSummaryText.textContent = selectedBilling === 'monthly' 
+            ? '$99 / month · Flexible prepaid top-ups anytime' 
+            : '$82.50 / month · Billed annually at $990 (Save $198)';
+          planBadge.style.display = 'flex';
+        }
+        if (formTitle) formTitle.textContent = 'Get Started with Discover';
+      } else if (rawPlan === 'intelligence') {
+        selectedPlan = 'intelligence';
+        if (planBadge) {
+          planNameDisplay.textContent = 'Intelligence';
+          planBillingTag.textContent = selectedBilling === 'monthly' ? 'Monthly Billing' : 'Annual (Save $598)';
+          planSummaryText.textContent = selectedBilling === 'monthly' 
+            ? '$299 / month · 5,000 monthly AI matching credits' 
+            : '$249 / month · Billed annually at $2,990 (5,000 AI credits/mo)';
+          planBadge.style.display = 'flex';
+        }
+        if (formTitle) formTitle.textContent = 'Start Intelligence Free Trial';
+      } else if (rawPlan === 'enterprise') {
+        selectedPlan = 'enterprise';
+        if (planBadge) {
+          planNameDisplay.textContent = 'Enterprise Scale';
+          planBillingTag.textContent = 'Custom Agreement';
+          planSummaryText.textContent = 'Tailored AI allowance, custom RBAC & dedicated SLA terms';
+          planBadge.style.display = 'flex';
+        }
+        if (formTitle) formTitle.textContent = 'Connect with Enterprise Sales';
+      } else if (rawPlan === 'calibration') {
+        selectedPlan = 'calibration';
+        if (planBadge) {
+          planNameDisplay.textContent = 'Talent Calibration';
+          planBillingTag.textContent = 'Zero Risk';
+          const compNum = Number(rawComp);
+          const feeNum = Number(rawFee);
+          if (compNum && feeNum) {
+            planSummaryText.textContent = `$${compNum.toLocaleString()} / mo talent + $${feeNum.toLocaleString()} / mo fee ($${(compNum + feeNum).toLocaleString()} / mo total)`;
+          } else {
+            planSummaryText.textContent = 'Transparent 10% engagement rate · Billed only while active';
+          }
+          if (planChangeLink) planChangeLink.href = '/pricing#calculator';
+          planBadge.style.display = 'flex';
+        }
+        if (formTitle) formTitle.textContent = 'Start Free Talent Calibration';
+      }
+
+      if (hiddenPlanInput) hiddenPlanInput.value = selectedPlan;
+      if (hiddenBillingInput) hiddenBillingInput.value = selectedBilling;
+      if (hiddenCompInput) hiddenCompInput.value = rawComp;
+      if (hiddenFeeInput) hiddenFeeInput.value = rawFee;
 
       const fields = {
         firstName: {
@@ -1137,7 +1375,14 @@
           companyName: fields.companyName.el.value.trim(),
           email: fields.email.el.value.trim(),
           projectDetails: fields.projectDetails.el.value.trim(),
-          source: 'start_page_lead',
+          plan: selectedPlan || 'general',
+          billing: selectedPlan ? selectedBilling : 'unspecified',
+          talentComp: rawComp || null,
+          talentFee: rawFee || null,
+          source: selectedPlan ? `pricing_${selectedPlan}` : 'start_page_lead',
+          timezone: (window.Intl && Intl.DateTimeFormat) ? Intl.DateTimeFormat().resolvedOptions().timeZone : '',
+          submittedLocalTime: new Date().toLocaleString(),
+          pageUrl: window.location.href,
           _hp_company_url: honeypotInput ? honeypotInput.value : '',
           _formRenderTime: formLoadTime
         };
@@ -1202,6 +1447,16 @@
           document.getElementById('confirmName').textContent = leadData.firstName;
           document.getElementById('confirmCompany').textContent = leadData.companyName;
           document.getElementById('confirmEmail').textContent = leadData.email;
+          const confirmPlanDetails = document.getElementById('confirmPlanDetails');
+          if (confirmPlanDetails && selectedPlan) {
+            const planTitles = {
+              discover: 'Discover Plan',
+              intelligence: 'Intelligence Plan',
+              enterprise: 'Enterprise Tier',
+              calibration: 'Talent Calibration'
+            };
+            confirmPlanDetails.innerHTML = ` regarding the <strong>${planTitles[selectedPlan] || selectedPlan}</strong> (${selectedBilling === 'monthly' ? 'Monthly' : 'Annual'} cycle)`;
+          }
 
           // Store successful lead in localStorage as client-side backup
           try {
@@ -1211,6 +1466,8 @@
               lastName: leadData.lastName,
               companyName: leadData.companyName,
               email: leadData.email,
+              plan: leadData.plan,
+              billing: leadData.billing,
               submittedAt: new Date().toISOString()
             });
             localStorage.setItem('spotalents_leads', JSON.stringify(existing));
@@ -1267,93 +1524,242 @@
     });
   </script>
 
-  <!-- Interactive Testimonials Carousel Script -->
+  <!-- Interactive Testimonials Carousel Script with Seamless Auto-Scroll -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       const track = document.getElementById('carouselTrack');
       const prevBtn = document.getElementById('prevBtn');
       const nextBtn = document.getElementById('nextBtn');
-      const cards = Array.from(document.querySelectorAll('.testimonial-card'));
       const viewport = document.querySelector('.carousel-viewport');
+      const wrapper = document.querySelector('.satisfaction-wrapper');
+      if (!track || !viewport) return;
 
-      let currentIndex = 0;
+      const originalCards = Array.from(track.querySelectorAll('.testimonial-card'));
+      const cardCount = originalCards.length;
+      if (cardCount === 0) return;
 
-      function getStepAndMax() {
-        if (!viewport || cards.length === 0) return { step: 0, maxMove: 0, maxIndex: 0 };
-        const cardWidth = cards[0].offsetWidth;
-        const gap = 20;
-        const step = cardWidth + gap;
-        const maxMove = Math.max(0, track.scrollWidth - viewport.clientWidth);
-        const maxIndex = step > 0 ? Math.ceil(maxMove / step) : 0;
-        return { step, maxMove, maxIndex };
+      // Clone cards for infinite seamless loop: 1 set before, 2 sets after
+      // [Clone 0..3] [Real 0..3] [Clone 0..3] [Clone 0..3]
+      const beforeClones = originalCards.map(card => {
+        const clone = card.cloneNode(true);
+        clone.classList.add('is-clone');
+        clone.setAttribute('aria-hidden', 'true');
+        clone.querySelectorAll('a, button').forEach(el => el.setAttribute('tabindex', '-1'));
+        return clone;
+      });
+
+      const afterClones1 = originalCards.map(card => {
+        const clone = card.cloneNode(true);
+        clone.classList.add('is-clone');
+        clone.setAttribute('aria-hidden', 'true');
+        clone.querySelectorAll('a, button').forEach(el => el.setAttribute('tabindex', '-1'));
+        return clone;
+      });
+
+      const afterClones2 = originalCards.map(card => {
+        const clone = card.cloneNode(true);
+        clone.classList.add('is-clone');
+        clone.setAttribute('aria-hidden', 'true');
+        clone.querySelectorAll('a, button').forEach(el => el.setAttribute('tabindex', '-1'));
+        return clone;
+      });
+
+      // Insert clones into track
+      beforeClones.forEach(c => track.insertBefore(c, originalCards[0]));
+      afterClones1.forEach(c => track.appendChild(c));
+      afterClones2.forEach(c => track.appendChild(c));
+
+      // Real cards start at index = cardCount
+      const START_INDEX = cardCount;
+      let currentIndex = START_INDEX;
+      let isTransitioning = false;
+      const TRANSITION_STYLE = 'transform 0.85s cubic-bezier(0.25, 1, 0.35, 1)';
+      const AUTO_SCROLL_DELAY = 4200; // 4.2 seconds between auto-scroll steps: smooth, standard cadence
+
+      function getStep() {
+        const firstCard = track.querySelector('.testimonial-card');
+        if (!firstCard) return 370;
+        const cardWidth = firstCard.offsetWidth;
+        const trackStyle = window.getComputedStyle(track);
+        const gap = parseFloat(trackStyle.gap) || 20;
+        return cardWidth + gap;
       }
 
-      function updateCarousel() {
-        const { step, maxMove, maxIndex } = getStepAndMax();
-        if (currentIndex > maxIndex) currentIndex = maxIndex;
-        if (currentIndex < 0) currentIndex = 0;
-
-        let moveAmount = currentIndex * step;
-        if (moveAmount > maxMove) moveAmount = maxMove;
-
-        track.style.transform = `translateX(-${moveAmount}px)`;
-
-        if (prevBtn) prevBtn.disabled = (currentIndex === 0);
-        if (nextBtn) nextBtn.disabled = (currentIndex >= maxIndex || moveAmount >= maxMove);
+      function applyPosition(animate = true) {
+        const step = getStep();
+        if (animate) {
+          track.style.transition = TRANSITION_STYLE;
+        } else {
+          track.style.transition = 'none';
+        }
+        track.style.transform = `translateX(-${currentIndex * step}px)`;
       }
 
+      // Initial placement at START_INDEX without animation
+      applyPosition(false);
+
+      function goToSlide(targetIndex, animate = true) {
+        if (isTransitioning) return;
+        isTransitioning = animate;
+        currentIndex = targetIndex;
+        applyPosition(animate);
+      }
+
+      function nextSlide() {
+        goToSlide(currentIndex + 1, true);
+      }
+
+      function prevSlide() {
+        goToSlide(currentIndex - 1, true);
+      }
+
+      // Handle seamless loop boundaries on transition end
+      track.addEventListener('transitionend', function(e) {
+        if (e.target !== track) return;
+        isTransitioning = false;
+
+        // If moved past the real cards into after-clones
+        if (currentIndex >= START_INDEX + cardCount) {
+          currentIndex -= cardCount; // seamless modulo wrap (e.g. 8 -> 4)
+          applyPosition(false);
+          void track.offsetHeight; // force reflow
+        } else if (currentIndex < START_INDEX) {
+          currentIndex += cardCount; // seamless wrap backward (e.g. 3 -> 7)
+          applyPosition(false);
+          void track.offsetHeight; // force reflow
+        }
+      });
+
+      // Arrow button controls
       if (nextBtn) {
+        nextBtn.removeAttribute('disabled');
         nextBtn.addEventListener('click', function() {
-          const { maxIndex } = getStepAndMax();
-          if (currentIndex < maxIndex) {
-            currentIndex++;
-            updateCarousel();
-          }
+          nextSlide();
+          resetAutoScroll();
         });
       }
 
       if (prevBtn) {
+        prevBtn.removeAttribute('disabled');
         prevBtn.addEventListener('click', function() {
-          if (currentIndex > 0) {
-            currentIndex--;
-            updateCarousel();
-          }
+          prevSlide();
+          resetAutoScroll();
         });
       }
 
-      // Touch swipe support for mobile
+      // Auto-scroll loop with pause/resume
+      let autoScrollTimer = null;
+      let isHovered = false;
+      let isVisible = true;
+
+      function startAutoScroll() {
+        stopAutoScroll();
+        if (!isVisible || isHovered) return;
+        autoScrollTimer = setInterval(function() {
+          if (!isHovered && isVisible) {
+            nextSlide();
+          }
+        }, AUTO_SCROLL_DELAY);
+      }
+
+      function stopAutoScroll() {
+        if (autoScrollTimer) {
+          clearInterval(autoScrollTimer);
+          autoScrollTimer = null;
+        }
+      }
+
+      function resetAutoScroll() {
+        stopAutoScroll();
+        startAutoScroll();
+      }
+
+      // Hover pause on satisfaction wrapper and viewport
+      if (wrapper) {
+        wrapper.addEventListener('mouseenter', function() {
+          isHovered = true;
+          stopAutoScroll();
+        });
+        wrapper.addEventListener('mouseleave', function() {
+          isHovered = false;
+          startAutoScroll();
+        });
+      }
+
+      // Intersection Observer: only auto-scroll when visible in screen
+      if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            isVisible = entry.isIntersecting;
+            if (isVisible) {
+              startAutoScroll();
+            } else {
+              stopAutoScroll();
+            }
+          });
+        }, { threshold: 0.15 });
+        observer.observe(wrapper || viewport);
+      } else {
+        startAutoScroll();
+      }
+
+      // Document visibility (pause when switching tabs)
+      document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+          isVisible = false;
+          stopAutoScroll();
+        } else {
+          isVisible = true;
+          startAutoScroll();
+        }
+      });
+
+      // Touch / swipe support
       let startX = 0;
       let currentX = 0;
+      let isSwiping = false;
+
       track.addEventListener('touchstart', function(e) {
         startX = e.touches[0].clientX;
+        currentX = startX;
+        isSwiping = true;
+        isHovered = true;
+        stopAutoScroll();
       }, { passive: true });
 
       track.addEventListener('touchmove', function(e) {
+        if (!isSwiping) return;
         currentX = e.touches[0].clientX;
       }, { passive: true });
 
       track.addEventListener('touchend', function() {
+        if (!isSwiping) return;
+        isSwiping = false;
         const diff = startX - currentX;
-        const { maxIndex } = getStepAndMax();
-        if (Math.abs(diff) > 50) {
-          if (diff > 0 && currentIndex < maxIndex) {
-            currentIndex++;
-          } else if (diff < 0 && currentIndex > 0) {
-            currentIndex--;
+        if (Math.abs(diff) > 40) {
+          if (diff > 0) {
+            nextSlide();
+          } else {
+            prevSlide();
           }
-          updateCarousel();
         }
+        setTimeout(function() {
+          isHovered = false;
+          resetAutoScroll();
+        }, 300);
       });
 
-      // Recalculate on window resize
+      // Resize recalculation
       let resizeTimer;
       window.addEventListener('resize', function() {
         clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(updateCarousel, 100);
+        resizeTimer = setTimeout(function() {
+          applyPosition(false);
+        }, 120);
       });
 
-      // Initial layout update
-      setTimeout(updateCarousel, 150);
+      // Start after initial render
+      setTimeout(startAutoScroll, 1200);
     });
   </script>
 </body>

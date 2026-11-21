@@ -4,10 +4,13 @@
   "private": true,
   "description": "Spotalents - Elite engineering pods powered by multi-signal intelligence",
   "scripts": {
-    "test": "node scripts/test_lead_api.js"
+    "test": "node scripts/test_lead_api.js",
+    "sync:components": "python3 scripts/sync_components.py",
+    "sync:footer": "python3 scripts/sync_footer.py"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.48.1",
+    "nodemailer": "^10.6.1",
     "pg": "^8.23.1"
   }
 }

@@ -209,8 +209,39 @@ async function runTests() {
     console.log('✓ Test 8 Passed: Local development & file:// CORS policies verified');
   }
 
+  // Test 9: Founder Email Notification Generation & Targeting
+  {
+    const { DEFAULT_FOUNDER_EMAILS, generateEmailTemplates, escapeHtml } = require('../api/_email');
+    assert.deepStrictEqual(DEFAULT_FOUNDER_EMAILS, [
+      'hatemalihassan1@gmail.com',
+      'contact@jointhedragons.com'
+    ], 'Founder recipients must match specified emails');
+
+    const testLead = {
+      firstName: 'Sarah',
+      lastName: 'Connor',
+      companyName: 'Cyberdyne Systems',
+      email: 'sarah@cyberdyne.com',
+      projectDetails: 'Need an AI infra pod with Kubernetes and Go expertise.',
+      source: 'start_page_lead'
+    };
+    const { subject, html, text } = generateEmailTemplates(testLead);
+    assert(subject.includes('Sarah Connor'), 'Subject must contain lead full name');
+    assert(subject.includes('Cyberdyne Systems'), 'Subject must contain company name');
+    assert(html.includes('SPOTALENTS'), 'HTML must feature Spotalents branding');
+    assert(html.includes('hatemalihassan1@gmail.com'), 'HTML must feature founder notification recipient');
+    assert(html.includes('contact@jointhedragons.com'), 'HTML must feature founder notification recipient');
+    assert(html.includes('sarah@cyberdyne.com'), 'HTML must feature lead contact email');
+    assert(text.includes('Sarah Connor'), 'Plain-text must contain lead full name');
+
+    // Anti-XSS check
+    const xssPayload = '<script>alert(1)</script>';
+    assert(!escapeHtml(xssPayload).includes('<script>'), 'HTML must escape tags');
+    console.log('✓ Test 9 Passed: Founder email notification templates & recipients verified');
+  }
+
   console.log('\n========================================');
-  console.log('All 7 Security & API Tests Passed 100%!');
+  console.log('All 9 Security & API Tests Passed 100%!');
   console.log('========================================\n');
 }
 
